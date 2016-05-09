@@ -1,0 +1,663 @@
+//
+//  NetRequest.h
+//  正式版网络请求类
+//
+//  Created by houpeng on 13-7-4.
+//  Copyright (c) 2013年 eastedge. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#import "ASIFormDataRequest.h"
+
+#import "BaseModel.h"
+
+
+#import "EADefine.h"
+
+
+
+@protocol NetRequestDelegate <NSObject>
+
+@optional
+/*
+*不管请求成功失败，都走下面的请求完成回调
+*/
+- (void)netRequestFinished:(BaseModel *)model;
+
+@end
+
+@interface NetRequest : NSObject <ASIHTTPRequestDelegate>
+
+@property (retain, nonatomic) NSMutableDictionary *requestDic;
+
+@property (nonatomic, assign) id <NetRequestDelegate>delegate;
+
+
+@property (nonatomic,retain) NSString *screct;
+@property (nonatomic, retain) NSString *oauth_token;
+@property (nonatomic, retain) NSString *oauth_verifier;
+
+
+- (void)startAsynchronousWithRequest:(ASIHTTPRequest *)request;
+
+/*
+ *
+ *setDelegate when init
+ *
+ */
+- (id)initWithDelegate:(id <NetRequestDelegate>)aDelegate;
+
+//////////////////////////在下面写请求方法/////////////////////////////////
+/*
+ *
+ *一个RequestToken请求 tag 100
+ */
+
+- (void)getRequestTokenKey:(NSString *)oauth_consumer_key andMethod:(NSString *)oauth_signature_method andTimesTamep:(NSString *)oauth_timestamp andNonce:(NSString *)oauth_nonce andVewsion:(NSString *)oauth_version andCallback:(NSString *)oauth_callback;
+/*
+ *
+ *一个登录请求 tag 101
+ */
+- (void) getLoginName:(NSString *)username andPassword:(NSString *)password andToken:(NSString *)oauth_token;
+
+/*
+ *
+ *一个获取AccessToken请求 tag 102
+ */
+
+- (void)getAccessTokenKey:(NSString *)oauth_consumer_key andToken:(NSString *)oauth_token andVerifier:(NSString *)oauth_verifier andOauth_signature_method:(NSString *)oauth_signature_method andOauth_signature:(NSString *)oauth_signature andOauth_timestamp:(NSString *)oauth_timestamp andOauth_nonce:(NSString *)oauth_nonce andOauth_version:(NSString *)oauth_version;
+#pragma mark  ======② 与我相关
+/*
+ *
+ *定时提醒数据 tag 103
+ */
+- (void)getMessagesEnterPriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken;
+
+
+/*
+ *
+ *我的动态 我的分享请求 tag 104
+ */
+- (void)getShareThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andUserid:(NSString *)userid andDatatype:(NSString *)datatype andShowType:(NSString *)showtype andKeywords:(NSString *)keywords andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *我的动态 我的任务请求 tag 105
+ */
+// thispage pagesize enterpriseid taskstatus accesstoken
+- (void)getTeskEnterpriseid:(NSString *)enterpriseid andTaskstatus:(NSString *)taskstatus andUserid:(NSString *)userid ;
+/*
+ *
+ *4.	我的文档  tag 106
+ */
+// thispage pagesize enterpriseid datatype isimportant accesstoken
+- (void)getMyDoumentsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andDatatype:(NSString *)datatype andIsimportant:(NSString *)isimportant andAccesstoken
+                      :(NSString *)accesstoken;
+/*
+ *
+ *	我的活动 tag 107
+ */
+// thispage pagesize enterpriseid isall status accesstoken
+- (void)getMyEventsEnterpriseid:(NSString *)enterpriseid andIsall:(NSString *)isall andStatus:(NSString *)status andAccesstoken
+                      :(NSString *)accesstoken;
+
+/*
+ *
+ *	6.	@我的 tag 108
+ */
+// thispage pagesize enterpriseid isnew accesstoken
+- (void)getMyThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andIsnew:(NSString *)isnew andKeywords:(NSString *)keywords andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *	7.	回复我的 tag 109
+ */
+
+// Thispage Pagesize enterpriseid Isnew
+- (void)getRepliiesThispage:(NSString *)Thispage andPagesize:(NSString *)Pagesize andEnterpriseid:(NSString *)enterpriseid andIsnew:(NSString *)Isnew andKeywords:(NSString *)keywords;
+/*
+ *
+ *	待办事项 tag 110
+ */
+// Thispage Pagesize enterpriseid isimportant Status
+- (void)getToDoEnterpriseid:(NSString *)enterpriseid andIsimportant:(NSString *)isimportant andStatus:(NSString *)Status
+;
+/*
+ *
+ *	9.	工作通知 tag 111
+ */
+// worknotice thispage pagesize enterpriseid accesstoken
+- (void)getWorknoticeThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *	7.	10.	系统通知 tag 112
+ */
+//systemnotices thispage pagesize enterpriseid accesstoken
+- (void)getSystemnoticesThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *	7.	11.	用户信息 tag 113
+ */
+//userinfo userid accesstoken
+- (void)getUserinfoUserid:(NSString *)userid andAccesstoken
+                         :(NSString *)accesstoken;
+/*
+ *
+ *	修改资料tag 114
+ */
+//userupdate userid department position sex birthday cellphone phone address msn qq description logo accesstoken
+- (void)getUserupdateUserid:(NSString *)userid andDepartment:(NSString *)department andPosition:(NSString *)position andSex:(NSString *)sex andBirthday:(NSString *)birthday andCellphone:(NSString *)cellphone andPhone:(NSString *)phone andAddress:(NSString *)address andMsn:(NSString *)msn andQq:(NSString *)qq andDescription:(NSString *)description andLogo:(NSString *)logo andAccesstoken
+                           :(NSString *)accesstoken;
+/*
+ *
+ *	2.	上传头像 tag 115
+ */
+//uploadlogo userid accesstoken
+//- (void)getUploadlogoUserid:(NSString *)userid imgPathName:(NSString *)theImgPath andAccesstoken:(NSString *)accesstoken;
+- (void)getUploadlogoUserid:(NSString *)userid img:(id)theImg andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *	3.	修改密码 tag 116
+ */
+//changepassword username name oldpassword newpassword accesstoken
+- (void)getChangepasswordUsername:(NSString *)username andName:(NSString *)name andOldpassword:(NSString *)oldpassword andNewpassword:(NSString *)newpassword andAccesstoken
+                                 :(NSString *)accesstoken;
+/*
+ 
+ *
+ *	4.	邮件设置 tag 117
+ */
+//emailsetting enterpriseid messagetype messagedate todotype tododate accesstoken
+- (void)getEmailsettingEnterpriseid:(NSString *)enterpriseid andMessagetype:(NSString *)messagetype andMessagedate:(NSString *)messagedate andTodotype:(NSString *)todotype andTododate:(NSString *)tododate andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *	7.	1.	项目列表 tag 118
+ */
+//projects thispage pagesize type enterpriseid status isimportant accesstoken
+- (void)getProjectsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andType:(NSString *)type andEnterpriseid:(NSString *)enterpriseid andStatus:(NSString *)status andIsimportant:(NSString *)isimportant andInitial:(NSString *)initial andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *	7.	2.	项目详情 tag 119
+ */
+//projectinfo enterpriseid projectid accesstoken
+- (void)getProjectinfoEnterpriseid:(NSString *)enterpriseid andProjectid:(NSString *)projectid andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *	7.3.	项目动态 tag 120
+ */
+//projectshares thispage pagesize enterpriseid projectid accesstoken
+- (void)getProjectsharesThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andProjectid:(NSString *)projectid andKeywords:(NSString *)keywords andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *	7.4.	项目任务 tag 121
+ */
+//projecttasks thispage pagesize enterpriseid projectid type accesstoken
+- (void)getProjecttasksThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andProjectid:(NSString *)projectid andType:(NSString *)type andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *	5.	项目活动 tag 122
+ */
+//projectevents thispage pagesize enterpriseid projectid type accesstoken
+- (void)getProjecteventsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andProjectid:(NSString *)projectid andType:(NSString *)type andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *	6.	项目文档 tag 123
+ */
+//projectdocuments thispage pagesize enterpriseid projectid isimportant accesstoken
+- (void)getProjectdocumentsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andProjectid:(NSString *)projectid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *1.	新建项目，修改项目 tag 124
+ */
+
+//projectadd enterpriseid name description ispublic starttime endtime projectid accesstoken
+- (void)getProjectaddEnterpriseid:(NSString *)enterpriseid andName:(NSString *)name andDescription:(NSString *)description andIspublic:(NSString *)ispublic andStarttime:(NSString *)starttime andEndtime:(NSString *)endtime andProjectid:(NSString *)projectid andAccesstoken:(NSString *)accesstoken;
+/*
+ * 有问题
+ *2.	修改项目  tag 125
+ */
+//enterpriseid projectid starttime endtime projectname description accesstoken
+/*
+ *
+ *	3.	删除项目 tag 126
+ */
+//projectdelete projectid access_token
+- (void)getProjectdeleteProjectid:(NSString *)projectid andAccess_Token:(NSString *)access_token;
+/*
+ *
+ *	完成项目，重启项目 tag 127
+ */
+
+//projectstatus projectid status accesstoken
+- (void)getProjectstatusProjectid:(NSString *)projectid andStatus:(NSString *)status andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *5.	负责人权限转交 tag 128
+ */
+//projectadmin projectid userid enterpriseid accesstoken
+- (void)getProjectadminProjectid:(NSString *)projectid andUserid:(NSString *)userid andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *	6.	将项目设置为重要或不重要（设置*标） tag 129
+ */
+
+//projectimportant projectid isimportant enterpriseid accesstoken
+- (void)getProjectimportantProjectid:(NSString *)projectid andIsimportant:(NSString *)isimportant andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *	7.	关注项目 tag 130
+ */
+//projectfollow projectid accesstoken
+- (void)getProjectfollowProjectid:(NSString *)projectid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *  8.  取消关注项目 tag 131
+ */
+//projectunfollow projectid accesstoken
+- (void)getProjectunfollowProjectid:(NSString *)projectid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *	9.	邀请别人加入项目 tag 132
+ */
+//teaminvite enterpriseid memberids projectid accesstoken
+
+- (void)getTeaminviteEnterpriseid:(NSString *)enterpriseid andMemberids:(NSString *)memberids andProjectid:(NSString *)projectid andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *	1.	团队列表 tag; 133
+ */
+//teamteams listtype enterpriseid accesstoken
+- (void)getTeamteamsListtype:(NSString *)listtype andEnterpriseid:(NSString *)enterpriseid andThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andInitial:(NSString *)initial andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *	2.	团队详情 tag 134
+ */
+//teaminfo enterpriseid teamid accesstoken
+- (void)getTeaminfoEnterpriseid:(NSString *)enterpriseid andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *	3.	团队动态 tag 135
+ */
+
+//thispage pagesize enterpriseid teamid accesstoken
+- (void)getThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andTeamid:(NSString *)teamid andKeywords:(NSString *)keywords andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *4.	团队活动 tag 136
+ */
+//teamevents thispage pagesize enterpriseid teamid type accesstoken
+- (void)getTeameventsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andTeamid:(NSString *)teamid andType:(NSString *)type andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *5.	团队文档 tag 137
+ */
+//teamdocuments thispage pagesize enterpriseid teamid isimportant accesstoken
+- (void)getTeamdocumentsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andTeamid:(NSString *)teamid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *6.	信息获取申请加入团队成员 tag 138
+ */
+//applymembers enterpriseid teamid accesstoken
+- (void)getApplymembersEnterpriseid:(NSString *)enterpriseid andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *1.	新建团队 tag 139  用修改团队的
+ */
+//teamadd enterpriseid name description accesstoken
+//- (void)getTeamaddEnterpriseid:(NSString *)enterpriseid andName:(NSString *)name andDescription:(NSString *)description andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *52.	修改团队 tag 140
+ */
+//teamupdate enterpriseid name description teamid accesstoken
+- (void)getTeamupdateEnterpriseid:(NSString *)enterpriseid andName:(NSString *)name andDescription:(NSString *)description andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *设置或修改团队公告 tag 141
+ */
+//announcement announcement teamid accesstoken
+- (void)getAnnouncementAnnouncement:(NSString *)announcement andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *4.	同意某人加入团队 tag 142
+ */
+//agreejoin memberid teamid accesstoken
+- (void)getAgreejoinMemberid:(NSString *)memberid andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *5.	拒绝某人加入团队 tag 143
+ */
+//spacerefusejoin memberid teamid accesstoken
+- (void)getSpacerefusejoinMemberid:(NSString *)memberid andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *5.	删除团队 tag 145
+ */
+//teamdeletec teamid accesstoken
+
+- (void)getTeamdeletecTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *7.	团队加*标 tag 146
+ */
+//setisimportant teamid enterpriseid isimportant accesstoken
+- (void)getSetisimportantTeamid:(NSString *)teamid andEnterpriseid:(NSString *)enterpriseid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *8.	邀请别人加入团队 tag 147
+ */
+//teaminvite teamid userid enterpriseid accesstoken
+- (void)getTeaminviteTeamid:(NSString *)teamid andUserid:(NSString *)userid andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *9.	管理员权限转交 tag 148
+ */
+//teamadmin teamid userid enterpriseid accesstoken
+- (void)getTeamadminTeamid:(NSString *)teamid andUserid:(NSString *)userid andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *10.	退出团队 tag 149
+ */
+//teamexit teamid accesstoken
+- (void)getTeamexitTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *5.	11.	同意别人邀请自已加入某团队 tag 150
+ */
+//teamagreeinvite teamid
+- (void)getTeamagreeinviteTeamid:(NSString *)teamid;
+
+/*
+ *
+ *5.12.	拒绝别人邀请自己加入某团队 tag 151
+ */
+//teamrefuseinvite teamid accesstoken
+- (void)getTeamrefuseinviteTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoke;
+/*
+ *
+ *5.13.	申请加入某团队 tag 152
+ */
+//teamapply teamid accesstoken
+- (void)getTeamapplyTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *5.14.	取消申请加入某团队 tag 153
+ */
+//teamcancelapply teamid accesstoken
+- (void)getTeamcancelapplyTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *1.	同事列表 tag 154
+ */
+//friendshipsfriends datatype enterpriseid accesstoken
+- (void)getFriendshipsfriendsDatatype:(NSString *)datatype andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken andInitial:(NSString *)initial;
+/*
+ *
+ *5.	1.	关注同事 tag 155
+ */
+//friendshipscreate friendsid accesstoken
+- (void)getFriendshipscreateFriendsid:(NSString *)friendsid andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *6.	1.	取消关注 tag 155
+ */
+//friendshipscreate friendsid accesstoken
+- (void)getFriendshipsdestroyFriendsid:(NSString *)friendsid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *3.	邀请同事加入企业空间 tag 156
+ */
+//friendshipsinvite friendsemail enterpriseid accesstoken
+- (void)getFriendshipsinviteFriendsemail:(NSString *)friendsemail andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *1.	资料(企业文档) tag 157
+ */
+//spacedocuments thispage pagesize keywords enterpriseid currentfileid isimportant accesstoken
+- (void)getSpacedocumentsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andKeywords:(NSString *)keywords andEnterpriseid:(NSString *)enterpriseid andCurrentfileid:(NSString *)currentfileid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *2.	获取本公司的绑定邮箱 tag 158
+ */
+//spaceemails enterpriseid accesstoken
+- (void)getSpaceemailsEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *5.1.	分享详情 tag 159
+ */
+
+//shareinfo enterpriseid themeid accesstoken
+- (void)getShareinfoEnterpriseid:(NSString *)enterpriseid andThemeid:(NSString *)themeid andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *5.	1.	发分享 tag 160
+ */
+//shareadd ispublic url enterpriseid fileid filename filesize groupid grouptype text accesstoken
+- (void)getShareaddIspublic:(NSString *)ispublic andUrl:(NSString *)url andEnterpriseid:(NSString *)enterpriseid andFileid:(NSString *)fileid andFilename:(NSString *)filename andFilesize:(NSString *)filesize andGroupid:(NSString *)groupid andGrouptype:(NSString *)grouptype andText:(NSString *)text andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *2.	删除分享及回复 tag 161
+ */
+//sharedelete themeid userid accesstoken
+- (void)getSharedeleteThemeid:(NSString *)themeid andUserid:(NSString *)userid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *1.	任务详情 tag 162
+ */
+//taskinfo enterpriseid taskid accesstoken
+- (void)getTaskinfoEnterpriseid:(NSString *)enterpriseid andTaskid:(NSString *)taskid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *5.	1.	发任务 tag 163
+ */
+//taskadd enterpriseid taskid ispublic title start end atuids receiveid fileid filename filesize groupid grouptype description oldatuids oldreceiveid setting accesstoken
+- (void)getTaskaddEnterpriseid:(NSString *)enterpriseid
+                     andTaskid:(NSString *)taskid
+                     andUserid:(NSString *)userid
+                   andIspublic:(NSString *)ispublic
+                      andTitle:(NSString *)title
+                      andStart:(NSString *)start
+                        andEnd:(NSString *)end
+                     andAtuids:(NSString *)atuids
+                  andReceiveid:(NSString *)receiveid
+                     andFileid:(NSString *)fileid
+                   andFilename:(NSString *)filename
+                   andFilesize:(NSString *)filesize
+                    andGroupid:(NSString *)groupid
+                  andGrouptype:(NSString *)grouptype
+                andDescription:(NSString *)description
+                  andOldatuids:(NSString *)oldatuids
+               andOldreceiveid:(NSString *)oldreceiveid
+                   andIsremind:(NSString *)isremind
+                     andInfoid:(NSString *)infoid
+                       andTime:(NSString *)time
+                andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *2.	修改任务状态 tag 164
+ */
+//taskaddmembers taskid enterpriseid oldatuser newatuser accesstoken
+
+- (void)getTaskchangeTaskStatusTaskid:(NSString *)taskid andStatus:(NSString *)status andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *3.	添加任务参与者 tag 165
+ */
+//taskaddmembers taskid enterpriseid oldatuser newatuser accesstoken
+
+- (void)getTaskaddmembersTaskid:(NSString *)taskid andEnterpriseid:(NSString *)enterpriseid andOldatuser:(NSString *)oldatuser andNewatuser:(NSString *)newatuser andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *2.	4.	删除任务 tag 166
+ */
+//taskdelete themeid accesstoken
+
+- (void)getTaskdeleteTaskid:(NSString *)taskid andAccesstoken:(NSString *)accesstoken;
+/*
+ *
+ *2.	1.	活动详情 tag 167
+ */
+//eventinfo enterpriseid eventid accesstoken
+- (void)getEventinfoEnterpriseid:(NSString *)enterpriseid andEventid:(NSString *)eventid andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *2.	1.	发活动 tag 168
+ */
+//eventadd enterpriseid eventid name start end address atids oldatids description fileid filename filesize ispublic oldispublic groupid type accesstoken
+- (void)getEventaddEnterpriseid:(NSString *)enterpriseid
+                     andEventid:(NSString *)eventid
+                        andName:(NSString *)name
+                       andStart:(NSString *)start
+                         andEnd:(NSString *)end
+                     andAddress:(NSString *)address
+                       andAtids:(NSString *)atids
+                    andOldatids:(NSString *)oldatids
+                 andDescription:(NSString *)description
+                      andFileid:(NSString *)fileid
+                    andFilename:(NSString *)filename
+                    andFilesize:(NSString *)filesize
+                    andIspublic:(NSString *)ispublic
+                 andOldispublic:(NSString *)oldispublic
+                     andGroupid:(NSString *)groupid
+                        andType:(NSString *)type
+                    andIsremind:(NSString *)isremind
+                      andInfoid:(NSString *)infoid
+                        andTime:(NSString *)time
+                 andAccesstoken:(NSString *)accesstoken;
+
+
+/*
+ *
+ *2.	2.	删除活动 tag 169
+ */
+//eventdelete eventid accesstoken
+- (void)getEventdeleteEventid:(NSString *)eventid andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *2.	3.	添加活动成员 tag 170
+ */
+//eventaddmembers eventid enterpriseid oldatuser newatuser accesstoken
+
+- (void)getEventaddmembersEventid:(NSString *)eventid andEnterpriseid:(NSString *)enterpriseid andOldatuser:(NSString *)oldatuser andNewatuser:(NSString *)newatuser andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *1.	回复内容列表 tag 171
+ */
+//replies themeid enterpriseid thispage pagesize keywords accesstoken
+- (void)getRepliesThemeid:(NSString *)themeid andEnterpriseid:(NSString *)enterpriseid andThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andAccesstoken:(NSString *)accesstoken;
+
+
+/*
+ *
+ *21.	退出登录 tag 172
+ */
+//signout accesstoken userid
+- (void)getSignoutAccesstoken:(NSString *)accesstoken andUserid:(NSString *)userid;
+/*
+ *
+ *2.	2.	发回复 tag 173
+ */
+//reply type enterpriseid text groupid parentid receiveid themeid ispublic filename fileid filesize grouptype accesstoken
+- (void)getReplyType:(NSString *)type
+     andEnterpriseid:(NSString *)enterpriseid
+             andText:(NSString *)text
+          andGroupid:(NSString *)groupid
+         andParentid:(NSString *)parentid
+        andReceiveid:(NSString *)receiveid
+          andThemeid:(NSString *)themeid
+         andIspublic:(NSString *)ispublic
+         andFilename:(NSString *)filename
+           andFileid:(NSString *)fileid
+         andFilesize:(NSString *)filesize
+        andGrouptype:(NSString *)grouptype
+      andAccesstoken:(NSString *)accesstoken;
+
+/*
+ *
+ *3.	上传文件 tag 174
+ */
+//upload fileid action enterpriseid accesstoken
+- (void)getUploadFileid:(NSString *)fileid andAction:(NSString *)action andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken andData:(id)data;
+
+/*
+ *
+ *4.	找回密码 tag 175
+ */
+//findpassword email checkcode
+
+- (void)getFindpasswordEmail:(NSString *)email andCheckcode:(NSString *)checkcode;
+
+
+
+
+//加载用户邮件设置 tag 176
+
+- (void)loadUserMailSetEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken;
+
+
+/**
+ 搜索结果页   search 
+ */
+- (void)searchWithKeywords:(NSString *)theKeywords enterpeiseid:(NSString *)theEID thisCurrentPage:(NSString *)thePage datatype:(NSInteger)theType;
+
+/**
+ 1.	检测新版本接口  178
+ */
+- (void)getVersion;
+
+/**
+ 1.	退出登录 179
+ */
+- (void)signoutWithUserid:(NSString *)userid;
+
+
+
+
+
+
+
+//团队踢出成员  180
+- (void)getTeamLeaveWithTeamid:(NSString *)teamid andUserids:(NSString *)userids andAccesstoken:(NSString *)accesstoken;
+
+//团队文档加星去星  181
+- (void)getTeamDocumentImportantWithTeamid:(NSString *)teamid andFileid:(NSString *)fileid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken;
+
+
+
+
+//项目文档加星去星  182
+- (void)getProjectDocumentImportantWithProjectid:(NSString *)projectid andFileid:(NSString *)fileid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken;
+
+//项目踢出成员  183
+- (void)getProjectLeaveWithProjectid:(NSString *)projectid andUserids:(NSString *)userids andAccesstoken:(NSString *)accesstoken;
+
+- (void)getPicFileID:(NSString *)fid fileName:(NSString *)theName fileType:(NSString *)theType isBig:(BOOL) theIsBig isTypePic:(NSInteger)theFromType;
+
+
+//待办事项加星操作   184
+- (void)getToDoImportantWithId:(NSString *)dataId andUserid:(NSString *)userid andReceiveid:(NSString *)receiveid andIstask:(NSString *)istask andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken;
+
+//文档加星   185
+- (void)getDocumentImportantWithInfoid:(NSString *)infoid andFiletype:(NSString *)fileType andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken;
+
+//删除提醒    186
+- (void)getDeletRemindWithInfoid:(NSString *)infoid andType:(NSString *)type andEnterpriseid:(NSString *)enterpeiseid andAccesstoken:(NSString *)accesstoken;
+
+@end

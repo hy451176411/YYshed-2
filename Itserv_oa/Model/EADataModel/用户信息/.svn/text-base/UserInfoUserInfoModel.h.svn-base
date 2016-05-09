@@ -1,0 +1,24 @@
+//
+//  UserInfoUserInfoModel.h
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "UserInfoCount.h"
+#import "UserInfoData.h"
+
+@interface UserInfoUserInfoModel : BaseModel <NSCoding>
+
+@property (nonatomic, retain) NSString *errorcode;
+@property (nonatomic, retain) UserInfoData *data;
+@property (nonatomic, retain) UserInfoCount *count;
+@property (nonatomic, retain) NSString *issuccess;
+
++ (UserInfoUserInfoModel *)modelObjectWithDictionary:(NSDictionary *)dict;
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
+- (NSDictionary *)dictionaryRepresentation;
+
+@end
+

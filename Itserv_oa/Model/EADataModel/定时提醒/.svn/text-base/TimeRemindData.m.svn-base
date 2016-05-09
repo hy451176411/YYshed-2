@@ -1,0 +1,123 @@
+//
+//  TimeRemindData.m
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import "TimeRemindData.h"
+
+
+@interface TimeRemindData ()
+
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict;
+
+@end
+
+@implementation TimeRemindData
+
+@synthesize ats = _ats;
+@synthesize events = _events;
+@synthesize replies = _replies;
+@synthesize teams = _teams;
+@synthesize works = _works;
+@synthesize syss = _syss;
+@synthesize fans = _fans;
+
+
++ (TimeRemindData *)modelObjectWithDictionary:(NSDictionary *)dict
+{
+    TimeRemindData *instance = [[[TimeRemindData alloc] initWithDictionary:dict] autorelease];
+    return instance;
+}
+
+- (id)initWithDictionary:(NSDictionary *)dict
+{
+    self = [super init];
+    
+    // This check serves to make sure that a non-NSDictionary object
+    // passed into the model class doesn't break the parsing.
+    if(self && [dict isKindOfClass:[NSDictionary class]]) {
+            self.ats = [self objectOrNilForKey:@"ats" fromDictionary:dict];
+            self.events = [self objectOrNilForKey:@"events" fromDictionary:dict];
+            self.replies = [self objectOrNilForKey:@"replies" fromDictionary:dict];
+            self.teams = [self objectOrNilForKey:@"teams" fromDictionary:dict];
+            self.works = [self objectOrNilForKey:@"works" fromDictionary:dict];
+            self.syss = [self objectOrNilForKey:@"syss" fromDictionary:dict];
+            self.fans = [self objectOrNilForKey:@"fans" fromDictionary:dict];
+
+    }
+    
+    return self;
+    
+}
+
+- (NSDictionary *)dictionaryRepresentation
+{
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
+    [mutableDict setValue:self.ats forKey:@"ats"];
+    [mutableDict setValue:self.events forKey:@"events"];
+    [mutableDict setValue:self.replies forKey:@"replies"];
+    [mutableDict setValue:self.teams forKey:@"teams"];
+    [mutableDict setValue:self.works forKey:@"works"];
+    [mutableDict setValue:self.syss forKey:@"syss"];
+    [mutableDict setValue:self.fans forKey:@"fans"];
+
+    return [NSDictionary dictionaryWithDictionary:mutableDict];
+}
+
+- (NSString *)description 
+{
+    return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
+}
+
+#pragma mark - Helper Method
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict
+{
+    id object = [dict objectForKey:aKey];
+    return [object isEqual:[NSNull null]] ? nil : object;
+}
+
+
+#pragma mark - NSCoding Methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+
+    self.ats = [aDecoder decodeObjectForKey:@"ats"];
+    self.events = [aDecoder decodeObjectForKey:@"events"];
+    self.replies = [aDecoder decodeObjectForKey:@"replies"];
+    self.teams = [aDecoder decodeObjectForKey:@"teams"];
+    self.works = [aDecoder decodeObjectForKey:@"works"];
+    self.syss = [aDecoder decodeObjectForKey:@"syss"];
+    self.fans = [aDecoder decodeObjectForKey:@"fans"];
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+
+    [aCoder encodeObject:_ats forKey:@"ats"];
+    [aCoder encodeObject:_events forKey:@"events"];
+    [aCoder encodeObject:_replies forKey:@"replies"];
+    [aCoder encodeObject:_teams forKey:@"teams"];
+    [aCoder encodeObject:_works forKey:@"works"];
+    [aCoder encodeObject:_syss forKey:@"syss"];
+    [aCoder encodeObject:_fans forKey:@"fans"];
+}
+
+
+- (void)dealloc
+{
+    [_ats release];
+    [_events release];
+    [_replies release];
+    [_teams release];
+    [_works release];
+    [_syss release];
+    [_fans release];
+    [super dealloc];
+}
+
+@end

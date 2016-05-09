@@ -1,0 +1,31 @@
+//
+//  FriendShipData.h
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+
+
+@interface FriendShipData : NSObject <NSCoding>
+
+@property (nonatomic, retain) NSString *initials;
+@property (nonatomic, retain) NSString *position;
+@property (nonatomic, retain) NSString *cellphone;
+@property (nonatomic, retain) NSString *dataIdentifier;
+@property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSString *isattention;
+@property (nonatomic, retain) NSString *isonline;
+@property (nonatomic, retain) NSString *department;
+@property (nonatomic, retain) NSString *logo;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, assign) BOOL isSelect;
+
+
++ (FriendShipData *)modelObjectWithDictionary:(NSDictionary *)dict;
+- (id)initWithDictionary:(NSDictionary *)dict;
+- (NSDictionary *)dictionaryRepresentation;
+
+@end

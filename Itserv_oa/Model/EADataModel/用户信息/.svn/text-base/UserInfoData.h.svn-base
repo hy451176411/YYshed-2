@@ -1,0 +1,39 @@
+//
+//  UserInfoData.h
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+
+
+@interface UserInfoData : NSObject <NSCoding>
+
+@property (nonatomic, retain) NSString *dataIdentifier;
+@property (nonatomic, retain) NSString *cellphone;
+@property (nonatomic, retain) NSString *phone;
+@property (nonatomic, retain) NSString *position;
+@property (nonatomic, retain) NSString *sex;
+@property (nonatomic, retain) NSString *des;
+@property (nonatomic, retain) NSString *addr;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) NSString *logo;
+@property (nonatomic, retain) NSString *msn;
+@property (nonatomic, retain) NSString *birthday;
+@property (nonatomic, retain) NSString *username;
+@property (nonatomic, retain) NSString *qq;
+@property (nonatomic, retain) NSString *department;
+@property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *eid;
+
++ (UserInfoData *)modelObjectWithDictionary:(NSDictionary *)dict;
+- (id)initWithDictionary:(NSDictionary *)dict;
+- (NSDictionary *)dictionaryRepresentation;
+
+
+
+
+@end

@@ -1,0 +1,360 @@
+//
+//  EADefine.h
+//  网络请求用到的各种常量、宏定义、枚举等
+//
+//  Created by yufeiyue  on 13-7-9.
+//  Copyright (c) 2013年 eastedge. All rights reserved.
+//
+
+//请求地址
+
+//18315151515  密码 1qaz1qaz
+
+
+
+//====================================================
+// 用途: 服务器地址
+//====================================================
+#define TESTDOMAIN     @"http://test.api.cipnet.com.cn/" //内网地址
+//#define OFFICIALDOMAIN @"http://bjyek.9966.org:8080/yekapi/index.php" //外网地址
+//#define OFFICIALDOMAIN @"http://mobiletest.aimer.com.cn/mobile/"
+#define OFFICIALDOMAIN @"http://www.aimer.com.cn/mobile/"
+
+
+
+#define WebSeviceUrl TESTDOMAIN
+
+#define HttpRequestMethod @"requestCommand"
+
+//请求tag宏定义
+#define Http_RequestToken_Tag 100 //获取RequestToken
+
+#define Http_Login_Tag 101 //登陆
+
+#define Http_AccessToken_Tag 102 //获取AccessToken
+
+#define Http_Messages_Tag 103 //定时提醒数据
+
+#define Http_Brands_Tag 104 //品牌列表
+
+#define Http_Categories_Tag 105 //分类列表
+
+#define Http_Productlist_Tag 106 //商品列表(附:筛选)
+
+#define Http_Product_Tag 107 // 商品详情
+
+#define Http_Channelcate_Tag 108 //频道专区主页
+
+#define Http_Channelllist_Tag 109 //频道专区主页
+
+#define Http_Car_Tag 110 //购物车
+
+#define Http_Checkout_Tag 111 //结算中心
+
+#define Http_Check_couponcard_Tag 112 // 验证优惠卷是否有效
+
+#define Http_Submitorder_Tag 113 // 提交订单
+
+#define Http_Addresslist_Tag 114 //  地址列表
+
+#define Http_Favorite_Tag 115 // 收藏夹列表
+
+#define Http_Orders_Tag 116 //订单列表
+
+#define Http_Orderdetail_Tag 117 //订单详情
+
+#define Http_More_Tag 118 //获取我的爱慕页面更多推荐的信息
+
+#define Http_Active_Tag 119 //激活(第一次运行)
+
+#define Http_Version_Tag 120 //版本检查
+
+#define Http_Register_Tag 121 //注册
+
+#define Http_Productionfo_Tag 122 // 更新商品信息
+
+#define Http_Logout_Tag 123 //注销
+
+#define Http_Car_add_Tag 124 //添加到购物车
+
+#define Http_Addsuittocar_Tag 125 //  添加套装到购物车
+
+#define Http_EditCar_Tag 126 //修改购物车
+
+#define Http_Editsuittocar_Tag 127 //修改购物车中的套装
+
+#define Http_Suittocart_deletes_Tag 128 // 删除购物车中的套装
+
+#define Http_Delcar_Tag 129 //从购物车删除
+
+#define Http_Addressadd_Tag 130 //添加地址
+
+#define Http_AddressEdit_Tag 131 //修改地址
+
+#define Http_AddressDel_Tag 132 //删除地址
+
+#define Http_FavoriteAdd_Tag 133 //添加到收藏夹
+
+#define Http_FavoriteDel_Tag 134 //从收藏夹删除
+
+#define Http_CancelOrder_Tag 135 //取消订单
+
+#define Http_NoticeList_Tag 136 //消息列表
+
+#define Http_SuitList_Tag 137 //  套装列表
+
+#define Http_FeedBack_Tag 138 //  意见反馈
+
+typedef enum  {
+    RequestToken = 100,//获取RequestToken,
+    Login,//登录,
+    AccessToken,//获取AccessToken,
+    Messages,//定时提醒数据,
+    Shares,//我的分享,与我相关,所有动态,
+    Tasks,//,我的任务,
+    Documents,//我的文档,
+    Events,//我的活动,
+    Ats,//@我的,
+    Replies,//回复我的,
+    Todos,//代办事项,
+    Worknotices,//工作通知,
+    Systemnotices,//系统通知,
+    Info,//用户信息,    
+    Update,    //修改资料,
+    Uploadlogo,//上传头像,
+    Changepassword,    //,修改密码,
+    Emailsetting,//邮件设置,
+    Projects,    //项目列表,
+    ProjectsInfo,    //项目详情,
+    ProjectsShares,    //项目动态,
+    ProjectsTasks,    //项目任务,
+    ProjectsEvent,    //项目活动,
+    ProjectsDocuments,    //项目文档,    
+    ProjectNew,    //新建项目,
+    ProjectAdd,    //修改项目,
+    ProjectDelete,    //删除项目,
+    ProjectStatus,    //完成项目,重启项目,
+    ProjectAdmin,    //负责人权限转交,
+    ProjectImportant,    //将项目设置为重要的或者不重要,
+    ProjectFollow,    //关注项目,
+    ProjectUnfollow,    //取消关注项目,
+    ProjectINvite,    //邀请别人加入项目,
+    TeamList,    //团队列表,
+    TeamInfo,    //团队详情,
+    TeamShares,    //团队动态,
+    TeamEvents,    //团队活动,
+    TeamDouments,    //团队文档,
+    Applymembers,    //获取申请加入团队成员信息//写入接口,
+    TeamAdd,    //新建团队,
+    TeamUpdate,    //修改团队,
+    TeamANnouncement,    //设置或修改团队公告,
+    TeamAgreeJoin,    //同意某人加入团队,
+    TeamRefuseJoin,    //拒绝某人加入团队,
+    TeameDelete,    //删除团队,
+    TeamSetisImportan,    //团队加*标,
+    TeamInvite,    //邀请别人加入团队,
+    TeamAdmin,    //管理员权限移交,
+    TeamExit,    //退出团队,
+    TeamAgreeinvite,    //同意别人邀请自己加入团队,
+    TeamRefuseinvite,    //拒绝别邀请自己加入团队,
+    TeamApply,    //申请加入团队,
+    TeamCancelapply,    //取消申请加入团队
+    FriendShips,    //同事列表//写入接口,
+    FriendCreate,    //关注同事,
+    FriendDestroy,    //取消关注,
+    FriendInvite,    //邀请同事加入企业空间//六。企业空间,
+    SpaceDocuments,    //企业资料,
+    SpaceEmails,    //获取本公司的绑定邮箱//⑦,
+    ShareInfo,    //分享详情,
+    ShareAdd,    //发分享,
+    ShareDelete,    //删除分享及回复//⑧任务,
+    TaskInfo,    //任务详情,
+    TaskAdd,    //发任务,
+    TaskStatus,    //修改任务状态,
+    TaskAddmembers,    //添加任务参与者,
+    TaskDele,    //删除任务//⑨活动,
+    EventInfo,    //活动详情,
+    EventAdd,//发起活动,
+    EventDelete,//删除活动,
+    EventAddmembers,//添加活动成员//⑩全局操作,
+    AllReplies,//回复内容列表,
+    AllSignout,//退出登录,
+    AllReply,//发回复,
+    AllUpload,//上传文件,
+    AllFindPassword,//找回密码,
+    LoadUserMailSet,//加载用户邮件设置
+    AllSearch,//搜索页
+    Version,//检测新版本接口
+    Signout,//退出登录
+    
+    
+    
+    
+    TeamLeave,   //团队踢出成员
+    TeamDocumentImportant,   //团队文档加星去星
+    
+    
+    ProjectDocumentImportant,     //项目文档加星去星
+    ProjectLeave,     //项目踢出成员
+    
+    
+    TodoImportant,//待办事项加星
+    DocumentImportant,//文档加星
+    DeleteRemind,//删除提醒
+    
+} HttpRequestTag;
+
+
+#define APP_STORE_ID @"540979751"
+
+//====================================================
+// 用途: API拼接
+// 格式: 数据名称_API
+//====================================================
+#define RequestToken_API (@"getrequesttoken.ashx") //获取RequestToken
+#define Login_API        (@"signin.ashx")              //登录
+#define AccessToken_API  (@"getaccesstoken.ashx") //获取AccessToken
+#define Messages_API     (@"user/messages.ashx") //定时提醒数据
+#define Shares_API       (@"user/shares.ashx") //我的分享 与我相关 所有动态
+#define Tasks_API        (@"user/tasks.ashx") // 我的任务
+#define Documents_API    (@"user/documents.ashx") //我的文档
+#define Events_API       (@"user/events.ashx") //我的活动
+#define Ats_API          (@"user/ats.ashx") //@我的
+#define Replies_API      (@"user/replies.ashx") //回复我的
+#define Todos_API        (@"user/todos.ashx") //代办事项
+#define Worknotices_API  (@"user/worknotices.ashx") //工作通知
+#define Systemnotices_API (@"user/systemnotices.ashx") //系统通知
+#define LoadUserMailSet_API (@"user/loademailsetting.ashx") //加载用户邮件设置
+#define Info_API         (@"user/info.ashx") //用户信息
+// 写入接口
+#define Update_API         (@"user/update.ashx") // 修改资料
+#define Uploadlogo_API     (@"user/uploadlogo.ashx") //上传头像
+#define Changepassword_API (@"user/changepassword.ashx") // 修改密码
+#define Emailsetting_API   (@"user/emailsetting.ashx") //邮件设置
+// 三 。项目 读取接口
+#define Projects_API          (@"project/projects.ashx") //项目列表
+#define ProjectsInfo_API      (@"project/info.ashx") //项目详情
+#define ProjectsShares_API    (@"project/shares.ashx") //项目动态
+#define ProjectsTasks_API     (@"project/tasks.ashx") //项目任务
+#define ProjectsEvent_API     (@"project/events.ashx") //项目活动
+#define ProjectsDocuments_API (@"project/documents.ashx") //项目文档
+//写入接口
+#define ProjectNew_API       (@"project/add.ashx") //新建项目
+#define ProjectAdd_API       (@"project/add.ashx") //修改项目
+#define ProjectDelete_API    (@"project/delete.ashx") //删除项目
+#define ProjectStatus_API    (@"project/status.ashx") //完成项目 重启项目
+#define ProjectAdmin_API     (@"project/admin.ashx") //负责人权限转交
+#define ProjectImportant_API (@"project/important.ashx") //将项目设置为重要的或者不重要
+#define ProjectFollow_API    (@"project/follow.ashx") //关注项目
+#define ProjectUnfollow_API  (@"project/unfollow.ashx") //取消关注项目
+#define ProjectINvite_API    (@"project/invite.ashx") //邀请别人加入项目
+//团队
+
+// 读取接口
+#define TeamList_API      (@"team/teams.ashx") //团队列表
+#define TeamInfo_API      (@"team/info.ashx") //团队详情
+#define TeamShares_API    (@"team/shares.ashx") //团队动态
+#define TeamEvents_API    (@"team/events.ashx") //团队活动
+#define TeamDouments_API  (@"team/documents.ashx") //团队文档
+#define Applymembers_API  (@"team/applymembers.ashx") //获取申请加入团队成员信息
+//写入接口
+#define TeamAdd_API           (@"team/add.ashx")//新建团队
+#define TeamUpdate_API        (@"team/update.ashx") //修改团队
+#define TeamANnouncement_API  (@"team/announcement.ashx") //设置或修改团队公告
+#define TeamAgreeJoin_API     (@"team/agreejoin.ashx") //同意冒人加入团队
+#define TeamRefuseJoin_API    (@"team/refusejoin.ashx") //拒绝冒人加入团队
+#define TeameDelete_API       (@"team/delete.ashx") //删除团队
+#define TeamSetisImportan_API (@"team/important.ashx") //团队加*标
+#define TeamInvite_API        (@"team/invite.ashx") //邀请别人加入团队
+#define TeamAdmin_API         (@"team/admin.ashx") //管理员权限移交
+#define TeamExit_API          (@"team/exit.ashx") //退出团队
+#define TeamAgreeinvite_API   (@"team/agreeinvite.ashx") //同意比人邀请自己加入团队
+#define TeamRefuseinvite_API  (@"team/refuseinvite.ashx") //拒绝别人邀请自己加入团队
+#define TeamApply_API         (@"team/apply.ashx")   //申请加入团队
+#define TeamCancelapply_API   (@"team/cancelapply.ashx") //取消申请加入团队
+//五 。同事
+#define FriendShips_API  (@"friendships/friends.ashx") //同事列表
+//写入接口
+#define FriendCreate_API  (@"friendships/create.ashx") //关注同事
+#define FriendDestroy_API  (@"friendships/destroy.ashx") //取消关注
+#define FriendInvite_API  (@"friendships/invite.ashx") //邀请同事加入企业空间
+//六。企业空间
+#define SpaceDocuments_API (@"space/documents.ashx") //企业资料
+#define SpaceEmails_API     (@"space/emails.ashx") //获取本公司的绑定邮箱
+//⑦ 分享
+#define ShareInfo_API     (@"share/info.ashx") //分享详情
+#define ShareAdd_API     (@"share/add.ashx") //发分享
+#define ShareDelete_API   (@"share/delete.ashx")//删除分享及回复
+
+//⑧任务
+#define TaskInfo_API      (@"task/info.ashx") //任务详情
+#define TaskAdd_API       (@"task/add.ashx") //发任务
+#define TaskStatus_API    (@"task/status.ashx") //修改任务状态
+#define TaskAddmembers_API (@"task/addmembers.ashx") //添加任务参与者
+#define TaskDele_API      (@"task/delete.ashx") //删除任务
+
+//⑨活动
+#define EventInfo_API      (@"event/info.ashx") //活动详情
+#define EventAdd_API      (@"event/add.ashx") //发起活动
+#define EventDelete_API   (@"event/delete.ashx") //删除活动
+#define EventAddmembers_API (@"event/addmenmbers.ashx") //添加活动成员
+//⑩全局操作
+#define AllReplies_API     (@"replies.ashx")//回复内容列表
+#define AllSignout_API     (@"signout.ashx") //退出登录
+#define AllReply_API        (@"reply.ashx") //发回复
+#define AllUpload_API      (@"upload.ashx") //上传文件
+#define AllSearch_API      (@"search.ashx") //搜索页
+#define AllFindPassword_API (@"findpassword.ashx") //找回密码
+#define Version_API (@"appapi/version.ashx") //1.	检测新版本接口
+#define Signout_API (@"signout.ashx") //退出登录
+
+
+
+
+
+//团队写入接口
+#define TeamLeave_API      (@"team/leave.ashx")//团队踢出成员
+#define TeamDocumentImportant_API      (@"team /document/important.ashx")//团队文档加星去星
+
+
+
+//项目写入接口
+#define ProjectDocumentImportant_API       (@"project/document/important.ashx")//项目文档加星去星
+#define ProjectLeave_API       (@"project/leave.ashx")//项目踢出成员
+
+
+//与我相关写入接口
+#define TodoImportant_API          (@"user/todo/important.ashx")//待办事项加星
+#define DocumentImportant_API       (@"user/document/important.ashx")//文档加星
+#define DeleteRemind_API          (@"user/remind/delete.ashx")//删除提醒
+
+
+
+
+#define Consumer_key   (@"D9C48AC6-E1B7-4A3D-8C47-EF5B71F65BDC") //consumer_secret：11D9EF03-3443-449D-8190-AA999AC18ED8
+#define Consumer_secret (@"11D9EF03-3443-449D-8190-AA999AC18ED8&")
+#define Oauth_signature_method	(@"HMAC-SHA1") //生成签名的方式，默认值HMAC-SHA1
+#define Oauth_version	(@"1.0") //String	版本号，默认
+#define Oauth_callback	(@"http://www.cipnet.cn") //String	回调地址，默认
+
+#define AddController_backgroundColor self.view.backgroundColor=[UIColor colorWithRed:(0xde)/255.0 green:(0xe1)/255.0 blue:(0xe5)/255.0 alpha:(0.0)];
+#define Background_RGBACOLOR [UIColor colorWithRed:(0xde)/255.0 green:(0xe1)/255.0 blue:(0xe5)/255.0 alpha:(0.0)]
+#define WHETHERTABLEHIDDEN(_TABLE,_IMAGE,_WHETHER,_RESETEDITING){_TABLE.hidden=_WHETHER;_IMAGE.hidden=!_WHETHER;if([_TABLE isKindOfClass:[UITableView class]]){_TABLE.editing=_RESETEDITING?NO:_TABLE.editing;}}
+
+//====================================================
+// 用途: 用于跳转升级的URL
+//====================================================
+#define UPDATE_URL @"http://bjyek.9966.org:8080/yekapi/index.php/"
+
+
+//====================================================
+// 用途: 判断字符串是否为空
+//====================================================
+#define strIsEmpty(str) (str==nil || [str length]<1 ? YES : NO )
+
+//====================================================
+#define RGBACOLOR(_r, _g, _b, _a) [UIColor colorWithRed:(_r)/255.0 green:(_g)/255.0 blue:(_b)/255.0 alpha:(_a)]
+
+
+
+

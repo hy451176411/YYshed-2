@@ -1,0 +1,97 @@
+//
+//  UserInfoCount.m
+//
+//  Created by xiexianhui  on 13-8-30
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import "UserInfoCount.h"
+
+
+NSString *const kUserInfoCountBeattentions = @"beattentions";
+NSString *const kUserInfoCountAttentions = @"attentions";
+
+
+@interface UserInfoCount ()
+
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict;
+
+@end
+
+@implementation UserInfoCount
+
+@synthesize beattentions = _beattentions;
+@synthesize attentions = _attentions;
+
+
++ (UserInfoCount *)modelObjectWithDictionary:(NSDictionary *)dict
+{
+    UserInfoCount *instance = [[[UserInfoCount alloc] initWithDictionary:dict] autorelease];
+    return instance;
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dict
+{
+    self = [super init];
+    
+    // This check serves to make sure that a non-NSDictionary object
+    // passed into the model class doesn't break the parsing.
+    if(self && [dict isKindOfClass:[NSDictionary class]]) {
+            self.beattentions = [self objectOrNilForKey:kUserInfoCountBeattentions fromDictionary:dict];
+            self.attentions = [self objectOrNilForKey:kUserInfoCountAttentions fromDictionary:dict];
+
+    }
+    
+    return self;
+    
+}
+
+- (NSDictionary *)dictionaryRepresentation
+{
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
+    [mutableDict setValue:self.beattentions forKey:kUserInfoCountBeattentions];
+    [mutableDict setValue:self.attentions forKey:kUserInfoCountAttentions];
+
+    return [NSDictionary dictionaryWithDictionary:mutableDict];
+}
+
+- (NSString *)description 
+{
+    return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
+}
+
+#pragma mark - Helper Method
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict
+{
+    id object = [dict objectForKey:aKey];
+    return [object isEqual:[NSNull null]] ? nil : object;
+}
+
+
+#pragma mark - NSCoding Methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+
+    self.beattentions = [aDecoder decodeObjectForKey:kUserInfoCountBeattentions];
+    self.attentions = [aDecoder decodeObjectForKey:kUserInfoCountAttentions];
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+
+    [aCoder encodeObject:_beattentions forKey:kUserInfoCountBeattentions];
+    [aCoder encodeObject:_attentions forKey:kUserInfoCountAttentions];
+}
+
+
+- (void)dealloc
+{
+    [_beattentions release];
+    [_attentions release];
+    [super dealloc];
+}
+
+@end

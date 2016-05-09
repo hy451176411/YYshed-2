@@ -1,0 +1,1513 @@
+//
+//  NetRequest.m
+//  正式版网络请求类
+//
+//  Created by houpeng on 13-7-4.
+//  Copyright (c) 2013年 eastedge. All rights reserved.
+//
+
+#import "NetRequest.h"
+//#import "Photo.h"
+
+#import "NSString+SBJSON.h"
+
+#import "NSObject+SBJSON.h"
+
+#import "ModelManager.h"
+
+#include <CommonCrypto/CommonDigest.h>
+
+#include <CommonCrypto/CommonHMAC.h>
+
+#import "GTMBase64.h"
+
+#import "NSString+Extension.h"
+
+#import "NSString+Digest.h"
+
+#define kCookie @"cookie"
+
+@implementation NetRequest
+
+- (void)dealloc
+{
+    for (ASIHTTPRequest *request in _requestDic.allValues) {
+        [request clearDelegatesAndCancel];
+    }
+    [_requestDic release];
+    [super dealloc];
+}
+
+
+/* - (id)init */
+//
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _requestDic = [[NSMutableDictionary alloc] init];
+    }
+    return self;
+}
+
+/* - (id)initWith: */
+//
+- (id)initWithDelegate:(id <NetRequestDelegate>)aDelegate
+{
+    self = [super init];
+    if (self) {
+        
+        _requestDic = [[NSMutableDictionary alloc] init];
+        _delegate = aDelegate;
+    }
+    return self;
+}
+
+#pragma mark -
+#pragma mark request helper function
+
+- (NSString *)DictionaryToStr:(NSDictionary *)dic {
+
+    NSMutableString *tempstr = [[[NSMutableString alloc]init] autorelease];
+    
+    for (int i = 0 ;i < dic.allKeys.count; i++) {
+        if ( i == dic.count-1) {
+            [tempstr appendFormat:@"%@=%@",[dic.allKeys objectAtIndex:i],[dic objectForKey:[dic.allKeys objectAtIndex:i]]];
+
+        }else {
+            [tempstr appendFormat:@"%@=%@&",[dic.allKeys objectAtIndex:i],[dic objectForKey:[dic.allKeys objectAtIndex:i]]];    }
+    }
+
+    
+    return tempstr;
+}
+
+
+- (NSDictionary *)stringToDictionary:(NSString *)str {
+    
+    NSMutableDictionary *dic = [[[NSMutableDictionary alloc]init] autorelease];
+    NSArray *arr = [str componentsSeparatedByString:@"&"];
+    
+    for (int i = 0; i<arr.count; i++) {
+        NSString *tmpStr = [arr objectAtIndex:i];
+        NSRange tmpRang = [tmpStr rangeOfString:@"="];
+        
+        NSString *tmpStrEnd = [tmpStr substringFromIndex:tmpRang.location+1];
+        NSString *tmpStrStar = [tmpStr substringToIndex:tmpRang.location];
+        //        NSArray *arr1 = [[arr objectAtIndex:i] componentsSeparatedByString:@"="];
+        //        for (int j = 0; j<arr1.count; j++) {
+        
+        [dic setObject:tmpStrEnd forKey:tmpStrStar];
+        //        }
+        
+    }
+    
+    
+    return dic;
+}
+
+- (NSString *)strEncode:(NSString *)str {
+    NSMutableString *string = [[[NSMutableString alloc] init] autorelease];
+    
+    NSArray *arr = [str componentsSeparatedByString:@"&"];
+    
+    for (int i = 0; i< arr.count; i++) {
+        //        NSArray *arr1 = [[arr objectAtIndex:i] componentsSeparatedByString:@"="];
+        
+        NSString *tmpStr = [arr objectAtIndex:i];
+        NSRange tmpRang = [tmpStr rangeOfString:@"="];
+        
+        NSString *tmpStrEnd = [tmpStr substringFromIndex:tmpRang.location+1];
+        NSString *tmpStrStar = [tmpStr substringToIndex:tmpRang.location];
+        
+        
+        //        NSArray *arr1 = [[arr objectAtIndex:i] componentsSeparatedByString:@"="];
+        //        for (int j = 0; j<arr1.count; j++) {
+        
+        //        if (i == [arr count] - 1) {
+        //            [string appendFormat:@"%@=%@",[arr1 objectAtIndex:0],[[arr1 objectAtIndex:1] stringEncode]];
+        //        } else {
+        [string appendFormat:@"%@=%@&",tmpStrStar,[tmpStrEnd stringEncode]];
+        //        }
+        
+    }
+    
+    return string;
+}
+
+
+- (void)setRequest:(ASIHTTPRequest *)request forKey:(int)tag
+{
+    NSString *tagKey = [NSString stringWithFormat:@"%d",tag];
+    ASIHTTPRequest *tempRequest = [_requestDic objectForKey:tagKey];
+    [tempRequest clearDelegatesAndCancel];
+    [_requestDic setObject:request forKey:tagKey];
+}
+- (ASIHTTPRequest *)creatRequestURLAndData:(NSString *)APIUrl WithDic:(id)tempDicOrStr withTag:(int)tag
+{
+    
+    ASIFormDataRequest *request= nil;
+    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@%@",WebSeviceUrl,APIUrl];
+    
+    if ([tempDicOrStr isKindOfClass:[NSString class]]||tempDicOrStr == nil) {
+        NSString *tempStr = nil;
+        NSString *appUrlStr = nil;
+        if (tag != RequestToken && tag != Login && tag != AccessToken) {
+            NSDate *date  = [NSDate date];
+            NSString *strDate = [NSString stringWithFormat:@"%.0f",[date timeIntervalSince1970]];
+            NSString *oauth_nonce = [self getUniqueStrByUUID];
+            tempStr = [NSString stringWithFormat:@"oauth_consumer_key=%@&oauth_signature_method=%@&oauth_timestamp=%@&oauth_nonce=%@&oauth_version=%@&oauth_token=%@",Consumer_key,Oauth_signature_method,strDate,oauth_nonce ,Oauth_version,[[NSUserDefaults standardUserDefaults]objectForKey:@"oauth_token"]];
+            if (tempDicOrStr== nil) {
+                appUrlStr = tempStr;
+            }else {
+                appUrlStr = [NSMutableString stringWithFormat:@"%@&%@",tempStr,tempDicOrStr];
+            }
+            
+        }else {
+            appUrlStr = tempDicOrStr;
+            
+        }
+        
+        if ( [[NSUserDefaults standardUserDefaults] objectForKey:@"oauth_token"] != nil||tag == RequestToken) {
+            NSString  *oauth_signature = [self oauth_signatureWithRequestURL:urlStr parameterDic:[self stringToDictionary:appUrlStr]];
+            
+            [urlStr appendFormat:@"?%@", [self strEncode:(NSString *)appUrlStr]];
+            [urlStr appendFormat:@"oauth_signature=%@",oauth_signature];
+            
+            request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:urlStr]];
+            request.delegate = self;
+            [request setRequestMethod:@"GET"];
+            
+            
+            NSLog(@"GET请求");
+            [self setRequest:request forKey:tag];
+            
+        }
+        
+        
+    }else if ([tempDicOrStr isKindOfClass:[NSDictionary class]]) {
+        
+        NSString *tempStr = nil;
+        NSString *appUrlStr = nil;
+        if (tag != RequestToken && tag != Login && tag != AccessToken) {
+            NSDate *date  = [NSDate date];
+            NSString *strDate = [NSString stringWithFormat:@"%.0f",[date timeIntervalSince1970]];
+            NSString *oauth_nonce = [self getUniqueStrByUUID];
+            tempStr = [NSString stringWithFormat:@"oauth_consumer_key=%@&oauth_signature_method=%@&oauth_timestamp=%@&oauth_nonce=%@&oauth_version=%@&oauth_token=%@",Consumer_key,Oauth_signature_method,strDate,oauth_nonce ,Oauth_version,[[NSUserDefaults standardUserDefaults]objectForKey:@"oauth_token"]];
+            if (tempDicOrStr== nil) {
+                appUrlStr = tempStr;
+            }else {
+                appUrlStr = [NSMutableString stringWithFormat:@"%@&%@",tempStr,[self DictionaryToStr:tempDicOrStr ]];
+            }
+        }
+        
+        
+        if ( [[NSUserDefaults standardUserDefaults] objectForKey:@"oauth_token"] != nil||tag == RequestToken) {
+            NSString  *oauth_signature = [self oauth_signatureWithRequestURL:urlStr parameterDic:[self stringToDictionary:appUrlStr]];
+            
+            [urlStr appendFormat:@"?%@", [self strEncode:(NSString *)appUrlStr]];
+            [urlStr appendFormat:@"oauth_signature=%@",oauth_signature];
+            
+        }
+        
+        
+        NSDictionary *tempDic = (NSDictionary *)tempDicOrStr;
+        request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:urlStr]];
+        request.delegate = self;
+        
+        if (tempDic&&tempDic.count > 0) {
+            for (NSString *key in tempDic) {
+                [request addPostValue:[tempDic objectForKey:key] forKey:key];
+                
+            }
+        }
+        [request setRequestMethod:@"POST"];
+        
+        NSLog(@"POST请求");
+        [self setRequest:request forKey:tag];
+        
+    }
+    
+    NSLog(@"urlStr== %@\n",urlStr);
+    
+    request.tag = tag;
+    return request;
+}
+- (ASIHTTPRequest *)creatURLAndData:(NSString *)APIUrl WithDic:(id)tempDicOrStr withTag:(int)tag
+{
+    
+    ASIHTTPRequest *request= nil;
+    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@%@",WebSeviceUrl,APIUrl];
+    
+    if ([tempDicOrStr isKindOfClass:[NSString class]]||tempDicOrStr == nil) {
+        NSString *tempStr = nil;
+        NSString *appUrlStr = nil;
+        if (tag != RequestToken && tag != Login && tag != AccessToken) {
+            NSDate *date  = [NSDate date];
+            NSString *strDate = [NSString stringWithFormat:@"%.0f",[date timeIntervalSince1970]];
+            NSString *oauth_nonce = [self getUniqueStrByUUID];
+            tempStr = [NSString stringWithFormat:@"oauth_consumer_key=%@&oauth_signature_method=%@&oauth_timestamp=%@&oauth_nonce=%@&oauth_version=%@&oauth_token=%@",Consumer_key,Oauth_signature_method,strDate,oauth_nonce ,Oauth_version,                [[NSUserDefaults standardUserDefaults]objectForKey:@"oauth_token"]];
+            if (tempDicOrStr== nil) {
+                appUrlStr = tempStr;
+                
+            }else {
+                appUrlStr = [NSMutableString stringWithFormat:@"%@&%@",tempStr,tempDicOrStr];
+            }
+            
+        }else {
+            appUrlStr = tempDicOrStr;
+            
+        }
+        
+        if ( [[NSUserDefaults standardUserDefaults] objectForKey:@"oauth_token"] != nil||tag == RequestToken) {
+            NSString  *oauth_signature = [self oauth_signatureWithRequestURL:urlStr parameterDic:[self stringToDictionary:appUrlStr]];
+            
+            [urlStr appendFormat:@"?%@", [self strEncode:(NSString *)appUrlStr]];
+            [urlStr appendFormat:@"oauth_signature=%@",oauth_signature];
+            
+            request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlStr]];
+            request.delegate = self;
+            [request setRequestMethod:@"GET"];
+            
+            
+            NSLog(@"GET请求");
+            [self setRequest:request forKey:tag];
+            
+        }
+        
+        
+    }else if ([tempDicOrStr isKindOfClass:[NSDictionary class]]) {
+        
+        
+        NSDictionary *tempDic = (NSDictionary *)tempDicOrStr;
+        request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlStr]];
+        request.delegate = self;
+        
+        if (tempDic&&tempDic.count > 0) {
+            for (NSString *key in tempDic) {
+                [request addPostValue:[tempDic objectForKey:key] forKey:key];
+                
+            }
+        }
+        [request setRequestMethod:@"POST"];
+        
+        NSLog(@"POST请求");
+        [self setRequest:request forKey:tag];
+        
+    }
+    
+    NSLog(@"urlStr== %@\n",urlStr);
+    
+    request.tag = tag;
+    return request;
+}
+
+- (void)startAsynchronousWithRequest:(ASIHTTPRequest *)request
+{
+    [request startAsynchronous];
+}
+
+//- ()
+
+#pragma mark -
+#pragma mark ASIHTTPRequestDelegate
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+    NSString *responseStr = [request responseString];
+    NSLog(@"responseStr\n++++++++++++++++\n%@\n++++++++++++++++\n%d", responseStr ,request.responseStatusCode);
+    
+    BaseModel *model;
+    switch (request.tag) {
+        case RequestToken:
+        {
+            NSArray *arr = [responseStr componentsSeparatedByString:@"="];
+            if (arr.count > 0) {
+                NSString *appSecret = [arr lastObject];
+                
+                
+                self.screct = [NSString stringWithFormat:@"%@%@",Consumer_secret,appSecret];
+                
+                NSArray *strArr = [[arr objectAtIndex:1] componentsSeparatedByString:@"&"];
+                
+                
+                self.oauth_token = [strArr objectAtIndex:0];
+                
+                [[NSUserDefaults standardUserDefaults] setValue:self.oauth_token forKey:@"oauth_token"];
+                [[NSUserDefaults standardUserDefaults] setValue:self.screct forKey:@"consumer_secret"];
+                model = [[BaseModel alloc] initWithResult:@"成功" requestTag:RequestToken andErrorMessage:@{@"成功":@"data"}];
+            }
+        }
+            break;
+        case Login:
+        {
+            self.oauth_verifier = [[responseStr JSONValue] objectForKey:@"oauth_verifier"];
+            
+            [[NSUserDefaults standardUserDefaults] setValue:self.oauth_verifier forKey:@"oauth_verifier"];
+            
+            model = [[BaseModel alloc] initWithResult:@"成功" requestTag:Login andErrorMessage:[responseStr JSONValue]];
+            
+            
+            //cookie
+            NSDictionary *tmpDicCookie = [NSHTTPCookie requestHeaderFieldsWithCookies:request.responseCookies];
+            NSString *strCookie = [tmpDicCookie objectForKey:@"Cookie"];
+            NSLog(@"%@",tmpDicCookie);
+            
+            NSArray *tmpArr = [strCookie componentsSeparatedByString:@"&"];
+            
+            NSMutableArray *tmpMutArrCookie = [NSMutableArray array];
+            for (int i = 0; i < [tmpArr count]; i++) {
+                NSString *tmpStr = [tmpArr objectAtIndex:i];
+                if ([tmpStr rangeOfString:@"Type="].location != NSNotFound ||
+                    [tmpStr rangeOfString:@"CookieID="].location != NSNotFound) {
+                    
+                    [tmpMutArrCookie addObject:tmpStr];
+                } else if ([tmpStr rangeOfString:@"XFUSER=PID="].location != NSNotFound) {
+                    tmpStr = [tmpStr stringByReplacingOccurrencesOfString:@"XFUSER=" withString:@""];
+                    [tmpMutArrCookie addObject:tmpStr];
+                }
+            }
+            
+            if ([tmpMutArrCookie count]>2) {
+                NSString *tmpStrCookie = [NSString stringWithFormat:@"%@&%@&Source=App&%@",[tmpMutArrCookie objectAtIndex:0],[tmpMutArrCookie objectAtIndex:1],[tmpMutArrCookie objectAtIndex:2]];
+                [[NSUserDefaults standardUserDefaults] setObject:tmpStrCookie forKey:kCookie];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+            }
+            
+        }
+            break;
+            
+        case AccessToken:
+        {
+            NSArray *arr = [responseStr componentsSeparatedByString:@"="];
+            if (arr.count > 1) {
+                NSString *appSecret = [arr lastObject];
+                
+                //                和第一步请求的时候返回的secret
+                //                Consumer_secret 是哈希加密的key
+                //                Consumer_secret 是原始的 secret 第一步请求返回的secret 加上后用来请求第三部 然后 用第三步请求回来的secret替换掉第一在consumer_secret后面secret
+                
+                self.screct = [NSString stringWithFormat:@"%@%@",Consumer_secret,appSecret];
+                
+                NSArray *strArr = [[arr objectAtIndex:1] componentsSeparatedByString:@"&"];
+                
+                self.oauth_token = [strArr objectAtIndex:0];
+                
+                [[NSUserDefaults standardUserDefaults] setValue:self.oauth_token forKey:@"oauth_token"];
+                
+                [[NSUserDefaults standardUserDefaults] setValue:self.screct forKey:@"consumer_secret"];
+                
+                
+                model = [[BaseModel alloc] initWithResult:@"成功" requestTag:AccessToken andErrorMessage:@{@"成功":@"text"}];
+            }
+        }
+            break;
+            
+        default:
+        {
+            NSDictionary *jsonDic = [responseStr JSONValue];
+            if ([jsonDic isKindOfClass:[NSDictionary class]]) {
+                model = [ModelManager parseModelWithDictionary:jsonDic tag:request.tag];
+            } else {
+                model = [[BaseModel alloc] initWithResult:@"失败" requestTag:AccessToken andErrorMessage:@{@"失败":@"text"}];
+            }
+        }
+            break;
+    }
+    
+    
+    /*请求成功*/
+    if ([_delegate respondsToSelector:@selector(netRequestFinished:)]) {
+        [_delegate netRequestFinished:model];
+    }
+}
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+    BaseModel *model = [ModelManager parseModelWithFaileResult:@"100" tag:request.tag];
+    /*请求超时*/
+    if ([_delegate respondsToSelector:@selector(netRequestFinished:)]) {
+        [_delegate netRequestFinished:model];
+    }
+}
+#pragma mark -
+#pragma mark all interface
+////////////////////////在下面实现请求方法//////////////////////////////////
+/*
+ *所有请求的请求头
+ */
+
+- (NSString *)getUniqueStrByUUID
+{
+    CFUUIDRef    uuidObj = CFUUIDCreate(nil);//create a new UUID
+    
+    //get the string representation of the UUID
+    
+    NSString    *uuidString = ( NSString *)CFUUIDCreateString(nil, uuidObj);
+    
+    CFRelease(uuidObj);
+    
+    return uuidString ;
+    
+}
+
+
+//#define SECRET @"11D9EF03-3443-449D-8190-AA999AC18ED8&07d7593f-fe1e-423e-953e-f30057b7b682"
+
+
+- (NSString *)hmacsha1:(NSString *)data secret:(NSString *)key
+{
+    const char *cKey  = [key cStringUsingEncoding:NSASCIIStringEncoding];
+    const char *cData = [data cStringUsingEncoding:NSASCIIStringEncoding];
+    
+    unsigned char cHMAC[CC_SHA1_DIGEST_LENGTH];
+    
+    CCHmac(kCCHmacAlgSHA1, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
+    
+    NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
+    
+    
+    
+    NSString *hash = [GTMBase64 stringByEncodingData:HMAC];
+    [HMAC release];
+    return hash;
+}
+
+#pragma mark 生成【QQ登录】签名参数oauth_signature说明
+- (NSString *)oauth_signatureWithRequestURL:(NSString *)theUrl parameterDic:(NSDictionary *)theDic
+{
+    //第1步：将请求的URI路径进行URL编码
+    NSString *tmpURL = [theUrl stringEncode];
+    
+    
+    //字典的所有key
+    NSArray *tmpArrayKey = [theDic allKeys];
+    //对数组进行排序,第2步：将除“oauth_signature”外的所有参数按key进行字典升序排列
+    
+    
+    
+    NSArray *tmpArraySortKey = [tmpArrayKey sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
+    //    第3步：将第2步中排序后的参数(key=value)用&拼接起来，并进行URL编码
+    NSMutableString *tmpKey_ValueStr = [NSMutableString string];
+    for (int i = 0; i < [tmpArraySortKey count]; i++) {
+        NSString *tmpStr = [tmpArraySortKey objectAtIndex:i];
+        
+        if (i == [tmpArraySortKey count] - 1) {
+            [tmpKey_ValueStr appendFormat:@"%@=%@",tmpStr,[[theDic objectForKey:tmpStr] stringEncode]];
+        } else {
+            [tmpKey_ValueStr appendFormat:@"%@=%@&",tmpStr,[[theDic objectForKey:tmpStr] stringEncode]];
+        }
+    }
+    NSString *tmpUrlRequest = [tmpKey_ValueStr stringEncode];
+    NSString *tmpYuanStr = [NSString stringWithFormat:@"GET&%@&%@",tmpURL,tmpUrlRequest];
+    //    2.HMACSHA1加密需要一个Key就是ConsumerSecret，然后将第一步的字节数组加密，结果也是一个字节数组
+    
+    NSLog(@"tmpYuanStr  %@", tmpYuanStr);
+    NSString *url = [self hmacsha1:tmpYuanStr secret:[[NSUserDefaults standardUserDefaults] objectForKey:@"consumer_secret"]];
+    //4.将第三步的字符串Url编码
+    NSString *tmpEndStr = [url stringEncode];
+    
+    NSLog(@"tmpEndStr   %@",tmpEndStr);
+    
+    return tmpEndStr;
+    
+    
+    
+}
+
+
+//////////////////////////在下面写请求方法/////////////////////////////////
+/*
+ *
+ *一个RequestToken请求 tag 100
+ */
+
+//GET
+- (void)getRequestTokenKey:(NSString *)oauth_consumer_key andMethod:(NSString *)oauth_signature_method andTimesTamep:(NSString *)oauth_timestamp andNonce:(NSString *)oauth_nonce andVewsion:(NSString *)oauth_version andCallback:(NSString *)oauth_callback {
+    
+    oauth_nonce = [self getUniqueStrByUUID];
+    
+    //    NSDictionary *tmpDic = @{@"oauth_callback":[oauth_callback stringEncode],@"oauth_signature_method":[oauth_signature_method stringEncode],@"oauth_version":[oauth_version stringEncode],@"oauth_timestamp":oauth_timestamp,@"oauth_nonce":[oauth_nonce stringEncode],@"oauth_consumer_key":[oauth_consumer_key stringEncode]};
+    
+    [[NSUserDefaults standardUserDefaults] setValue:Consumer_secret forKey:@"consumer_secret"];
+    
+    NSDate *date  = [NSDate date];
+    NSString *strDate = [NSString stringWithFormat:@"%.0f",[date timeIntervalSince1970]];
+    oauth_nonce = [self getUniqueStrByUUID];
+    oauth_callback = @"";
+    //    Consumer_key,Oauth_signature_method,strDate,oauth_nonce
+    
+    
+    NSString *tempStr = [NSString stringWithFormat:@"oauth_consumer_key=%@&oauth_signature_method=%@&oauth_timestamp=%@&oauth_nonce=%@&oauth_version=%@&oauth_callback=%@",Consumer_key,Oauth_signature_method ,strDate,oauth_nonce ,Oauth_version ,Oauth_callback];
+    
+    ASIHTTPRequest *request = [self creatRequestURLAndData:RequestToken_API WithDic:tempStr withTag:RequestToken];
+    [self startAsynchronousWithRequest:request];
+    
+    
+}
+
+/*
+ *
+ *一个登录请求 tag 101
+ */
+- (void) getLoginName:(NSString *)username andPassword:(NSString *)password andToken:(NSString *)oauth_token {
+    
+    if (self.oauth_token != nil) {
+        NSMutableDictionary *tempDic = [NSMutableDictionary dictionary];
+        [tempDic setObject:username forKey:@"username"];
+        [tempDic setObject:[password MD5] forKey:@"password"];
+        [tempDic setObject:self.oauth_token forKey:@"oauth_token"];
+        ASIHTTPRequest *request = [self creatRequestURLAndData:Login_API WithDic:tempDic withTag:Login];
+        [self startAsynchronousWithRequest:request];
+    }
+}
+
+/*
+ *
+ *一个获取AccessToken请求 tag 102
+ */
+
+- (void)getAccessTokenKey:(NSString *)oauth_consumer_key andToken:(NSString *)oauth_token andVerifier:(NSString *)oauth_verifier andOauth_signature_method:(NSString *)oauth_signature_method andOauth_signature:(NSString *)oauth_signature andOauth_timestamp:(NSString *)oauth_timestamp andOauth_nonce:(NSString *)oauth_nonce andOauth_version:(NSString *)oauth_version {
+    
+    NSDate *date  = [NSDate date];
+    NSString *strDate = [NSString stringWithFormat:@"%.0f",[date timeIntervalSince1970]];
+    oauth_nonce = [self getUniqueStrByUUID];
+    
+    if (self.oauth_token != nil && self.oauth_verifier != nil) {
+        NSString *tempStr = [NSString stringWithFormat:@"oauth_consumer_key=%@&oauth_token=%@&oauth_verifier=%@&oauth_signature_method=%@&oauth_timestamp=%@&oauth_nonce=%@&oauth_version=%@",Consumer_key,self.oauth_token, self.oauth_verifier,Oauth_signature_method ,strDate ,oauth_nonce ,Oauth_version ];
+        
+        ASIHTTPRequest *request = [self creatRequestURLAndData:AccessToken_API WithDic:tempStr withTag:AccessToken];
+        [self startAsynchronousWithRequest:request];
+    }
+    
+}
+
+#pragma mark  ======② 与我相关
+/*
+ *
+ *定时提醒数据 tag 103
+ */
+- (void)getMessagesEnterPriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken {
+    
+    //    NSDate *date  = [NSDate date];
+    //
+    //    NSString *strDate = [NSString stringWithFormat:@"%.0f",[date timeIntervalSince1970]];
+    //    NSString *oauth_nonce = [self getUniqueStrByUUID];
+    
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@",enterpriseid];
+    
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Messages_API WithDic:tempStr withTag:Messages];
+    [self startAsynchronousWithRequest:request];
+}
+
+
+/*
+ *
+ *我的动态 我的分享请求 tag 104
+ */
+- (void)getShareThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andUserid:(NSString *)userid andDatatype:(NSString *)datatype andShowType:(NSString *)showtype andAccesstoken:(NSString *)accesstoken {
+    
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@&userid=%@&datatype=%@&showtype=%@",thispage,pagesize,enterpriseid,userid,datatype,showtype];
+    
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Shares_API WithDic:tempStr withTag:Shares];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *我的动态 我的任务请求 tag 105
+ */
+// thispage pagesize enterpriseid taskstatus accesstoken
+- (void)getTeskEnterpriseid:(NSString *)enterpriseid andTaskstatus:(NSString *)taskstatus andUserid:(NSString *)userid {
+    
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&taskstatus=%@&userid=%@",enterpriseid,taskstatus,userid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Tasks_API WithDic:tempStr withTag:Tasks];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *4.	我的文档  tag 106
+ */
+// thispage pagesize enterpriseid datatype isimportant accesstoken
+- (void)getMyDoumentsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andDatatype:(NSString *)datatype andIsimportant:(NSString *)isimportant andAccesstoken
+                             :(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@&datatype=%@&isimportant=%@",thispage,pagesize,enterpriseid,datatype,isimportant];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Documents_API WithDic:tempStr withTag:Documents];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	我的活动 tag 107
+ */
+// thispage pagesize enterpriseid isall status accesstoken
+- (void)getMyEventsEnterpriseid:(NSString *)enterpriseid andIsall:(NSString *)isall andStatus:(NSString *)status andAccesstoken
+                               :(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&isall=%@&status=%@",enterpriseid,isall,status];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Events_API WithDic:tempStr withTag:Events];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *	6.	@我的 tag 108
+ */
+// thispage pagesize enterpriseid isnew accesstoken
+- (void)getMyThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andIsnew:(NSString *)isnew andAccesstoken
+                     :(NSString *)accesstoken
+{
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@&isnew=%@",thispage,pagesize,enterpriseid,isnew];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Ats_API WithDic:tempStr withTag:Ats];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *	7.	回复我的 tag 109
+ */
+
+// Thispage Pagesize enterpriseid Isnew
+- (void)getRepliiesThispage:(NSString *)Thispage andPagesize:(NSString *)Pagesize andEnterpriseid:(NSString *)enterpriseid andIsnew:(NSString *)Isnew{
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@&isnew=%@",Thispage,Pagesize,enterpriseid,Isnew];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Replies_API WithDic:tempStr withTag:Replies];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	待办事项 tag 110
+ */
+// Thispage Pagesize enterpriseid isimportant Status
+- (void)getToDoEnterpriseid:(NSString *)enterpriseid andIsimportant:(NSString *)isimportant andStatus:(NSString *)Status
+{
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&isimportant=%@&status=%@",enterpriseid,isimportant,Status];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Todos_API WithDic:tempStr withTag:Todos];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	9.	工作通知 tag 111
+ */
+// worknotice thispage pagesize enterpriseid accesstoken
+- (void)getWorknoticeThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken {
+    
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@",thispage,pagesize,enterpriseid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Worknotices_API WithDic:tempStr withTag:Worknotices];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *	7.	10.	系统通知 tag 112
+ */
+//systemnotices thispage pagesize enterpriseid accesstoken
+- (void)getSystemnoticesThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@",thispage,pagesize,enterpriseid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Systemnotices_API WithDic:tempStr withTag:Systemnotices];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	7.	11.	用户信息 tag 113
+ */
+//userinfo userid accesstoken
+
+- (void)getUserinfoUserid:(NSString *)userid andAccesstoken
+                         :(NSString *)accesstoken {
+    NSString *tmpStr = [NSString stringWithFormat:@"userid=%@",userid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Info_API WithDic:tmpStr withTag:Info];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	修改资料tag 114
+ */
+//userupdate userid department position sex birthday cellphone phone address msn qq description logo accesstoken
+- (void)getUserupdateUserid:(NSString *)userid andDepartment:(NSString *)department andPosition:(NSString *)position andSex:(NSString *)sex andBirthday:(NSString *)birthday andCellphone:(NSString *)cellphone andPhone:(NSString *)phone andAddress:(NSString *)address andMsn:(NSString *)msn andQq:(NSString *)qq andDescription:(NSString *)description andLogo:(NSString *)logo andAccesstoken
+                           :(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"userid=%@&department=%@&position=%@&sex=%@&birthday=%@&cellphone=%@&phone=%@&address=%@&msn=%@&qq=%@&description=%@&logo=%@",userid,department,position,sex,birthday,cellphone,phone,address,msn,qq,description,logo];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Update_API WithDic:tempStr withTag:Update];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	2.	上传头像 tag 115
+ */
+//uploadlogo userid accesstoken
+- (void)getUploadlogoUserid:(NSString *)userid img:(id)theImg andAccesstoken:(NSString *)accesstoken {
+    
+//    NSString *tempStr = [NSString stringWithFormat:@"userid=%@",userid];
+    NSDictionary *tmpDic = [NSDictionary dictionaryWithObjectsAndKeys:userid,@"userid", nil];
+    ASIFormDataRequest *request = (ASIFormDataRequest*)[self creatRequestURLAndData:Uploadlogo_API WithDic:tmpDic withTag:Uploadlogo];
+    NSLog(@"%d",request.responseStatusCode);
+
+    [request setRequestMethod:@"POST"];
+    //[request addPostValue:@"f.png" forKey:@""];
+    [request addRequestHeader:@"Content-Type" value:@"multipart/form-data"];
+   // [request addData:theImg withFileName:@"f.png" andContentType:@"image/png" forKey:@"filename"];//multipart/form-data
+//    NSString *str=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//    [request addData:theImg forKey:@"filename"];
+//    [request addFile:[NSString stringWithFormat:@"%@/iphoneIcon.png",theImg] withFileName:@"" andContentType:@"image/png" forKey:@"filename"];//multipart/form-data
+    
+//    [request addFile:theImg withFileName:@"" andContentType:@"multipart/form-data" forKey:@"filename"];//multipart/form-data
+
+//    [request appendPostDataFromFile:theImgPath];
+//    NSString *tmpBast64Str = [Photo image2String:theImg];
+    
+    //[request setPostBodyFilePath:theImg];
+    
+//    [request setPostValue:[NSArray arrayWithObject:theImg] forKey:@"filename"];
+//  [request addFile:theImg forKey:@"filename"];
+//  tmpBast64Str = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+//                                                        (CFStringRef)tmpBast64Str,
+//                                                        NULL,
+//                                                        CFSTR("!*'();:@&=+$,/?%#[]"),
+//                                                        kCFStringEncodingUTF8);
+//    [request setPostBody:[NSMutableData dataWithData:[tmpBast64Str dataUsingEncoding:NSUTF8StringEncoding]]];
+//    request setpost
+//    UIImage *tmpImg = [UIImage imageWithContentsOfFile:theImgPath];
+//    [request appendPostData:[tmpBast64Str dataUsingEncoding:NSUTF8StringEncoding]];
+//    request
+//    request add
+    //    [request addFile:theImgPath forKey:];
+    
+//    [request appendPostData:theImg];//返回500
+
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	3.	修改密码 tag 116
+ */
+//changepassword username name oldpassword newpassword accesstoken
+- (void)getChangepasswordUsername:(NSString *)username andName:(NSString *)name andOldpassword:(NSString *)oldpassword andNewpassword:(NSString *)newpassword andAccesstoken
+                                 :(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"username=%@&name=%@&oldpassword=%@&newpassword=%@",username,name,[oldpassword MD5],[newpassword MD5]];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Changepassword_API WithDic:tempStr withTag:Changepassword];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ 
+ *
+ *	4.	邮件设置 tag 117
+ */
+//emailsetting enterpriseid messagetype messagedate todotype tododate accesstoken
+- (void)getEmailsettingEnterpriseid:(NSString *)enterpriseid andMessagetype:(NSString *)messagetype andMessagedate:(NSString *)messagedate andTodotype:(NSString *)todotype andTododate:(NSString *)tododate andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&messagetype=%@&messagedate=%@&todotype=%@&tododate=%@",enterpriseid,messagetype,messagedate,todotype,tododate];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Emailsetting_API WithDic:tempStr withTag:Emailsetting];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	7.	1.	项目列表 tag 118
+ */
+//projects thispage pagesize type enterpriseid status isimportant accesstoken
+- (void)getProjectsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andType:(NSString *)type andEnterpriseid:(NSString *)enterpriseid andStatus:(NSString *)status andIsimportant:(NSString *)isimportant andInitial:(NSString *)initial andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&type=%@&enterpriseid=%@&status=%@&isimportant=%@&initial=%@",thispage,pagesize,type,enterpriseid,status,isimportant,initial];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Projects_API WithDic:tempStr withTag:Projects];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	7.	2.	项目详情 tag 119
+ */
+//projectinfo enterpriseid projectid accesstoken
+- (void)getProjectinfoEnterpriseid:(NSString *)enterpriseid andProjectid:(NSString *)projectid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&projectid=%@",enterpriseid,projectid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectsInfo_API WithDic:tempStr withTag:ProjectsInfo];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *	7.3.	项目动态 tag 120
+ */
+//projectshares thispage pagesize enterpriseid projectid accesstoken
+- (void)getProjectsharesThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andProjectid:(NSString *)projectid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@&projectid=%@",thispage,pagesize,enterpriseid,projectid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectsShares_API WithDic:tempStr withTag:ProjectsShares];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *	7.4.	项目任务 tag 121
+ */
+//projecttasks thispage pagesize enterpriseid projectid type accesstoken
+- (void)getProjecttasksThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andProjectid:(NSString *)projectid andType:(NSString *)type andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@&projectid=%@&type=%@",thispage,pagesize,enterpriseid,projectid,type];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectsTasks_API WithDic:tempStr withTag:ProjectsTasks];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	5.	项目活动 tag 122
+ */
+//projectevents thispage pagesize enterpriseid projectid type accesstoken
+- (void)getProjecteventsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andProjectid:(NSString *)projectid andType:(NSString *)type andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@&projectid=%@&type=%@",thispage,pagesize,enterpriseid,projectid,type];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectsEvent_API WithDic:tempStr withTag:ProjectsEvent];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *	6.	项目文档 tag 123
+ */
+//projectdocuments thispage pagesize enterpriseid projectid isimportant accesstoken
+- (void)getProjectdocumentsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andProjectid:(NSString *)projectid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@&projectid=%@&isimportant=%@",thispage,pagesize,enterpriseid,projectid,isimportant];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectsDocuments_API WithDic:tempStr withTag:ProjectsDocuments];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *1.	新建项目，修改项目 tag 124
+ */
+
+//projectadd enterpriseid name description ispublic starttime endtime projectid accesstoken
+- (void)getProjectaddEnterpriseid:(NSString *)enterpriseid andName:(NSString *)name andDescription:(NSString *)description andIspublic:(NSString *)ispublic andStarttime:(NSString *)starttime andEndtime:(NSString *)endtime andProjectid:(NSString *)projectid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&name=%@&description=%@&ispublic=%@&starttime=%@&endtime=%@&projectid=%@",enterpriseid,name,description,ispublic,starttime,endtime,projectid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectNew_API WithDic:tempStr withTag:ProjectNew];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ * 有问题
+ *2.	修改项目  tag 125
+ */
+//enterpriseid projectid starttime endtime projectname description accesstoken
+/*
+ *
+ *	3.	删除项目 tag 126
+ */
+//projectdelete projectid access_token
+- (void)getProjectdeleteProjectid:(NSString *)projectid andAccess_Token:(NSString *)access_token {
+    NSString *tempStr = [NSString stringWithFormat:@"projectid=%@",projectid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectDelete_API WithDic:tempStr withTag:ProjectDelete];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	完成项目，重启项目 tag 127
+ */
+
+//projectstatus projectid status accesstoken
+- (void)getProjectstatusProjectid:(NSString *)projectid andStatus:(NSString *)status andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"projectid=%@&status=%@",projectid,status];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectStatus_API WithDic:tempStr withTag:ProjectStatus];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *5.	负责人权限转交 tag 128
+ */
+//projectadmin projectid userid enterpriseid accesstoken
+- (void)getProjectadminProjectid:(NSString *)projectid andUserid:(NSString *)userid andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken {
+    NSString *tmpStr = [NSString stringWithFormat:@"projectid=%@&userid=%@&enterpriseid=%@",projectid,userid,enterpriseid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectAdmin_API WithDic:tmpStr withTag:ProjectAdmin];
+    [self startAsynchronousWithRequest:request];
+}
+
+
+/*
+ *
+ *	6.	将项目设置为重要或不重要（设置*标） tag 129
+ */
+
+//projectimportant projectid isimportant enterpriseid accesstoken
+- (void)getProjectimportantProjectid:(NSString *)projectid andIsimportant:(NSString *)isimportant andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken {
+    NSString *tmpStr = [NSString stringWithFormat:@"projectid=%@&isimportant=%@&enterpriseid=%@",projectid,isimportant,enterpriseid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectImportant_API WithDic:tmpStr withTag:ProjectImportant];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	7.	关注项目 tag 130
+ */
+//projectfollow projectid accesstoken
+- (void)getProjectfollowProjectid:(NSString *)projectid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"projectid=%@",projectid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectFollow_API WithDic:tempStr withTag:ProjectFollow];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *取消关注项目 tag 131
+ */
+//projectunfollow projectid accesstoken
+- (void)getProjectunfollowProjectid:(NSString *)projectid andAccesstoken:(NSString *)accesstoken{
+    NSString *tempStr = [NSString stringWithFormat:@"projectid=%@",projectid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectUnfollow_API WithDic:tempStr withTag:ProjectUnfollow];
+    [self startAsynchronousWithRequest:request];
+}
+///*
+// *
+// *	9.	邀请别人加入项目 tag 132
+// */
+////teaminvite enterpriseid memberids projectid accesstoken
+//
+//- (void)getTeaminviteEnterpriseid:(NSString *)enterpriseid andMemberids:(NSString *)memberids andProjectid:(NSString *)projectid andAccesstoken:(NSString *)accesstoken{
+//    ASIHTTPRequest *request = [self creatRequestURLAndData:Tasks_API WithDic:tempStr withTag:Tasks];
+//    [self startAsynchronousWithRequest:request];
+//}
+
+/*
+ *	1.	团队列表 tag; 133
+ */
+//teamteams listtype enterpriseid accesstoken
+- (void)getTeamteamsListtype:(NSString *)listtype andEnterpriseid:(NSString *)enterpriseid andThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andInitial:(NSString *)initial andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"listtype=%@&enterpriseid=%@&thispage=%@&pagesize=%@&initial=%@&isimportant=%@",listtype,enterpriseid,thispage,pagesize,initial,isimportant];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamList_API WithDic:tempStr withTag:TeamList];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	2.	团队详情 tag 134
+ */
+//teaminfo enterpriseid teamid accesstoken
+- (void)getTeaminfoEnterpriseid:(NSString *)enterpriseid andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken{
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&teamid=%@",enterpriseid,teamid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamInfo_API WithDic:tempStr withTag:TeamInfo];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *	3.	团队动态 tag 135
+ */
+
+//thispage pagesize enterpriseid teamid accesstoken
+- (void)getThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@&teamid=%@",thispage,pagesize,enterpriseid,teamid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamShares_API WithDic:tempStr withTag:TeamShares];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *4.	团队活动 tag 136
+ */
+//teamevents thispage pagesize enterpriseid teamid type accesstoken
+- (void)getTeameventsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andTeamid:(NSString *)teamid andType:(NSString *)type andAccesstoken:(NSString *)accesstoken{
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@&teamid=%@&type=%@",thispage,pagesize,enterpriseid,teamid,type];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamEvents_API WithDic:tempStr withTag:TeamEvents];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *5.	团队文档 tag 137
+ */
+//teamdocuments thispage pagesize enterpriseid teamid isimportant accesstoken
+- (void)getTeamdocumentsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andEnterpriseid:(NSString *)enterpriseid andTeamid:(NSString *)teamid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken{
+    NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&enterpriseid=%@&teamid=%@&isimportant=%@",thispage,pagesize,enterpriseid,teamid,isimportant];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamDouments_API WithDic:tempStr withTag:TeamDouments];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *6.	信息获取申请加入团队成员 tag 138
+ */
+//applymembers enterpriseid teamid accesstoken
+- (void)getApplymembersEnterpriseid:(NSString *)enterpriseid andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken{
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&teamid=%@",enterpriseid,teamid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Applymembers_API WithDic:tempStr withTag:Applymembers];
+    [self startAsynchronousWithRequest:request];
+}
+
+///*
+// *
+// *1.	新建团队 tag 139
+// */
+//teamadd enterpriseid name description accesstoken
+//- (void)getTeamaddEnterpriseid:(NSString *)enterpriseid andName:(NSString *)name andDescription:(NSString *)description andAccesstoken:(NSString *)accesstoken{
+//    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&name=%@&description=%@&accesstoken=%@",enterpriseid,name,description,accesstoken];
+//    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamAdd_API WithDic:tempStr withTag:TeamAdd];
+//    [self startAsynchronousWithRequest:request];
+//}
+/*
+ *
+ *52.	修改团队 tag 140
+ */
+//teamupdate enterpriseid name description teamid accesstoken
+- (void)getTeamupdateEnterpriseid:(NSString *)enterpriseid andName:(NSString *)name andDescription:(NSString *)description andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken{
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&name=%@&description=%@&teamid=%@&accesstoken=%@",enterpriseid,name,description,teamid,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamAdd_API WithDic:tempStr withTag:TeamUpdate];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *设置或修改团队公告 tag 141
+ */
+//announcement announcement teamid accesstoken
+- (void)getAnnouncementAnnouncement:(NSString *)announcement andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"teamid=%@&accesstoken=%@",teamid,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamANnouncement_API WithDic:tempStr withTag:TeamANnouncement];
+    [self startAsynchronousWithRequest:request];
+}
+///*
+// *
+// *4.	同意某人加入团队 tag 142
+// */
+////agreejoin memberid teamid accesstoken
+//- (void)getAgreejoinMemberid:(NSString *)memberid andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken {
+//    ASIHTTPRequest *request = [self creatRequestURLAndData:Tasks_API WithDic:tempStr withTag:Tasks];
+//    [self startAsynchronousWithRequest:request];
+//}
+///*
+// *
+// *5.	拒绝某人加入团队 tag 143
+// */
+////spacerefusejoin memberid teamid accesstoken
+//- (void)getSpacerefusejoinMemberid:(NSString *)memberid andTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken {
+//    ASIHTTPRequest *request = [self creatRequestURLAndData:Tasks_API WithDic:tempStr withTag:Tasks];
+//    [self startAsynchronousWithRequest:request];
+//}
+//
+/*
+ *
+ *5.	删除团队 tag 145
+ */
+//teamdeletec teamid accesstoken
+
+- (void)getTeamdeletecTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"teamid=%@&accesstoken=%@",teamid,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeameDelete_API WithDic:tempStr withTag:TeameDelete];
+    [self startAsynchronousWithRequest:request];
+}
+///*
+// *
+// *7.	团队加*标 tag 146
+// */
+//setisimportant teamid enterpriseid isimportant accesstoken
+- (void)getSetisimportantTeamid:(NSString *)teamid andEnterpriseid:(NSString *)enterpriseid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"teamid=%@&enterpriseid=%@&isimportant=%@",teamid,enterpriseid,isimportant];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamSetisImportan_API WithDic:tempStr withTag:TeamSetisImportan];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *8.	邀请别人加入团队 tag 147
+ */
+//teaminvite teamid userid enterpriseid accesstoken
+- (void)getTeaminviteTeamid:(NSString *)teamid andUserid:(NSString *)useremails andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken{
+    NSString *tmpStr = [NSString stringWithFormat:@"teamid=%@&useremails=%@&enterpriseid=%@",teamid,useremails,enterpriseid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamInvite_API WithDic:tmpStr withTag:TeamInvite];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *9.	管理员权限转交 tag 148
+ */
+//teamadmin teamid userid enterpriseid accesstoken
+- (void)getTeamadminTeamid:(NSString *)teamid andUserid:(NSString *)userid andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken {
+    NSString *tmpStr = [NSString stringWithFormat:@"teamid=%@&userid=%@&enterpriseid=%@",teamid,userid,enterpriseid];
+//    NSMutableDictionary *tmpDic = [NSMutableDictionary dictionary];
+//    [tmpDic setObject:teamid forKey:@"teamid"];
+//    [tmpDic setObject:userid forKey:@"userid"];
+//    [tmpDic setObject:enterpriseid forKey:@"enterpriseid"];
+    
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamAdmin_API WithDic:tmpStr withTag:TeamAdmin];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *10.	退出团队 tag 149
+ */
+//teamexit teamid accesstoken
+- (void)getTeamexitTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"teamid=%@&accesstoken=%@",teamid,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamExit_API WithDic:tempStr withTag:TeamExit];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *5.	11.	同意别人邀请自已加入某团队 tag 150
+ */
+//teamagreeinvite teamid
+- (void)getTeamagreeinviteTeamid:(NSString *)teamid {
+    NSString *tempStr = [NSString stringWithFormat:@"teamid=%@",teamid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamAgreeinvite_API WithDic:tempStr withTag:TeamAgreeinvite];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *5.12.	拒绝别人邀请自己加入某团队 tag 151
+ */
+//teamrefuseinvite teamid accesstoken
+- (void)getTeamrefuseinviteTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoke {
+    NSString *tempStr = [NSString stringWithFormat:@"teamid=%@",teamid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamRefuseinvite_API WithDic:tempStr withTag:TeamRefuseinvite];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *5.13.	申请加入某团队 tag 152
+ */
+//teamapply teamid accesstoken
+- (void)getTeamapplyTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken{
+    NSString *tempStr = [NSString stringWithFormat:@"teamid=%@&accesstoken=%@",teamid,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamApply_API WithDic:tempStr withTag:TeamApply];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *5.14.	取消申请加入某团队 tag 153
+ */
+//teamcancelapply teamid accesstoken
+- (void)getTeamcancelapplyTeamid:(NSString *)teamid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"teamid=%@&accesstoken=%@",teamid,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamCancelapply_API WithDic:tempStr withTag:TeamCancelapply];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *1.	同事列表 tag 154
+ */
+//friendshipsfriends datatype enterpriseid accesstoken
+- (void)getFriendshipsfriendsDatatype:(NSString *)datatype andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken andInitial:(NSString *)initial{
+    NSString *tempStr = [NSString stringWithFormat:@"datatype=%@&enterpriseid=%@&initial=%@",datatype,enterpriseid,initial];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:FriendShips_API WithDic:tempStr withTag:FriendShips];
+    [self startAsynchronousWithRequest:request];
+}
+
+///*
+// *
+// *5.	1.	关注同事 tag 155  FriendCreate
+// */
+//friendshipscreate friendsid accesstoken
+- (void)getFriendshipscreateFriendsid:(NSString *)friendsid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"friendsid=%@",friendsid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:FriendCreate_API WithDic:tempStr withTag:FriendCreate];
+    [self startAsynchronousWithRequest:request];
+}
+///*
+// *
+// *5.	1.	取消关注同事 tag 155  FriendDestroy
+// */
+- (void)getFriendshipsdestroyFriendsid:(NSString *)friendsid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"friendsid=%@",friendsid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:FriendDestroy_API WithDic:tempStr withTag:FriendDestroy];
+    [self startAsynchronousWithRequest:request];
+}
+
+///*
+// *
+// *3.	邀请同事加入企业空间 tag 156
+// */
+////friendshipsinvite friendsemail enterpriseid accesstoken
+//- (void)getFriendshipsinviteFriendsemail:(NSString *)friendsemail andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken {
+//    ASIHTTPRequest *request = [self creatRequestURLAndData:Tasks_API WithDic:tempStr withTag:Tasks];
+//    [self startAsynchronousWithRequest:request];
+//}
+/*
+ *
+ *1.	资料(企业文档) tag 157
+ */
+//spacedocuments thispage pagesize keywords enterpriseid currentfileid isimportant accesstoken
+- (void)getSpacedocumentsThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andKeywords:(NSString *)keywords andEnterpriseid:(NSString *)enterpriseid andCurrentfileid:(NSString *)currentfileid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken {
+     NSString *tempStr = [NSString stringWithFormat:@"thispage=%@&pagesize=%@&keywords=%@&enterpriseid=%@&currentfileid=%@&isimportant=%@",thispage,pagesize,keywords,enterpriseid,currentfileid,isimportant];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:SpaceDocuments_API WithDic:tempStr withTag:SpaceDocuments];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *2.	获取本公司的绑定邮箱 tag 158
+ */
+//spaceemails enterpriseid accesstoken
+- (void)getSpaceemailsEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@",enterpriseid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:SpaceEmails_API WithDic:tempStr withTag:SpaceEmails];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *5.1.	分享详情 tag 159
+ */
+
+//shareinfo enterpriseid themeid accesstoken
+- (void)getShareinfoEnterpriseid:(NSString *)enterpriseid andThemeid:(NSString *)themeid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&themeid=%@",enterpriseid,themeid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ShareInfo_API WithDic:tempStr withTag:ShareInfo];
+    [self startAsynchronousWithRequest:request];
+}
+//
+///*
+// *
+// *5.	1.	发分享 tag 160
+// */
+////shareadd ispublic url enterpriseid fileid filename filesize groupid grouptype text accesstoken
+- (void)getShareaddIspublic:(NSString *)ispublic andUrl:(NSString *)url andEnterpriseid:(NSString *)enterpriseid andFileid:(NSString *)fileid andFilename:(NSString *)filename andFilesize:(NSString *)filesize andGroupid:(NSString *)groupid andGrouptype:(NSString *)grouptype andText:(NSString *)text andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"ispublic=%@&url=%@&enterpriseid=%@&fileid=%@&filename=%@&filesize=%@&groupid=%@&grouptype=%@&text=%@&accesstoken=%@",ispublic,url,enterpriseid,fileid,filename,filesize,groupid,grouptype,text,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Tasks_API WithDic:tempStr withTag:Tasks];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *2.	删除分享及回复 tag 161
+ */
+//sharedelete themeid userid accesstoken
+- (void)getSharedeleteThemeid:(NSString *)themeid andUserid:(NSString *)userid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"themeid=%@&userid=%@",themeid,userid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ShareDelete_API WithDic:tempStr withTag:ShareDelete];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *1.	任务详情 tag 162
+ */
+//taskinfo enterpriseid taskid accesstoken
+- (void)getTaskinfoEnterpriseid:(NSString *)enterpriseid andTaskid:(NSString *)taskid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&taskid=%@",enterpriseid,taskid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TaskInfo_API WithDic:tempStr withTag:TaskInfo];
+    [self startAsynchronousWithRequest:request];
+}
+///*
+// *
+// *5.	1.	发任务 tag 163
+// */
+////taskadd enterpriseid taskid ispublic title start end atuids receiveid fileid filename filesize groupid grouptype description oldatuids oldreceiveid setting accesstoken
+//- (void)getTaskaddEnterpriseid:(NSString *)enterpriseid andTaskid:(NSString *)taskid andIspublic:(NSString *)ispublic andTitle:(NSString *)title andStart:(NSString *)start andEnd:(NSString *)end andAtuids:(NSString *)atuids andReceiveid:(NSString *)receiveid andFileid:(NSString *)fileid andFilename:(NSString *)filename andFilesize:(NSString *)filesize andGroupid:(NSString *)groupid andGrouptype:(NSString *)grouptype andDescription:(NSString *)description andOldatuids:(NSString *)oldatuids andOldreceiveid:(NSString *)oldreceiveid andSetting:(NSString *)setting andAccesstoken:(NSString *)accesstoken {
+//    ASIHTTPRequest *request = [self creatRequestURLAndData:Tasks_API WithDic:tempStr withTag:Tasks];
+//    [self startAsynchronousWithRequest:request];
+//}
+//
+
+
+/*
+ *
+ *2.	修改任务状态 tag 164
+ */
+//taskaddmembers taskid enterpriseid oldatuser newatuser accesstoken
+
+- (void)getTaskchangeTaskStatusTaskid:(NSString *)taskid andStatus:(NSString *)status andAccesstoken:(NSString *)accesstoken{
+    
+}
+
+/*
+ *
+ *3.	添加任务参与者 tag 165
+ */
+//taskaddmembers taskid enterpriseid oldatuser newatuser accesstoken
+
+- (void)getTaskaddmembersTaskid:(NSString *)taskid andEnterpriseid:(NSString *)enterpriseid andOldatuser:(NSString *)oldatuser andNewatuser:(NSString *)newatuser andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"taskid=%@&enterpriseid=%@&oldatuser=%@&newatuser=%@&accesstoken=%@",taskid,enterpriseid,oldatuser,newatuser,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TaskAddmembers_API WithDic:tempStr withTag:TaskAddmembers];
+    [self startAsynchronousWithRequest:request];
+}
+
+
+
+
+/*
+ *
+ *2.	4.	删除任务 tag 166
+ */
+//taskdelete themeid accesstoken
+
+- (void)getTaskdeleteThemeid:(NSString *)themeid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"themeid=%@&accesstoken=%@",themeid,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TaskDele_API WithDic:tempStr withTag:TaskDele];
+    [self startAsynchronousWithRequest:request];
+}
+/*
+ *
+ *2.	1.	活动详情 tag 167
+ */
+//eventinfo enterpriseid eventid accesstoken
+- (void)getEventinfoEnterpriseid:(NSString *)enterpriseid andEventid:(NSString *)eventid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@&eventid=%@",enterpriseid,eventid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:EventInfo_API WithDic:tempStr withTag:EventInfo];
+    [self startAsynchronousWithRequest:request];
+}
+//
+///*
+// *
+// *2.	1.	发活动 tag 168
+// */
+////eventadd enterpriseid eventid name start end address atids oldatids description fileid filename filesize ispublic oldispublic groupid type accesstoken
+//- (void)getEventaddEnterpriseid:(NSString *)enterpriseid andEventid:(NSString *)eventid andName:(NSString *)name andStart:(NSString *)start andEnd:(NSString *)end andAddress:(NSString *)address andAtids:(NSString *)atids andOldatids:(NSString *)oldatids andDescription:(NSString *)description andFileid:(NSString *)fileid andFilename:(NSString *)filename andFilesize:(NSString *)filesize andIspublic:(NSString *)ispublic andOldispublic:(NSString *)oldispublic andGroupid:(NSString *)groupid andType:(NSString *)type andAccesstoken:(NSString *)accesstoken {
+//    ASIHTTPRequest *request = [self creatRequestURLAndData:Tasks_API WithDic:tempStr withTag:Tasks];
+//    [self startAsynchronousWithRequest:request];
+//}
+//
+
+/*
+ *
+ *2.	2.	删除活动 tag 169
+ */
+//eventdelete eventid accesstoken
+- (void)getEventdeleteEventid:(NSString *)eventid andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"eventid=%@&accesstoken=%@",eventid,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:EventDelete_API WithDic:tempStr withTag:EventDelete];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *2.	3.	添加活动成员 tag 170
+ */
+//eventaddmembers eventid enterpriseid oldatuser newatuser accesstoken
+
+- (void)getEventaddmembersEventid:(NSString *)eventid andEnterpriseid:(NSString *)enterpriseid andOldatuser:(NSString *)oldatuser andNewatuser:(NSString *)newatuser andAccesstoken:(NSString *)accesstoken {
+    NSString *tempStr = [NSString stringWithFormat:@"eventid=%@&enterpriseid=%@&oldatuser=%@&newatuser=%@&accesstoken=%@",eventid,enterpriseid,oldatuser,newatuser,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:EventAddmembers_API WithDic:tempStr withTag:EventAddmembers];
+    [self startAsynchronousWithRequest:request];
+}
+
+/*
+ *
+ *1.	回复内容列表 tag 171
+ */
+//replies themeid enterpriseid thispage pagesize keywords accesstoken
+- (void)getRepliesThemeid:(NSString *)themeid andEnterpriseid:(NSString *)enterpriseid andThispage:(NSString *)thispage andPagesize:(NSString *)pagesize andAccesstoken:(NSString *)accesstoken {
+
+    NSString *tempStr = [NSString stringWithFormat:@"themeid=%@&enterpriseid=%@&thispage=%@&pagesize=%@&accesstoken=%@",themeid,enterpriseid,thispage,pagesize,accesstoken];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:AllReplies_API WithDic:tempStr withTag:AllReplies];
+    [self startAsynchronousWithRequest:request];
+}
+//
+//
+///*
+// *
+// *21.	退出登录 tag 172
+// */
+////signout accesstoken userid
+//- (void)getSignoutAccesstoken:(NSString *)accesstoken andUserid:(NSString *)userid {
+//    ASIHTTPRequest *request = [self creatRequestURLAndData:Tasks_API WithDic:tempStr withTag:Tasks];
+//    [self startAsynchronousWithRequest:request];
+//}
+/*
+ *
+ *2.	2.	发回复 tag 173
+ */
+//reply type enterpriseid text groupid parentid receiveid themeid ispublic filename fileid filesize grouptype accesstoken
+//- (void)getReplyType:(NSString *)type andEnterpriseid:(NSString *)enterpriseid andText:(NSString *)text andGroupid:(NSString *)groupid andParentid:(NSString *)parentid andReceiveid:(NSString *)receiveid andThemeid:(NSString *)themeid andIspublic:(NSString *)ispublic andFilename:(NSString *)filename andFileid:(NSString *)fileid andFilesize:(NSString *)filesize andGrouptype:(NSString *)grouptype andAccesstoken:(NSString *)accesstoken {
+//    NSString *tempStr = [NSString stringWithFormat:@"type=%@&enterpriseid=%@&text=%@&groupid=%@&parentid=%@&receiveid=%@&themeid=%@&filename=%@&fileid=%@&filesize=%@&grouptype=%@&accesstoken=%@",type,enterpriseid,text,groupid,parentid,receiveid,themeid,filename,fileid,filesize,grouptype,accesstoken];
+//    ASIHTTPRequest *request = [self creatRequestURLAndData:AllReply_API WithDic:tempStr withTag:AllReply];
+//    [self startAsynchronousWithRequest:request];
+//}
+
+///*
+// *
+// *3.	上传文件 tag 174
+// */
+////upload fileid action enterpriseid accesstoken
+//- (void)getUploadFileid:(NSString *)fileid andAction:(NSString *)action andEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken {
+//    ASIHTTPRequest *request = [self creatRequestURLAndData:Tasks_API WithDic:tempStr withTag:Tasks];
+//    [self startAsynchronousWithRequest:request];
+//}
+
+/*
+ *
+ *4.	找回密码 tag 175
+ */
+//findpassword email checkcode
+
+- (void)getFindpasswordEmail:(NSString *)email andCheckcode:(NSString *)checkcode
+{
+    NSString *tempStr = [NSString stringWithFormat:@"email=%@&checkcode=%@",email,checkcode];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:AllFindPassword_API WithDic:tempStr withTag:AllFindPassword];
+    [self startAsynchronousWithRequest:request];
+}
+
+//加载用户邮件设置 tag 176
+
+//enterpriseid accesstoken
+- (void)loadUserMailSetEnterpriseid:(NSString *)enterpriseid andAccesstoken:(NSString *)accesstoken
+{
+    NSString *tempStr = [NSString stringWithFormat:@"enterpriseid=%@",enterpriseid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:LoadUserMailSet_API WithDic:tempStr withTag:LoadUserMailSet];
+    [self startAsynchronousWithRequest:request];
+}
+
+#pragma mark 搜索结果页
+- (void)searchWithKeywords:(NSString *)theKeywords enterpeiseid:(NSString *)theEID thisCurrentPage:(NSString *)thePage datatype:(NSInteger)theType
+{
+    NSString *tempStr = [NSString stringWithFormat:@"keywords=%@&enterpriseid=%@&thispage=%@&pagesize=%@&datatype=%d",theKeywords,theEID,thePage,pageSize,theType];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:AllSearch_API WithDic:tempStr withTag:AllSearch];
+    [self startAsynchronousWithRequest:request];
+}
+
+#pragma mark 1.	检测新版本接口
+- (void)getVersion
+{
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Version_API WithDic:nil withTag:Version];
+    [self startAsynchronousWithRequest:request];
+}
+
+#pragma mark 退出登录
+- (void)signoutWithUserid:(NSString *)userid
+{
+    NSString *tempStr = [NSString stringWithFormat:@"userid=%@",userid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:Signout_API WithDic:tempStr withTag:Signout];
+    [self startAsynchronousWithRequest:request];
+}
+
+
+#pragma mark 团队踢出成员
+- (void)getTeamLeaveWithTeamid:(NSString *)teamid andUserids:(NSString *)userids andAccesstoken:(NSString *)accesstoken
+{
+    NSString *tempStr = [NSString stringWithFormat:@"teamid=%@&userids=%@",teamid,userids];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamLeave_API WithDic:tempStr withTag:TeamLeave];
+    [self startAsynchronousWithRequest:request];
+}
+
+
+#pragma mark - 团队文档加星去星
+- (void)getTeamDocumentImportantWithTeamid:(NSString *)teamid andFileid:(NSString *)fileid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken
+{
+    NSString *tempStr = [NSString stringWithFormat:@"teamid=%@&fileid=%@&isimportant=%@",teamid,fileid,isimportant];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TeamDocumentImportant_API WithDic:tempStr withTag:TeamDocumentImportant];
+    [self startAsynchronousWithRequest:request];
+}
+
+
+
+
+
+#pragma mark - 项目文档加星去星 
+- (void)getProjectDocumentImportantWithProjectid:(NSString *)projectid andFileid:(NSString *)fileid andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken
+{
+    NSString *tempStr = [NSString stringWithFormat:@"projectid=%@&fileid=%@&isimportant=%@",projectid,fileid,isimportant];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectDocumentImportant_API WithDic:tempStr withTag:ProjectDocumentImportant];
+    [self startAsynchronousWithRequest:request];
+}
+
+#pragma mark - 项目踢出成员 
+- (void)getProjectLeaveWithProjectid:(NSString *)projectid andUserids:(NSString *)userids andAccesstoken:(NSString *)accesstoken
+{
+    NSString *tempStr = [NSString stringWithFormat:@"projectid=%@&userids=%@",projectid,userids];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:ProjectLeave_API WithDic:tempStr withTag:ProjectLeave];
+    [self startAsynchronousWithRequest:request];
+}
+
+
+
+
+
+
+#pragma mark - 待办事项加星操作 
+- (void)getToDoImportantWithId:(NSString *)dataId andUserid:(NSString *)userid andReceiveid:(NSString *)receiveid andIstask:(NSString *)istask andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken
+{
+    NSString *tempStr = [NSString stringWithFormat:@"id=%@&userid=%@&receiveid=%@&istask=%@isimportant=%@",dataId,userid,receiveid,istask,isimportant];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:TodoImportant_API WithDic:tempStr withTag:TodoImportant];
+    [self startAsynchronousWithRequest:request];
+}
+
+#pragma mark - 文档加星  
+- (void)getDocumentImportantWithInfoid:(NSString *)infoid andFiletype:(NSString *)fileType andIsimportant:(NSString *)isimportant andAccesstoken:(NSString *)accesstoken
+{
+    NSString *tempStr = [NSString stringWithFormat:@"infoid=%@&filetype=%@&isimportant=%@",infoid,fileType,isimportant];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:DocumentImportant_API WithDic:tempStr withTag:DocumentImportant];
+    [self startAsynchronousWithRequest:request];
+}
+
+#pragma mark - 删除提醒   
+- (void)getDeletRemindWithInfoid:(NSString *)infoid andType:(NSString *)type andEnterpriseid:(NSString *)enterpeiseid andAccesstoken:(NSString *)accesstoken
+{
+    NSString *tempStr = [NSString stringWithFormat:@"infoid=%@&type=%@&enterpriseid=%@",infoid,type,enterpeiseid];
+    ASIHTTPRequest *request = [self creatRequestURLAndData:DeleteRemind_API WithDic:tempStr withTag:DeleteRemind];
+    [self startAsynchronousWithRequest:request];
+}
+
+
+@end

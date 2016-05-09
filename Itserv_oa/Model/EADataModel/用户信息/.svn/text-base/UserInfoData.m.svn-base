@@ -1,0 +1,187 @@
+//
+//  UserInfoData.m
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import "UserInfoData.h"
+
+
+@interface UserInfoData ()
+
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict;
+
+@end
+
+@implementation UserInfoData
+
+@synthesize dataIdentifier = _dataIdentifier;
+@synthesize cellphone = _cellphone;
+@synthesize phone = _phone;
+@synthesize position = _position;
+@synthesize sex = _sex;
+@synthesize des = _des;
+@synthesize addr = _addr;
+@synthesize type = _type;
+@synthesize logo = _logo;
+@synthesize msn = _msn;
+@synthesize birthday = _birthday;
+@synthesize username = _username;
+@synthesize qq = _qq;
+@synthesize department = _department;
+@synthesize email = _email;
+@synthesize name = _name;
+@synthesize eid = _eid;
+
+
++ (UserInfoData *)modelObjectWithDictionary:(NSDictionary *)dict
+{
+    UserInfoData *instance = [[[UserInfoData alloc] initWithDictionary:dict] autorelease];
+    return instance;
+}
+
+- (id)initWithDictionary:(NSDictionary *)dict
+{
+    self = [super init];
+    
+    // This check serves to make sure that a non-NSDictionary object
+    // passed into the model class doesn't break the parsing.
+    if(self && [dict isKindOfClass:[NSDictionary class]]) {
+            self.dataIdentifier = [self objectOrNilForKey:@"id" fromDictionary:dict];
+            self.cellphone = [self objectOrNilForKey:@"cellphone" fromDictionary:dict];
+            self.phone = [self objectOrNilForKey:@"phone" fromDictionary:dict];
+            self.position = [self objectOrNilForKey:@"position" fromDictionary:dict];
+            self.sex = [self objectOrNilForKey:@"sex" fromDictionary:dict];
+            self.des = [self objectOrNilForKey:@"des" fromDictionary:dict];
+            self.addr = [self objectOrNilForKey:@"addr" fromDictionary:dict];
+            self.type = [self objectOrNilForKey:@"type" fromDictionary:dict];
+            self.logo = [self objectOrNilForKey:@"logo" fromDictionary:dict];
+            self.msn = [self objectOrNilForKey:@"msn" fromDictionary:dict];
+            self.birthday = [self objectOrNilForKey:@"birthday" fromDictionary:dict];
+            self.username = [self objectOrNilForKey:@"username" fromDictionary:dict];
+            self.qq = [self objectOrNilForKey:@"qq" fromDictionary:dict];
+            self.department = [self objectOrNilForKey:@"department" fromDictionary:dict];
+            self.email = [self objectOrNilForKey:@"email" fromDictionary:dict];
+            self.name = [self objectOrNilForKey:@"name" fromDictionary:dict];
+            self.eid = [self objectOrNilForKey:@"eid" fromDictionary:dict];
+
+    }
+    
+    return self;
+    
+}
+
+- (NSDictionary *)dictionaryRepresentation
+{
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
+    [mutableDict setValue:self.dataIdentifier forKey:@"id"];
+    [mutableDict setValue:self.cellphone forKey:@"cellphone"];
+    [mutableDict setValue:self.phone forKey:@"phone"];
+    [mutableDict setValue:self.position forKey:@"position"];
+    [mutableDict setValue:self.sex forKey:@"sex"];
+    [mutableDict setValue:self.des forKey:@"des"];
+    [mutableDict setValue:self.addr forKey:@"addr"];
+    [mutableDict setValue:self.type forKey:@"type"];
+    [mutableDict setValue:self.logo forKey:@"logo"];
+    [mutableDict setValue:self.msn forKey:@"msn"];
+    [mutableDict setValue:self.birthday forKey:@"birthday"];
+    [mutableDict setValue:self.username forKey:@"username"];
+    [mutableDict setValue:self.qq forKey:@"qq"];
+    [mutableDict setValue:self.department forKey:@"department"];
+    [mutableDict setValue:self.email forKey:@"email"];
+    [mutableDict setValue:self.name forKey:@"name"];
+    [mutableDict setValue:self.eid forKey:@"eid"];
+
+    return [NSDictionary dictionaryWithDictionary:mutableDict];
+}
+
+- (NSString *)description 
+{
+    return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
+}
+
+#pragma mark - Helper Method
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict
+{
+    id object = [dict objectForKey:aKey];
+    return [object isEqual:[NSNull null]] ? nil : object;
+}
+
+
+#pragma mark - NSCoding Methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    
+    self = [aDecoder decodeObjectForKey:@"userInfoData"];
+
+    self.dataIdentifier = [aDecoder decodeObjectForKey:@"dataIdentifier"];
+    self.cellphone = [aDecoder decodeObjectForKey:@"cellphone"];
+    self.phone = [aDecoder decodeObjectForKey:@"phone"];
+    self.position = [aDecoder decodeObjectForKey:@"position"];
+    self.sex = [aDecoder decodeObjectForKey:@"sex"];
+    self.des = [aDecoder decodeObjectForKey:@"des"];
+    self.addr = [aDecoder decodeObjectForKey:@"addr"];
+    self.type = [aDecoder decodeObjectForKey:@"type"];
+    self.logo = [aDecoder decodeObjectForKey:@"logo"];
+    self.msn = [aDecoder decodeObjectForKey:@"msn"];
+    self.birthday = [aDecoder decodeObjectForKey:@"birthday"];
+    self.username = [aDecoder decodeObjectForKey:@"username"];
+    self.qq = [aDecoder decodeObjectForKey:@"qq"];
+    self.department = [aDecoder decodeObjectForKey:@"department"];
+    self.email = [aDecoder decodeObjectForKey:@"email"];
+    self.name = [aDecoder decodeObjectForKey:@"name"];
+    self.eid = [aDecoder decodeObjectForKey:@"eid"];
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self forKey:@"userInfoData"];
+
+    [aCoder encodeObject:_dataIdentifier forKey:@"dataIdentifier"];
+    [aCoder encodeObject:_cellphone forKey:@"cellphone"];
+    [aCoder encodeObject:_phone forKey:@"phone"];
+    [aCoder encodeObject:_position forKey:@"position"];
+    [aCoder encodeObject:_sex forKey:@"sex"];
+    [aCoder encodeObject:_des forKey:@"des"];
+    [aCoder encodeObject:_addr forKey:@"addr"];
+    [aCoder encodeObject:_type forKey:@"type"];
+    [aCoder encodeObject:_logo forKey:@"logo"];
+    [aCoder encodeObject:_msn forKey:@"msn"];
+    [aCoder encodeObject:_birthday forKey:@"birthday"];
+    [aCoder encodeObject:_username forKey:@"username"];
+    [aCoder encodeObject:_qq forKey:@"qq"];
+    [aCoder encodeObject:_department forKey:@"department"];
+    [aCoder encodeObject:_email forKey:@"email"];
+    [aCoder encodeObject:_name forKey:@"name"];
+    [aCoder encodeObject:_eid forKey:@"eid"];
+}
+
+
+- (void)dealloc
+{
+    [_dataIdentifier release];
+    [_cellphone release];
+    [_phone release];
+    [_position release];
+    [_sex release];
+    [_des release];
+    [_addr release];
+    [_type release];
+    [_logo release];
+    [_msn release];
+    [_birthday release];
+    [_username release];
+    [_qq release];
+    [_department release];
+    [_email release];
+    [_name release];
+    [_eid release];
+    [super dealloc];
+}
+
+@end

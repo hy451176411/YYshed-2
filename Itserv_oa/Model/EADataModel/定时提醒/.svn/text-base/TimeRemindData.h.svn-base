@@ -1,0 +1,26 @@
+//
+//  TimeRemindData.h
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+
+
+@interface TimeRemindData : NSObject <NSCoding>
+
+@property (nonatomic, retain) NSString *ats;
+@property (nonatomic, retain) NSString *events;
+@property (nonatomic, retain) NSString *replies;
+@property (nonatomic, retain) NSString *teams;
+@property (nonatomic, retain) NSString *works;
+@property (nonatomic, retain) NSString *syss;
+@property (nonatomic, retain) NSString *fans;
+
++ (TimeRemindData *)modelObjectWithDictionary:(NSDictionary *)dict;
+- (id)initWithDictionary:(NSDictionary *)dict;
+- (NSDictionary *)dictionaryRepresentation;
+
+@end

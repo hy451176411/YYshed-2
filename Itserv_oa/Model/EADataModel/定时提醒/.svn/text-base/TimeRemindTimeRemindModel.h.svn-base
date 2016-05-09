@@ -1,0 +1,23 @@
+//
+//  TimeRemindTimeRemindModel.h
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@class TimeRemindData, TimeRemindRemind;
+
+@interface TimeRemindTimeRemindModel : BaseModel <NSCoding>
+
+@property (nonatomic, retain) NSString *errorcode;
+@property (nonatomic, retain) TimeRemindData *data;
+@property (nonatomic, retain) TimeRemindRemind *remind;
+@property (nonatomic, retain) NSString *issuccess;
+
++ (TimeRemindTimeRemindModel *)modelObjectWithDictionary:(NSDictionary *)dict;
+- (id)initWithDictionary:(NSDictionary *)dict;
+- (NSDictionary *)dictionaryRepresentation;
+
+@end

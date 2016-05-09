@@ -1,0 +1,107 @@
+//
+//  TimeRemindTimeRemindModel.m
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import "TimeRemindTimeRemindModel.h"
+#import "TimeRemindData.h"
+#import "TimeRemindRemind.h"
+
+
+@interface TimeRemindTimeRemindModel ()
+
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict;
+
+@end
+
+@implementation TimeRemindTimeRemindModel
+
+@synthesize errorcode = _errorcode;
+@synthesize data = _data;
+@synthesize remind = _remind;
+@synthesize issuccess = _issuccess;
+
+
++ (TimeRemindTimeRemindModel *)modelObjectWithDictionary:(NSDictionary *)dict
+{
+    TimeRemindTimeRemindModel *instance = [[[TimeRemindTimeRemindModel alloc] initWithDictionary:dict] autorelease];
+    return instance;
+}
+
+- (id)initWithDictionary:(NSDictionary *)dict
+{
+    self = [super init];
+    
+    // This check serves to make sure that a non-NSDictionary object
+    // passed into the model class doesn't break the parsing.
+    if(self && [dict isKindOfClass:[NSDictionary class]]) {
+            self.errorcode = [self objectOrNilForKey:@"errorcode" fromDictionary:dict];
+            self.data = [TimeRemindData modelObjectWithDictionary:[dict objectForKey:@"data"]];
+            self.remind = [TimeRemindRemind modelObjectWithDictionary:[dict objectForKey:@"remind"]];
+            self.issuccess = [self objectOrNilForKey:@"issuccess" fromDictionary:dict];
+
+    }
+    
+    return self;
+    
+}
+
+- (NSDictionary *)dictionaryRepresentation
+{
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
+    [mutableDict setValue:self.errorcode forKey:@"errorcode"];
+    [mutableDict setValue:[self.data dictionaryRepresentation] forKey:@"data"];
+    [mutableDict setValue:[self.remind dictionaryRepresentation] forKey:@"remind"];
+    [mutableDict setValue:self.issuccess forKey:@"issuccess"];
+
+    return [NSDictionary dictionaryWithDictionary:mutableDict];
+}
+
+- (NSString *)description 
+{
+    return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
+}
+
+#pragma mark - Helper Method
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict
+{
+    id object = [dict objectForKey:aKey];
+    return [object isEqual:[NSNull null]] ? nil : object;
+}
+
+
+#pragma mark - NSCoding Methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+
+    self.errorcode = [aDecoder decodeObjectForKey:@"errorcode"];
+    self.data = [aDecoder decodeObjectForKey:@"data"];
+    self.remind = [aDecoder decodeObjectForKey:@"remind"];
+    self.issuccess = [aDecoder decodeObjectForKey:@"issuccess"];
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+
+    [aCoder encodeObject:_errorcode forKey:@"errorcode"];
+    [aCoder encodeObject:_data forKey:@"data"];
+    [aCoder encodeObject:_remind forKey:@"remind"];
+    [aCoder encodeObject:_issuccess forKey:@"issuccess"];
+}
+
+
+- (void)dealloc
+{
+    [_errorcode release];
+    [_data release];
+    [_remind release];
+    [_issuccess release];
+    [super dealloc];
+}
+
+@end

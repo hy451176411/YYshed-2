@@ -1,0 +1,118 @@
+{
+	"addressList":
+    [
+     {
+     "title":"深圳  Java版",
+     "name":"深圳",
+     "oa_ip":"http://gjet.szciqic.net:8090",
+     "email_ip":"http://gjet.szciqic.net:8090",
+     "urlface":"/terminal/api/interface.jsp?appid=22000022&appsecret=abcd1234&",
+     "type":1
+     },{
+     "title":"辽宁 内网 Domino版",
+     "name":"辽宁",
+     "oa_ip":"http://10.21.0.8",
+     "email_ip":"http://10.21.0.145",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     },{
+     "title":"辽宁 外网 Domino版",
+     "name":"辽宁",
+     "oa_ip":"http://218.25.158.50:9531",
+     "email_ip":"http://218.25.158.57:87",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     },{
+     "title":"广东（特别版，登录、邮件不一样） Domino版",
+     "name":"广东",
+     "oa_ip":"http://10.44.0.83",
+     "email_ip":"http://10.44.0.83",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     },{
+     "title":"山西 内网 (特别版，菜单不一样) Domino版",
+     "name":"山西",
+     "oa_ip":"http://10.14.0.3",
+     "email_ip":"http://10.14.0.3",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     },{
+     "title":"山西 外网 (特别版，菜单不一样) Domino版",
+     "name":"山西",
+     "oa_ip":"http://183.203.212.36:443",
+     "email_ip":"http://183.203.212.36:443",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     },{
+     "title":"珠海 局外 Domino版",
+     "name":"珠海",
+     "oa_ip":"http://10.48.0.44",
+     "email_ip":"http://10.48.0.4",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     },{
+     "title":"珠海 局内 Domino版",
+     "name":"珠海",
+     "oa_ip":"http://192.168.75.44",
+     "email_ip":"http://192.168.75.24",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     },{
+     "title":"广西 Domino版",
+     "name":"广西",
+     "oa_ip":"http://10.45.0.2",
+     "email_ip":"http://10.45.0.77",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     },{
+     "title":"浙江 Domino版",
+     "name":"浙江",
+     "oa_ip":"http://10.33.200.99",
+     "email_ip":"http://10.33.200.103",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     },{
+     "title":"吉林 Java版",
+     "name":"吉林",
+     "oa_ip":"http://10.22.0.25",
+     "email_ip":"http://10.22.0.25",
+     "urlface":"/terminal/api/interface.jsp?appid=22000022&appsecret=abcd1234&",
+     "type":1
+     },{
+     "title":"江西 内网 Domino版",
+     "name":"江西",
+     "oa_ip":"http://10.36.0.12",
+     "email_ip":"http://10.36.0.12",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     },{
+     "title":"江西 外网 Domino版",
+     "name":"江西",
+     "oa_ip":"http://oa.jxciq.gov.cn:10080",
+     "email_ip":"http://oa.jxciq.gov.cn:10080",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     },{
+     "title":"四川 外网 Java版",
+     "name":"四川",
+     "oa_ip":"http://111.9.25.66:8089",
+     "email_ip":"http://111.9.25.66:8089",
+     "urlface":"/terminal/api/interface.jsp?appid=22000022&appsecret=abcd1234&",
+     "type":1
+     },{
+     "title":"四川 内网 Java版",
+     "name":"四川",
+     "oa_ip":"http://10.51.0.22",
+     "email_ip":"http://10.51.0.22",
+     "urlface":"/terminal/api/interface.jsp?appid=22000022&appsecret=abcd1234&",
+     "type":1
+     },{
+     "title":"ITS Domino版",
+     "name":"ITS",
+     "oa_ip":"http://www.itserv.com.cn:8088",
+     "email_ip":"http://www.itserv.com.cn:8088",
+     "urlface":"/weboa/app.nsf/interface?OpenAgent&",
+     "type":0
+     }
+     ]
+}

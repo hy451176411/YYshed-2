@@ -1,0 +1,27 @@
+//
+//  TimeRemindInfos.h
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+
+
+@interface TimeRemindInfos : NSObject <NSCoding>
+
+@property (nonatomic, retain) NSString *uid;
+@property (nonatomic, retain) NSString *time;
+@property (nonatomic, retain) NSString *infosIdentifier;
+@property (nonatomic, retain) NSString *gn;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *gt;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) NSString *gid;
+
++ (TimeRemindInfos *)modelObjectWithDictionary:(NSDictionary *)dict;
+- (id)initWithDictionary:(NSDictionary *)dict;
+- (NSDictionary *)dictionaryRepresentation;
+
+@end

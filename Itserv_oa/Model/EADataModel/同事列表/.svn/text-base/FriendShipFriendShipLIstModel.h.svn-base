@@ -1,0 +1,22 @@
+//
+//  FriendShipFriendShipLIstModel.h
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#import "FriendShipData.h"
+
+@interface FriendShipFriendShipLIstModel : BaseModel <NSCoding>
+
+@property (nonatomic, retain) NSString *errorcode;
+@property (nonatomic, retain) NSArray *data;
+@property (nonatomic, retain) NSString *issuccess;
+
++ (FriendShipFriendShipLIstModel *)modelObjectWithDictionary:(NSDictionary *)dict;
+- (id)initWithDictionary:(NSDictionary *)dict;
+- (NSDictionary *)dictionaryRepresentation;
+
+@end

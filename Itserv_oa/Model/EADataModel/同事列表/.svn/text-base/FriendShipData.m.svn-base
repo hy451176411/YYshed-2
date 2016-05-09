@@ -1,0 +1,141 @@
+//
+//  FriendShipData.m
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import "FriendShipData.h"
+
+
+@interface FriendShipData ()
+
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict;
+
+@end
+
+@implementation FriendShipData
+
+@synthesize initials = _initials;
+@synthesize position = _position;
+@synthesize cellphone = _cellphone;
+@synthesize dataIdentifier = _dataIdentifier;
+@synthesize email = _email;
+@synthesize isattention = _isattention;
+@synthesize isonline = _isonline;
+@synthesize department = _department;
+@synthesize logo = _logo;
+@synthesize name = _name;
+
+
++ (FriendShipData *)modelObjectWithDictionary:(NSDictionary *)dict
+{
+    FriendShipData *instance = [[[FriendShipData alloc] initWithDictionary:dict] autorelease];
+    return instance;
+}
+
+- (id)initWithDictionary:(NSDictionary *)dict
+{
+    self = [super init];
+    
+    // This check serves to make sure that a non-NSDictionary object
+    // passed into the model class doesn't break the parsing.
+    if(self && [dict isKindOfClass:[NSDictionary class]]) {
+            self.initials = [self objectOrNilForKey:@"initials" fromDictionary:dict];
+            self.position = [self objectOrNilForKey:@"position" fromDictionary:dict];
+            self.cellphone = [self objectOrNilForKey:@"cellphone" fromDictionary:dict];
+            self.dataIdentifier = [self objectOrNilForKey:@"id" fromDictionary:dict];
+            self.email = [self objectOrNilForKey:@"email" fromDictionary:dict];
+            self.isattention = [self objectOrNilForKey:@"isattention" fromDictionary:dict];
+            self.isonline = [self objectOrNilForKey:@"isonline" fromDictionary:dict];
+            self.department = [self objectOrNilForKey:@"department" fromDictionary:dict];
+            self.logo = [self objectOrNilForKey:@"logo" fromDictionary:dict];
+            self.name = [self objectOrNilForKey:@"name" fromDictionary:dict];
+
+    }
+    
+    return self;
+    
+}
+
+- (NSDictionary *)dictionaryRepresentation
+{
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
+    [mutableDict setValue:self.initials forKey:@"initials"];
+    [mutableDict setValue:self.position forKey:@"position"];
+    [mutableDict setValue:self.cellphone forKey:@"cellphone"];
+    [mutableDict setValue:self.dataIdentifier forKey:@"id"];
+    [mutableDict setValue:self.email forKey:@"email"];
+    [mutableDict setValue:self.isattention forKey:@"isattention"];
+    [mutableDict setValue:self.isonline forKey:@"isonline"];
+    [mutableDict setValue:self.department forKey:@"department"];
+    [mutableDict setValue:self.logo forKey:@"logo"];
+    [mutableDict setValue:self.name forKey:@"name"];
+
+    return [NSDictionary dictionaryWithDictionary:mutableDict];
+}
+
+- (NSString *)description 
+{
+    return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
+}
+
+#pragma mark - Helper Method
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict
+{
+    id object = [dict objectForKey:aKey];
+    return [object isEqual:[NSNull null]] ? nil : object;
+}
+
+
+#pragma mark - NSCoding Methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+
+    self.initials = [aDecoder decodeObjectForKey:@"initials"];
+    self.position = [aDecoder decodeObjectForKey:@"position"];
+    self.cellphone = [aDecoder decodeObjectForKey:@"cellphone"];
+    self.dataIdentifier = [aDecoder decodeObjectForKey:@"dataIdentifier"];
+    self.email = [aDecoder decodeObjectForKey:@"email"];
+    self.isattention = [aDecoder decodeObjectForKey:@"isattention"];
+    self.isonline = [aDecoder decodeObjectForKey:@"isonline"];
+    self.department = [aDecoder decodeObjectForKey:@"department"];
+    self.logo = [aDecoder decodeObjectForKey:@"logo"];
+    self.name = [aDecoder decodeObjectForKey:@"name"];
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+
+    [aCoder encodeObject:_initials forKey:@"initials"];
+    [aCoder encodeObject:_position forKey:@"position"];
+    [aCoder encodeObject:_cellphone forKey:@"cellphone"];
+    [aCoder encodeObject:_dataIdentifier forKey:@"dataIdentifier"];
+    [aCoder encodeObject:_email forKey:@"email"];
+    [aCoder encodeObject:_isattention forKey:@"isattention"];
+    [aCoder encodeObject:_isonline forKey:@"isonline"];
+    [aCoder encodeObject:_department forKey:@"department"];
+    [aCoder encodeObject:_logo forKey:@"logo"];
+    [aCoder encodeObject:_name forKey:@"name"];
+}
+
+
+- (void)dealloc
+{
+    [_initials release];
+    [_position release];
+    [_cellphone release];
+    [_dataIdentifier release];
+    [_email release];
+    [_isattention release];
+    [_isonline release];
+    [_department release];
+    [_logo release];
+    [_name release];
+    [super dealloc];
+}
+
+@end

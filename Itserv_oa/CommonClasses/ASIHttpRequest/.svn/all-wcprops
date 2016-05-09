@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 285
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest
+END
+ASIHTTPRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 302
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIHTTPRequest.m
+END
+ASICacheDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 304
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASICacheDelegate.h
+END
+ASINetworkQueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 303
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASINetworkQueue.h
+END
+ASIDataDecompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 307
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIDataDecompressor.h
+END
+ASIAuthenticationDialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 311
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIAuthenticationDialog.h
+END
+ASIProgressDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 307
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIProgressDelegate.h
+END
+ASIDownloadCache.m
+K 25
+svn:wc:ra_dav:version-url
+V 304
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIDownloadCache.m
+END
+ASINetworkQueue.m
+K 25
+svn:wc:ra_dav:version-url
+V 303
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASINetworkQueue.m
+END
+Reachability.h
+K 25
+svn:wc:ra_dav:version-url
+V 300
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/Reachability.h
+END
+ASIDataDecompressor.m
+K 25
+svn:wc:ra_dav:version-url
+V 307
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIDataDecompressor.m
+END
+ASIAuthenticationDialog.m
+K 25
+svn:wc:ra_dav:version-url
+V 311
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIAuthenticationDialog.m
+END
+ASIFormDataRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 306
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIFormDataRequest.h
+END
+Reachability.m
+K 25
+svn:wc:ra_dav:version-url
+V 300
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/Reachability.m
+END
+ASIInputStream.h
+K 25
+svn:wc:ra_dav:version-url
+V 302
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIInputStream.h
+END
+ASIFormDataRequest.m
+K 25
+svn:wc:ra_dav:version-url
+V 306
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIFormDataRequest.m
+END
+ASIHTTPRequestConfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 308
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIHTTPRequestConfig.h
+END
+ASIInputStream.m
+K 25
+svn:wc:ra_dav:version-url
+V 302
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIInputStream.m
+END
+ASIHTTPRequestDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 310
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIHTTPRequestDelegate.h
+END
+ASIDataCompressor.h
+K 25
+svn:wc:ra_dav:version-url
+V 305
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIDataCompressor.h
+END
+ASIHTTPRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 302
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIHTTPRequest.h
+END
+ASIDownloadCache.h
+K 25
+svn:wc:ra_dav:version-url
+V 304
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIDownloadCache.h
+END
+ASIDataCompressor.m
+K 25
+svn:wc:ra_dav:version-url
+V 305
+/svn/Project/!svn/ver/41537/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91/%E4%B8%AD%E5%9B%BD%E5%8D%8F%E5%90%8C%E5%88%9B%E6%96%B0%E7%BD%91%E4%BC%81%E4%B8%9A%E7%89%88%E7%A7%BB%E5%8A%A8app%E4%B8%80%E6%9C%9F/code/ios/SynergyInnovate/SynergyInnovate/Library/ASIHttpRequest/ASIDataCompressor.m
+END

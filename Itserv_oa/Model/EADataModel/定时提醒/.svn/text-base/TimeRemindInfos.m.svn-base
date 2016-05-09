@@ -1,0 +1,129 @@
+//
+//  TimeRemindInfos.m
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import "TimeRemindInfos.h"
+
+
+@interface TimeRemindInfos ()
+
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict;
+
+@end
+
+@implementation TimeRemindInfos
+
+@synthesize uid = _uid;
+@synthesize time = _time;
+@synthesize infosIdentifier = _infosIdentifier;
+@synthesize gn = _gn;
+@synthesize title = _title;
+@synthesize gt = _gt;
+@synthesize type = _type;
+@synthesize gid = _gid;
+
+
++ (TimeRemindInfos *)modelObjectWithDictionary:(NSDictionary *)dict
+{
+    TimeRemindInfos *instance = [[[TimeRemindInfos alloc] initWithDictionary:dict] autorelease];
+    return instance;
+}
+
+- (id)initWithDictionary:(NSDictionary *)dict
+{
+    self = [super init];
+    
+    // This check serves to make sure that a non-NSDictionary object
+    // passed into the model class doesn't break the parsing.
+    if(self && [dict isKindOfClass:[NSDictionary class]]) {
+            self.uid = [self objectOrNilForKey:@"uid" fromDictionary:dict];
+            self.time = [self objectOrNilForKey:@"time" fromDictionary:dict];
+            self.infosIdentifier = [self objectOrNilForKey:@"id" fromDictionary:dict];
+            self.gn = [self objectOrNilForKey:@"gn" fromDictionary:dict];
+            self.title = [self objectOrNilForKey:@"title" fromDictionary:dict];
+            self.gt = [self objectOrNilForKey:@"gt" fromDictionary:dict];
+            self.type = [self objectOrNilForKey:@"type" fromDictionary:dict];
+            self.gid = [self objectOrNilForKey:@"gid" fromDictionary:dict];
+
+    }
+    
+    return self;
+    
+}
+
+- (NSDictionary *)dictionaryRepresentation
+{
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
+    [mutableDict setValue:self.uid forKey:@"uid"];
+    [mutableDict setValue:self.time forKey:@"time"];
+    [mutableDict setValue:self.infosIdentifier forKey:@"id"];
+    [mutableDict setValue:self.gn forKey:@"gn"];
+    [mutableDict setValue:self.title forKey:@"title"];
+    [mutableDict setValue:self.gt forKey:@"gt"];
+    [mutableDict setValue:self.type forKey:@"type"];
+    [mutableDict setValue:self.gid forKey:@"gid"];
+
+    return [NSDictionary dictionaryWithDictionary:mutableDict];
+}
+
+- (NSString *)description 
+{
+    return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
+}
+
+#pragma mark - Helper Method
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict
+{
+    id object = [dict objectForKey:aKey];
+    return [object isEqual:[NSNull null]] ? nil : object;
+}
+
+
+#pragma mark - NSCoding Methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+
+    self.uid = [aDecoder decodeObjectForKey:@"uid"];
+    self.time = [aDecoder decodeObjectForKey:@"time"];
+    self.infosIdentifier = [aDecoder decodeObjectForKey:@"infosIdentifier"];
+    self.gn = [aDecoder decodeObjectForKey:@"gn"];
+    self.title = [aDecoder decodeObjectForKey:@"title"];
+    self.gt = [aDecoder decodeObjectForKey:@"gt"];
+    self.type = [aDecoder decodeObjectForKey:@"type"];
+    self.gid = [aDecoder decodeObjectForKey:@"gid"];
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+
+    [aCoder encodeObject:_uid forKey:@"uid"];
+    [aCoder encodeObject:_time forKey:@"time"];
+    [aCoder encodeObject:_infosIdentifier forKey:@"infosIdentifier"];
+    [aCoder encodeObject:_gn forKey:@"gn"];
+    [aCoder encodeObject:_title forKey:@"title"];
+    [aCoder encodeObject:_gt forKey:@"gt"];
+    [aCoder encodeObject:_type forKey:@"type"];
+    [aCoder encodeObject:_gid forKey:@"gid"];
+}
+
+
+- (void)dealloc
+{
+    [_uid release];
+    [_time release];
+    [_infosIdentifier release];
+    [_gn release];
+    [_title release];
+    [_gt release];
+    [_type release];
+    [_gid release];
+    [super dealloc];
+}
+
+@end

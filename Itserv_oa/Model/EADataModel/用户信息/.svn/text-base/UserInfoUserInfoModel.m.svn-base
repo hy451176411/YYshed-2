@@ -1,0 +1,109 @@
+//
+//  UserInfoUserInfoModel.m
+//
+//  Created by 于飞跃  on 13-8-16
+//  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
+//
+
+#import "UserInfoUserInfoModel.h"
+
+NSString *const kUserInfoUserInfoModelErrorcode = @"errorcode";
+NSString *const kUserInfoUserInfoModelData = @"data";
+NSString *const kUserInfoUserInfoModelCount = @"count";
+NSString *const kUserInfoUserInfoModelIssuccess = @"issuccess";
+
+@interface UserInfoUserInfoModel ()
+
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict;
+
+@end
+
+@implementation UserInfoUserInfoModel
+
+@synthesize errorcode = _errorcode;
+@synthesize data = _data;
+@synthesize count = _count;
+@synthesize issuccess = _issuccess;
+
+
++ (UserInfoUserInfoModel *)modelObjectWithDictionary:(NSDictionary *)dict
+{
+    UserInfoUserInfoModel *instance = [[[UserInfoUserInfoModel alloc] initWithDictionary:dict] autorelease];
+    return instance;
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dict
+{
+    self = [super init];
+    
+    // This check serves to make sure that a non-NSDictionary object
+    // passed into the model class doesn't break the parsing.
+    if(self && [dict isKindOfClass:[NSDictionary class]]) {
+        self.errorcode = [self objectOrNilForKey:kUserInfoUserInfoModelErrorcode fromDictionary:dict];
+        self.data = [UserInfoData modelObjectWithDictionary:[dict objectForKey:kUserInfoUserInfoModelData]];
+        self.count = [UserInfoCount modelObjectWithDictionary:[dict objectForKey:kUserInfoUserInfoModelCount]];
+        self.issuccess = [self objectOrNilForKey:kUserInfoUserInfoModelIssuccess fromDictionary:dict];
+        
+    }
+    
+    return self;
+    
+}
+
+- (NSDictionary *)dictionaryRepresentation
+{
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
+    [mutableDict setValue:self.errorcode forKey:kUserInfoUserInfoModelErrorcode];
+    [mutableDict setValue:[self.data dictionaryRepresentation] forKey:kUserInfoUserInfoModelData];
+    [mutableDict setValue:[self.count dictionaryRepresentation] forKey:kUserInfoUserInfoModelCount];
+    [mutableDict setValue:self.issuccess forKey:kUserInfoUserInfoModelIssuccess];
+    
+    return [NSDictionary dictionaryWithDictionary:mutableDict];
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@", [self dictionaryRepresentation]];
+}
+
+#pragma mark - Helper Method
+- (id)objectOrNilForKey:(id)aKey fromDictionary:(NSDictionary *)dict
+{
+    id object = [dict objectForKey:aKey];
+    return [object isEqual:[NSNull null]] ? nil : object;
+}
+
+
+#pragma mark - NSCoding Methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    
+    self.errorcode = [aDecoder decodeObjectForKey:kUserInfoUserInfoModelErrorcode];
+    self.data = [aDecoder decodeObjectForKey:kUserInfoUserInfoModelData];
+    self.count = [aDecoder decodeObjectForKey:kUserInfoUserInfoModelCount];
+    self.issuccess = [aDecoder decodeObjectForKey:kUserInfoUserInfoModelIssuccess];
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    
+    [aCoder encodeObject:_errorcode forKey:kUserInfoUserInfoModelErrorcode];
+    [aCoder encodeObject:_data forKey:kUserInfoUserInfoModelData];
+    [aCoder encodeObject:_count forKey:kUserInfoUserInfoModelCount];
+    [aCoder encodeObject:_issuccess forKey:kUserInfoUserInfoModelIssuccess];
+}
+
+
+- (void)dealloc
+{
+    [_errorcode release];
+    [_data release];
+    [_count release];
+    [_issuccess release];
+    [super dealloc];
+}
+
+@end
