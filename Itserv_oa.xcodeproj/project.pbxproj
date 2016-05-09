@@ -12,6 +12,10 @@
 		04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */; };
 		04B9E0A71CE09713004CC6D5 /* ShedHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0A51CE09713004CC6D5 /* ShedHomeViewController.m */; };
 		04B9E0A81CE09713004CC6D5 /* ShedHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B9E0A61CE09713004CC6D5 /* ShedHomeViewController.xib */; };
+		04D4B9ED1CE0B27C00124034 /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D4B9EC1CE0B27C00124034 /* login_bg.png */; };
+		04D4B9F01CE0C39C00124034 /* logo_sinaweibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D4B9EE1CE0C39C00124034 /* logo_sinaweibo.png */; };
+		04D4B9F11CE0C39C00124034 /* logo_tencentweibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D4B9EF1CE0C39C00124034 /* logo_tencentweibo.png */; };
+		04D4B9F31CE0C3B400124034 /* logo_qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D4B9F21CE0C3B400124034 /* logo_qq.png */; };
 		04F12F8D1CE050480014E655 /* a1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F12F891CE050480014E655 /* a1.png */; };
 		04F12F8E1CE050480014E655 /* a2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F12F8A1CE050480014E655 /* a2.png */; };
 		04F12F8F1CE050480014E655 /* a3.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F12F8B1CE050480014E655 /* a3.png */; };
@@ -366,6 +370,10 @@
 		04B9E0A41CE09713004CC6D5 /* ShedHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedHomeViewController.h; sourceTree = "<group>"; };
 		04B9E0A51CE09713004CC6D5 /* ShedHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedHomeViewController.m; sourceTree = "<group>"; };
 		04B9E0A61CE09713004CC6D5 /* ShedHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShedHomeViewController.xib; sourceTree = "<group>"; };
+		04D4B9EC1CE0B27C00124034 /* login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bg.png; sourceTree = "<group>"; };
+		04D4B9EE1CE0C39C00124034 /* logo_sinaweibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_sinaweibo.png; sourceTree = "<group>"; };
+		04D4B9EF1CE0C39C00124034 /* logo_tencentweibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_tencentweibo.png; sourceTree = "<group>"; };
+		04D4B9F21CE0C3B400124034 /* logo_qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_qq.png; sourceTree = "<group>"; };
 		04F12F891CE050480014E655 /* a1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a1.png; sourceTree = "<group>"; };
 		04F12F8A1CE050480014E655 /* a2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a2.png; sourceTree = "<group>"; };
 		04F12F8B1CE050480014E655 /* a3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a3.png; sourceTree = "<group>"; };
@@ -844,10 +852,14 @@
 		04F12F921CE0506F0014E655 /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
+				04D4B9EC1CE0B27C00124034 /* login_bg.png */,
+				04D4B9EE1CE0C39C00124034 /* logo_sinaweibo.png */,
+				04D4B9EF1CE0C39C00124034 /* logo_tencentweibo.png */,
 				04F12FCB1CE052790014E655 /* login_btn_bg.png */,
 				04F12FC91CE052660014E655 /* input1.png */,
 				04F12FAB1CE0512F0014E655 /* number_icon.png */,
 				04F12FAC1CE0512F0014E655 /* number_icon2.png */,
+				04D4B9F21CE0C3B400124034 /* logo_qq.png */,
 				04F12FA11CE0510E0014E655 /* logo_qq.png */,
 				04F12FA21CE0510E0014E655 /* logo_sinaweibo.png */,
 				04F12FA31CE0510E0014E655 /* logo_tencentweibo.png */,
@@ -1974,6 +1986,7 @@
 				63A7379F1941915800DCBD68 /* icon_attachbtn_paperclip_highlighted.png in Resources */,
 				A53D266D1AC13C9A00C14721 /* ).png in Resources */,
 				63B0F0B71990C34500791D0F /* Icon.png in Resources */,
+				04D4B9F01CE0C39C00124034 /* logo_sinaweibo.png in Resources */,
 				63E5A51B1936DE27008CC126 /* CustomSwitch.xib in Resources */,
 				A5E870101ABC1555005195ED /* EmailContactsViewController_iPhone.xib in Resources */,
 				04F12F9E1CE050F90014E655 /* feature_guide_0.jpg in Resources */,
@@ -2066,6 +2079,7 @@
 				63405401194072C90019052B /* SendEmailViewController_iPhone.xib in Resources */,
 				63B0F0B81990C34500791D0F /* Icon@2x.png in Resources */,
 				04F12FAA1CE051210014E655 /* logo1.png in Resources */,
+				04D4B9F11CE0C39C00124034 /* logo_tencentweibo.png in Resources */,
 				63341609197E805800303105 /* selectOn.png in Resources */,
 				63B9A78B1980DD58005ED169 /* back.png in Resources */,
 				63B098A7194590EB0055457D /* HomeViewController.xib in Resources */,
@@ -2095,11 +2109,13 @@
 				A54AF5D71AC27C48000B5B8F /* 发短信.png in Resources */,
 				A5E86FE81ABC0D64005195ED /* BindingEmailViewController_iPhone.xib in Resources */,
 				63A7379719418F2600DCBD68 /* icon_attach_panel_camera_highlighted.png in Resources */,
+				04D4B9F31CE0C3B400124034 /* logo_qq.png in Resources */,
 				63F3E485193C8B3400C4F7BA /* ProcessFileCell.xib in Resources */,
 				A5E86FF01ABC13F3005195ED /* EmailPopListViewController_iPad.xib in Resources */,
 				04F12F8E1CE050480014E655 /* a2.png in Resources */,
 				6374B6511938AD110071710A /* SendReceiveViewController_iPad.xib in Resources */,
 				63B20A971946D89C00D16C5B /* btn_add.png in Resources */,
+				04D4B9ED1CE0B27C00124034 /* login_bg.png in Resources */,
 				634053F619404A400019052B /* arrow_down.png in Resources */,
 				A55088101AD61E3800E6C351 /* SelectType@2x.png in Resources */,
 				A5C8B0BD1A8C6722008496A2 /* back_normal@2x.png in Resources */,
