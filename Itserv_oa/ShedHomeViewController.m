@@ -24,7 +24,7 @@
 	img.frame =CGRectMake(0, 0, 30, 30);
 	img.backgroundColor = [UIColor clearColor];
 	item.customView = img ;
-	
+	//右边按钮
 	UIImage *right = [UIImage imageNamed:@"add.png"];
 	
 	UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] init];
