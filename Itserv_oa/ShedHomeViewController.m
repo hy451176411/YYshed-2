@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
-	
+	//添加左边的按钮
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
 	UIImage *left = [UIImage imageNamed:@"logo.png"];
 	UIImageView* img = [[UIImageView alloc] initWithImage:left];
