@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class Friend;
+@class Component;
 
 @interface FriendGroup : NSObject
 

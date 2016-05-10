@@ -7,7 +7,7 @@
 //
 
 #import "ShedHomeViewController.h"
-#import "Friend.h"
+#import "Component.h"
 #import "FriendGroup.h"
 #import "FriendCell.h"
 #import "FriendHeader.h"
@@ -54,7 +54,8 @@
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
 	self.theRequest = [NetRequestManager createNetRequestWithDelegate:self];
-	[self initDataSource];
+	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
+	[_theRequest getUserInfo:session_token user_Agent:@"test"];
 }
 - (BOOL)prefersStatusBarHidden {
 	return YES;
@@ -77,6 +78,7 @@
 
 #pragma mark - dataSource方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	int nums = self.friendGroups.count;
 	return self.friendGroups.count;
 }
 
@@ -126,20 +128,60 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)initDataSource
+-(void)initDataSource:(NSDictionary *)model
 {
-	NSDictionary *dic02=[NSDictionary dictionaryWithObjectsAndKeys:@"001.png",@"icon",@"不要命的工作",@"intro",@"黄晓明",@"name",@"1",@"vip", nil];
-	NSArray *friends1=[NSArray arrayWithObjects:dic02, nil];
-	
-	NSDictionary *datas =[NSDictionary dictionaryWithObjectsAndKeys:@"我的好友",@"name",@"1",@"online",friends1,@"friends", nil];
-	self.groupsArray = [NSArray arrayWithObjects:datas,nil];
-	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
-	[_theRequest getUserInfo:session_token user_Agent:@"test"];
+	NSMutableArray *groups = [NSMutableArray arrayWithCapacity:3];
+	NSArray *smartgates = model[@"smartgates"];
+	for (int i=0;i<smartgates.count; i++) {
+		NSDictionary *smartgate = smartgates[i];
+		NSDictionary *smartgateV = smartgate[@"smartgate"];
+		NSString *dev_name = smartgateV[@"dev_name"];
+		
+		NSArray *components = smartgate[@"components"];
+		NSString *air_temperature;
+		NSString *air_humidity;
+		NSString *sn;
+		if(components!=nil)
+		{
+			NSDictionary *component = components[0];
+			air_temperature = component[@"air_temperature"];
+			if(air_temperature==nil){
+				air_temperature= @"0";
+			}
+			air_humidity = component[@"air_humidity"];
+			if(air_humidity==nil){
+				air_humidity= @"0";
+			}
+			sn = component[@"sn"];
+			if(sn==nil){
+				sn= @"0";
+			}
+		}
+		
+		NSDictionary *dic02=[NSDictionary dictionaryWithObjectsAndKeys:air_temperature,@"air_temperature",air_humidity,@"air_humidity",sn,@"sn", nil];
+		NSArray *friends1=[NSArray arrayWithObjects:dic02, nil];
+		
+		NSDictionary *datas =[NSDictionary dictionaryWithObjectsAndKeys:dev_name,@"name",@"1",@"online",friends1,@"friends", nil];
+		[groups addObject:datas];
+		
+	}
+	self.groupsArray = [NSMutableArray arrayWithCapacity:3];
+	self.groupsArray = groups;
+	if (nil != groups) {
+		NSMutableArray *mgroupsArray = [NSMutableArray array];
+		for (NSDictionary *groupDict in groups) {
+			FriendGroup *group = [FriendGroup friendGroupWithDictionary:groupDict];
+			[mgroupsArray addObject:group];
+		}
+		self.friendGroups = mgroupsArray;
+	}
+	[self.tableView reloadData];
 }
 #pragma mark 登录请求成功
 - (void)netRequest:(int)tag Finished:(NSDictionary *)model
 {
 	NSLog(@"----------%@",model);
+	[self initDataSource:model];
 
 }
 

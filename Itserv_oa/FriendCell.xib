@@ -58,8 +58,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-40.1C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nYX-Pf-Tod">
-                        <rect key="frame" x="65" y="149" width="46" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-40.1C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nYX-Pf-Tod">
+                        <rect key="frame" x="74" y="149" width="46" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,8 +72,8 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ECc-Kn-FP5">
-                        <rect key="frame" x="171" y="149" width="46" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ECc-Kn-FP5">
+                        <rect key="frame" x="180" y="149" width="46" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,8 +86,8 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TMv-lG-Y39">
-                        <rect key="frame" x="266" y="149" width="46" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TMv-lG-Y39">
+                        <rect key="frame" x="275" y="149" width="46" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,8 +96,12 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="desc" destination="nYX-Pf-Tod" id="fGn-L0-8Ib"/>
-                <outlet property="img" destination="Tk6-9A-uE9" id="wta-sh-SEK"/>
+                <outlet property="mLable" destination="nYX-Pf-Tod" id="PMU-QT-1nh"/>
+                <outlet property="mLable1" destination="ECc-Kn-FP5" id="mjw-ld-pOL"/>
+                <outlet property="mLable2" destination="TMv-lG-Y39" id="eWk-pM-TDK"/>
+                <outlet property="mPointer" destination="ukO-au-Asv" id="u9u-xN-BGK"/>
+                <outlet property="mPointer1" destination="Tdp-2u-gB7" id="5Wn-DO-p69"/>
+                <outlet property="mPointer2" destination="twJ-Fh-GrZ" id="cXc-VI-d39"/>
             </connections>
             <point key="canvasLocation" x="225" y="273"/>
         </tableViewCell>

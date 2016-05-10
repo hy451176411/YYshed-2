@@ -8,19 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Friend : NSObject
+@interface Component : NSObject
 
-/** 头像 */
-@property(nonatomic, copy) NSString *icon;
+/** air_temperature */
+@property(nonatomic, copy) NSString *air_temperature;
 
-/** 介绍 */
-@property(nonatomic, copy) NSString *intro;
+/** air_humidity */
+@property(nonatomic, copy) NSString *air_humidity;
 
-/** 名字 */
-@property(nonatomic, copy) NSString *name;
-
-/** vip标志 */
-@property(nonatomic, assign, getter=isVip) NSString *vip;
+/** sn */
+@property(nonatomic, copy) NSString *sn;
 
 - (instancetype) initWithDictionary:(NSDictionary *) dictionary;
 + (instancetype) friendWithDictionary:(NSDictionary *) dictionary;

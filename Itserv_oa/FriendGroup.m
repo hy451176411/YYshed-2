@@ -7,7 +7,7 @@
 //
 
 #import "FriendGroup.h"
-#import "Friend.h"
+#import "Component.h"
 
 @implementation FriendGroup
 
@@ -16,7 +16,7 @@
         [self setValuesForKeysWithDictionary:dictionary];
         NSMutableArray *mFriendsArray = [NSMutableArray array];
         for (NSDictionary *friendDict in self.friends) {
-            Friend *friend = [Friend friendWithDictionary:friendDict];
+            Component *friend = [Component friendWithDictionary:friendDict];
             [mFriendsArray addObject:friend];
         }
         

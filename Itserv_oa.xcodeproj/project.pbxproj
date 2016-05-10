@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		044C79C31CE17C0000F9EE21 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79BB1CE17C0000F9EE21 /* Friend.m */; };
+		044C79C31CE17C0000F9EE21 /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79BB1CE17C0000F9EE21 /* Component.m */; };
 		044C79C51CE17C0000F9EE21 /* FriendGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79BF1CE17C0000F9EE21 /* FriendGroup.m */; };
 		044C79C61CE17C0000F9EE21 /* FriendHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79C11CE17C0000F9EE21 /* FriendHeader.m */; };
 		044C79C71CE17C0000F9EE21 /* friends.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044C79C21CE17C0000F9EE21 /* friends.plist */; };
@@ -29,6 +29,7 @@
 		044C79F01CE1D7B200F9EE21 /* chart2.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79ED1CE1D7B200F9EE21 /* chart2.png */; };
 		044C79F11CE1D7B200F9EE21 /* chart3.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79EE1CE1D7B200F9EE21 /* chart3.png */; };
 		044C79F31CE1D98100F9EE21 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79F21CE1D98100F9EE21 /* pointer.png */; };
+		044EE82B1CE1F77C007C90C2 /* Smartgate.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE82A1CE1F77C007C90C2 /* Smartgate.m */; };
 		045EAFD41CD0700C008AE499 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EAFD21CD0700C008AE499 /* TestView.m */; };
 		045EAFD51CD0700C008AE499 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EAFD31CD0700C008AE499 /* TestView.xib */; };
 		04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */; };
@@ -384,8 +385,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		044C79BA1CE17C0000F9EE21 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
-		044C79BB1CE17C0000F9EE21 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		044C79BA1CE17C0000F9EE21 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
+		044C79BB1CE17C0000F9EE21 /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Component.m; sourceTree = "<group>"; };
 		044C79BE1CE17C0000F9EE21 /* FriendGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGroup.h; sourceTree = "<group>"; };
 		044C79BF1CE17C0000F9EE21 /* FriendGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroup.m; sourceTree = "<group>"; };
 		044C79C01CE17C0000F9EE21 /* FriendHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendHeader.h; sourceTree = "<group>"; };
@@ -410,6 +411,8 @@
 		044C79ED1CE1D7B200F9EE21 /* chart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart2.png; sourceTree = "<group>"; };
 		044C79EE1CE1D7B200F9EE21 /* chart3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart3.png; sourceTree = "<group>"; };
 		044C79F21CE1D98100F9EE21 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
+		044EE8291CE1F77C007C90C2 /* Smartgate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smartgate.h; sourceTree = "<group>"; };
+		044EE82A1CE1F77C007C90C2 /* Smartgate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Smartgate.m; sourceTree = "<group>"; };
 		045EAFD11CD0700C008AE499 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		045EAFD21CD0700C008AE499 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		045EAFD31CD0700C008AE499 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
@@ -869,8 +872,8 @@
 		044C79B91CE17BE400F9EE21 /* friend */ = {
 			isa = PBXGroup;
 			children = (
-				044C79BA1CE17C0000F9EE21 /* Friend.h */,
-				044C79BB1CE17C0000F9EE21 /* Friend.m */,
+				044C79BA1CE17C0000F9EE21 /* Component.h */,
+				044C79BB1CE17C0000F9EE21 /* Component.m */,
 				044C79BE1CE17C0000F9EE21 /* FriendGroup.h */,
 				044C79BF1CE17C0000F9EE21 /* FriendGroup.m */,
 				044C79C01CE17C0000F9EE21 /* FriendHeader.h */,
@@ -879,6 +882,8 @@
 				044C79E71CE1BEE800F9EE21 /* FriendCell.h */,
 				044C79E81CE1BEE800F9EE21 /* FriendCell.m */,
 				044C79E91CE1BEE800F9EE21 /* FriendCell.xib */,
+				044EE8291CE1F77C007C90C2 /* Smartgate.h */,
+				044EE82A1CE1F77C007C90C2 /* Smartgate.m */,
 			);
 			name = friend;
 			sourceTree = "<group>";
@@ -2344,7 +2349,7 @@
 				639578751938935C00FDE95D /* UIView+LoadXib.m in Sources */,
 				63ED7C721939CB23005B7B93 /* ASINetworkQueue.m in Sources */,
 				63405400194072C90019052B /* SendEmailViewController.m in Sources */,
-				044C79C31CE17C0000F9EE21 /* Friend.m in Sources */,
+				044C79C31CE17C0000F9EE21 /* Component.m in Sources */,
 				63ED7C731939CB23005B7B93 /* Reachability.m in Sources */,
 				04F12FD81CE056B90014E655 /* YYshedRootViewController.m in Sources */,
 				A5E86FE61ABC0D64005195ED /* BindingEmailViewController.m in Sources */,
@@ -2362,6 +2367,7 @@
 				63341557197E30E100303105 /* SwitchingAddressViewController.m in Sources */,
 				04F12FC71CE052200014E655 /* FourController.m in Sources */,
 				044C79C61CE17C0000F9EE21 /* FriendHeader.m in Sources */,
+				044EE82B1CE1F77C007C90C2 /* Smartgate.m in Sources */,
 				63F3E47D193C89EF00C4F7BA /* ProcessFileViewController.m in Sources */,
 				63F3E483193C8B1B00C4F7BA /* ProcessFileCell.m in Sources */,
 				63ED7C6B1939CB23005B7B93 /* ASIAuthenticationDialog.m in Sources */,

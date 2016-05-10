@@ -7,14 +7,10 @@
 //
 
 #import "FriendCell.h"
-#import "Friend.h"
+#import "Component.h"
 @implementation FriendCell
 
 - (void)awakeFromNib {
-    // Initialization code
-//	self.img.backgroundColor=[UIColor clearColor];
-//	self.title.backgroundColor=[UIColor clearColor];
-//	self.desc.backgroundColor=[UIColor clearColor];
 
 }
 
@@ -37,10 +33,10 @@
 }
 
 /** 加载数据 */
-- (void)setFriendData:(Friend *)friendData {
+- (void)setFriendData:(Component *)friendData {
 	_friendData = friendData;
-	//self.img.image = [UIImage imageNamed:friendData.icon];
-	//self.title.text = friendData.name;
+	self.mLable.text = friendData.air_temperature;
+	self.mLable1.text = friendData.air_humidity;
 	//self.desc.textColor = friendData.isVip?[UIColor redColor]:[UIColor blackColor];
 	//self.desc.text = friendData.intro;
 }

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 hellovoidworld. All rights reserved.
 //
 
-#import "Friend.h"
+#import "Component.h"
 
-@implementation Friend
+@implementation Component
 
 - (instancetype) initWithDictionary:(NSDictionary *) dictionary {
     if (self = [super init]) {

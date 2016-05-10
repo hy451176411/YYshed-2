@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Friend;
+@class Component;
 @interface FriendCell : UITableViewCell
 
-@property(nonatomic, strong) Friend *friendData;
-@property (weak, nonatomic) IBOutlet UIImageView *img;
-@property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UILabel *desc;
+@property(nonatomic, strong) Component *friendData;
+@property (weak, nonatomic) IBOutlet UIImageView *mPointer;
+@property (weak, nonatomic) IBOutlet UIImageView *mPointer1;
+@property (weak, nonatomic) IBOutlet UIImageView *mPointer2;
+@property (weak, nonatomic) IBOutlet UILabel *mLable;
 
+@property (weak, nonatomic) IBOutlet UILabel *mLable1;
+@property (weak, nonatomic) IBOutlet UILabel *mLable2;
 + (instancetype) cellWithTableView:(UITableView *) tableView;
 @end

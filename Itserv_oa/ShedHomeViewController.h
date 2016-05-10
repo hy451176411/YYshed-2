@@ -12,6 +12,6 @@
 
 @interface ShedHomeViewController : UIViewController<UITextFieldDelegate,YYNetRequestDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) NSArray *groupsArray;
--(void)initDataSource;
+@property (weak, nonatomic) NSMutableArray *groupsArray;
+-(void)initDataSource:(NSDictionary *)model;
 @end
