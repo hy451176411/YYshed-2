@@ -14,7 +14,6 @@
 - (instancetype) initWithDictionary:(NSDictionary *) dictionary {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dictionary];
-        
         NSMutableArray *mFriendsArray = [NSMutableArray array];
         for (NSDictionary *friendDict in self.friends) {
             Friend *friend = [Friend friendWithDictionary:friendDict];

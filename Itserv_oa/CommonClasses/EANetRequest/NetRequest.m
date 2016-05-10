@@ -186,8 +186,6 @@
 			NSLog(@"Test：%@",response);
 		}
 	}
-
- 
 }
 
 #pragma mark 登录接口

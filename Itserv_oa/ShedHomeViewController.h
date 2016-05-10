@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YYNetRequest.h"
+#import "EADefine.h"
 
-@interface ShedHomeViewController : UIViewController
+@interface ShedHomeViewController : UIViewController<UITextFieldDelegate,YYNetRequestDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (weak, nonatomic) NSArray *groupsArray;
+-(void)initDataSource;
 @end

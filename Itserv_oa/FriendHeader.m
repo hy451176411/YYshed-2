@@ -11,13 +11,7 @@
 
 @implementation FriendHeader
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+
 
 + (instancetype) friendHeaderWithTableView:(UITableView *) tableView {
     static NSString *ID = @"friendHeader";
@@ -103,7 +97,7 @@
     [self.headerButtonView setTitle:friendGroup.name forState:UIControlStateNormal];
     
     // 2.在线人数/好友数
-    self.onlineCountView.text = [NSString stringWithFormat:@"%d/%d", friendGroup.online, friendGroup.friends.count];
+    self.onlineCountView.text = [NSString stringWithFormat:@"%@/%d", friendGroup.online, friendGroup.friends.count];
 }
 
 /** 点击事件 */

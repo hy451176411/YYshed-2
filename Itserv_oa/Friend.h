@@ -20,7 +20,7 @@
 @property(nonatomic, copy) NSString *name;
 
 /** vip标志 */
-@property(nonatomic, assign, getter=isVip) BOOL vip;
+@property(nonatomic, assign, getter=isVip) NSString *vip;
 
 - (instancetype) initWithDictionary:(NSDictionary *) dictionary;
 + (instancetype) friendWithDictionary:(NSDictionary *) dictionary;

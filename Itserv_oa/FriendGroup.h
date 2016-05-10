@@ -19,7 +19,7 @@
 @property(nonatomic, copy) NSString *name;
 
 /** 在线人数 */
-@property(nonatomic, assign) int online;
+@property(nonatomic, assign) NSString *online;
 
 /** 是否伸展显示好友 */
 @property(nonatomic, assign, getter=isOpened) BOOL opened;

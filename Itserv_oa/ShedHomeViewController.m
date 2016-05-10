@@ -16,13 +16,12 @@
 @interface ShedHomeViewController () <FriendHeaderDelegate>
 
 @property(nonatomic, strong) NSArray *friendGroups;
-
+@property (nonatomic, retain) YYNetRequest *theRequest;
 @end
 
 @implementation ShedHomeViewController
 
 
-NSDictionary *dataDic;//第二层需要展示的数据
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
@@ -54,7 +53,8 @@ NSDictionary *dataDic;//第二层需要展示的数据
 	self.tableView.sectionHeaderHeight = 44;
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
-	[self.tableView reloadData];
+	self.theRequest = [NetRequestManager createNetRequestWithDelegate:self];
+	[self initDataSource];
 }
 - (BOOL)prefersStatusBarHidden {
 	return YES;
@@ -63,10 +63,9 @@ NSDictionary *dataDic;//第二层需要展示的数据
 /** 加载数据 */
 - (NSArray *) friendGroups {
 	if (nil == _friendGroups) {
-		NSArray *groupsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"friends.plist" ofType:nil]];
 		
 		NSMutableArray *mgroupsArray = [NSMutableArray array];
-		for (NSDictionary *groupDict in groupsArray) {
+		for (NSDictionary *groupDict in self.groupsArray) {
 			FriendGroup *group = [FriendGroup friendGroupWithDictionary:groupDict];
 			[mgroupsArray addObject:group];
 		}
@@ -123,14 +122,34 @@ NSDictionary *dataDic;//第二层需要展示的数据
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)initDataSource
+{
+	NSDictionary *dic02=[NSDictionary dictionaryWithObjectsAndKeys:@"001.png",@"icon",@"不要命的工作",@"intro",@"黄晓明",@"name",@"1",@"vip", nil];
+	NSDictionary *dic03=[NSDictionary dictionaryWithObjectsAndKeys:@"002.png",@"icon",@"不要命的工作",@"intro",@"黄晓明1",@"name",@"1",@"vip", nil];
+	
+	NSArray *friends1=[NSArray arrayWithObjects:dic02,dic03, nil];
+	
+	NSDictionary *datas =[NSDictionary dictionaryWithObjectsAndKeys:@"我的好友",@"name",@"1",@"online",friends1,@"friends", nil];
+	self.groupsArray = [NSArray arrayWithObjects:datas,nil];
+	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
+	[_theRequest getUserInfo:session_token user_Agent:@"test"];
 }
-*/
+#pragma mark 登录请求成功
+- (void)netRequest:(int)tag Finished:(NSDictionary *)model
+{
+	NSLog(@"----------%@",model);
+
+}
+
+- (void)netRequest:(int)tag Failed:(NSDictionary *)model
+{
+	NSLog(@"请求超时");
+	[SBPublicAlert showMBProgressHUD:@"请求超时" andWhereView:self.view hiddenTime:kHiddenAlertTime];
+}
+
+- (void)netRequest:(int)tag requestFailed:(NSString *)message
+{
+	[SBPublicAlert showMBProgressHUD:message andWhereView:self.view hiddenTime:kHiddenAlertTime];
+}
 
 @end

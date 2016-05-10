@@ -10,7 +10,7 @@
 
 
 @interface YYshedLoginController ()
-@property (nonatomic, retain) NetRequest *theRequest;
+@property (nonatomic, retain) YYNetRequest *theRequest;
 @end
 
 @implementation YYshedLoginController

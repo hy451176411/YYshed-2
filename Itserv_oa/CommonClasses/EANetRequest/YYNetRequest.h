@@ -46,6 +46,8 @@
  *
  */
 - (id)initWithDelegate:(id <NetRequestDelegate>)aDelegate;
-
+//登录接口
 -(void)login:(NSString*) username password:(NSString*) psd;
+//获取大鹏首页数据
+-(void)getUserInfo:(NSString*)session_token user_Agent:(NSString*)Agent;
 @end
