@@ -25,6 +25,10 @@
 		044C79E01CE17DBB00F9EE21 /* buddy_header_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79DF1CE17DBB00F9EE21 /* buddy_header_bg.png */; };
 		044C79EA1CE1BEE800F9EE21 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79E81CE1BEE800F9EE21 /* FriendCell.m */; };
 		044C79EB1CE1BEE800F9EE21 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044C79E91CE1BEE800F9EE21 /* FriendCell.xib */; };
+		044C79EF1CE1D7B200F9EE21 /* chart1.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79EC1CE1D7B200F9EE21 /* chart1.png */; };
+		044C79F01CE1D7B200F9EE21 /* chart2.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79ED1CE1D7B200F9EE21 /* chart2.png */; };
+		044C79F11CE1D7B200F9EE21 /* chart3.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79EE1CE1D7B200F9EE21 /* chart3.png */; };
+		044C79F31CE1D98100F9EE21 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79F21CE1D98100F9EE21 /* pointer.png */; };
 		045EAFD41CD0700C008AE499 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EAFD21CD0700C008AE499 /* TestView.m */; };
 		045EAFD51CD0700C008AE499 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EAFD31CD0700C008AE499 /* TestView.xib */; };
 		04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */; };
@@ -402,6 +406,10 @@
 		044C79E71CE1BEE800F9EE21 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
 		044C79E81CE1BEE800F9EE21 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
 		044C79E91CE1BEE800F9EE21 /* FriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
+		044C79EC1CE1D7B200F9EE21 /* chart1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart1.png; sourceTree = "<group>"; };
+		044C79ED1CE1D7B200F9EE21 /* chart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart2.png; sourceTree = "<group>"; };
+		044C79EE1CE1D7B200F9EE21 /* chart3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart3.png; sourceTree = "<group>"; };
+		044C79F21CE1D98100F9EE21 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
 		045EAFD11CD0700C008AE499 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		045EAFD21CD0700C008AE499 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		045EAFD31CD0700C008AE499 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
@@ -948,6 +956,10 @@
 		04F12F931CE050870014E655 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				044C79F21CE1D98100F9EE21 /* pointer.png */,
+				044C79EC1CE1D7B200F9EE21 /* chart1.png */,
+				044C79ED1CE1D7B200F9EE21 /* chart2.png */,
+				044C79EE1CE1D7B200F9EE21 /* chart3.png */,
 				04F12F911CE050520014E655 /* 首页导航 */,
 				04F12F941CE050940014E655 /* add.png */,
 			);
@@ -2106,10 +2118,12 @@
 				63341612197E805800303105 /* defineUrgentIcon.png in Resources */,
 				634053FA19404A400019052B /* refresh_bg.png in Resources */,
 				63A7379519418F2600DCBD68 /* icon_attach_panel_album_highlighted.png in Resources */,
+				044C79F11CE1D7B200F9EE21 /* chart3.png in Resources */,
 				044C79DE1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png in Resources */,
 				639578A31938AC5000FDE95D /* IntegratedQueryViewController_iPhone.xib in Resources */,
 				63A7379619418F2600DCBD68 /* icon_attach_panel_camera.png in Resources */,
 				6334155A197E310B00303105 /* SwitchingAddressViewController_iPad.xib in Resources */,
+				044C79EF1CE1D7B200F9EE21 /* chart1.png in Resources */,
 				63AB9D051952D6A2007AFA83 /* contenttoolbar_hd_share@2x.png in Resources */,
 				6303A8FF199213E7000C20FB /* Default-Portrait@2x.png in Resources */,
 				639578971938A98F00FDE95D /* SendReceiveViewController_iPhone.xib in Resources */,
@@ -2186,6 +2200,7 @@
 				04F12FA51CE0510E0014E655 /* logo_sinaweibo.png in Resources */,
 				630CE9AC193E08F000E34663 /* EmailListViewController_iPhone.xib in Resources */,
 				63AB9D061952D6A2007AFA83 /* contenttoolbar_hd_share_light.png in Resources */,
+				044C79F31CE1D98100F9EE21 /* pointer.png in Resources */,
 				04F12FCA1CE052660014E655 /* input1.png in Resources */,
 				A53D26601AC13C4100C14721 /* peopleIcon@2x.png in Resources */,
 				63341601197E805800303105 /* toolbarTwo.png in Resources */,
@@ -2209,6 +2224,7 @@
 				04D4B9ED1CE0B27C00124034 /* login_bg.png in Resources */,
 				634053F619404A400019052B /* arrow_down.png in Resources */,
 				A55088101AD61E3800E6C351 /* SelectType@2x.png in Resources */,
+				044C79F01CE1D7B200F9EE21 /* chart2.png in Resources */,
 				A5C8B0BD1A8C6722008496A2 /* back_normal@2x.png in Resources */,
 				63CB000B197F96CA009C07AA /* searchInput_iPhone.png in Resources */,
 				639578711938930F00FDE95D /* PushMessageCell.xib in Resources */,

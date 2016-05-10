@@ -39,11 +39,10 @@
 /** 加载数据 */
 - (void)setFriendData:(Friend *)friendData {
 	_friendData = friendData;
-	self.img.image = [UIImage imageNamed:friendData.icon];
-	UIImageView *imageTest = self.img;
-	self.title.text = friendData.name;
-	self.desc.textColor = friendData.isVip?[UIColor redColor]:[UIColor blackColor];
-	self.desc.text = friendData.intro;
+	//self.img.image = [UIImage imageNamed:friendData.icon];
+	//self.title.text = friendData.name;
+	//self.desc.textColor = friendData.isVip?[UIColor redColor]:[UIColor blackColor];
+	//self.desc.text = friendData.intro;
 }
 
 @end

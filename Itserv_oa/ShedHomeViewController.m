@@ -96,18 +96,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//	// 列寬
-//	CGFloat contentWidth = self.tableView.frame.size.width;
-//	// 用何種字體進行顯示
-//	UIFont *font = [UIFont systemFontOfSize:13];
-//	
-//	// 該行要顯示的內容
-//	NSString *content = [data objectAtIndex:indexPath.row];
-//	// 計算出顯示完內容需要的最小尺寸
-//	CGSize size = [content sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 1000) lineBreakMode:UILineBreakModeWordWrap];
-//	
-//	// 這裏返回需要的高度
-	return 135;
+	return 192;
 }
 /** 自定义每个section的头部 */
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -140,9 +129,7 @@
 -(void)initDataSource
 {
 	NSDictionary *dic02=[NSDictionary dictionaryWithObjectsAndKeys:@"001.png",@"icon",@"不要命的工作",@"intro",@"黄晓明",@"name",@"1",@"vip", nil];
-	NSDictionary *dic03=[NSDictionary dictionaryWithObjectsAndKeys:@"002.png",@"icon",@"不要命的工作",@"intro",@"黄晓明1",@"name",@"1",@"vip", nil];
-	
-	NSArray *friends1=[NSArray arrayWithObjects:dic02,dic03, nil];
+	NSArray *friends1=[NSArray arrayWithObjects:dic02, nil];
 	
 	NSDictionary *datas =[NSDictionary dictionaryWithObjectsAndKeys:@"我的好友",@"name",@"1",@"online",friends1,@"friends", nil];
 	self.groupsArray = [NSArray arrayWithObjects:datas,nil];
