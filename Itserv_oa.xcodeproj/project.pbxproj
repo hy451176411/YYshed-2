@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		044C79C31CE17C0000F9EE21 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79BB1CE17C0000F9EE21 /* Friend.m */; };
-		044C79C41CE17C0000F9EE21 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79BD1CE17C0000F9EE21 /* FriendCell.m */; };
 		044C79C51CE17C0000F9EE21 /* FriendGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79BF1CE17C0000F9EE21 /* FriendGroup.m */; };
 		044C79C61CE17C0000F9EE21 /* FriendHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79C11CE17C0000F9EE21 /* FriendHeader.m */; };
 		044C79C71CE17C0000F9EE21 /* friends.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044C79C21CE17C0000F9EE21 /* friends.plist */; };
@@ -24,6 +23,8 @@
 		044C79DC1CE17DAB00F9EE21 /* buddy_header_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79DB1CE17DAB00F9EE21 /* buddy_header_arrow.png */; };
 		044C79DE1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79DD1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png */; };
 		044C79E01CE17DBB00F9EE21 /* buddy_header_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79DF1CE17DBB00F9EE21 /* buddy_header_bg.png */; };
+		044C79EA1CE1BEE800F9EE21 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79E81CE1BEE800F9EE21 /* FriendCell.m */; };
+		044C79EB1CE1BEE800F9EE21 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044C79E91CE1BEE800F9EE21 /* FriendCell.xib */; };
 		045EAFD41CD0700C008AE499 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EAFD21CD0700C008AE499 /* TestView.m */; };
 		045EAFD51CD0700C008AE499 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EAFD31CD0700C008AE499 /* TestView.xib */; };
 		04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */; };
@@ -381,8 +382,6 @@
 /* Begin PBXFileReference section */
 		044C79BA1CE17C0000F9EE21 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
 		044C79BB1CE17C0000F9EE21 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
-		044C79BC1CE17C0000F9EE21 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
-		044C79BD1CE17C0000F9EE21 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
 		044C79BE1CE17C0000F9EE21 /* FriendGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGroup.h; sourceTree = "<group>"; };
 		044C79BF1CE17C0000F9EE21 /* FriendGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroup.m; sourceTree = "<group>"; };
 		044C79C01CE17C0000F9EE21 /* FriendHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendHeader.h; sourceTree = "<group>"; };
@@ -400,6 +399,9 @@
 		044C79DB1CE17DAB00F9EE21 /* buddy_header_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddy_header_arrow.png; sourceTree = "<group>"; };
 		044C79DD1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddy_header_bg_highlighted.png; sourceTree = "<group>"; };
 		044C79DF1CE17DBB00F9EE21 /* buddy_header_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddy_header_bg.png; sourceTree = "<group>"; };
+		044C79E71CE1BEE800F9EE21 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
+		044C79E81CE1BEE800F9EE21 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
+		044C79E91CE1BEE800F9EE21 /* FriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
 		045EAFD11CD0700C008AE499 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		045EAFD21CD0700C008AE499 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		045EAFD31CD0700C008AE499 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
@@ -861,13 +863,14 @@
 			children = (
 				044C79BA1CE17C0000F9EE21 /* Friend.h */,
 				044C79BB1CE17C0000F9EE21 /* Friend.m */,
-				044C79BC1CE17C0000F9EE21 /* FriendCell.h */,
-				044C79BD1CE17C0000F9EE21 /* FriendCell.m */,
 				044C79BE1CE17C0000F9EE21 /* FriendGroup.h */,
 				044C79BF1CE17C0000F9EE21 /* FriendGroup.m */,
 				044C79C01CE17C0000F9EE21 /* FriendHeader.h */,
 				044C79C11CE17C0000F9EE21 /* FriendHeader.m */,
 				044C79C21CE17C0000F9EE21 /* friends.plist */,
+				044C79E71CE1BEE800F9EE21 /* FriendCell.h */,
+				044C79E81CE1BEE800F9EE21 /* FriendCell.m */,
+				044C79E91CE1BEE800F9EE21 /* FriendCell.xib */,
 			);
 			name = friend;
 			sourceTree = "<group>";
@@ -2070,6 +2073,7 @@
 				63CB001A197FC69C009C07AA /* orgImgIcon.png in Resources */,
 				63A7969D193F0363006418E2 /* ShowWebViewController_iPad.xib in Resources */,
 				63B0F0B41990C34500791D0F /* Icon_120.png in Resources */,
+				044C79EB1CE1BEE800F9EE21 /* FriendCell.xib in Resources */,
 				63B0F0B51990C34500791D0F /* Icon_144.png in Resources */,
 				04F12F991CE050CA0014E655 /* button_on.png in Resources */,
 				63AB454B196282A300C6E39A /* ToReadViewController_iPhone.xib in Resources */,
@@ -2249,6 +2253,7 @@
 				63ED7C921939CBF4005B7B93 /* BaseModel.m in Sources */,
 				04F12FD41CE056A90014E655 /* YYshedLoginController.m in Sources */,
 				63DDEFC01943611300A28A0B /* RATreeView+Enums.m in Sources */,
+				044C79EA1CE1BEE800F9EE21 /* FriendCell.m in Sources */,
 				04F12FC41CE052030014E655 /* ThirdController.m in Sources */,
 				630CE9AB193E08F000E34663 /* EmailListViewController.m in Sources */,
 				045EAFD41CD0700C008AE499 /* TestView.m in Sources */,
@@ -2343,7 +2348,6 @@
 				044C79C61CE17C0000F9EE21 /* FriendHeader.m in Sources */,
 				63F3E47D193C89EF00C4F7BA /* ProcessFileViewController.m in Sources */,
 				63F3E483193C8B1B00C4F7BA /* ProcessFileCell.m in Sources */,
-				044C79C41CE17C0000F9EE21 /* FriendCell.m in Sources */,
 				63ED7C6B1939CB23005B7B93 /* ASIAuthenticationDialog.m in Sources */,
 				63A93030194803D60077A8EF /* CustomIOS7AlertView.m in Sources */,
 			);

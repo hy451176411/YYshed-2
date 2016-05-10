@@ -94,6 +94,21 @@
 	return cell;
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//	// 列寬
+//	CGFloat contentWidth = self.tableView.frame.size.width;
+//	// 用何種字體進行顯示
+//	UIFont *font = [UIFont systemFontOfSize:13];
+//	
+//	// 該行要顯示的內容
+//	NSString *content = [data objectAtIndex:indexPath.row];
+//	// 計算出顯示完內容需要的最小尺寸
+//	CGSize size = [content sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 1000) lineBreakMode:UILineBreakModeWordWrap];
+//	
+//	// 這裏返回需要的高度
+	return 135;
+}
 /** 自定义每个section的头部 */
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	FriendHeader *header = [FriendHeader friendHeaderWithTableView:self.tableView];
