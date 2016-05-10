@@ -30,6 +30,9 @@
 		044C79F11CE1D7B200F9EE21 /* chart3.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79EE1CE1D7B200F9EE21 /* chart3.png */; };
 		044C79F31CE1D98100F9EE21 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79F21CE1D98100F9EE21 /* pointer.png */; };
 		044EE82B1CE1F77C007C90C2 /* Smartgate.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EE82A1CE1F77C007C90C2 /* Smartgate.m */; };
+		044EE8311CE21F62007C90C2 /* FriendHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044EE8301CE21F62007C90C2 /* FriendHeader.xib */; };
+		044EE8331CE22495007C90C2 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 044EE8321CE22495007C90C2 /* house.png */; };
+		044EE8351CE224A9007C90C2 /* expand.png in Resources */ = {isa = PBXBuildFile; fileRef = 044EE8341CE224A9007C90C2 /* expand.png */; };
 		045EAFD41CD0700C008AE499 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EAFD21CD0700C008AE499 /* TestView.m */; };
 		045EAFD51CD0700C008AE499 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EAFD31CD0700C008AE499 /* TestView.xib */; };
 		04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */; };
@@ -413,6 +416,9 @@
 		044C79F21CE1D98100F9EE21 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
 		044EE8291CE1F77C007C90C2 /* Smartgate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smartgate.h; sourceTree = "<group>"; };
 		044EE82A1CE1F77C007C90C2 /* Smartgate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Smartgate.m; sourceTree = "<group>"; };
+		044EE8301CE21F62007C90C2 /* FriendHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendHeader.xib; sourceTree = "<group>"; };
+		044EE8321CE22495007C90C2 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
+		044EE8341CE224A9007C90C2 /* expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expand.png; sourceTree = "<group>"; };
 		045EAFD11CD0700C008AE499 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		045EAFD21CD0700C008AE499 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		045EAFD31CD0700C008AE499 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
@@ -877,6 +883,7 @@
 				044C79BE1CE17C0000F9EE21 /* FriendGroup.h */,
 				044C79BF1CE17C0000F9EE21 /* FriendGroup.m */,
 				044C79C01CE17C0000F9EE21 /* FriendHeader.h */,
+				044EE8301CE21F62007C90C2 /* FriendHeader.xib */,
 				044C79C11CE17C0000F9EE21 /* FriendHeader.m */,
 				044C79C21CE17C0000F9EE21 /* friends.plist */,
 				044C79E71CE1BEE800F9EE21 /* FriendCell.h */,
@@ -961,6 +968,8 @@
 		04F12F931CE050870014E655 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				044EE8341CE224A9007C90C2 /* expand.png */,
+				044EE8321CE22495007C90C2 /* house.png */,
 				044C79F21CE1D98100F9EE21 /* pointer.png */,
 				044C79EC1CE1D7B200F9EE21 /* chart1.png */,
 				044C79ED1CE1D7B200F9EE21 /* chart2.png */,
@@ -2048,6 +2057,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044C79CC1CE17D7300F9EE21 /* 002.png in Resources */,
+				044EE8331CE22495007C90C2 /* house.png in Resources */,
 				63A7969B193F0348006418E2 /* ShowWebViewController_iPhone.xib in Resources */,
 				63AB9D041952D6A2007AFA83 /* contenttoolbar_hd_share_light@2x.png in Resources */,
 				A5E86FEE1ABC13F3005195ED /* EmailPopListViewController_iPhone.xib in Resources */,
@@ -2057,6 +2067,7 @@
 				63B20A951946D89C00D16C5B /* checkbox_disabled.png in Resources */,
 				A53D266F1AC13C9A00C14721 /* ))@2x.png in Resources */,
 				63CB000D197F99CB009C07AA /* SelectType.png in Resources */,
+				044EE8351CE224A9007C90C2 /* expand.png in Resources */,
 				A5EE8A9F1B7057240051DB11 /* json.txt in Resources */,
 				04F12F951CE050940014E655 /* add.png in Resources */,
 				630824BB197F675300BB7217 /* OfficialIcon1.png in Resources */,
@@ -2197,6 +2208,7 @@
 				63AB45501962A5F000C6E39A /* btn_voice_cancel.png in Resources */,
 				63341606197E805800303105 /* loginIcon.png in Resources */,
 				A5E870111ABC1555005195ED /* EmailContactsViewController_iPad.xib in Resources */,
+				044EE8311CE21F62007C90C2 /* FriendHeader.xib in Resources */,
 				04F12FAE1CE0512F0014E655 /* number_icon2.png in Resources */,
 				63E5A5131936DA34008CC126 /* login_ico.png in Resources */,
 				630824B4197F61DF00BB7217 /* menuBg.png in Resources */,

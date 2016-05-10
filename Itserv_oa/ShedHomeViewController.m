@@ -100,6 +100,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return 192;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	return 70.0f;
+}
 /** 自定义每个section的头部 */
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	FriendHeader *header = [FriendHeader friendHeaderWithTableView:self.tableView];

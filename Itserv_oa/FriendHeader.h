@@ -22,11 +22,15 @@
 /** 包含了箭头图标和组名、背景色的按钮 */
 @property(nonatomic, weak) UIButton *headerButtonView;
 
+- (IBAction)headerClick:(id)sender;
+- (void) headerClicked;
 /** 在线人数 */
 @property(nonatomic, weak) UILabel *onlineCountView;
 
 /** group数据 */
 @property(nonatomic, strong) FriendGroup *friendGroup;
+@property (weak, nonatomic) IBOutlet UIView *mView;
+@property (weak, nonatomic) IBOutlet UILabel *headerTitle;
 
 /** 代理 */
 @property(nonatomic, strong) id<FriendHeaderDelegate> delegate;
