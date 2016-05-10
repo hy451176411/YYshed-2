@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044C79C31CE17C0000F9EE21 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79BB1CE17C0000F9EE21 /* Friend.m */; };
+		044C79C41CE17C0000F9EE21 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79BD1CE17C0000F9EE21 /* FriendCell.m */; };
+		044C79C51CE17C0000F9EE21 /* FriendGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79BF1CE17C0000F9EE21 /* FriendGroup.m */; };
+		044C79C61CE17C0000F9EE21 /* FriendHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79C11CE17C0000F9EE21 /* FriendHeader.m */; };
+		044C79C71CE17C0000F9EE21 /* friends.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044C79C21CE17C0000F9EE21 /* friends.plist */; };
+		044C79CA1CE17D6800F9EE21 /* 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79C91CE17D6800F9EE21 /* 001.png */; };
+		044C79CC1CE17D7300F9EE21 /* 002.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CB1CE17D7300F9EE21 /* 002.png */; };
+		044C79CE1CE17D7A00F9EE21 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CD1CE17D7A00F9EE21 /* 003.png */; };
+		044C79D01CE17D8100F9EE21 /* 004.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CF1CE17D8100F9EE21 /* 004.png */; };
+		044C79D21CE17D8700F9EE21 /* 005.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79D11CE17D8700F9EE21 /* 005.png */; };
+		044C79D41CE17D8E00F9EE21 /* 006.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79D31CE17D8E00F9EE21 /* 006.png */; };
+		044C79D61CE17D9500F9EE21 /* 007.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79D51CE17D9500F9EE21 /* 007.png */; };
+		044C79D81CE17D9B00F9EE21 /* 008.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79D71CE17D9B00F9EE21 /* 008.png */; };
+		044C79DA1CE17DA300F9EE21 /* 009.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79D91CE17DA300F9EE21 /* 009.png */; };
+		044C79DC1CE17DAB00F9EE21 /* buddy_header_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79DB1CE17DAB00F9EE21 /* buddy_header_arrow.png */; };
+		044C79DE1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79DD1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png */; };
+		044C79E01CE17DBB00F9EE21 /* buddy_header_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79DF1CE17DBB00F9EE21 /* buddy_header_bg.png */; };
 		045EAFD41CD0700C008AE499 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EAFD21CD0700C008AE499 /* TestView.m */; };
 		045EAFD51CD0700C008AE499 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EAFD31CD0700C008AE499 /* TestView.xib */; };
 		04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */; };
@@ -362,6 +379,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		044C79BA1CE17C0000F9EE21 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		044C79BB1CE17C0000F9EE21 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		044C79BC1CE17C0000F9EE21 /* FriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
+		044C79BD1CE17C0000F9EE21 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
+		044C79BE1CE17C0000F9EE21 /* FriendGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGroup.h; sourceTree = "<group>"; };
+		044C79BF1CE17C0000F9EE21 /* FriendGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroup.m; sourceTree = "<group>"; };
+		044C79C01CE17C0000F9EE21 /* FriendHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendHeader.h; sourceTree = "<group>"; };
+		044C79C11CE17C0000F9EE21 /* FriendHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendHeader.m; sourceTree = "<group>"; };
+		044C79C21CE17C0000F9EE21 /* friends.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = friends.plist; sourceTree = "<group>"; };
+		044C79C91CE17D6800F9EE21 /* 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 001.png; sourceTree = "<group>"; };
+		044C79CB1CE17D7300F9EE21 /* 002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 002.png; sourceTree = "<group>"; };
+		044C79CD1CE17D7A00F9EE21 /* 003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 003.png; sourceTree = "<group>"; };
+		044C79CF1CE17D8100F9EE21 /* 004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 004.png; sourceTree = "<group>"; };
+		044C79D11CE17D8700F9EE21 /* 005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 005.png; sourceTree = "<group>"; };
+		044C79D31CE17D8E00F9EE21 /* 006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 006.png; sourceTree = "<group>"; };
+		044C79D51CE17D9500F9EE21 /* 007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 007.png; sourceTree = "<group>"; };
+		044C79D71CE17D9B00F9EE21 /* 008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 008.png; sourceTree = "<group>"; };
+		044C79D91CE17DA300F9EE21 /* 009.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 009.png; sourceTree = "<group>"; };
+		044C79DB1CE17DAB00F9EE21 /* buddy_header_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddy_header_arrow.png; sourceTree = "<group>"; };
+		044C79DD1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddy_header_bg_highlighted.png; sourceTree = "<group>"; };
+		044C79DF1CE17DBB00F9EE21 /* buddy_header_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buddy_header_bg.png; sourceTree = "<group>"; };
 		045EAFD11CD0700C008AE499 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		045EAFD21CD0700C008AE499 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		045EAFD31CD0700C008AE499 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
@@ -818,6 +856,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		044C79B91CE17BE400F9EE21 /* friend */ = {
+			isa = PBXGroup;
+			children = (
+				044C79BA1CE17C0000F9EE21 /* Friend.h */,
+				044C79BB1CE17C0000F9EE21 /* Friend.m */,
+				044C79BC1CE17C0000F9EE21 /* FriendCell.h */,
+				044C79BD1CE17C0000F9EE21 /* FriendCell.m */,
+				044C79BE1CE17C0000F9EE21 /* FriendGroup.h */,
+				044C79BF1CE17C0000F9EE21 /* FriendGroup.m */,
+				044C79C01CE17C0000F9EE21 /* FriendHeader.h */,
+				044C79C11CE17C0000F9EE21 /* FriendHeader.m */,
+				044C79C21CE17C0000F9EE21 /* friends.plist */,
+			);
+			name = friend;
+			sourceTree = "<group>";
+		};
+		044C79C81CE17D5600F9EE21 /* friend */ = {
+			isa = PBXGroup;
+			children = (
+				044C79DB1CE17DAB00F9EE21 /* buddy_header_arrow.png */,
+				044C79DD1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png */,
+				044C79DF1CE17DBB00F9EE21 /* buddy_header_bg.png */,
+				044C79D91CE17DA300F9EE21 /* 009.png */,
+				044C79D71CE17D9B00F9EE21 /* 008.png */,
+				044C79D31CE17D8E00F9EE21 /* 006.png */,
+				044C79D51CE17D9500F9EE21 /* 007.png */,
+				044C79D11CE17D8700F9EE21 /* 005.png */,
+				044C79CF1CE17D8100F9EE21 /* 004.png */,
+				044C79CD1CE17D7A00F9EE21 /* 003.png */,
+				044C79CB1CE17D7300F9EE21 /* 002.png */,
+				044C79C91CE17D6800F9EE21 /* 001.png */,
+			);
+			name = friend;
+			sourceTree = "<group>";
+		};
 		04F12F7F1CE04F960014E655 /* yyshed */ = {
 			isa = PBXGroup;
 			children = (
@@ -891,6 +964,7 @@
 		04F12FAF1CE051510014E655 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				044C79B91CE17BE400F9EE21 /* friend */,
 				04F12FD01CE0532D0014E655 /* 引导页 */,
 				04F12FC81CE052290014E655 /* 登录 */,
 				04F12FB01CE051730014E655 /* 首页 */,
@@ -1004,6 +1078,7 @@
 		631A4E7D1928839B0067FF3B /* pictures-iphone */ = {
 			isa = PBXGroup;
 			children = (
+				044C79C81CE17D5600F9EE21 /* friend */,
 				04F12FA91CE051210014E655 /* logo1.png */,
 				04F12FA71CE0511A0014E655 /* logo.png */,
 				04F12F9A1CE050E10014E655 /* 启动引导 */,
@@ -1952,11 +2027,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044C79CC1CE17D7300F9EE21 /* 002.png in Resources */,
 				63A7969B193F0348006418E2 /* ShowWebViewController_iPhone.xib in Resources */,
 				63AB9D041952D6A2007AFA83 /* contenttoolbar_hd_share_light@2x.png in Resources */,
 				A5E86FEE1ABC13F3005195ED /* EmailPopListViewController_iPhone.xib in Resources */,
 				633415FC197E805800303105 /* toolbarFour.png in Resources */,
 				63A7379E1941915800DCBD68 /* icon_attachbtn_paperclip.png in Resources */,
+				044C79D81CE17D9B00F9EE21 /* 008.png in Resources */,
 				63B20A951946D89C00D16C5B /* checkbox_disabled.png in Resources */,
 				A53D266F1AC13C9A00C14721 /* ))@2x.png in Resources */,
 				63CB000D197F99CB009C07AA /* SelectType.png in Resources */,
@@ -1996,6 +2073,7 @@
 				63B0F0B51990C34500791D0F /* Icon_144.png in Resources */,
 				04F12F991CE050CA0014E655 /* button_on.png in Resources */,
 				63AB454B196282A300C6E39A /* ToReadViewController_iPhone.xib in Resources */,
+				044C79C71CE17C0000F9EE21 /* friends.plist in Resources */,
 				63B19CB01928548B002F3E17 /* Images.xcassets in Resources */,
 				A5E8701A1ABC17A9005195ED /* EmailPopContentViewController_iPhone.xib in Resources */,
 				A53D26701AC13C9A00C14721 /* )@2x.png in Resources */,
@@ -2014,7 +2092,9 @@
 				63A79742193F53BE006418E2 /* ContactsCell.xib in Resources */,
 				63B0F0BB1990C3C700791D0F /* Default.png in Resources */,
 				633415FD197E805800303105 /* toolbarOne.png in Resources */,
+				044C79D41CE17D8E00F9EE21 /* 006.png in Resources */,
 				63AB9D071952D6A2007AFA83 /* contenttoolbar_hd_share.png in Resources */,
+				044C79D61CE17D9500F9EE21 /* 007.png in Resources */,
 				04F12FCC1CE052790014E655 /* login_btn_bg.png in Resources */,
 				A5E86FFD1ABC1518005195ED /* SendEmailPOPViewController_iPhone.xib in Resources */,
 				04B9E0A81CE09713004CC6D5 /* ShedHomeViewController.xib in Resources */,
@@ -2022,6 +2102,7 @@
 				63341612197E805800303105 /* defineUrgentIcon.png in Resources */,
 				634053FA19404A400019052B /* refresh_bg.png in Resources */,
 				63A7379519418F2600DCBD68 /* icon_attach_panel_album_highlighted.png in Resources */,
+				044C79DE1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png in Resources */,
 				639578A31938AC5000FDE95D /* IntegratedQueryViewController_iPhone.xib in Resources */,
 				63A7379619418F2600DCBD68 /* icon_attach_panel_camera.png in Resources */,
 				6334155A197E310B00303105 /* SwitchingAddressViewController_iPad.xib in Resources */,
@@ -2032,18 +2113,23 @@
 				63341604197E805800303105 /* select.png in Resources */,
 				6334160A197E805800303105 /* userIcon.png in Resources */,
 				6374B6571938ADBE0071710A /* IntegratedQueryViewController_iPad.xib in Resources */,
+				044C79CA1CE17D6800F9EE21 /* 001.png in Resources */,
 				639578A91938AC9500FDE95D /* ContactsViewController_iPhone.xib in Resources */,
 				63B9A7891980D8FF005ED169 /* searchInput_iPad.png in Resources */,
 				63AB454A196282A300C6E39A /* ToReadViewController_iPad.xib in Resources */,
+				044C79CE1CE17D7A00F9EE21 /* 003.png in Resources */,
 				63A7379C1941915800DCBD68 /* icon_attach_readmail.png in Resources */,
 				634053F719404A400019052B /* arrow_up.png in Resources */,
 				A5E870131ABC1555005195ED /* PeopleTableViewCell.xib in Resources */,
+				044C79D21CE17D8700F9EE21 /* 005.png in Resources */,
 				63A135A61A81FF4C00B8A58E /* OA_Address.geojson in Resources */,
 				633415FE197E805800303105 /* toolbarOneSelect.png in Resources */,
 				04F12F901CE050480014E655 /* a4.png in Resources */,
 				63D2813319430A0700556A22 /* EmailContentViewController_iPhone.xib in Resources */,
+				044C79DA1CE17DA300F9EE21 /* 009.png in Resources */,
 				634053FC19404A400019052B /* RefreshView.xib in Resources */,
 				04F12FD51CE056A90014E655 /* YYshedLoginController.xib in Resources */,
+				044C79D01CE17D8100F9EE21 /* 004.png in Resources */,
 				63B0F0B61990C34500791D0F /* Icon-72.png in Resources */,
 				63F3E47E193C89EF00C4F7BA /* ProcessFileViewController_iPhone.xib in Resources */,
 				63A7379419418F2600DCBD68 /* icon_attach_panel_album.png in Resources */,
@@ -2061,6 +2147,7 @@
 				A55E29201ABD160700FF4190 /* RegistrViewController_iPhone.xib in Resources */,
 				6303A8FE199213E7000C20FB /* Default-Portrait.png in Resources */,
 				63A7379D1941915800DCBD68 /* icon_attachbtn_paperclip_active.png in Resources */,
+				044C79E01CE17DBB00F9EE21 /* buddy_header_bg.png in Resources */,
 				04F12F981CE050CA0014E655 /* button_off.png in Resources */,
 				630824B6197F64B600BB7217 /* toolbarFourSelect.png in Resources */,
 				63341603197E805800303105 /* no_select.png in Resources */,
@@ -2121,6 +2208,7 @@
 				A5C8B0BD1A8C6722008496A2 /* back_normal@2x.png in Resources */,
 				63CB000B197F96CA009C07AA /* searchInput_iPhone.png in Resources */,
 				639578711938930F00FDE95D /* PushMessageCell.xib in Resources */,
+				044C79DC1CE17DAB00F9EE21 /* buddy_header_arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2179,6 +2267,7 @@
 				63ED7C6D1939CB23005B7B93 /* ASIDataDecompressor.m in Sources */,
 				63ED7C6E1939CB23005B7B93 /* ASIDownloadCache.m in Sources */,
 				63F5D9871999FD4400043421 /* SBAppMessage.m in Sources */,
+				044C79C51CE17C0000F9EE21 /* FriendGroup.m in Sources */,
 				6324C63E19396AD000E5C2A2 /* FileMessageCell.m in Sources */,
 				63E5A5231936E2D2008CC126 /* UIView+SBAdditions.m in Sources */,
 				A5E870191ABC17A9005195ED /* EmailPopContentViewController.m in Sources */,
@@ -2234,6 +2323,7 @@
 				639578751938935C00FDE95D /* UIView+LoadXib.m in Sources */,
 				63ED7C721939CB23005B7B93 /* ASINetworkQueue.m in Sources */,
 				63405400194072C90019052B /* SendEmailViewController.m in Sources */,
+				044C79C31CE17C0000F9EE21 /* Friend.m in Sources */,
 				63ED7C731939CB23005B7B93 /* Reachability.m in Sources */,
 				04F12FD81CE056B90014E655 /* YYshedRootViewController.m in Sources */,
 				A5E86FE61ABC0D64005195ED /* BindingEmailViewController.m in Sources */,
@@ -2250,8 +2340,10 @@
 				63341588197E37E600303105 /* GlobalData.m in Sources */,
 				63341557197E30E100303105 /* SwitchingAddressViewController.m in Sources */,
 				04F12FC71CE052200014E655 /* FourController.m in Sources */,
+				044C79C61CE17C0000F9EE21 /* FriendHeader.m in Sources */,
 				63F3E47D193C89EF00C4F7BA /* ProcessFileViewController.m in Sources */,
 				63F3E483193C8B1B00C4F7BA /* ProcessFileCell.m in Sources */,
+				044C79C41CE17C0000F9EE21 /* FriendCell.m in Sources */,
 				63ED7C6B1939CB23005B7B93 /* ASIAuthenticationDialog.m in Sources */,
 				63A93030194803D60077A8EF /* CustomIOS7AlertView.m in Sources */,
 			);

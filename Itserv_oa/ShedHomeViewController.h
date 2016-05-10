@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShedHomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *mTableView;
-@property (weak, nonatomic) NSArray *titleArray;//第一层列表需要展示的数据
+@interface ShedHomeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
