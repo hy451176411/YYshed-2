@@ -22,9 +22,11 @@
     [super viewDidLoad];
 	ShedDatailCenter *mShedDetailCenter  = [[ShedDatailCenter alloc] init];
 	ShedDetailHeaderView *mShedDetailHeader1  = [[ShedDetailHeaderView alloc] init];
+	mShedDetailHeader1.frame = CGRectMake(0, 10, self.view.frame.size.width, 330);
 	mShedDetailCenter.frame = CGRectMake(0, 330, self.view.frame.size.width, 460);
 	[mShedDetailCenter configDataOfCenter:nil];
 	[mShedDetailHeader1 configDataOfHeader:nil];
+	mShedDetailHeader1.userInteractionEnabled = YES;
 	mShedDetailCenter.delegate = self;
 	[self.mScrollView addSubview:mShedDetailHeader1];
 	[self.mScrollView addSubview:mShedDetailCenter];

@@ -21,6 +21,7 @@
 	float width = SCREEN_WIDTH;
 	UIView *rootView = [[UIView alloc] init];
 	rootView.backgroundColor = [UIColor clearColor];
+	rootView.frame = CGRectMake(0, 0, width, 330);
 	int lableH = 45;
 	int topH = 5;
 	int i = 0;
@@ -160,7 +161,15 @@
 	location = lable;
 	lable.frame = CGRectMake(singleLableW, 0, doubleLableW, lableH);
 	[view addSubview:lable];
+	UITapGestureRecognizer *singleTap1 =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchUP:)];
+	[lable addGestureRecognizer:singleTap1];
+	lable.userInteractionEnabled = YES;
 	[rootView addSubview:view];
 	[self addSubview:rootView];
+}
+
+- (void)touchUP:(id)sender
+{
+	NSLog(@"touchUp");
 }
 @end

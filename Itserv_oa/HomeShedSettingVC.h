@@ -10,4 +10,5 @@
 
 @interface HomeShedSettingVC : UIViewController
 
+- (IBAction)btnclck:(id)sender;
 @end

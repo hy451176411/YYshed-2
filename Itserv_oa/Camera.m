@@ -11,10 +11,11 @@
 @implementation Camera
 
 -(void)initCamera:(id)data{
-
+	self.userInteractionEnabled = YES;
 	float width = SCREEN_WIDTH;
 	UIView *rootView1 = [[UIView alloc] init];
 	rootView1.frame = CGRectMake(0, 0, width, 230);
+	rootView1.userInteractionEnabled = YES;
 //	if (data) {
 //		rootView1.backgroundColor = [UIColor whiteColor];
 //	}else{
@@ -90,10 +91,10 @@
 	UIImageView* rightImg = [[UIImageView alloc] initWithImage:right];
 	rightImg.frame = CGRectMake(controlX, controlY, controlW, controlH);
 	
-//	UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(10, 180, 100, 20)];
-//	[btn addTarget:nil action:@selector(touchUP) forControlEvents:UIControlEventTouchUpInside];
-//	[btn setTitle:@"点击" forState:UIControlStateNormal];
-//	[btn setBackgroundColor:[UIColor redColor]];
+	UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchUP:)];
+	[rightImg addGestureRecognizer:singleTap];
+	rightImg.userInteractionEnabled = YES;
+	
 	lable = [[UILabel alloc] init];
 	lable.text = @"更新:2016-05-12 14:41:40";
 	lable.backgroundColor = [UIColor clearColor];
@@ -109,7 +110,11 @@
 	[rootView1 addSubview:leftImg];
 	[rootView1 addSubview:rightImg];
 	[rootView1 addSubview:centerImg];
+
 	[self addSubview:rootView1];
 }
-
+- (void)touchUP:(id)sender
+{
+	NSLog(@"touchUp Camera");
+}
 @end

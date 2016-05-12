@@ -26,4 +26,7 @@
 
 
 
+- (IBAction)btnclck:(id)sender {
+	NSLog(@"HomeShedSettingVC click");
+}
 @end
