@@ -13,50 +13,21 @@
 -(void)configDataOfCenter:(id)data{
 	float width = SCREEN_WIDTH;
 	UIView *rootView = [[UIView alloc] init];
-	UIView *rootView1 = [[UIView alloc] init];
-	rootView1.frame = CGRectMake(0, 0, width, 270);
-	rootView1.backgroundColor = [UIColor whiteColor];
+	Camera *camera = [[Camera alloc] init];
+	[camera initCamera:nil];
 	
-	//图像
-	UIImage *left = [UIImage imageNamed:@"category2.png"];
-	UIImageView* img = [[UIImageView alloc] initWithImage:left];
-	img.frame = CGRectMake(10, 10, 49, 49);
-	[rootView1 addSubview:img];
-	
-	//名字
-	UIView *view = [[UIView alloc] init];
-	view.backgroundColor = [UIColor clearColor];
-	view.frame = CGRectMake(59, 10, 200, 49);
-	//上下排列的名字与sn
-	UILabel *lable = [[UILabel alloc] init];
-	lable.text = @"摄像头2";
-	lable.frame = CGRectMake(3, 0, 200, 25);
-	[view addSubview:lable];
-	
-	lable = [[UILabel alloc] init];
-	lable.text = @"sn:yyyyyyyyyyyyy";
-	lable.frame = CGRectMake(3, 20, 200, 25);
-	[view addSubview:lable];
-	[rootView1 addSubview:view];
-	
-	lable = [[UILabel alloc] init];
-	lable.text = @"状态：";
-	lable.frame = CGRectMake(width-120, 10, 60, 49);
-	[rootView1 addSubview:lable];
-	
-	lable = [[UILabel alloc] init];
-	lable.text = @"请连接";
-	lable.frame = CGRectMake(width-120+60, 10, 60, 49);
-	[rootView1 addSubview:lable];
-	
-	
-	UIImage *center = [UIImage imageNamed:@"video.png"];
-	UIImageView* centerImg = [[UIImageView alloc] initWithImage:center];
-	centerImg.frame = CGRectMake(10, 65, width-20, 100);
-	[rootView1 addSubview:centerImg];
-	
-	
-	[rootView addSubview:rootView1];
+	Camera *camera2 = [[Camera alloc] init];
+	[camera2 initCamera:nil];
+	camera2.frame = CGRectMake(0, 235, width, 230);
+	[rootView addSubview:camera];
+	[rootView addSubview:camera2];
 	[self addSubview:rootView];
+}
+
+- (void)touchUP
+{
+	if (_delegate && [_delegate respondsToSelector:@selector(up)]) {
+		[_delegate up];
+	}
 }
 @end

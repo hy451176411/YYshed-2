@@ -12,6 +12,7 @@
 		0414E7901CE45A110072076C /* HomeShedSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0414E78E1CE45A110072076C /* HomeShedSettingVC.m */; };
 		0414E7911CE45A110072076C /* HomeShedSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0414E78F1CE45A110072076C /* HomeShedSettingVC.xib */; };
 		0414E7931CE45AC00072076C /* HomeShedDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0414E7921CE45AC00072076C /* HomeShedDetail.m */; };
+		0414E79D1CE47C580072076C /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 0414E79C1CE47C580072076C /* Camera.m */; };
 		044C79C31CE17C0000F9EE21 /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79BB1CE17C0000F9EE21 /* Component.m */; };
 		044C79C51CE17C0000F9EE21 /* FriendGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79BF1CE17C0000F9EE21 /* FriendGroup.m */; };
 		044C79C61CE17C0000F9EE21 /* FriendHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 044C79C11CE17C0000F9EE21 /* FriendHeader.m */; };
@@ -425,6 +426,8 @@
 		0414E78F1CE45A110072076C /* HomeShedSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeShedSettingVC.xib; sourceTree = "<group>"; };
 		0414E7921CE45AC00072076C /* HomeShedDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeShedDetail.m; path = "../../tabbar/ICViewPager-master副本/ICViewPager/Controller/HomeShedDetail.m"; sourceTree = "<group>"; };
 		0414E7961CE45B0C0072076C /* HomeShedDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HomeShedDetail.h; path = "../../tabbar/ICViewPager-master副本/ICViewPager/Controller/HomeShedDetail.h"; sourceTree = "<group>"; };
+		0414E79B1CE47C580072076C /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		0414E79C1CE47C580072076C /* Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
 		044C79BA1CE17C0000F9EE21 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 		044C79BB1CE17C0000F9EE21 /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Component.m; sourceTree = "<group>"; };
 		044C79BE1CE17C0000F9EE21 /* FriendGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGroup.h; sourceTree = "<group>"; };
@@ -949,6 +952,15 @@
 			name = ICViewPager;
 			sourceTree = "<group>";
 		};
+		0414E79A1CE47C2A0072076C /* 大鹏详情视图 */ = {
+			isa = PBXGroup;
+			children = (
+				0414E79B1CE47C580072076C /* Camera.h */,
+				0414E79C1CE47C580072076C /* Camera.m */,
+			);
+			name = "大鹏详情视图";
+			sourceTree = "<group>";
+		};
 		044C79B91CE17BE400F9EE21 /* friend */ = {
 			isa = PBXGroup;
 			children = (
@@ -989,6 +1001,7 @@
 		046B81611CE2DF59003F170B /* 大棚 */ = {
 			isa = PBXGroup;
 			children = (
+				0414E79A1CE47C2A0072076C /* 大鹏详情视图 */,
 				046B816D1CE30D36003F170B /* Contacts.h */,
 				046B816E1CE30D36003F170B /* Contacts.m */,
 				0414E78A1CE459AB0072076C /* HomeDetailNav.h */,
@@ -2465,6 +2478,7 @@
 				0414E7931CE45AC00072076C /* HomeShedDetail.m in Sources */,
 				634053F919404A400019052B /* PullToRefreshTableView.m in Sources */,
 				A53D26791AC1490100C14721 /* UIView+SBHLayerSet.m in Sources */,
+				0414E79D1CE47C580072076C /* Camera.m in Sources */,
 				63B098A6194590EB0055457D /* HomeViewController.m in Sources */,
 				3609191E1CA2EB3E00DF05D3 /* NDHTMLtoPDF.m in Sources */,
 				63AB4549196282A300C6E39A /* ToReadViewController.m in Sources */,

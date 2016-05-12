@@ -10,7 +10,8 @@
 #import "ShedDetailHeaderView.h"
 #import "ShedDatailCenter.h"
 
-@interface ShedDetailVC ()
+
+@interface ShedDetailVC ()<ShedDatailCenterDelegate>
 
 @end
 
@@ -21,9 +22,10 @@
     [super viewDidLoad];
 	ShedDatailCenter *mShedDetailCenter  = [[ShedDatailCenter alloc] init];
 	ShedDetailHeaderView *mShedDetailHeader1  = [[ShedDetailHeaderView alloc] init];
-	mShedDetailCenter.frame = CGRectMake(0, 330, self.view.frame.size.width, 270);
+	mShedDetailCenter.frame = CGRectMake(0, 330, self.view.frame.size.width, 460);
 	[mShedDetailCenter configDataOfCenter:nil];
 	[mShedDetailHeader1 configDataOfHeader:nil];
+	mShedDetailCenter.delegate = self;
 	[self.mScrollView addSubview:mShedDetailHeader1];
 	[self.mScrollView addSubview:mShedDetailCenter];
 	[self.mScrollView setContentSize:CGSizeMake(320, 2000)];
@@ -36,5 +38,8 @@
 	
 }
 
+-(void)up{
+	NSLog(@"up click");
+}
 
 @end
