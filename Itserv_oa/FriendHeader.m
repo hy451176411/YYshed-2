@@ -8,7 +8,7 @@
 
 #import "FriendHeader.h"
 #import "FriendGroup.h"
-
+#import "ShedDetailVC.h"
 @implementation FriendHeader
 
 
@@ -24,71 +24,16 @@
     
     return header;
 }
-
-///** 重写初始化方法, 给header加上图标、组名、在线人数等子控件 */
-//- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
-//    // 必须先调用super的方法
-//    if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
-//        // 1.添加背景按钮
-//        // 1.1背景
-//        UIButton *headerButtonView = [[UIButton alloc] init];
-//        
-//        // 改变箭头填充方式为居中
-//        [headerButtonView.imageView setContentMode:UIViewContentModeCenter];
-//        // 不需要裁剪箭头图片的边界
-//        [headerButtonView.imageView setClipsToBounds:NO];
-//        
-//        [headerButtonView setBackgroundImage:[UIImage imageNamed:@"buddy_header_bg"] forState:UIControlStateNormal];
-//        [headerButtonView setBackgroundImage:[UIImage imageNamed:@"buddy_header_bg_highlighted"] forState:UIControlStateHighlighted];
-//        
-//        // 1.2图标
-//        // 水平左对齐
-//        headerButtonView.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-//        
-//        // 设置内边距
-//        headerButtonView.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-//        
-//        // 设置图片
-//        [headerButtonView setImage:[UIImage imageNamed:@"buddy_header_arrow"] forState:UIControlStateNormal];
-//        
-//        // 1.3组名
-//        [headerButtonView setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        headerButtonView.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-//        
-//        // 1.4点击事件
-//        [headerButtonView addTarget:self action:@selector(headerClicked) forControlEvents:UIControlEventTouchUpInside];
-//        
-//        [self.contentView addSubview:headerButtonView];
-//        self.headerButtonView = headerButtonView;
-//        
-//        // 2.在线人数/好友数
-//        UILabel *onlineCountView = [[UILabel alloc] init];
-//        [onlineCountView setTextColor:[UIColor grayColor]];
-//        [onlineCountView setTextAlignment:NSTextAlignmentRight];
-//        [self.contentView addSubview:onlineCountView];
-//        self.onlineCountView = onlineCountView;
-//    }
-//    
-//    return self;
-//}
-
 /** 子控件布局方法 
     在init的时候，只分配的内存，没有初始化控件的尺寸，在此处header已经有了位置尺寸了
  */
-//- (void)layoutSubviews {
-//    // 必须先调用父类的方法
-//    [super layoutSubviews];
-//    
-//    // 1.背景
-//    self.headerButtonView.frame = self.bounds;
-//    
-//    // 2.在线人数/组内总人数
-//    CGFloat countWidth = 150;
-//    CGFloat countHeight = self.frame.size.height;
-//    CGFloat countX = self.frame.size.width - 10 - countWidth;
-//    CGFloat countY = 0;
-//    self.onlineCountView.frame = CGRectMake(countX, countY, countWidth, countHeight);
-//}
+- (void)layoutSubviews {
+    // 必须先调用父类的方法
+    [super layoutSubviews];
+	self.mExpand.tag = 100;
+	self.headerTitle.tag = 101;
+	
+}
 
 /** 加载数据  */
 - (void)setFriendGroup:(FriendGroup *)friendGroup {
@@ -103,34 +48,51 @@
 
 /** 点击事件 */
 - (IBAction)headerClick:(id)sender {
+	self.clickView = self.mExpand;
 	// 1.伸展、隐藏组内好友
 	self.friendGroup.opened = !self.friendGroup.isOpened;
-	
 	// 2.刷新tableView
 	if ([self.delegate respondsToSelector:@selector(friendHeaderDidClickedHeader:)]) {
 		[self.delegate friendHeaderDidClickedHeader:self];
 	}
 }
 
-- (void) headerClicked {
-    // 1.伸展、隐藏组内好友
-    self.friendGroup.opened = !self.friendGroup.isOpened;
-    
-    // 2.刷新tableView
-    if ([self.delegate respondsToSelector:@selector(friendHeaderDidClickedHeader:)]) {
-        [self.delegate friendHeaderDidClickedHeader:self];
-    }
 
-}
-
-/** 
-    被加到父控件之前 
-    由于tableView刷新数据后，所有header会被重新创建，所以要在这里对箭头朝向做出修改
+/**
+ 被加到父控件之前
+ 由于tableView刷新数据后，所有header会被重新创建，所以要在这里对箭头朝向做出修改
  */
-//- (void)didMoveToSuperview {
-//    // 改变箭头朝向，顺时针旋转90度
-//    CGFloat rotation = self.friendGroup.isOpened? M_PI_2 : 0;
-//    self.headerButtonView.imageView.transform = CGAffineTransformMakeRotation(rotation);
-//}
-
+- (void)didMoveToSuperview {
+    // 改变箭头朝向，顺时针旋转90度
+	if (self.friendGroup.isOpened)
+	{
+		CGFloat countWidth = 42;
+		CGFloat countHeight = 30;
+		CGFloat countX = self.mExpand.frame.origin.x-10;
+		CGFloat countY = self.mExpand.frame.origin.y;
+		self.mExpand.frame  = CGRectMake(countX, countY, countWidth, countHeight);
+		UIImage *imgage =[UIImage imageNamed:@"expand.png"];
+		[self.mExpand setImage:imgage forState:UIControlStateNormal];
+		[self.mExpand setBackgroundColor:[UIColor clearColor]];
+	}else
+	{
+		CGFloat countWidth = 30;
+		CGFloat countHeight = 42;
+		CGFloat countX = self.mExpand.frame.origin.x;
+		CGFloat countY = self.mExpand.frame.origin.y-10;
+		self.mExpand.frame  = CGRectMake(countX, countY, countWidth, countHeight);
+		UIImage *imgage =[UIImage imageNamed:@"lead.png"];
+		[self.mExpand setImage:imgage forState:UIControlStateNormal];
+		[self.mExpand setBackgroundColor:[UIColor clearColor]];
+	}
+	//CGFloat rotation = self.friendGroup.isOpened? M_PI_2 : 0;
+	//self.mExpand.imageView.transform = CGAffineTransformMakeRotation(rotation);
+}
+- (IBAction)headerTitleClick:(id)sender {
+	self.clickView = self.headerTitle;
+	NSLog(@"headerTitleClick");
+	if ([self.delegate respondsToSelector:@selector(HeaderTitleDidClicked:)]) {
+		[self.delegate HeaderTitleDidClicked:self.friendGroup];
+	}
+}
 @end

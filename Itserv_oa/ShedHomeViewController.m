@@ -11,6 +11,8 @@
 #import "FriendGroup.h"
 #import "FriendCell.h"
 #import "FriendHeader.h"
+#import "ShedDetailVC.h"
+
 
 // 遵守FriendHeaderDelegate协议
 @interface ShedHomeViewController () <FriendHeaderDelegate>
@@ -57,8 +59,9 @@
 	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
 	[_theRequest getUserInfo:session_token user_Agent:@"test"];
 }
+//iOS不显示状态栏（电池和信号栏）
 - (BOOL)prefersStatusBarHidden {
-	return YES;
+	return NO;
 }
 
 /** 加载数据 */
@@ -117,10 +120,21 @@
 
 #pragma mark - FriendHeaderDelegate方法
 - (void)friendHeaderDidClickedHeader:(FriendHeader *)header {
-	// 刷新数据
-	[self.tableView reloadData];
+	if (header.clickView.tag == 100) {
+		// 刷新数据
+		[self.tableView reloadData];
+	}else{
+		ShedDetailVC *control = [[ShedDetailVC alloc] init];
+		[self.navigationController pushViewController:control animated:YES];
+	}
+	
 }
-
+- (void) HeaderTitleDidClicked:(FriendGroup *) group{
+	FriendGroup *gg = group;
+	HomeShedDetail *control = [[HomeShedDetail alloc] init];
+	control.friendGroup = group;
+	[self.navigationController pushViewController:control animated:YES];
+}
 
 -(void)rightBtnClick{
 	UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请添加大棚!" delegate:self  cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -137,6 +151,7 @@
 {
 	NSMutableArray *groups = [NSMutableArray arrayWithCapacity:3];
 	NSArray *smartgates = model[@"smartgates"];
+	//
 	for (int i=0;i<smartgates.count; i++) {
 		NSDictionary *smartgate = smartgates[i];
 		NSDictionary *smartgateV = smartgate[@"smartgate"];
@@ -157,7 +172,7 @@
 			if(air_humidity==nil){
 				air_humidity= @"0";
 			}
-			sn = component[@"sn"];
+			sn = smartgateV[@"sn"];
 			if(sn==nil){
 				sn= @"0";
 			}
@@ -174,8 +189,14 @@
 	self.groupsArray = groups;
 	if (nil != groups) {
 		NSMutableArray *mgroupsArray = [NSMutableArray array];
+		int i=0;
 		for (NSDictionary *groupDict in groups) {
 			FriendGroup *group = [FriendGroup friendGroupWithDictionary:groupDict];
+			if(i==0){
+				//设置第一个大鹏为展开
+				group.opened = YES;
+				i++;
+			}
 			[mgroupsArray addObject:group];
 		}
 		self.friendGroups = mgroupsArray;

@@ -14,18 +14,23 @@
 /** header被点击的代理方法 */
 @optional
 - (void) friendHeaderDidClickedHeader:(FriendHeader *) header;
-
+- (void) HeaderTitleDidClicked:(FriendGroup *) group;
 @end
 
 @interface FriendHeader : UITableViewHeaderFooterView
+
 
 /** 包含了箭头图标和组名、背景色的按钮 */
 @property(nonatomic, weak) UIButton *headerButtonView;
 
 - (IBAction)headerClick:(id)sender;
-- (void) headerClicked;
+
 /** 在线人数 */
 @property(nonatomic, weak) UILabel *onlineCountView;
+@property (weak, nonatomic) IBOutlet UIButton *mExpand;
+- (IBAction)headerTitleClick:(id)sender;
+
+@property(nonatomic, strong) UIView *clickView;
 
 /** group数据 */
 @property(nonatomic, strong) FriendGroup *friendGroup;

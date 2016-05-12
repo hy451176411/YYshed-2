@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "YYNetRequest.h"
 #import "EADefine.h"
-
+#import "HomeShedDetail.h"
 @interface ShedHomeViewController : UIViewController<UITextFieldDelegate,YYNetRequestDelegate,UIAlertViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) NSMutableArray *groupsArray;
 -(void)initDataSource:(NSDictionary *)model;
