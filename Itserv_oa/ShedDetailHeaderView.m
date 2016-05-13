@@ -21,7 +21,7 @@
 	float width = SCREEN_WIDTH;
 	UIView *rootView = [[UIView alloc] init];
 	rootView.backgroundColor = [UIColor clearColor];
-	rootView.frame = CGRectMake(0, 0, width, 330);
+	rootView.frame = CGRectMake(0, ELEMENT_SPACING, width, SHED_HEADER_H);
 	int lableH = 45;
 	int topH = 5;
 	int i = 0;

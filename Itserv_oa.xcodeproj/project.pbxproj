@@ -64,6 +64,21 @@
 		046B816F1CE30D36003F170B /* Contacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 046B816E1CE30D36003F170B /* Contacts.m */; };
 		046B81711CE30E25003F170B /* json in Resources */ = {isa = PBXBuildFile; fileRef = 046B81701CE30E25003F170B /* json */; };
 		046B81791CE310AF003F170B /* ShedDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046B81781CE310AF003F170B /* ShedDetailHeaderView.m */; };
+		0481119D1CE56C5D0023390E /* Shutter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0481119C1CE56C5D0023390E /* Shutter.m */; };
+		048111AB1CE576E90023390E /* ShedWater.m in Sources */ = {isa = PBXBuildFile; fileRef = 048111AA1CE576E90023390E /* ShedWater.m */; };
+		048111AF1CE585C30023390E /* camera_offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111AD1CE585C30023390E /* camera_offline.png */; };
+		048111B01CE585C30023390E /* camera_online.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111AE1CE585C30023390E /* camera_online.png */; };
+		048111B21CE586030023390E /* button_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111B11CE586030023390E /* button_close.png */; };
+		048111B41CE5860D0023390E /* button_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111B31CE5860D0023390E /* button_open.png */; };
+		048111B61CE586450023390E /* lamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111B51CE586440023390E /* lamp.png */; };
+		048111B81CE586580023390E /* main_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111B71CE586580023390E /* main_07.png */; };
+		048111BA1CE586700023390E /* shutter.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111B91CE586700023390E /* shutter.png */; };
+		048111BC1CE5868B0023390E /* temperature_humidity.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111BB1CE5868B0023390E /* temperature_humidity.png */; };
+		048111BE1CE586960023390E /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111BD1CE586960023390E /* time.png */; };
+		048111C01CE586BE0023390E /* water_valve.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111BF1CE586BE0023390E /* water_valve.png */; };
+		048111C21CE58A890023390E /* forward3_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111C11CE58A890023390E /* forward3_focus.png */; };
+		048111C41CE58A910023390E /* forward2_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111C31CE58A910023390E /* forward2_focus.png */; };
+		048111C61CE58A980023390E /* forward1_foucs.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111C51CE58A980023390E /* forward1_foucs.png */; };
 		04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */; };
 		04B9E0A71CE09713004CC6D5 /* ShedHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0A51CE09713004CC6D5 /* ShedHomeViewController.m */; };
 		04B9E0A81CE09713004CC6D5 /* ShedHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B9E0A61CE09713004CC6D5 /* ShedHomeViewController.xib */; };
@@ -490,6 +505,24 @@
 		046B81701CE30E25003F170B /* json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json; sourceTree = "<group>"; };
 		046B81771CE310AF003F170B /* ShedDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedDetailHeaderView.h; sourceTree = "<group>"; };
 		046B81781CE310AF003F170B /* ShedDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedDetailHeaderView.m; sourceTree = "<group>"; };
+		0481119B1CE56C5D0023390E /* Shutter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shutter.h; sourceTree = "<group>"; };
+		0481119C1CE56C5D0023390E /* Shutter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shutter.m; sourceTree = "<group>"; };
+		048111A91CE576E90023390E /* ShedWater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedWater.h; sourceTree = "<group>"; };
+		048111AA1CE576E90023390E /* ShedWater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedWater.m; sourceTree = "<group>"; };
+		048111AC1CE57D250023390E /* CommonShed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonShed.h; sourceTree = "<group>"; };
+		048111AD1CE585C30023390E /* camera_offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_offline.png; path = "../../../res/drawable-hdpi/camera_offline.png"; sourceTree = "<group>"; };
+		048111AE1CE585C30023390E /* camera_online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_online.png; path = "../../../res/drawable-hdpi/camera_online.png"; sourceTree = "<group>"; };
+		048111B11CE586030023390E /* button_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_close.png; path = "../../../res/drawable-hdpi/button_close.png"; sourceTree = "<group>"; };
+		048111B31CE5860D0023390E /* button_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_open.png; path = "../../../res/drawable-hdpi/button_open.png"; sourceTree = "<group>"; };
+		048111B51CE586440023390E /* lamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lamp.png; path = "../../../res/drawable-hdpi/lamp.png"; sourceTree = "<group>"; };
+		048111B71CE586580023390E /* main_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_07.png; path = "../../../res/drawable-hdpi/main_07.png"; sourceTree = "<group>"; };
+		048111B91CE586700023390E /* shutter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shutter.png; path = "../../../res/drawable-hdpi/shutter.png"; sourceTree = "<group>"; };
+		048111BB1CE5868B0023390E /* temperature_humidity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = temperature_humidity.png; path = "../../../res/drawable-hdpi/temperature_humidity.png"; sourceTree = "<group>"; };
+		048111BD1CE586960023390E /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = time.png; path = "../../../res/drawable-hdpi/time.png"; sourceTree = "<group>"; };
+		048111BF1CE586BE0023390E /* water_valve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = water_valve.png; path = "../../../res/drawable-hdpi/water_valve.png"; sourceTree = "<group>"; };
+		048111C11CE58A890023390E /* forward3_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forward3_focus.png; path = "../../../res/drawable-hdpi/forward3_focus.png"; sourceTree = "<group>"; };
+		048111C31CE58A910023390E /* forward2_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forward2_focus.png; path = "../../../res/drawable-hdpi/forward2_focus.png"; sourceTree = "<group>"; };
+		048111C51CE58A980023390E /* forward1_foucs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = forward1_foucs.png; path = "../../../res/drawable-hdpi/forward1_foucs.png"; sourceTree = "<group>"; };
 		04B9E0901CE0733B004CC6D5 /* YYNetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNetRequest.h; sourceTree = "<group>"; };
 		04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNetRequest.m; sourceTree = "<group>"; };
 		04B9E0A41CE09713004CC6D5 /* ShedHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedHomeViewController.h; sourceTree = "<group>"; };
@@ -957,6 +990,10 @@
 			children = (
 				0414E79B1CE47C580072076C /* Camera.h */,
 				0414E79C1CE47C580072076C /* Camera.m */,
+				0481119B1CE56C5D0023390E /* Shutter.h */,
+				0481119C1CE56C5D0023390E /* Shutter.m */,
+				048111A91CE576E90023390E /* ShedWater.h */,
+				048111AA1CE576E90023390E /* ShedWater.m */,
 			);
 			name = "大鹏详情视图";
 			sourceTree = "<group>";
@@ -1029,6 +1066,19 @@
 		046B81671CE2E6BF003F170B /* 大棚详情 */ = {
 			isa = PBXGroup;
 			children = (
+				048111C51CE58A980023390E /* forward1_foucs.png */,
+				048111C31CE58A910023390E /* forward2_focus.png */,
+				048111C11CE58A890023390E /* forward3_focus.png */,
+				048111BF1CE586BE0023390E /* water_valve.png */,
+				048111BD1CE586960023390E /* time.png */,
+				048111BB1CE5868B0023390E /* temperature_humidity.png */,
+				048111B91CE586700023390E /* shutter.png */,
+				048111B71CE586580023390E /* main_07.png */,
+				048111B51CE586440023390E /* lamp.png */,
+				048111B31CE5860D0023390E /* button_open.png */,
+				048111B11CE586030023390E /* button_close.png */,
+				048111AD1CE585C30023390E /* camera_offline.png */,
+				048111AE1CE585C30023390E /* camera_online.png */,
 				0463AC0C1CE33A5900EE9A96 /* category2.png */,
 				0463ABF21CE339A500EE9A96 /* video_center.png */,
 				0463AC0A1CE339B400EE9A96 /* video.png */,
@@ -1064,6 +1114,7 @@
 		04F12F881CE04FF30014E655 /* commonfile */ = {
 			isa = PBXGroup;
 			children = (
+				048111AC1CE57D250023390E /* CommonShed.h */,
 			);
 			name = commonfile;
 			sourceTree = "<group>";
@@ -2215,6 +2266,8 @@
 				046B81691CE2E6D1003F170B /* back.png in Resources */,
 				630824BB197F675300BB7217 /* OfficialIcon1.png in Resources */,
 				A54AF5D21AC25940000B5B8F /* 发邮件.png in Resources */,
+				048111C61CE58A980023390E /* forward1_foucs.png in Resources */,
+				048111C21CE58A890023390E /* forward3_focus.png in Resources */,
 				6334160C197E805800303105 /* left.png in Resources */,
 				63CB001B197FC69C009C07AA /* peopleIcon.png in Resources */,
 				63341600197E805800303105 /* toolbarThreeSelect.png in Resources */,
@@ -2233,8 +2286,10 @@
 				633415FB197E805800303105 /* homeToolBg_iPhone.png in Resources */,
 				045EAFD51CD0700C008AE499 /* TestView.xib in Resources */,
 				A5E86FFE1ABC1518005195ED /* SendEmailPOPViewController_iPad.xib in Resources */,
+				048111B01CE585C30023390E /* camera_online.png in Resources */,
 				633415FF197E805800303105 /* toolbarThree.png in Resources */,
 				6334160D197E805800303105 /* sure.png in Resources */,
+				048111B61CE586450023390E /* lamp.png in Resources */,
 				63A7379F1941915800DCBD68 /* icon_attachbtn_paperclip_highlighted.png in Resources */,
 				A53D266D1AC13C9A00C14721 /* ).png in Resources */,
 				63B0F0B71990C34500791D0F /* Icon.png in Resources */,
@@ -2254,6 +2309,7 @@
 				046B81661CE2DF90003F170B /* ShedDetailVC.xib in Resources */,
 				044C79C71CE17C0000F9EE21 /* friends.plist in Resources */,
 				63B19CB01928548B002F3E17 /* Images.xcassets in Resources */,
+				048111B41CE5860D0023390E /* button_open.png in Resources */,
 				A5E8701A1ABC17A9005195ED /* EmailPopContentViewController_iPhone.xib in Resources */,
 				A53D26701AC13C9A00C14721 /* )@2x.png in Resources */,
 				63B20A961946D89C00D16C5B /* checkbox_checked.png in Resources */,
@@ -2261,6 +2317,7 @@
 				04F12FA61CE0510E0014E655 /* logo_tencentweibo.png in Resources */,
 				0463AC0D1CE33A5900EE9A96 /* category2.png in Resources */,
 				63DDEFCA1943611300A28A0B /* OrgCell.xib in Resources */,
+				048111C41CE58A910023390E /* forward2_focus.png in Resources */,
 				63B20AE11946F1BB00D16C5B /* btn_contactblock.png in Resources */,
 				631A4FA4192885D10067FF3B /* LoginViewController_iPad.xib in Resources */,
 				63341611197E805800303105 /* defineNotUrgentIcon.png in Resources */,
@@ -2278,12 +2335,15 @@
 				044C79D61CE17D9500F9EE21 /* 007.png in Resources */,
 				04F12FCC1CE052790014E655 /* login_btn_bg.png in Resources */,
 				A5E86FFD1ABC1518005195ED /* SendEmailPOPViewController_iPhone.xib in Resources */,
+				048111BE1CE586960023390E /* time.png in Resources */,
 				0463AC011CE339A500EE9A96 /* video_icon.png in Resources */,
 				04B9E0A81CE09713004CC6D5 /* ShedHomeViewController.xib in Resources */,
 				04F12F8F1CE050480014E655 /* a3.png in Resources */,
 				63341612197E805800303105 /* defineUrgentIcon.png in Resources */,
 				634053FA19404A400019052B /* refresh_bg.png in Resources */,
+				048111BC1CE5868B0023390E /* temperature_humidity.png in Resources */,
 				63A7379519418F2600DCBD68 /* icon_attach_panel_album_highlighted.png in Resources */,
+				048111B81CE586580023390E /* main_07.png in Resources */,
 				044C79F11CE1D7B200F9EE21 /* chart3.png in Resources */,
 				0463AC001CE339A500EE9A96 /* video_down_unseletor.png in Resources */,
 				044C79DE1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png in Resources */,
@@ -2291,12 +2351,14 @@
 				63A7379619418F2600DCBD68 /* icon_attach_panel_camera.png in Resources */,
 				6334155A197E310B00303105 /* SwitchingAddressViewController_iPad.xib in Resources */,
 				044C79EF1CE1D7B200F9EE21 /* chart1.png in Resources */,
+				048111C01CE586BE0023390E /* water_valve.png in Resources */,
 				63AB9D051952D6A2007AFA83 /* contenttoolbar_hd_share@2x.png in Resources */,
 				6303A8FF199213E7000C20FB /* Default-Portrait@2x.png in Resources */,
 				639578971938A98F00FDE95D /* SendReceiveViewController_iPhone.xib in Resources */,
 				630CE9B0193E091A00E34663 /* EmailListViewController_iPad.xib in Resources */,
 				63341604197E805800303105 /* select.png in Resources */,
 				6334160A197E805800303105 /* userIcon.png in Resources */,
+				048111AF1CE585C30023390E /* camera_offline.png in Resources */,
 				6374B6571938ADBE0071710A /* IntegratedQueryViewController_iPad.xib in Resources */,
 				044C79CA1CE17D6800F9EE21 /* 001.png in Resources */,
 				639578A91938AC9500FDE95D /* ContactsViewController_iPhone.xib in Resources */,
@@ -2323,6 +2385,7 @@
 				63CB0015197FB348009C07AA /* peopleEmailBg.png in Resources */,
 				63AD686B1991F55900BA86A6 /* Default-568h@2x.png in Resources */,
 				A53D265F1AC13C4100C14721 /* orgImgIcon@2x.png in Resources */,
+				048111BA1CE586700023390E /* shutter.png in Resources */,
 				63D281351943109400556A22 /* EmailContentViewController_iPad.xib in Resources */,
 				A53D26761AC13F4600C14721 /* PeopleMessageView.xib in Resources */,
 				63F3E480193C8ACE00C4F7BA /* ProcessFileViewController_iPad.xib in Resources */,
@@ -2337,6 +2400,7 @@
 				04F12F981CE050CA0014E655 /* button_off.png in Resources */,
 				630824B6197F64B600BB7217 /* toolbarFourSelect.png in Resources */,
 				63341603197E805800303105 /* no_select.png in Resources */,
+				048111B21CE586030023390E /* button_close.png in Resources */,
 				6334160B197E805800303105 /* cancel.png in Resources */,
 				6334160F197E805800303105 /* noRead.png in Resources */,
 				630824BD197F675300BB7217 /* OfficialIcon3.png in Resources */,
@@ -2474,6 +2538,7 @@
 				63B19CAA1928548B002F3E17 /* main.m in Sources */,
 				63A79683193EBC0C006418E2 /* EmailCell.m in Sources */,
 				63ED7C711939CB23005B7B93 /* ASIInputStream.m in Sources */,
+				048111AB1CE576E90023390E /* ShedWater.m in Sources */,
 				63D2813A19431B7B00556A22 /* SendtoView.m in Sources */,
 				0414E7931CE45AC00072076C /* HomeShedDetail.m in Sources */,
 				634053F919404A400019052B /* PullToRefreshTableView.m in Sources */,
@@ -2508,6 +2573,7 @@
 				631A4FA1192885AF0067FF3B /* LoginViewController.m in Sources */,
 				63ED7C6F1939CB23005B7B93 /* ASIFormDataRequest.m in Sources */,
 				63ED7C701939CB23005B7B93 /* ASIHTTPRequest.m in Sources */,
+				0481119D1CE56C5D0023390E /* Shutter.m in Sources */,
 				A55E291F1ABD160700FF4190 /* RegistrViewController.m in Sources */,
 				63ED7C511939CB0C005B7B93 /* NetRequest.m in Sources */,
 				63DDEFC21943611300A28A0B /* RATreeView+TableViewDataSource.m in Sources */,

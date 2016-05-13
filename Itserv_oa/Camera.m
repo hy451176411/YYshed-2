@@ -12,26 +12,20 @@
 
 -(void)initCamera:(id)data{
 	self.userInteractionEnabled = YES;
-	float width = SCREEN_WIDTH;
 	UIView *rootView1 = [[UIView alloc] init];
-	rootView1.frame = CGRectMake(0, 0, width, 230);
+	rootView1.frame = CGRectMake(0, ELEMENT_SPACING, SCREEN_WIDTH, CAMERA_H);
 	rootView1.userInteractionEnabled = YES;
-//	if (data) {
-//		rootView1.backgroundColor = [UIColor whiteColor];
-//	}else{
-//		rootView1.backgroundColor = [UIColor redColor];
-//	}
 	rootView1.backgroundColor = [UIColor whiteColor];
 	//图像
-	UIImage *left = [UIImage imageNamed:@"category2.png"];
+	UIImage *left = [UIImage imageNamed:@"camera_offline.png"];
 	UIImageView* img = [[UIImageView alloc] initWithImage:left];
-	img.frame = CGRectMake(10, 10, 49, 49);
+	img.frame = CGRectMake(ELEMENT_SPACING, ELEMENT_SPACING, ELEMENT_IMG_W_H, ELEMENT_IMG_W_H);
 	[rootView1 addSubview:img];
 	
 	//名字
 	UIView *view = [[UIView alloc] init];
 	view.backgroundColor = [UIColor clearColor];
-	view.frame = CGRectMake(59, 10, 200, 49);
+	view.frame = CGRectMake(ELEMENT_IMG_W_H+ELEMENT_SPACING, ELEMENT_SPACING, 200, 49);
 	//上下排列的名字与sn
 	UILabel *lable = [[UILabel alloc] init];
 	lable.text = @"摄像头2";
@@ -39,28 +33,28 @@
 	[view addSubview:lable];
 	
 	lable = [[UILabel alloc] init];
-	lable.text = @"sn:yyyyyyyyyyyyy";
+	lable.text = @"sn:YXF0002000000000030";
 	lable.frame = CGRectMake(3, 20, 200, 25);
 	lable.backgroundColor = [UIColor clearColor];
-	lable.font = [UIFont systemFontOfSize:13];
+	lable.font = [UIFont systemFontOfSize:10];
 	lable.textColor = [UIColor grayColor];
 	[view addSubview:lable];
 	[rootView1 addSubview:view];
 	
 	lable = [[UILabel alloc] init];
 	lable.text = @"状态：";
-	lable.frame = CGRectMake(width-120, 10, 60, 49);
+	lable.frame = CGRectMake(SCREEN_WIDTH-120, ELEMENT_SPACING, 60, 49);
 	[rootView1 addSubview:lable];
 	
 	lable = [[UILabel alloc] init];
 	lable.text = @"请连接";
-	lable.frame = CGRectMake(width-120+60, 10, 60, 49);
+	lable.frame = CGRectMake(SCREEN_WIDTH-120+60, ELEMENT_SPACING, 60, 49);
 	[rootView1 addSubview:lable];
 	
 	
 	UIImage *center = [UIImage imageNamed:@"video.png"];
 	UIImageView* centerImg = [[UIImageView alloc] initWithImage:center];
-	centerImg.frame = CGRectMake(10, 65, width-20, 100);
+	centerImg.frame = CGRectMake(ELEMENT_SPACING, 65, SCREEN_WIDTH-20, 100);
 	
 	int controlW = 45;
 	int controlX  = 10;
@@ -101,7 +95,7 @@
 	//label.backgroundColor = [UIColor clearColor];
 	lable.font = [UIFont systemFontOfSize:10];
 	lable.textColor = [UIColor grayColor];
-	lable.frame = CGRectMake(width-140, 190, 140, 49);
+	lable.frame = CGRectMake(SCREEN_WIDTH-140, 190, 140, 49);
 	[rootView1 addSubview:lable];
 	
 	[rootView1 addSubview:downImg];

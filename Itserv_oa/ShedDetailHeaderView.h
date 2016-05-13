@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FriendGroup.h"
-#define SCREEN_WIDTH    [[UIScreen mainScreen] bounds].size.width
+#import "CommonShed.h"
 @interface ShedDetailHeaderView : UIView
 //+ (instancetype) initHeader:(UIScrollView *) scrollView;
 //@property (nonatomic, strong) UILabel *plant_name;//种植作物

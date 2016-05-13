@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FriendGroup.h"
 #import "ShedDetailHeaderView.h"
+#import "CommonShed.h"
 
 @interface ShedDetailVC : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *mScrollView;
