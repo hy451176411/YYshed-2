@@ -28,7 +28,7 @@
 	[mShedDetailHeader1 configDataOfHeader:nil];
 	mShedDetailHeader1.userInteractionEnabled = YES;
 	mShedDetailCenter.delegate = self;
-	float ContentSize = SHED_HEADER_H+WATER_SHED_H+CAMERA_H+SHUTTER_H+ELEMENT_SPACING*5+BOTTOM_H;
+	float ContentSize = SHED_HEADER_H+WATER_SHED_H+CAMERA_H+SHUTTER_H+ELEMENT_SPACING*6+BOTTOM_H+ECHART_H;
 	[self.mScrollView addSubview:mShedDetailHeader1];
 	[self.mScrollView addSubview:mShedDetailCenter];
 	[self.mScrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ContentSize)];

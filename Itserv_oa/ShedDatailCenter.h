@@ -10,6 +10,7 @@
 #import "Camera.h"
 #import "Shutter.h"
 #import "ShedWater.h"
+#import "EchartViewShed.h"
 
 @protocol ShedDatailCenterDelegate <NSObject>
 

@@ -12,10 +12,12 @@
 #import "FriendCell.h"
 #import "FriendHeader.h"
 #import "ShedDetailVC.h"
+#import "HomeController.h"
+
 
 
 // 遵守FriendHeaderDelegate协议
-@interface ShedHomeViewController () <FriendHeaderDelegate>
+@interface ShedHomeViewController () <FriendHeaderDelegate,UIWebViewDelegate>
 
 @property(nonatomic, strong) NSArray *friendGroups;
 @property (nonatomic, retain) YYNetRequest *theRequest;
@@ -130,9 +132,11 @@
 	
 }
 - (void) HeaderTitleDidClicked:(FriendGroup *) group{
-	FriendGroup *gg = group;
+//	FriendGroup *gg = group;
 	HomeShedDetail *control = [[HomeShedDetail alloc] init];
 	control.friendGroup = group;
+//	UIViewController *controller;
+//	controller = [[LineDemoController alloc] init];
 	[self.navigationController pushViewController:control animated:YES];
 }
 

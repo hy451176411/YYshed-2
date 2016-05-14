@@ -56,12 +56,13 @@
 	downImg.frame = CGRectMake(controlX, controlY, controlW, controlH);
 	
 	controlX = controlX +controlW;
-	UIImage *stop = [UIImage imageNamed:@"forward3_focus.png"];
-	UIImageView* stopImg = [[UIImageView alloc] initWithImage:stop];
-	stopImg.frame = CGRectMake(controlX, controlY, controlW, controlH);
+	int timeW_H = 30;
+	UIImage *time = [UIImage imageNamed:@"time.png"];
+	UIImageView* timeImg = [[UIImageView alloc] initWithImage:time];
+	timeImg.frame = CGRectMake(SCREEN_WIDTH-timeW_H-ELEMENT_SPACING, controlY, timeW_H, timeW_H);
 	UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchUP:)];
-	[stopImg addGestureRecognizer:singleTap];
-	stopImg.userInteractionEnabled = YES;
+	[timeImg addGestureRecognizer:singleTap];
+	timeImg.userInteractionEnabled = YES;
 	
 	lable = [[UILabel alloc] init];
 	lable.text = @"更新:2016-05-12 14:41:40";
@@ -73,7 +74,7 @@
 	
 	[rootView1 addSubview:downImg];
 	[rootView1 addSubview:upImg];
-	[rootView1 addSubview:stopImg];
+	[rootView1 addSubview:timeImg];
 	[self addSubview:rootView1];
 
 }

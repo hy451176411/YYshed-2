@@ -7,6 +7,10 @@
 //
 
 #import "YYshedLoginController.h"
+#import "ShedHomeViewController.h"
+#import "LineDemoController.h"
+#import "EChartTest.h"
+
 
 
 @interface YYshedLoginController ()
@@ -117,6 +121,12 @@
 		[UserDefaults setObject:session_token forKey:YYSession_token];
 		[SBPublicAlert showMBProgressHUD:@"登录成功" andWhereView:self.view states:YES];
 		HomeController *control = [[HomeController alloc] init];
+		//UIViewController *controller;
+		//controller = [[LineDemoController alloc] init];
+		
+		UIViewController *test;
+		test = [[EChartTest alloc] init];
+
 		[self presentViewController:control animated:YES completion:nil];
 	}
 }
