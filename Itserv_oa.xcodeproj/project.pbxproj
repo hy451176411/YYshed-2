@@ -39,6 +39,9 @@
 		044EE8311CE21F62007C90C2 /* FriendHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044EE8301CE21F62007C90C2 /* FriendHeader.xib */; };
 		044EE8331CE22495007C90C2 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 044EE8321CE22495007C90C2 /* house.png */; };
 		044EE8351CE224A9007C90C2 /* expand.png in Resources */ = {isa = PBXBuildFile; fileRef = 044EE8341CE224A9007C90C2 /* expand.png */; };
+		0450FC591CE817100060A17E /* ico_make.png in Resources */ = {isa = PBXBuildFile; fileRef = 0450FC561CE817100060A17E /* ico_make.png */; };
+		0450FC5A1CE817100060A17E /* JSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450FC581CE817100060A17E /* JSDropDownMenu.m */; };
+		0450FC651CE817420060A17E /* ShedDetailBottom.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450FC641CE817420060A17E /* ShedDetailBottom.m */; };
 		045EAFD41CD0700C008AE499 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EAFD21CD0700C008AE499 /* TestView.m */; };
 		045EAFD51CD0700C008AE499 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EAFD31CD0700C008AE499 /* TestView.xib */; };
 		0463ABF11CE338D700EE9A96 /* ShedDatailCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463ABF01CE338D700EE9A96 /* ShedDatailCenter.m */; };
@@ -532,6 +535,11 @@
 		044EE8301CE21F62007C90C2 /* FriendHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendHeader.xib; sourceTree = "<group>"; };
 		044EE8321CE22495007C90C2 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		044EE8341CE224A9007C90C2 /* expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expand.png; sourceTree = "<group>"; };
+		0450FC561CE817100060A17E /* ico_make.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_make.png; sourceTree = "<group>"; };
+		0450FC571CE817100060A17E /* JSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDropDownMenu.h; sourceTree = "<group>"; };
+		0450FC581CE817100060A17E /* JSDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDropDownMenu.m; sourceTree = "<group>"; };
+		0450FC631CE817420060A17E /* ShedDetailBottom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedDetailBottom.h; sourceTree = "<group>"; };
+		0450FC641CE817420060A17E /* ShedDetailBottom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedDetailBottom.m; sourceTree = "<group>"; };
 		045EAFD11CD0700C008AE499 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		045EAFD21CD0700C008AE499 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		045EAFD31CD0700C008AE499 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
@@ -1208,6 +1216,16 @@
 			name = friend;
 			sourceTree = "<group>";
 		};
+		0450FC551CE817100060A17E /* JSDropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0450FC561CE817100060A17E /* ico_make.png */,
+				0450FC571CE817100060A17E /* JSDropDownMenu.h */,
+				0450FC581CE817100060A17E /* JSDropDownMenu.m */,
+			);
+			path = JSDropDownMenu;
+			sourceTree = "<group>";
+		};
 		046B81611CE2DF59003F170B /* 大棚 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1237,6 +1255,8 @@
 				044EE82A1CE1F77C007C90C2 /* Smartgate.m */,
 				049968D01CE7679A00AA9FAE /* EChartTest.h */,
 				049968D11CE7679A00AA9FAE /* EChartTest.m */,
+				0450FC631CE817420060A17E /* ShedDetailBottom.h */,
+				0450FC641CE817420060A17E /* ShedDetailBottom.m */,
 			);
 			name = "大棚";
 			sourceTree = "<group>";
@@ -1425,6 +1445,7 @@
 		04883C0B1CE764C400249F2B /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				0450FC551CE817100060A17E /* JSDropDownMenu */,
 				04883C0C1CE764C400249F2B /* RMMapper */,
 			);
 			path = Library;
@@ -2635,6 +2656,7 @@
 				633415FB197E805800303105 /* homeToolBg_iPhone.png in Resources */,
 				045EAFD51CD0700C008AE499 /* TestView.xib in Resources */,
 				A5E86FFE1ABC1518005195ED /* SendEmailPOPViewController_iPad.xib in Resources */,
+				0450FC591CE817100060A17E /* ico_make.png in Resources */,
 				048111B01CE585C30023390E /* camera_online.png in Resources */,
 				633415FF197E805800303105 /* toolbarThree.png in Resources */,
 				6334160D197E805800303105 /* sure.png in Resources */,
@@ -2857,6 +2879,7 @@
 				630CE9A3193DD90600E34663 /* SaveData.m in Sources */,
 				63F383941986288B006CE287 /* NSObject+SBJSON.m in Sources */,
 				63ED7C921939CBF4005B7B93 /* BaseModel.m in Sources */,
+				0450FC651CE817420060A17E /* ShedDetailBottom.m in Sources */,
 				0414E78C1CE459B00072076C /* HomeDetailNav.m in Sources */,
 				04883BE51CE764B600249F2B /* PYItemStyleProp.m in Sources */,
 				04883BE01CE764B600249F2B /* PYColor.m in Sources */,
@@ -2985,6 +3008,7 @@
 				047863681CE71CE100F0E4F5 /* EchartViewShed.m in Sources */,
 				63ED7C731939CB23005B7B93 /* Reachability.m in Sources */,
 				04F12FD81CE056B90014E655 /* YYshedRootViewController.m in Sources */,
+				0450FC5A1CE817100060A17E /* JSDropDownMenu.m in Sources */,
 				04883BFD1CE764B600249F2B /* PYMarkLine.m in Sources */,
 				04883C051CE764B600249F2B /* PYWordCloudSeries.m in Sources */,
 				A5E86FE61ABC0D64005195ED /* BindingEmailViewController.m in Sources */,

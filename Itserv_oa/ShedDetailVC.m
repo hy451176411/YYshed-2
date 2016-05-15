@@ -9,6 +9,7 @@
 #import "ShedDetailVC.h"
 #import "ShedDetailHeaderView.h"
 #import "ShedDatailCenter.h"
+#import "ShedDetailBottom.h"
 
 
 @interface ShedDetailVC ()<ShedDatailCenterDelegate>
@@ -28,9 +29,15 @@
 	[mShedDetailHeader1 configDataOfHeader:nil];
 	mShedDetailHeader1.userInteractionEnabled = YES;
 	mShedDetailCenter.delegate = self;
-	float ContentSize = SHED_HEADER_H+WATER_SHED_H+CAMERA_H+SHUTTER_H+ELEMENT_SPACING*6+BOTTOM_H+ECHART_H;
+	float ContentSize = SHED_HEADER_H+WATER_SHED_H+CAMERA_H+SHUTTER_H+ELEMENT_SPACING*7+BOTTOM_H+ECHART_H+MENU_H;
+	
+	ShedDetailBottom *bottom = [[ShedDetailBottom alloc] init];
+	bottom.frame =CGRectMake(0, SHED_HEADER_H+WATER_SHED_H+CAMERA_H+SHUTTER_H+ELEMENT_SPACING*4,SCREEN_WIDTH, ECHART_H+MENU_H);
+	[bottom configDataOfBottom:nil withY:SHED_HEADER_H+WATER_SHED_H+CAMERA_H+SHUTTER_H+ELEMENT_SPACING*6+ECHART_H];
+	
 	[self.mScrollView addSubview:mShedDetailHeader1];
 	[self.mScrollView addSubview:mShedDetailCenter];
+	[self.mScrollView addSubview:bottom];
 	[self.mScrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ContentSize)];
 	
 	

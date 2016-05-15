@@ -44,10 +44,10 @@ typedef enum {
  */
 -(void)showStandardLineDemo {
 	PYOption *option = [[PYOption alloc] init];
-	PYTitle *title = [[PYTitle alloc] init];
+	//PYTitle *title = [[PYTitle alloc] init];
 	//title.text = @"未来一周气温变化";
-	title.subtext = @"纯属虚构";
-	option.title = title;
+	//title.subtext = @"纯属虚构";
+	//option.title = title;
 	PYTooltip *tooltip = [[PYTooltip alloc] init];
 	tooltip.trigger = @"axis";
 	option.tooltip = tooltip;
@@ -76,7 +76,7 @@ typedef enum {
 	PYAxis *xAxis = [[PYAxis  alloc] init];
 	xAxis.type = @"category";
 	xAxis.boundaryGap = @(NO);
-	xAxis.data = @[@"1",@"2",@"3",@"4"];
+	xAxis.data = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"];
 	option.xAxis = [[NSMutableArray alloc] initWithObjects:xAxis, nil];
 	PYAxis *yAxis = [[PYAxis alloc] init];
 	yAxis.type = @"value";
@@ -85,7 +85,7 @@ typedef enum {
 	PYSeries *series1 = [[PYSeries alloc] init];
 	series1.name = @"最高温度";
 	series1.type = @"line";
-	series1.data = @[@(11),@(11),@(15),@(13),@(1000),@(13),@(10),@(11),@(11),@(15),@(13),@(12),@(13),@(10)];
+	series1.data = @[@(11),@(11),@(15),@(13),@(1000),@(13),@(10),@(11),@(11),@(15),@(13),@(12)];
 	//    PYMarkPoint *markPoint = [[PYMarkPoint alloc] init];
 	//    markPoint.data = @[@{@"type" : @"max", @"name": @"最大值"},@{@"type" : @"min", @"name": @"最小值"}];
 	//    series1.markPoint = markPoint;

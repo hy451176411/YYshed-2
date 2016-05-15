@@ -16,3 +16,4 @@
 #define ELEMENT_IMG_W_H 40			//摄像头，卷帘机，节水系统，每一个元素的图片的宽与高
 #define ELEMENT_SPACING 10			//元素的左右边距，上下间距
 #define ECHART_H 300				//图标元素的高度
+#define MENU_H   45					//图表选择器的高度

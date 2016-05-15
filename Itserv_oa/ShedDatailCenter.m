@@ -15,7 +15,7 @@
 	//float Element_h = CAMERA_H+SHUTTER_H+WATER_SHED_H+ELEMENT_SPACING_H*3;
 	//一个摄像头的高度，一个卷帘机的高度，一个节水系统的高度，每个的间距为ELEMENT_SPACING_H
 	
-	float Element_h = CAMERA_H+SHUTTER_H+WATER_SHED_H+ELEMENT_SPACING*4+ECHART_H;
+	float Element_h = CAMERA_H+SHUTTER_H+WATER_SHED_H+ELEMENT_SPACING*3;
 	//一个摄像头的高度，一个卷帘机的高度，一个节水系统的高度，每个的间距为ELEMENT_SPACING_H
 	
 	UIView *rootView = [[UIView alloc] init];
@@ -33,14 +33,9 @@
 	[water initWater:nil];
 	water.frame = CGRectMake(0, CAMERA_H+SHUTTER_H+ELEMENT_SPACING*3, width, WATER_SHED_H);
 	
-	EchartViewShed *echart =	[[EchartViewShed alloc] init];
-	[echart initAll];
-	echart.frame = CGRectMake(0, CAMERA_H+SHUTTER_H+ELEMENT_SPACING*4+WATER_SHED_H, width, ECHART_H);
 	[rootView addSubview:camera];
 	[rootView addSubview:shutter];
 	[rootView addSubview:water];
-	[rootView addSubview:echart];
-	
 	[self addSubview:rootView];
 }
 - (void)touchUP:(id)sender
