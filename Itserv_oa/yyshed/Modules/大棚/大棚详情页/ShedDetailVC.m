@@ -22,28 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.theRequest = [NetRequestManager createNetRequestWithDelegate:self];
-	ShedDatailCenter *mShedDetailCenter  = [[ShedDatailCenter alloc] init];
-	ShedDetailHeaderView *mShedDetailHeader1  = [[ShedDetailHeaderView alloc] init];
-	mShedDetailHeader1.frame = CGRectMake(0, 0, SCREEN_WIDTH, SHED_HEADER_H);
-	mShedDetailCenter.frame = CGRectMake(0, SHED_HEADER_H+ELEMENT_SPACING, self.view.frame.size.width, WATER_SHED_H+CAMERA_H+SHUTTER_H+ELEMENT_SPACING*3);
-	[mShedDetailCenter configDataOfCenter:nil];
-	[mShedDetailHeader1 configDataOfHeader:nil];
-	mShedDetailHeader1.userInteractionEnabled = YES;
-	mShedDetailCenter.delegate = self;
-	float ContentSize = SHED_HEADER_H+WATER_SHED_H+CAMERA_H+SHUTTER_H+ELEMENT_SPACING*7+BOTTOM_H+ECHART_H+MENU_H;
-	
-	ShedDetailBottom *bottom = [[ShedDetailBottom alloc] init];
-	bottom.frame =CGRectMake(0, SHED_HEADER_H+WATER_SHED_H+CAMERA_H+SHUTTER_H+ELEMENT_SPACING*4,SCREEN_WIDTH, ECHART_H+MENU_H);
-	[bottom configDataOfBottom:nil withY:SHED_HEADER_H+WATER_SHED_H+CAMERA_H+SHUTTER_H+ELEMENT_SPACING*6+ECHART_H];
-	
-	[self.mScrollView addSubview:mShedDetailHeader1];
-	[self.mScrollView addSubview:mShedDetailCenter];
-	[self.mScrollView addSubview:bottom];
-	[self.mScrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ContentSize)];
-	//YXF0002000000000029
-	NSString *dev = self.dev_id;
 	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
 	[self.theRequest getDeviceInfo:session_token withDev_id:self.dev_id];
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,13 +32,46 @@
 	
 }
 
--(void)up{
-	NSLog(@"up click");
+-(void)initViewsWithDatas:(NSDictionary*)model{
+	float startY = 0;
+	/*头部初始化*/
+	self.mShedHeader  = [[ShedDetailHeaderView alloc] init];
+	self.mShedHeader.frame = CGRectMake(0, startY, SCREEN_WIDTH, SHED_HEADER_H);
+	self.mShedHeader.userInteractionEnabled = YES;
+	NSDictionary *smartgate = model[@"smartgate"];
+	self.mShedHeader.smartgate = smartgate;
+	[self.mShedHeader configDataOfHeader:nil];
+	[self.mScrollView addSubview:self.mShedHeader];
+	startY =SHED_HEADER_H;
+	/*end 头部初始化*/
+	
+	/*中部部初始化*/
+	self.mShedCenter  = [[ShedDatailCenter alloc] init];
+	self.mShedCenter.rootModel = model[@"components"];
+	float centerH = [self.mShedCenter configDataOfCenter:nil];
+	self.mShedCenter.frame = CGRectMake(0, startY, SCREEN_WIDTH, centerH);
+	self.mShedCenter.delegate = self;
+	[self.mScrollView addSubview:self.mShedCenter];
+	startY = centerH+startY+ELEMENT_SPACING;
+	/*end 中部初始化*/
+	
+	/*底部初始化*/
+	self.mShedBottom = [[ShedDetailBottom alloc] init];
+	self.mShedBottom.frame =CGRectMake(0, startY,SCREEN_WIDTH, ECHART_H);
+	[self.mShedBottom configDataOfBottom:nil withY:startY+ECHART_H];
+	[self.mScrollView addSubview:self.mShedBottom];
+	startY = startY+ECHART_H+MENU_H;
+	/*end 底部初始化*/
+	
+	/*根据头部，中部，底部的元素值动态设置滚动视图的高度*/
+	float ContentSize = startY+ELEMENT_SPACING;
+	[self.mScrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ContentSize)];
 }
 #pragma mark 登录请求成功
 - (void)netRequest:(int)tag Finished:(NSDictionary *)model
 {
 	NSLog(@"----------%@",model);
+	[self initViewsWithDatas:model];
 }
 
 - (void)netRequest:(int)tag Failed:(NSDictionary *)model

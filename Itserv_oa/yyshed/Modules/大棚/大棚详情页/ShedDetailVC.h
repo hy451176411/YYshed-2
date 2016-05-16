@@ -9,12 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "FriendGroup.h"
 #import "ShedDetailHeaderView.h"
+#import "ShedDetailBottom.h"
+#import "ShedDatailCenter.h"
 #import "CommonShed.h"
 #import "YYNetRequest.h"
 
 @interface ShedDetailVC : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *mScrollView;
-@property (nonatomic, retain) ShedDetailHeaderView *mShedDetailHeader;
+@property (nonatomic, retain) ShedDetailHeaderView *mShedHeader;
+@property (nonatomic, retain) ShedDatailCenter *mShedCenter;
+@property (nonatomic, retain) ShedDetailBottom *mShedBottom;
 @property (nonatomic, retain) YYNetRequest *theRequest;
 @property (weak, nonatomic) NSString *dev_id;
+-(void)initViewsWithDatas:(NSDictionary*)model;
 @end

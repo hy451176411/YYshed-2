@@ -18,12 +18,14 @@
 	UILabel *plant_time;//种植时间
 /** 加载数据  */
 -(void)configDataOfHeader:(id)data{
+	//self.backgroundColor = [UIColor blueColor];
+	NSDictionary *temp = data;
 	float width = SCREEN_WIDTH;
 	UIView *rootView = [[UIView alloc] init];
 	rootView.backgroundColor = [UIColor clearColor];
 	rootView.frame = CGRectMake(0, ELEMENT_SPACING, width, SHED_HEADER_H);
 	int lableH = 45;
-	int topH = 5;
+	int topH = 1;
 	int i = 0;
 	int singleLableW = 100;
 	int leftM = 10;//左边距
@@ -31,13 +33,14 @@
 	UIView *view = [[UIView alloc] init];
 	UILabel *lable = [[UILabel alloc] init];
 	
-	view.frame = CGRectMake(0, (lableH+i)*i+topH, width, lableH);
+	view.frame = CGRectMake(0, lableH*i, width, lableH);
 	view.backgroundColor = [UIColor whiteColor];
 	lable.text = @"种植作物：";
 	lable.frame = CGRectMake(leftM, 0,singleLableW, lableH);
 	[view addSubview:lable];
 	lable = [[UILabel alloc] init];
-	lable.text = @"番茄";
+	//lable.text = @"番茄";
+	lable.text = self.smartgate[@"plant_name"];
 	plant_name = lable;
 	lable.frame = CGRectMake(singleLableW, 0, doubleLableW, lableH);
 	[view addSubview:lable];
@@ -49,7 +52,7 @@
 	
 	//第二行
 	view = [[UIView alloc] init];
-	view.frame = CGRectMake(0, (lableH+1)*i+topH, width, lableH);
+	view.frame = CGRectMake(0, lableH*i+topH*i, width, lableH);
 	view.backgroundColor = [UIColor whiteColor];
 	
 	lable = [[UILabel alloc] init];
@@ -58,8 +61,9 @@
 	[view addSubview:lable];
 	
 	lable = [[UILabel alloc] init];
-	lable.text = @"2015年12月16日";
+	//lable.text = @"2015年12月16日";
 	plant_time = lable;
+	plant_time.text = self.smartgate[@"plant_time"];
 	lable.frame = CGRectMake(singleLableW, 0, doubleLableW, lableH);
 	[view addSubview:lable];
 	[rootView addSubview:view];
@@ -69,7 +73,7 @@
 	
 	//第三行
 	view = [[UIView alloc] init];
-	view.frame = CGRectMake(0, (lableH+1)*i+topH, width, lableH);
+	view.frame = CGRectMake(0, lableH*i+topH*i, width, lableH);
 	view.backgroundColor = [UIColor whiteColor];
 	
 	lable = [[UILabel alloc] init];
@@ -78,8 +82,9 @@
 	[view addSubview:lable];
 	
 	lable = [[UILabel alloc] init];
-	lable.text = @"1200平方米";
 	area = lable;
+	NSString *areaStr = self.smartgate[@"area"];
+	area.text = [NSString stringWithFormat:@"%@平方米",areaStr];
 	lable.frame = CGRectMake(singleLableW, 0, doubleLableW, lableH);
 	[view addSubview:lable];
 	[rootView addSubview:view];
@@ -88,7 +93,7 @@
 	
 	//第二行
 	view = [[UIView alloc] init];
-	view.frame = CGRectMake(0, (lableH+1)*i+topH, width, lableH);
+	view.frame = CGRectMake(0, lableH*i+topH*i, width, lableH);
 	view.backgroundColor = [UIColor whiteColor];
 	
 	lable = [[UILabel alloc] init];
@@ -97,8 +102,8 @@
 	[view addSubview:lable];
 	
 	lable = [[UILabel alloc] init];
-	lable.text = @"2016年12月16日";
 	harvest_time = lable;
+	harvest_time.text = self.smartgate[@"harvest_time"];
 	lable.frame = CGRectMake(singleLableW, 0, doubleLableW, lableH);
 	[view addSubview:lable];
 	[rootView addSubview:view];
@@ -108,7 +113,7 @@
 	
 	//第二行
 	view = [[UIView alloc] init];
-	view.frame = CGRectMake(0, (lableH+1)*i+topH, width, lableH);
+	view.frame = CGRectMake(0,lableH*i+topH*i, width, lableH);
 	view.backgroundColor = [UIColor whiteColor];
 	
 	lable = [[UILabel alloc] init];
@@ -117,8 +122,9 @@
 	[view addSubview:lable];
 	
 	lable = [[UILabel alloc] init];
-	lable.text = @"3000公斤";
 	expectation= lable;
+	NSString *expectationStr = self.smartgate[@"expectation"];
+	expectation.text = [NSString stringWithFormat:@"%@公斤",expectationStr];
 	lable.frame = CGRectMake(singleLableW, 0, doubleLableW, lableH);
 	[view addSubview:lable];
 	[rootView addSubview:view];
@@ -128,7 +134,7 @@
 	
 	//第二行
 	view = [[UIView alloc] init];
-	view.frame = CGRectMake(0, (lableH+1)*i+topH, width, lableH);
+	view.frame = CGRectMake(0, lableH*i+topH*i, width, lableH);
 	view.backgroundColor = [UIColor whiteColor];
 	
 	lable = [[UILabel alloc] init];
@@ -137,8 +143,8 @@
 	[view addSubview:lable];
 	
 	lable = [[UILabel alloc] init];
-	lable.text = @"YYYYYYYYYYYYYYY";
 	sn= lable;
+	sn.text = self.smartgate[@"sn"];
 	lable.frame = CGRectMake(singleLableW, 0, doubleLableW, lableH);
 	[view addSubview:lable];
 	[rootView addSubview:view];
@@ -148,7 +154,7 @@
 	
 	//第二行
 	view = [[UIView alloc] init];
-	view.frame = CGRectMake(0, (lableH+1)*i+topH, width, lableH);
+	view.frame = CGRectMake(0, lableH*i+topH*i, width, lableH);
 	view.backgroundColor = [UIColor whiteColor];
 	
 	lable = [[UILabel alloc] init];
@@ -157,8 +163,8 @@
 	[view addSubview:lable];
 	
 	lable = [[UILabel alloc] init];
-	lable.text = @"中国长沙";
 	location = lable;
+	location.text = self.smartgate[@"dev_location"];
 	lable.frame = CGRectMake(singleLableW, 0, doubleLableW, lableH);
 	[view addSubview:lable];
 	UITapGestureRecognizer *singleTap1 =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchUP:)];

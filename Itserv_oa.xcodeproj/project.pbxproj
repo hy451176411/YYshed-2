@@ -80,7 +80,7 @@
 		046532D11CE9699100B6EF1E /* ShedDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532CE1CE9699100B6EF1E /* ShedDetailHeaderView.m */; };
 		046532D51CE969CB00B6EF1E /* ShedDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532D31CE969CB00B6EF1E /* ShedDetailVC.m */; };
 		046532D61CE969CB00B6EF1E /* ShedDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046532D41CE969CB00B6EF1E /* ShedDetailVC.xib */; };
-		046532D81CE96BCE00B6EF1E /* 大棚详情.txt in Resources */ = {isa = PBXBuildFile; fileRef = 046532D71CE96BCE00B6EF1E /* 大棚详情.txt */; };
+		046532DA1CE96C2D00B6EF1E /* 大棚详情.txt in Resources */ = {isa = PBXBuildFile; fileRef = 046532D91CE96C2D00B6EF1E /* 大棚详情.txt */; };
 		046B81581CE2C538003F170B /* lead.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B81571CE2C538003F170B /* lead.png */; };
 		046B81691CE2E6D1003F170B /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B81681CE2E6D1003F170B /* back.png */; };
 		048111AF1CE585C30023390E /* camera_offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111AD1CE585C30023390E /* camera_offline.png */; };
@@ -598,7 +598,7 @@
 		046532D21CE969CB00B6EF1E /* ShedDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShedDetailVC.h; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailVC.h"; sourceTree = "<group>"; };
 		046532D31CE969CB00B6EF1E /* ShedDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShedDetailVC.m; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailVC.m"; sourceTree = "<group>"; };
 		046532D41CE969CB00B6EF1E /* ShedDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShedDetailVC.xib; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailVC.xib"; sourceTree = "<group>"; };
-		046532D71CE96BCE00B6EF1E /* 大棚详情.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "大棚详情.txt"; sourceTree = "<group>"; };
+		046532D91CE96C2D00B6EF1E /* 大棚详情.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "大棚详情.txt"; path = "yyshed/Modules/大棚/大棚详情页/大棚详情.txt"; sourceTree = "<group>"; };
 		046B81571CE2C538003F170B /* lead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lead.png; sourceTree = "<group>"; };
 		046B81681CE2E6D1003F170B /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		048111AD1CE585C30023390E /* camera_offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_offline.png; path = "../../../res/drawable-hdpi/camera_offline.png"; sourceTree = "<group>"; };
@@ -1169,7 +1169,7 @@
 		0414E79A1CE47C2A0072076C /* 大鹏详情页 */ = {
 			isa = PBXGroup;
 			children = (
-				046532D71CE96BCE00B6EF1E /* 大棚详情.txt */,
+				046532D91CE96C2D00B6EF1E /* 大棚详情.txt */,
 				046532D21CE969CB00B6EF1E /* ShedDetailVC.h */,
 				046532D31CE969CB00B6EF1E /* ShedDetailVC.m */,
 				046532D41CE969CB00B6EF1E /* ShedDetailVC.xib */,
@@ -2813,7 +2813,7 @@
 				048111B21CE586030023390E /* button_close.png in Resources */,
 				6334160B197E805800303105 /* cancel.png in Resources */,
 				6334160F197E805800303105 /* noRead.png in Resources */,
-				046532D81CE96BCE00B6EF1E /* 大棚详情.txt in Resources */,
+				046532DA1CE96C2D00B6EF1E /* 大棚详情.txt in Resources */,
 				630824BD197F675300BB7217 /* OfficialIcon3.png in Resources */,
 				633415FA197E805800303105 /* homeToolBg_iPad.png in Resources */,
 				046532671CE9624200B6EF1E /* friends.plist in Resources */,

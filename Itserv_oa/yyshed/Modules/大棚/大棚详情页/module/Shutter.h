@@ -12,6 +12,6 @@
 #import "CommonShed.h"
 
 @interface Shutter : UIView
-
+@property (nonatomic, retain) NSDictionary *model;
 -(void)initShutter:(id)data;
 @end

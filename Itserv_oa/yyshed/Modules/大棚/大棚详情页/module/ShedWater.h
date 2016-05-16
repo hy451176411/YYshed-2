@@ -11,4 +11,5 @@
 
 @interface ShedWater : UIView
 -(void)initWater:(id)data;
+@property (nonatomic, retain) NSDictionary *model;
 @end

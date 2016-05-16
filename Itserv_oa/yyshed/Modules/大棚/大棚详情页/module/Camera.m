@@ -13,7 +13,7 @@
 -(void)initCamera:(id)data{
 	self.userInteractionEnabled = YES;
 	UIView *rootView1 = [[UIView alloc] init];
-	rootView1.frame = CGRectMake(0, ELEMENT_SPACING, SCREEN_WIDTH, CAMERA_H);
+	rootView1.frame = CGRectMake(0, 0, SCREEN_WIDTH, CAMERA_H);
 	rootView1.userInteractionEnabled = YES;
 	rootView1.backgroundColor = [UIColor whiteColor];
 	//图像
@@ -28,12 +28,16 @@
 	view.frame = CGRectMake(ELEMENT_IMG_W_H+ELEMENT_SPACING, ELEMENT_SPACING, 200, 49);
 	//上下排列的名字与sn
 	UILabel *lable = [[UILabel alloc] init];
-	lable.text = @"摄像头2";
+	//lable.text = @"摄像头2";
+	lable.text = self.model[@"dev_name"];
 	lable.frame = CGRectMake(3, 0, 200, 25);
 	[view addSubview:lable];
 	
 	lable = [[UILabel alloc] init];
-	lable.text = @"sn:YXF0002000000000030";
+	//lable.text = @"sn:YXF0002000000000030";
+	NSString *sn = self.model[@"sn"];
+	NSString *snStr = [NSString stringWithFormat:@"sn:%@",sn];
+	lable.text = snStr;
 	lable.frame = CGRectMake(3, 20, 200, 25);
 	lable.backgroundColor = [UIColor clearColor];
 	lable.font = [UIFont systemFontOfSize:10];

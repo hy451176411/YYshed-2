@@ -22,11 +22,8 @@
 
 -(void)configDataOfBottom:(id)data  withY:(float) orignY{
 	
-	float Element_h = CAMERA_H+SHUTTER_H+WATER_SHED_H+ELEMENT_SPACING*4+ECHART_H;
-	//一个摄像头的高度，一个卷帘机的高度，一个节水系统的高度，每个的间距为ELEMENT_SPACING_H
-	
 	UIView *rootView = [[UIView alloc] init];
-	rootView.frame = CGRectMake(0, 0, SCREEN_WIDTH, ECHART_H+80);//注意设置frame
+	rootView.frame = CGRectMake(0, 0, SCREEN_WIDTH, ECHART_H+80);//注意设置
 	
 	EchartViewShed *echart =	[[EchartViewShed alloc] init];
 	[echart initAll];
@@ -43,11 +40,12 @@
 	menu.textColor = [UIColor colorWithRed:83.f/255.0f green:83.f/255.0f blue:83.f/255.0f alpha:1.0f];
 	menu.dataSource = self;
 	menu.delegate = self;
-	menu.frame = CGRectMake(10, 20, menuW, MENU_H);
-	
+	menu.frame = CGRectMake(10, 5, menuW, MENU_H);
+	//self.backgroundColor = [UIColor grayColor];
 	
 	[rootView addSubview:echart];
 	[rootView addSubview:menu];
+
 	[self addSubview:rootView];
 	
 }

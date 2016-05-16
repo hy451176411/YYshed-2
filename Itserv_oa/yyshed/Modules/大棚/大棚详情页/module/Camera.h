@@ -11,4 +11,5 @@
 @interface Camera : UIView
 
 -(void)initCamera:(id)data;
+@property (nonatomic, retain) NSDictionary *model;
 @end

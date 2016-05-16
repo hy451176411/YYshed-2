@@ -26,7 +26,7 @@ typedef enum {
 - (void)initAll {
 	
 	self.kEchartView = [[PYEchartsView alloc] init];
-	self.kEchartView.frame = CGRectMake(0, ELEMENT_SPACING, SCREEN_WIDTH, ECHART_H);
+	self.kEchartView.frame = CGRectMake(0, 0, SCREEN_WIDTH, ECHART_H);
 	self.kEchartView.backgroundColor = [UIColor whiteColor];
 	[self addSubview:self.kEchartView];
 	[self initData];
