@@ -10,8 +10,11 @@
 #import "FriendGroup.h"
 #import "ShedDetailHeaderView.h"
 #import "CommonShed.h"
+#import "YYNetRequest.h"
 
 @interface ShedDetailVC : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *mScrollView;
 @property (nonatomic, retain) ShedDetailHeaderView *mShedDetailHeader;
+@property (nonatomic, retain) YYNetRequest *theRequest;
+@property (weak, nonatomic) NSString *dev_id;
 @end

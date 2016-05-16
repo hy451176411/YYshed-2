@@ -1,48 +1,168 @@
-{
-	contacts:[];
-	email:"";
-	phone:13780889180;
-	smartgates:[
-		{
-		components:[
-			"air_humidity" = "0.1";
-			"air_temperature" = "-40.01";
-			charge = 0;
-			"charge_state" = normal;
-			"dev_alias" = "\U6e29\U6e7f\U5ea6\U4f20\U611f\U5668";
-			"dev_extend_type" = "";
-			"dev_name" = "\U6e29\U6e7f\U5ea6\U4f20\U611f\U5668";
-			"dev_type" = "humidity-temperature";
-			"humidity_state" = normal;
-			"online_state" = online;
-			owner = YXF0002000000000029;
-			password = "";
-			"server_time" = 1462919870960;
-			sn = 01010D0000000021;
-			"temperature_state" = normal;
-			user = "";
-		]
-		smartgate:{
-				area = 1200;
-				"contact_name" = yunyangdata;
-				"contact_number" = 18001228446;
-				"dev_alias" = undefined;
-				"dev_location" = "\U4e2d\U56fd\U5c71\U4e1c\U7701\U6f4d\U574a\U5e02\U5bff\U5149\U5e02S224";
-				"dev_name" = "\U6b23\U6b23\U519c\U4e1a\U793a\U8303\U56ed";
-				expectation = 3000;
-				"harvest_time" = 20160416;
-				"harvest_weight" = 3000;
-				lat = "36.87176";
-				lng = "118.95065";
-				"online_state" = online;
-				"plant_name" = "\U756a\U8304";
-				"plant_time" = 20151216;
-				"server_time" = 1462919870959;
-				sn = YXF0002000000000029;
-				"utc_offset" = 28800;
-				"utc_timestamp" = 1462948660007;
-			}
-		}
-	]
+Warning: Error creating LLDB target at path '/Users/itserv/Library/Developer/Xcode/DerivedData/Itserv_oa-ectqnauphowzevesyduajjoycxmo/Build/Products/Debug-iphonesimulator/Itserv_oa.app'- using an empty LLDB target which can cause slow memory reads from remote devices.
+2016-05-15 22:01:49.945 Itserv_oa[6281:105682] Test：(null)
+2016-05-15 22:01:51.187 Itserv_oa[6281:105682] ----------{
+email = "";
+emailVerified = 0;
+id = 56e8f761fda56ab105f85f98;
+mobilePhoneNumber = 13780889180;
+mobilePhoneVerified = 0;
+phone = 13780889180;
+role = user;
+sessionToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNoaXh1ZXBlbmciLCJjcmVhdGVkQXQiOiIyMDE2LTAzLTE2VDA2OjA0OjE3LjUzM1oiLCJpYXQiOjE0NTgxMDgyNTd9.Hnn0PyIMd0XXR-6SQxJiYMe7Dnx-gryQSoRshSV3s5w";
+"session_token" = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InNoaXh1ZXBlbmciLCJjcmVhdGVkQXQiOiIyMDE2LTAzLTE2VDA2OjA0OjE3LjUzM1oiLCJpYXQiOjE0NTgxMDgyNTd9.Hnn0PyIMd0XXR-6SQxJiYMe7Dnx-gryQSoRshSV3s5w";
+username = shixuepeng;
 }
-
+2016-05-15 22:01:51.515 Itserv_oa[6281:105682] ----------{
+contacts =     (
+);
+email = "";
+phone = 13780889180;
+smartgates =     (
+{
+components =             (
+{
+"air_humidity" = "0.1";
+"air_temperature" = "-40.01";
+charge = 0;
+"charge_state" = normal;
+"dev_alias" = "\U6e29\U6e7f\U5ea6\U4f20\U611f\U5668";
+"dev_extend_type" = "";
+"dev_name" = "\U6e29\U6e7f\U5ea6\U4f20\U611f\U5668";
+"dev_type" = "humidity-temperature";
+"humidity_state" = normal;
+"online_state" = online;
+owner = YXF0002000000000029;
+password = "";
+"server_time" = 1463292106339;
+sn = 01010D0000000021;
+"temperature_state" = normal;
+user = "";
+},
+{
+charge = 100;
+"charge_state" = normal;
+"dev_alias" = "\U6b23\U6b23\U519c\U4e1a2";
+"dev_extend_type" = "";
+"dev_name" = "\U6444\U50cf\U59342";
+"dev_type" = cameraip;
+"online_state" = online;
+owner = YXF0002000000000029;
+password = "";
+"server_time" = 1463292106354;
+sn = "HSL-220561-GWRPP";
+user = admin;
+},
+{
+charge = 100;
+"charge_state" = normal;
+"dev_alias" = "\U667a\U80fd\U8282\U6c34\U7cfb\U7edf";
+"dev_extend_type" = "erelay-water-valve";
+"dev_name" = "\U5355\U5b54\U63d2\U5ea7";
+"dev_type" = erelay;
+"online_state" = online;
+owner = YXF0002000000000029;
+password = "";
+"server_time" = 1463292106344;
+sn = 0000000000000029;
+status = 0;
+user = "";
+}
+);
+smartgate =             {
+area = 1200;
+"contact_name" = yunyangdata;
+"contact_number" = 18001228446;
+"dev_alias" = undefined;
+"dev_location" = "\U4e2d\U56fd\U5c71\U4e1c\U7701\U6f4d\U574a\U5e02\U5bff\U5149\U5e02S224";
+"dev_name" = "\U6b23\U6b23\U519c\U4e1a\U793a\U8303\U56ed";
+expectation = 3000;
+"harvest_time" = 20160416;
+"harvest_weight" = 3000;
+lat = "36.84086";
+lng = "118.91805";
+"online_state" = online;
+"plant_name" = "\U756a\U8304";
+"plant_time" = 20151216;
+"server_time" = 1463292106335;
+sn = YXF0002000000000029;
+"utc_offset" = 28800;
+"utc_timestamp" = 1463320905613;
+};
+},
+{
+components =             (
+{
+"dev_extend_type" = "";
+"dev_name" = "\U6e29\U6e7f\U5ea6\U4f20\U611f\U5668";
+"dev_type" = "humidity-temperature";
+id = 56f21394259da9015bea8c3e;
+"online_state" = offline;
+owner = YXF0002000000000030;
+password = "";
+sn = 01010D0000000038;
+user = "";
+},
+{
+"dev_alias" = "\U5377\U5e18\U673a\U63a7\U5236\U5668";
+"dev_extend_type" = "";
+"dev_name" = "\U53cc\U5411\U63a7\U5236";
+"dev_type" = erelay2;
+id = 57121d8b266c363c5024494a;
+"online_state" = offline;
+owner = YXF0002000000000030;
+password = "";
+sn = 21010B000000000E;
+user = "";
+},
+{
+"dev_extend_type" = "";
+"dev_name" = "\U5149\U7167\U4f20\U611f\U5668";
+"dev_type" = illumination;
+id = 571b34a9a3f611ff68ff9ff7;
+"online_state" = offline;
+owner = YXF0002000000000030;
+password = "";
+sn = 030111000000005C;
+user = "";
+},
+{
+"dev_alias" = "\U6444\U50cf\U59341";
+"dev_extend_type" = "";
+"dev_name" = "\U6444\U50cf\U59341";
+"dev_type" = cameraip;
+id = 571b3acaa3f611ff68ffa479;
+"online_state" = offline;
+owner = YXF0002000000000030;
+password = "";
+sn = "HSL-237657-PCXSC";
+user = admin;
+}
+);
+smartgate =             {
+area = 20;
+"contact_name" = yunyangdata;
+"contact_number" = 18001228446;
+createdAt = "2016-04-20T04:01:22.796Z";
+"dev_location" = "\U4e2d\U56fd\U5c71\U4e1c\U7701\U6f4d\U574a\U5e02\U5bff\U5149\U5e02S224";
+"dev_name" = "\U4e91\U6d0b\U6570\U636e\U667a\U80fd\U7f51\U5173";
+expectation = 3500;
+geogroup = "0fce8cd3-9a30-4cef-9711-fcc9971b150b";
+"harvest_time" = 20160601;
+"harvest_weight" = 3000;
+id = 5716ff12cf521faa651c45e1;
+lat = "36.872074";
+lng = "118.95086";
+owner = shixuepeng;
+"plant_name" = "\U5927\U8c46";
+"plant_time" = 20151101;
+sn = YXF0002000000000030;
+updatedAt = "2016-04-28T02:23:48.061Z";
+};
+}
+);
+username = shixuepeng;
+}
+2016-05-15 22:01:51.540 Itserv_oa[6281:105682] Setting the background color on UITableViewHeaderFooterView has been deprecated. Please use contentView.backgroundColor instead.
+2016-05-15 22:01:51.550 Itserv_oa[6281:105682] Setting the background color on UITableViewHeaderFooterView has been deprecated. Please use contentView.backgroundColor instead.
+2016-05-15 22:01:52.415 Itserv_oa[6281:105682] headerTitleClick
+(lldb)

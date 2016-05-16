@@ -1,0 +1,70 @@
+components =     (
+{
+"air_humidity" = "0.1";
+"air_temperature" = "-40.01";
+charge = 0;
+"charge_state" = normal;
+"dev_alias" = "\U6e29\U6e7f\U5ea6\U4f20\U611f\U5668";
+"dev_extend_type" = "";
+"dev_name" = "\U6e29\U6e7f\U5ea6\U4f20\U611f\U5668";
+"dev_type" = "humidity-temperature";
+"humidity_state" = normal;
+"online_state" = online;
+owner = YXF0002000000000029;
+password = "";
+"server_time" = 1463337666948;
+sn = 01010D0000000021;
+"temperature_state" = normal;
+user = "";
+},
+{
+charge = 100;
+"charge_state" = normal;
+"dev_alias" = "\U6b23\U6b23\U519c\U4e1a2";
+"dev_extend_type" = "";
+"dev_name" = "\U6444\U50cf\U59342";
+"dev_type" = cameraip;
+"online_state" = online;
+owner = YXF0002000000000029;
+password = "";
+"server_time" = 1463337666963;
+sn = "HSL-220561-GWRPP";
+user = admin;
+},
+{
+charge = 100;
+"charge_state" = normal;
+"dev_alias" = "\U667a\U80fd\U8282\U6c34\U7cfb\U7edf";
+"dev_extend_type" = "erelay-water-valve";
+"dev_name" = "\U5355\U5b54\U63d2\U5ea7";
+"dev_type" = erelay;
+"online_state" = online;
+owner = YXF0002000000000029;
+password = "";
+"server_time" = 1463337666954;
+sn = 0000000000000029;
+status = 0;
+user = "";
+}
+);
+smartgate =     {
+area = 1200;
+"contact_name" = yunyangdata;
+"contact_number" = 18001228446;
+"dev_alias" = undefined;
+"dev_location" = "\U4e2d\U56fd\U5c71\U4e1c\U7701\U6f4d\U574a\U5e02\U5bff\U5149\U5e02S224";
+"dev_name" = "\U6b23\U6b23\U519c\U4e1a\U793a\U8303\U56ed";
+expectation = 3000;
+"harvest_time" = 20160416;
+"harvest_weight" = 3000;
+lat = "36.84086";
+lng = "118.91805";
+"online_state" = online;
+"plant_name" = "\U756a\U8304";
+"plant_time" = 20151216;
+"server_time" = 1463337666943;
+sn = YXF0002000000000029;
+"utc_offset" = 28800;
+"utc_timestamp" = 1463366465577;
+};
+}

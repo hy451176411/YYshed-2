@@ -105,6 +105,30 @@
 	[request setTimeOutSeconds:30];
 	[self startAsynchronousWithRequest:request];
 }
+
+-(void)getDeviceInfo:(NSString*)session_token withDev_id:(NSString*)dev_id
+{
+	NSString *str = @"http://182.92.67.74/api/smartgates/";
+	NSString *tempStr = [NSString stringWithFormat:@"%@%@%@",str,dev_id,@"/infos"];
+	NSURL *url=[NSURL URLWithString:tempStr];
+	ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
+	[request setRequestMethod:@"GET"];
+	//访问
+	request = [ASIHTTPRequest requestWithURL:url];
+	//超时时间多少秒
+	[request setTimeOutSeconds:30];
+	//访问失败重新访问次数
+	[request setNumberOfTimesToRetryOnTimeout:2];
+	//是否使用持久化连接
+	[request setShouldAttemptPersistentConnection:NO];
+	NSString *agent = @"Mozilla/5.0 (Android; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/1.0 Mobile/EC99E CUTV/A312 Safari/525.13";
+	NSString *Authorization = [NSString stringWithFormat:@"%@%@",@"bearer ",session_token];
+	[request addRequestHeader:@"Authorization" value:Authorization];
+	[request addRequestHeader:@"User-Agent" value:agent];
+	request.delegate = self;
+	[request setTimeOutSeconds:30];
+	[self startAsynchronousWithRequest:request];
+}
 - (void)startAsynchronousWithRequest:(ASIHTTPRequest *)request
 {
 	[request startAsynchronous];

@@ -37,6 +37,7 @@
 	_friendData = friendData;
 	self.mLable.text = friendData.air_temperature;
 	self.mLable1.text = friendData.air_humidity;
+	
 	//self.desc.textColor = friendData.isVip?[UIColor redColor]:[UIColor blackColor];
 	//self.desc.text = friendData.intro;
 }

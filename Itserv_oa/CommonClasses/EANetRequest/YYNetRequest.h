@@ -50,4 +50,7 @@
 -(void)login:(NSString*) username password:(NSString*) psd;
 //获取大鹏首页数据
 -(void)getUserInfo:(NSString*)session_token user_Agent:(NSString*)Agent;
+//获取大棚详情页数据
+-(void)getDeviceInfo:(NSString*)session_token withDev_id:(NSString*)dev_id;
+
 @end
