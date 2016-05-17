@@ -59,7 +59,8 @@
 	
 	/*底部初始化*/
 	ShedDetailBottomMenu *menu = [[ShedDetailBottomMenu alloc] init];
-	menu.rootModel = model[@"components"];
+	NSMutableArray *menus = [self configMenus:model[@"components"]];
+	menu.menus = menus;
 	float menuH = [menu configDataOfBottomMenu:nil];
 	menu.frame = CGRectMake(0, self.startY,SCREEN_WIDTH, MENU_H);
 	menu.delegate = self;
@@ -71,25 +72,52 @@
 	/*根据头部，中部，底部的元素值动态设置滚动视图的高度*/
 	//float ContentSize = self.startY+BOTTOM_H;
 	[self.mScrollView setContentSize:CGSizeMake(SCREEN_WIDTH, self.startY)];
-	[self initBottom];
+	[self initCharts:menus[0]];
 }
 
--(void)initBottom{
-	self.mShedBottom = [[ShedDetailBottom alloc] init];
-	float bottomH = [self.mShedBottom configDataOfBottom:nil];
-	self.mShedBottom.frame =CGRectMake(0, self.startY,SCREEN_WIDTH, bottomH);
-	[self.mScrollView addSubview:self.mShedBottom];
-	self.startY = self.startY+bottomH+ELEMENT_SPACING;
-	float ContentSize = self.startY+BOTTOM_H;
-	[self.mScrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ContentSize)];
+-(NSMutableArray*)configMenus:(NSArray*)model{
+	NSMutableArray *menus=[NSMutableArray array];
+	NSArray *array = model;
+	for (int i=0; i<array.count; i++) {
+		NSDictionary *dic = array[i];
+		if (dic) {
+			NSString *dev_type = dic[@"dev_type"];
+			if ([dev_type isEqualToString:@"illumination"] || [dev_type isEqualToString:@"humidity-temperature"]) {
+				[menus addObject:dic];
+			}
+		}
+	}
+	return menus;
+}
+-(void)initBottom:(NSDictionary*)model{
+	NSString *result = model[@"result"];
+	if ([result isEqualToString:@"OK"]) {
+		NSDictionary *msg = model[@"msg"];
+		NSDictionary *data = msg[@"data"];
+		self.mShedBottom = [[ShedDetailBottom alloc] init];
+		self.mShedBottom.model = data;
+		float bottomH = [self.mShedBottom configDataOfBottom:nil];
+		self.mShedBottom.frame =CGRectMake(0, self.startY,SCREEN_WIDTH, bottomH);
+		[self.mScrollView addSubview:self.mShedBottom];
+		self.startY = self.startY+bottomH+ELEMENT_SPACING;
+		float ContentSize = self.startY+BOTTOM_H;
+		[self.mScrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ContentSize)];
+	}
+	
 }
 - (void)didConfirmWithItemAtRow:(NSDictionary*)model{
 	NSLog(@"didConfirmWithItemAtRow %@",model);
+	[self initCharts:model];
 }
 - (void)touchShutterUP:(NSDictionary*)model{
 	NSLog(@"touchShutterUP---%@",model);
 }
-
+-(void)initCharts:(NSDictionary*)menu{
+	NSString *sn = menu[@"sn"];
+	NSString *dev_type = menu[@"dev_type"];
+	NSString *scope = @"scope2";
+	[self.theRequest getAnalysisResult:sn withType:dev_type withScope:scope];
+}
 - (void)touchBtnWaterOnAndOff:(NSDictionary*)model withView:(UIView*)view{
 	NSLog(@"touchShutterUP---%@",model);
 	NSString *status = model[@"status"];
@@ -110,6 +138,8 @@
 	NSLog(@"----------%@",model);
 	if (tag == YYShed_getDeviceInfo) {
 		[self initViewsWithDatas:model];
+	}else if(tag == YYShed_getAnalysisResult){
+		[self initBottom:model];
 	}
 	
 }

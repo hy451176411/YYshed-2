@@ -56,4 +56,6 @@
 -(void)getDeviceInfo:(NSString*)session_token withDev_id:(NSString*)dev_id;
 //节水系统的开关操作
 -(void)opeErelay:(NSString*)session_token withDev_id:(NSString*)dev_id withComponentId:(NSString*) componentId withAction:(NSString*)action;
+//获取图标数据
+-(void)getAnalysisResult:(NSString*)sn withType:(NSString*)type withScope:(NSString*)scope;
 @end

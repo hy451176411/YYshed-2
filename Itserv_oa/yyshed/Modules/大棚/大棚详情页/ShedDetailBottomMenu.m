@@ -15,19 +15,6 @@
 
 @implementation ShedDetailBottomMenu
 
--(void)initModel{
-	self.menus=[NSMutableArray array];
-	NSArray *array = self.rootModel;
-	for (int i=0; i<array.count; i++) {
-		NSDictionary *dic = array[i];
-		if (dic) {
-			NSString *dev_type = dic[@"dev_type"];
-			if ([dev_type isEqualToString:@"illumination"] || [dev_type isEqualToString:@"humidity-temperature"]) {
-				[self.menus addObject:dic];
-			}
-		}
-	}
-}
 
 -(NSString*)configNameWithDic:(id)dic {
 	NSString *name = dic[@"dev_alias"];
@@ -40,11 +27,10 @@
 	return name;
 }
 -(float)configDataOfBottomMenu:(id)data{
-	[self initModel];
+	//[self initModel];
 	UIView *rootView1 = [[UIView alloc] init];
 	rootView1.frame = CGRectMake(0, 0, SCREEN_WIDTH, MENU_H);
 	float startY = 0;
-	//self.menus = @[@"温湿度传感器", @"光照传感器"];
 	self.mSelectBtn = [[UIButton alloc] init];
 	self.mSelectBtn.frame = CGRectMake(ELEMENT_SPACING, startY, SCREEN_WIDTH-2*ELEMENT_SPACING, MENU_H);
 	self.mSelectBtn.titleLabel.font = SystemFontOfSize(16);

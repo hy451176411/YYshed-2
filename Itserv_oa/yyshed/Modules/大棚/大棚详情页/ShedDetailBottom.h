@@ -10,5 +10,5 @@
 #import "EchartViewShed.h"
 @interface ShedDetailBottom : UIView
 -(float)configDataOfBottom:(id)data;
-
+@property (nonatomic, retain) NSDictionary *model;
 @end

@@ -18,7 +18,6 @@
 
 @interface ShedDetailBottomMenu : UIView
 -(float)configDataOfBottomMenu:(id)data;
-@property (nonatomic, assign) NSArray *rootModel;
 @property (nonatomic, strong) NSMutableArray *menus;//传感器数组
 - (void)showWithFooter:(id)sender;
 @property (nonatomic, retain) UIButton *mSelectBtn;

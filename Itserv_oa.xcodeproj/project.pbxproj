@@ -151,6 +151,7 @@
 		048C34C91CEAD952008745C1 /* CZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C34C61CEAD952008745C1 /* CZPickerView.m */; };
 		048C34D31CEAD962008745C1 /* button5.png in Resources */ = {isa = PBXBuildFile; fileRef = 048C34D21CEAD962008745C1 /* button5.png */; };
 		048C34D51CEAD96A008745C1 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 048C34D41CEAD96A008745C1 /* down.png */; };
+		048C34D71CEB04AE008745C1 /* chartjson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 048C34D61CEB04AE008745C1 /* chartjson.txt */; };
 		049968C21CE765D000AA9FAE /* js in Resources */ = {isa = PBXBuildFile; fileRef = 049968C11CE765D000AA9FAE /* js */; };
 		04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */; };
 		04D4B9ED1CE0B27C00124034 /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D4B9EC1CE0B27C00124034 /* login_bg.png */; };
@@ -725,6 +726,7 @@
 		048C34C61CEAD952008745C1 /* CZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZPickerView.m; sourceTree = "<group>"; };
 		048C34D21CEAD962008745C1 /* button5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button5.png; path = ../button5.png; sourceTree = "<group>"; };
 		048C34D41CEAD96A008745C1 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = ../down.png; sourceTree = "<group>"; };
+		048C34D61CEB04AE008745C1 /* chartjson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = chartjson.txt; sourceTree = "<group>"; };
 		049968C11CE765D000AA9FAE /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		04B9E0901CE0733B004CC6D5 /* YYNetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNetRequest.h; sourceTree = "<group>"; };
 		04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNetRequest.m; sourceTree = "<group>"; };
@@ -1249,6 +1251,7 @@
 				046532B31CE967D500B6EF1E /* ShedWater.m */,
 				046532B41CE967D500B6EF1E /* Shutter.h */,
 				046532B51CE967D500B6EF1E /* Shutter.m */,
+				048C34D61CEB04AE008745C1 /* chartjson.txt */,
 			);
 			name = module;
 			path = "yyshed/Modules/大棚/大棚详情页/module";
@@ -2801,6 +2804,7 @@
 				633415FE197E805800303105 /* toolbarOneSelect.png in Resources */,
 				04F12F901CE050480014E655 /* a4.png in Resources */,
 				63D2813319430A0700556A22 /* EmailContentViewController_iPhone.xib in Resources */,
+				048C34D71CEB04AE008745C1 /* chartjson.txt in Resources */,
 				0463AC051CE339A500EE9A96 /* video_right_unseletor.png in Resources */,
 				044C79DA1CE17DA300F9EE21 /* 009.png in Resources */,
 				634053FC19404A400019052B /* RefreshView.xib in Resources */,

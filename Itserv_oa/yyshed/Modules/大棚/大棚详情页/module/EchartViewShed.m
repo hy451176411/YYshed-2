@@ -9,35 +9,42 @@
 #import "EchartViewShed.h"
 #import "PYColor.h"
 #import "PYOption.h"
-
-typedef enum {
-	LineDemoTypeBtnTagStandardLine = 10000,
-	LineDemoTypeBtnTagStackedLine = 10001,
-	LineDemoTypeBtnTagBasicLine = 10002,
-	LindDemoTypeBtnTagBasicArea = 10003,
-	LindDemoTypeBtnTagStackedArea = 10004,
-	LindDemoTypeBtnTagIrregularLine = 10005,
-	LineDemoTypeBtnTagIrregularLine2 = 10006,
-	LineDemoTypeBtnTagLine = 10007,
-	LineDemoTypeBtnTagLogarithmic = 10008
-}LineDemoTypeBtnTag;
 @implementation EchartViewShed
 
+-(void)initDatas{
+	NSArray *array = self.model;
+	self.data = [NSMutableArray array];
+	self.time = [NSMutableArray array];
+	for (int i=0; i<array.count; i++) {
+		NSDictionary *dic = array[i];
+		NSString *value = dic[@"value"];
+		NSString *t = [NSString stringWithFormat:@"%i:00",i];
+		[self.time addObject:t];
+		[self.data addObject:value];
+	}
+	if ([self.type isEqualToString:@"air_humidity"]) {
+		self.title = @"湿度传感器";
+	}else if([self.type isEqualToString:@"air_temperature"]) {
+		self.title = @"温度传感器";
+	}else if([self.type isEqualToString:@"illumination"]) {
+		self.title = @"光照传感器";
+	}
+		
+}
 - (void)initAll {
-	
+	[self initDatas];
 	self.kEchartView = [[PYEchartsView alloc] init];
 	self.kEchartView.frame = CGRectMake(0, 0, SCREEN_WIDTH, ECHART_H);
 	self.kEchartView.backgroundColor = [UIColor whiteColor];
 	[self addSubview:self.kEchartView];
-	[self initData];
+	[self initChartView];
 
 }
 
-- (void)initData {
+- (void)initChartView {
 	//self.title = @"折线图";
 	[self showStandardLineDemo];
 	[_kEchartView loadEcharts];
-	//self.kEchartView.backgroundColor = [UIColor grayColor];
 }
 /**
  *  标准折线图
@@ -45,7 +52,7 @@ typedef enum {
 -(void)showStandardLineDemo {
 	PYOption *option = [[PYOption alloc] init];
 	PYTitle *title = [[PYTitle alloc] init];
-	title.text = @"温度传感器";
+	title.text = self.title;
 	//title.subtext = @"纯属虚构";
 	option.title = title;
 	PYTooltip *tooltip = [[PYTooltip alloc] init];
@@ -53,30 +60,15 @@ typedef enum {
 	option.tooltip = tooltip;
 	PYGrid *grid = [[PYGrid alloc] init];
 	grid.x = @(50);
-	//grid.y = @(50);
 	grid.x2 = @(20);
+	grid.y = @(40);
 	option.grid = grid;
-//	    PYLegend *legend = [[PYLegend alloc] init];
-//	    legend.data = @[@"最高温度"];
-//	    option.legend = legend;
-//	    PYToolbox *toolbox = [[PYToolbox alloc] init];
-//	    toolbox.show = YES;
-//	    toolbox.x = @"left";
-//	    toolbox.y = @"left";
-//	    toolbox.z = @(100);
-//	    toolbox.feature.mark.show = YES;
-//	    toolbox.feature.dataView.show = YES;
-//	    toolbox.feature.dataView.readOnly = NO;
-//	    toolbox.feature.magicType.show = YES;
-//	    toolbox.feature.magicType.type = @[@"line", @"bar"];
-//	    toolbox.feature.restore.show = YES;
-//	    toolbox.feature.saveAsImage.show = YES;
-//	    option.toolbox = toolbox;
+
 	option.calculable = YES;
 	PYAxis *xAxis = [[PYAxis  alloc] init];
 	xAxis.type = @"category";
 	xAxis.boundaryGap = @(NO);
-	xAxis.data = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12"];
+	xAxis.data = self.time;
 	option.xAxis = [[NSMutableArray alloc] initWithObjects:xAxis, nil];
 	PYAxis *yAxis = [[PYAxis alloc] init];
 	yAxis.type = @"value";
@@ -85,23 +77,7 @@ typedef enum {
 	PYSeries *series1 = [[PYSeries alloc] init];
 	series1.name = @"最高温度";
 	series1.type = @"line";
-	series1.data = @[@(11),@(11),@(15),@(13),@(1000),@(13),@(10),@(11),@(11),@(15),@(13),@(12)];
-	    PYMarkPoint *markPoint = [[PYMarkPoint alloc] init];
-	    markPoint.data = @[@{@"type" : @"max", @"name": @"最大值"},@{@"type" : @"min", @"name": @"最小值"}];
-	    series1.markPoint = markPoint;
-	    PYMarkLine *markLine = [[PYMarkLine alloc] init];
-	    markLine.data = @[@{@"type" : @"average", @"name": @"平均值"}];
-	    series1.markLine = markLine;
-	//    PYSeries *series2 = [[PYSeries alloc] init];
-	//    series2.name = @"最低温度";
-	//    series2.type = @"line";
-	//    series2.data = @[@(1),@(-2),@(2),@(5),@(3),@(2),@(0)];
-	//    PYMarkPoint *markPoint2 = [[PYMarkPoint alloc] init];
-	//    markPoint2.data = @[@{@"value" : @(2), @"name": @"周最低", @"xAxis":@(1), @"yAxis" : @(-1.5)}];
-	//    series2.markPoint = markPoint2;
-	//    PYMarkLine *markLine2 = [[PYMarkLine alloc] init];
-	//    markLine2.data = @[@{@"type" : @"average", @"name": @"平均值"}];
-	//    series2.markLine = markLine2;
+	series1.data = self.data;
 	option.series = [[NSMutableArray alloc] initWithObjects:series1, nil];
 	[_kEchartView setOption:option];
 }

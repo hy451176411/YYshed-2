@@ -1,0 +1,25 @@
+{
+msg =     {
+data =         {
+"air_humidity" =             (
+{
+{
+time = "2016-05-17T07:01:00.000Z";
+value = "0.10000000000000002";
+}
+);
+"air_temperature" =             (
+{
+{
+time = "2016-05-17T07:01:00.000Z";
+value = "-40.01";
+}
+);
+};
+date = "[2016-05-17 00:00:00,2016-05-17 15:38:42]";
+"device_type" = "humidity-temperature";
+scope = scope2;
+sn = 01010D0000000021;
+};
+result = OK;
+}
