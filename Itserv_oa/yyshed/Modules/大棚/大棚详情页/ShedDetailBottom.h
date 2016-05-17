@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "EchartViewShed.h"
 @interface ShedDetailBottom : UIView
--(void)configDataOfBottom:(id)data withY:(float) orignY;
+-(float)configDataOfBottom:(id)data;
+
 @end

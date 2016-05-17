@@ -102,6 +102,7 @@
 	[request addRequestHeader:@"Authorization" value:Authorization];
 	[request addRequestHeader:@"User-Agent" value:agent];
 	request.delegate = self;
+	request.tag = YYShed_getUserinfo;
 	[request setTimeOutSeconds:30];
 	[self startAsynchronousWithRequest:request];
 }
@@ -126,8 +127,37 @@
 	[request addRequestHeader:@"Authorization" value:Authorization];
 	[request addRequestHeader:@"User-Agent" value:agent];
 	request.delegate = self;
+	request.tag = YYShed_getDeviceInfo;
 	[request setTimeOutSeconds:30];
 	[self startAsynchronousWithRequest:request];
+}
+
+//节水系统的开关操作
+-(void)opeErelay:(NSString*)session_token withDev_id:(NSString*)dev_id withComponentId:(NSString*) componentId withAction:(NSString*)action{
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"set_eralay_switch",@"cmd",action,@"status",componentId,@"sn",nil];
+	NSString *jsonStr=[params JSONRepresentation];
+	NSMutableDictionary *resultsDictionary;// 返回的 JSON 数据
+	NSDictionary *userDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:@"ccp_token-smartgate-20150201", @"ccp_token",dev_id,@"smartgate_sn",jsonStr,@"params",nil];
+	if ([NSJSONSerialization isValidJSONObject:userDictionary])
+	{
+		NSError *error;
+		NSData *jsonData = [NSJSONSerialization dataWithJSONObject:userDictionary options:NSJSONWritingPrettyPrinted error: &error];
+		NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
+		NSURL *url = [NSURL URLWithString:@"http://182.92.67.74/api/remotes/erelays/actions"];
+		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+		[request setRequestMethod:@"POST"];
+		NSString *Authorization = [NSString stringWithFormat:@"%@%@",@"bearer ",session_token];
+		[request addRequestHeader:@"Authorization" value:Authorization];
+		request.tag = YYShed_openErelay;
+		request.delegate = self;
+		[request setPostBody:tempJsonData];
+		[self startAsynchronousWithRequest:request];
+		NSError *error1 = [request error];
+		if (!error1) {
+			NSString *response = [request responseString];
+			NSLog(@"Test：%@",response);
+		}
+	}
 }
 - (void)startAsynchronousWithRequest:(ASIHTTPRequest *)request
 {
@@ -148,11 +178,17 @@
 		responseStr = [responseStr stringByReplacingOccurrencesOfString:@"\r" withString:@"\\n"];
 		dic = [responseStr JSONValue];
 	}
-	/*请求成功*/
-	if ([_delegate respondsToSelector:@selector(netRequest:Finished:)]) {
-		[_delegate netRequest:request.tag Finished:dic];
+	if (request.tag == YYShed_openErelay) {
+		/*请求成功*/
+		if ([_delegate respondsToSelector:@selector(netRequest:Finished:withView:)]) {
+			[_delegate netRequest:request.tag Finished:dic withView:self.touchView];
+		}
+	}else{
+		/*请求成功*/
+		if ([_delegate respondsToSelector:@selector(netRequest:Finished:)]) {
+			[_delegate netRequest:request.tag Finished:dic];
+		}
 	}
-	
 	
 }
 - (void)requestFailed:(ASIHTTPRequest *)request

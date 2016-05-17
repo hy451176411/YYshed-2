@@ -10,9 +10,9 @@
 
 @implementation ShedDatailCenter
 -(void)initModel{
-	self.cameraModel=[NSMutableArray array];;//指定有五个元素初始化
-	self.waterModel=[NSMutableArray array];;//指定有五个元素初始化
-	self.shutterModel=[NSMutableArray array];//指定有五个元素初始化
+	self.cameraModel=[NSMutableArray array];
+	self.waterModel=[NSMutableArray array];
+	self.shutterModel=[NSMutableArray array];
 	NSArray *array = self.rootModel;
 	for (int i=0; i<array.count; i++) {
 		NSDictionary *dic = array[i];
@@ -31,6 +31,7 @@
 }
 
 -(float)configDataOfCenter:(id)data{
+	id temp = self.delegate;
 	[self initModel];
 	//self.backgroundColor = [UIColor redColor];
 	float width = SCREEN_WIDTH;
@@ -64,6 +65,7 @@
 			NSDictionary *shutterDic = self.shutterModel[i];
 			Shutter *shutter = [[Shutter alloc] init];
 			shutter.model = shutterDic;
+			shutter.delegate = self.delegate;
 			[shutter initShutter:nil];
 			shutter.frame = CGRectMake(0, startY, width, SHUTTER_H);
 			[rootView addSubview:shutter];
@@ -75,6 +77,7 @@
 		for (int i=0; i<self.waterModel.count; i++) {
 			NSDictionary *waterDic = self.waterModel[i];
 			ShedWater *water = [[ShedWater alloc] init];
+			water.delegate = self.delegate;
 			water.model = waterDic;
 			[water initWater:nil];
 			water.frame = CGRectMake(0, startY, width, WATER_SHED_H);

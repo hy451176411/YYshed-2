@@ -10,9 +10,10 @@
 #import "ShedDetailHeaderView.h"
 #import "ShedDatailCenter.h"
 #import "ShedDetailBottom.h"
+#import "ShedDetailBottomMenu.h"
+#import "EADefine.h"
 
-
-@interface ShedDetailVC ()<ShedDatailCenterDelegate>
+@interface ShedDetailVC ()<ShutterDelegate,ShedWaterDelegate,ShedDetailBottomMenuDelegate>
 
 @end
 
@@ -33,47 +34,102 @@
 }
 
 -(void)initViewsWithDatas:(NSDictionary*)model{
-	float startY = 0;
+	self.startY = 0;
 	/*头部初始化*/
 	self.mShedHeader  = [[ShedDetailHeaderView alloc] init];
-	self.mShedHeader.frame = CGRectMake(0, startY, SCREEN_WIDTH, SHED_HEADER_H);
+	self.mShedHeader.frame = CGRectMake(0, self.startY, SCREEN_WIDTH, SHED_HEADER_H);
 	self.mShedHeader.userInteractionEnabled = YES;
 	NSDictionary *smartgate = model[@"smartgate"];
 	self.mShedHeader.smartgate = smartgate;
 	[self.mShedHeader configDataOfHeader:nil];
 	[self.mScrollView addSubview:self.mShedHeader];
-	startY =SHED_HEADER_H;
+	self.startY =SHED_HEADER_H;
 	/*end 头部初始化*/
 	
 	/*中部部初始化*/
 	self.mShedCenter  = [[ShedDatailCenter alloc] init];
 	self.mShedCenter.rootModel = model[@"components"];
-	float centerH = [self.mShedCenter configDataOfCenter:nil];
-	self.mShedCenter.frame = CGRectMake(0, startY, SCREEN_WIDTH, centerH);
 	self.mShedCenter.delegate = self;
+	float centerH = [self.mShedCenter configDataOfCenter:nil];
+	self.mShedCenter.frame = CGRectMake(0, self.startY, SCREEN_WIDTH, centerH);
+	
 	[self.mScrollView addSubview:self.mShedCenter];
-	startY = centerH+startY+ELEMENT_SPACING;
+	self.startY = centerH+self.startY+ELEMENT_SPACING;
 	/*end 中部初始化*/
 	
 	/*底部初始化*/
-	self.mShedBottom = [[ShedDetailBottom alloc] init];
-	self.mShedBottom.frame =CGRectMake(0, startY,SCREEN_WIDTH, ECHART_H);
-	[self.mShedBottom configDataOfBottom:nil withY:startY+ECHART_H];
-	[self.mScrollView addSubview:self.mShedBottom];
-	startY = startY+ECHART_H+MENU_H;
+	ShedDetailBottomMenu *menu = [[ShedDetailBottomMenu alloc] init];
+	menu.rootModel = model[@"components"];
+	float menuH = [menu configDataOfBottomMenu:nil];
+	menu.frame = CGRectMake(0, self.startY,SCREEN_WIDTH, MENU_H);
+	menu.delegate = self;
+	[self.mScrollView addSubview:menu];
+	self.startY = self.startY+menuH+ELEMENT_SPACING;
+	self.startY = self.startY;
 	/*end 底部初始化*/
 	
 	/*根据头部，中部，底部的元素值动态设置滚动视图的高度*/
-	float ContentSize = startY+ELEMENT_SPACING;
+	//float ContentSize = self.startY+BOTTOM_H;
+	[self.mScrollView setContentSize:CGSizeMake(SCREEN_WIDTH, self.startY)];
+	[self initBottom];
+}
+
+-(void)initBottom{
+	self.mShedBottom = [[ShedDetailBottom alloc] init];
+	float bottomH = [self.mShedBottom configDataOfBottom:nil];
+	self.mShedBottom.frame =CGRectMake(0, self.startY,SCREEN_WIDTH, bottomH);
+	[self.mScrollView addSubview:self.mShedBottom];
+	self.startY = self.startY+bottomH+ELEMENT_SPACING;
+	float ContentSize = self.startY+BOTTOM_H;
 	[self.mScrollView setContentSize:CGSizeMake(SCREEN_WIDTH, ContentSize)];
 }
+- (void)didConfirmWithItemAtRow:(NSDictionary*)model{
+	NSLog(@"didConfirmWithItemAtRow %@",model);
+}
+- (void)touchShutterUP:(NSDictionary*)model{
+	NSLog(@"touchShutterUP---%@",model);
+}
+
+- (void)touchBtnWaterOnAndOff:(NSDictionary*)model withView:(UIView*)view{
+	NSLog(@"touchShutterUP---%@",model);
+	NSString *status = model[@"status"];
+	if ([status isEqualToString:@"0"]) {
+		//onAndoff.selected =NO;
+		
+	}else{
+		//onAndoff.selected =YES;
+	}
+	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
+	self.theRequest.touchView = view;
+	[self.theRequest opeErelay:session_token withDev_id:self.dev_id withComponentId:model[@"sn"] withAction:model[@"status"]];
+}
+
 #pragma mark 登录请求成功
 - (void)netRequest:(int)tag Finished:(NSDictionary *)model
 {
 	NSLog(@"----------%@",model);
-	[self initViewsWithDatas:model];
+	if (tag == YYShed_getDeviceInfo) {
+		[self initViewsWithDatas:model];
+	}
+	
 }
-
+- (void)netRequest:(int)tag Finished:(NSDictionary *)model withView:(UIView*)view {
+	if(tag == YYShed_openErelay){
+		NSString *ret = model[@"ret"];
+		if([ret isEqualToString:@"success"]){
+			UILabel *touchLable = (UILabel *)[view viewWithTag:102];
+			UIButton *touchButton = (UIButton *)[view viewWithTag:101];
+			Boolean isSelected = touchButton.isSelected;
+			if (isSelected) {
+				touchButton.selected = false;
+				touchLable.text = @"关闭";
+			}else{
+				touchButton.selected = true;
+				touchLable.text = @"打开";
+			}
+		}
+	}
+}
 - (void)netRequest:(int)tag Failed:(NSDictionary *)model
 {
 	NSLog(@"请求超时");

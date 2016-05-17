@@ -45,27 +45,36 @@
 	[rootView1 addSubview:view];
 	
 	int controlW = 40;
-	int controlX  = width-ELEMENT_SPACING-controlW*3;//屏幕宽度减去右边距宽度减去三个元素的宽度
+	int controlX  = width-ELEMENT_SPACING-125;//屏幕宽度减去右边距宽度减去三个元素的宽度
 	int controlY  = 25;
 	int controlH = 30;
 	
-	UIImage *up = [UIImage imageNamed:@"forward1_foucs.png"];
-	UIImageView* upImg = [[UIImageView alloc] initWithImage:up];
-	upImg.frame = CGRectMake(controlX, controlY, controlW, controlH);
+	UILabel *open = [[UILabel alloc]init];
+	open.frame = CGRectMake(controlX, controlY, controlW, controlH);
+	open.text = @"关闭";
+	open.tag = 102;
 	
 	controlX = controlX +controlW;
-	UIImage *down = [UIImage imageNamed:@"forward2_focus.png"];
-	UIImageView* downImg = [[UIImageView alloc] initWithImage:down];
-	downImg.frame = CGRectMake(controlX, controlY, controlW, controlH);
-	
-	controlX = controlX +controlW;
-	int timeW_H = 30;
+	UIButton *onAndoff = [[UIButton alloc] init];
+	onAndoff.frame = CGRectMake(controlX, controlY+3, 40, 25);
+	onAndoff.tag = 101;
+	onAndoff.backgroundColor = [UIColor clearColor];
+	onAndoff.titleLabel.font = SystemFontOfSize(16);
+	[onAndoff setImage:[UIImage imageNamed:@"button_close.png"] forState:UIControlStateNormal];
+	[onAndoff setImage:[UIImage imageNamed:@"button_open.png"] forState:UIControlStateSelected];
+	[onAndoff addTarget:self action:@selector(touchUP:) forControlEvents:UIControlEventTouchUpInside];
+	onAndoff.userInteractionEnabled =YES;
+	NSString *status = self.model[@"status"];
+	if ([status isEqualToString:@"0"]) {
+		onAndoff.selected =NO;
+	}else{
+		onAndoff.selected =YES;
+	}
+
+	controlX = controlX +40;
 	UIImage *time = [UIImage imageNamed:@"time.png"];
 	UIImageView* timeImg = [[UIImageView alloc] initWithImage:time];
-	timeImg.frame = CGRectMake(SCREEN_WIDTH-timeW_H-ELEMENT_SPACING, controlY, timeW_H, timeW_H);
-	UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchUP:)];
-	[timeImg addGestureRecognizer:singleTap];
-	timeImg.userInteractionEnabled = YES;
+	timeImg.frame = CGRectMake(controlX+5, controlY, 30, 30);
 	
 	lable = [[UILabel alloc] init];
 	lable.text = @"更新:2016-05-12 14:41:40";
@@ -75,15 +84,20 @@
 	lable.frame = CGRectMake(width-140, SHUTTER_H-25, 140, 15);
 	[rootView1 addSubview:lable];
 	
-	[rootView1 addSubview:downImg];
-	[rootView1 addSubview:upImg];
+	[rootView1 addSubview:onAndoff];
+	[rootView1 addSubview:open];
 	[rootView1 addSubview:timeImg];
 	[self addSubview:rootView1];
 
 }
 - (void)touchUP:(id)sender
 {
-	NSLog(@"touchUp ShedWater");
+	NSLog(@"touchUp shutter");
+	NSDictionary *touchModel = self.model;
+	id temp = self.delegate;
+	if (self.delegate && [self.delegate respondsToSelector:@selector(touchBtnWaterOnAndOff:withView:)]) {
+		[_delegate touchBtnWaterOnAndOff:self.model withView:self];
+	}
 }
 
 @end

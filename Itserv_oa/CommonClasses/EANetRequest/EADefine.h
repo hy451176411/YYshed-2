@@ -125,6 +125,9 @@ typedef enum  {
     MailList = 180,//邮件列表
     ReadFile = 200,//读取文件内容
     DownFile = 210,//下载文件
+	YYShed_getUserinfo,
+	YYShed_openErelay,
+	YYShed_getDeviceInfo,
 } HttpRequestTag;
 
 typedef enum  {

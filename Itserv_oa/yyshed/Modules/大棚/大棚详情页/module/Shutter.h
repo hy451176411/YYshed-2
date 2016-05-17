@@ -10,8 +10,14 @@
  */
 #import <UIKit/UIKit.h>
 #import "CommonShed.h"
+@protocol ShutterDelegate<NSObject>
 
+@optional
+- (void)touchShutterUP:(NSDictionary*)model;
+
+@end
 @interface Shutter : UIView
 @property (nonatomic, retain) NSDictionary *model;
+@property (nonatomic, assign) id<ShutterDelegate> delegate;
 -(void)initShutter:(id)data;
 @end

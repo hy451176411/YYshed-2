@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044393DB1CEA9EAA005D4347 /* ShedDetailBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 044393DA1CEA9EAA005D4347 /* ShedDetailBottomMenu.m */; };
 		044C79CA1CE17D6800F9EE21 /* 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79C91CE17D6800F9EE21 /* 001.png */; };
 		044C79CC1CE17D7300F9EE21 /* 002.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CB1CE17D7300F9EE21 /* 002.png */; };
 		044C79CE1CE17D7A00F9EE21 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CD1CE17D7A00F9EE21 /* 003.png */; };
@@ -25,8 +26,6 @@
 		044C79F31CE1D98100F9EE21 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79F21CE1D98100F9EE21 /* pointer.png */; };
 		044EE8331CE22495007C90C2 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 044EE8321CE22495007C90C2 /* house.png */; };
 		044EE8351CE224A9007C90C2 /* expand.png in Resources */ = {isa = PBXBuildFile; fileRef = 044EE8341CE224A9007C90C2 /* expand.png */; };
-		0450FC591CE817100060A17E /* ico_make.png in Resources */ = {isa = PBXBuildFile; fileRef = 0450FC561CE817100060A17E /* ico_make.png */; };
-		0450FC5A1CE817100060A17E /* JSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450FC581CE817100060A17E /* JSDropDownMenu.m */; };
 		0450FC671CE8B9880060A17E /* json in Resources */ = {isa = PBXBuildFile; fileRef = 0450FC661CE8B9880060A17E /* json */; };
 		045EAFD41CD0700C008AE499 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EAFD21CD0700C008AE499 /* TestView.m */; };
 		045EAFD51CD0700C008AE499 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EAFD31CD0700C008AE499 /* TestView.xib */; };
@@ -149,6 +148,9 @@
 		04883C161CE764C400249F2B /* NSObject+RMCopyable.m in Sources */ = {isa = PBXBuildFile; fileRef = 04883C101CE764C400249F2B /* NSObject+RMCopyable.m */; };
 		04883C171CE764C400249F2B /* NSUserDefaults+RMSaveCustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 04883C121CE764C400249F2B /* NSUserDefaults+RMSaveCustomObject.m */; };
 		04883C181CE764C400249F2B /* RMMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04883C141CE764C400249F2B /* RMMapper.m */; };
+		048C34C91CEAD952008745C1 /* CZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C34C61CEAD952008745C1 /* CZPickerView.m */; };
+		048C34D31CEAD962008745C1 /* button5.png in Resources */ = {isa = PBXBuildFile; fileRef = 048C34D21CEAD962008745C1 /* button5.png */; };
+		048C34D51CEAD96A008745C1 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 048C34D41CEAD96A008745C1 /* down.png */; };
 		049968C21CE765D000AA9FAE /* js in Resources */ = {isa = PBXBuildFile; fileRef = 049968C11CE765D000AA9FAE /* js */; };
 		04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */; };
 		04D4B9ED1CE0B27C00124034 /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D4B9EC1CE0B27C00124034 /* login_bg.png */; };
@@ -494,6 +496,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		044393D91CEA9EA9005D4347 /* ShedDetailBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShedDetailBottomMenu.h; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailBottomMenu.h"; sourceTree = "<group>"; };
+		044393DA1CEA9EAA005D4347 /* ShedDetailBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShedDetailBottomMenu.m; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailBottomMenu.m"; sourceTree = "<group>"; };
 		044C79C91CE17D6800F9EE21 /* 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 001.png; sourceTree = "<group>"; };
 		044C79CB1CE17D7300F9EE21 /* 002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 002.png; sourceTree = "<group>"; };
 		044C79CD1CE17D7A00F9EE21 /* 003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 003.png; sourceTree = "<group>"; };
@@ -512,9 +516,6 @@
 		044C79F21CE1D98100F9EE21 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
 		044EE8321CE22495007C90C2 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		044EE8341CE224A9007C90C2 /* expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expand.png; sourceTree = "<group>"; };
-		0450FC561CE817100060A17E /* ico_make.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_make.png; sourceTree = "<group>"; };
-		0450FC571CE817100060A17E /* JSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDropDownMenu.h; sourceTree = "<group>"; };
-		0450FC581CE817100060A17E /* JSDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDropDownMenu.m; sourceTree = "<group>"; };
 		0450FC661CE8B9880060A17E /* json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json; sourceTree = "<group>"; };
 		045EAFD11CD0700C008AE499 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		045EAFD21CD0700C008AE499 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
@@ -719,6 +720,11 @@
 		04883C121CE764C400249F2B /* NSUserDefaults+RMSaveCustomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+RMSaveCustomObject.m"; sourceTree = "<group>"; };
 		04883C131CE764C400249F2B /* RMMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapper.h; sourceTree = "<group>"; };
 		04883C141CE764C400249F2B /* RMMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMapper.m; sourceTree = "<group>"; };
+		048C34C41CEAD952008745C1 /* CZPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPicker.h; sourceTree = "<group>"; };
+		048C34C51CEAD952008745C1 /* CZPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPickerView.h; sourceTree = "<group>"; };
+		048C34C61CEAD952008745C1 /* CZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZPickerView.m; sourceTree = "<group>"; };
+		048C34D21CEAD962008745C1 /* button5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button5.png; path = ../button5.png; sourceTree = "<group>"; };
+		048C34D41CEAD96A008745C1 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = ../down.png; sourceTree = "<group>"; };
 		049968C11CE765D000AA9FAE /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		04B9E0901CE0733B004CC6D5 /* YYNetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNetRequest.h; sourceTree = "<group>"; };
 		04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNetRequest.m; sourceTree = "<group>"; };
@@ -1170,6 +1176,8 @@
 			isa = PBXGroup;
 			children = (
 				046532D91CE96C2D00B6EF1E /* 大棚详情.txt */,
+				044393D91CEA9EA9005D4347 /* ShedDetailBottomMenu.h */,
+				044393DA1CEA9EAA005D4347 /* ShedDetailBottomMenu.m */,
 				046532D21CE969CB00B6EF1E /* ShedDetailVC.h */,
 				046532D31CE969CB00B6EF1E /* ShedDetailVC.m */,
 				046532D41CE969CB00B6EF1E /* ShedDetailVC.xib */,
@@ -1221,16 +1229,6 @@
 				044C79C91CE17D6800F9EE21 /* 001.png */,
 			);
 			name = friend;
-			sourceTree = "<group>";
-		};
-		0450FC551CE817100060A17E /* JSDropDownMenu */ = {
-			isa = PBXGroup;
-			children = (
-				0450FC561CE817100060A17E /* ico_make.png */,
-				0450FC571CE817100060A17E /* JSDropDownMenu.h */,
-				0450FC581CE817100060A17E /* JSDropDownMenu.m */,
-			);
-			path = JSDropDownMenu;
 			sourceTree = "<group>";
 		};
 		046532AB1CE9670500B6EF1E /* 大棚详情页 */ = {
@@ -1306,7 +1304,9 @@
 				048111C51CE58A980023390E /* forward1_foucs.png */,
 				048111C31CE58A910023390E /* forward2_focus.png */,
 				048111C11CE58A890023390E /* forward3_focus.png */,
+				048C34D41CEAD96A008745C1 /* down.png */,
 				048111BF1CE586BE0023390E /* water_valve.png */,
+				048C34D21CEAD962008745C1 /* button5.png */,
 				048111BD1CE586960023390E /* time.png */,
 				048111BB1CE5868B0023390E /* temperature_humidity.png */,
 				048111B91CE586700023390E /* shutter.png */,
@@ -1338,6 +1338,7 @@
 		047862C31CE71A7D00F0E4F5 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				048C34BF1CEAD952008745C1 /* Pod */,
 				04883C0B1CE764C400249F2B /* Library */,
 				04883B711CE764B600249F2B /* iOS-Echarts */,
 			);
@@ -1484,7 +1485,6 @@
 		04883C0B1CE764C400249F2B /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				0450FC551CE817100060A17E /* JSDropDownMenu */,
 				04883C0C1CE764C400249F2B /* RMMapper */,
 			);
 			path = Library;
@@ -1503,6 +1503,24 @@
 				04883C141CE764C400249F2B /* RMMapper.m */,
 			);
 			path = RMMapper;
+			sourceTree = "<group>";
+		};
+		048C34BF1CEAD952008745C1 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				048C34C21CEAD952008745C1 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		048C34C21CEAD952008745C1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				048C34C41CEAD952008745C1 /* CZPicker.h */,
+				048C34C51CEAD952008745C1 /* CZPickerView.h */,
+				048C34C61CEAD952008745C1 /* CZPickerView.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		04F12F7F1CE04F960014E655 /* yyshed */ = {
@@ -2693,7 +2711,6 @@
 				633415FB197E805800303105 /* homeToolBg_iPhone.png in Resources */,
 				045EAFD51CD0700C008AE499 /* TestView.xib in Resources */,
 				A5E86FFE1ABC1518005195ED /* SendEmailPOPViewController_iPad.xib in Resources */,
-				0450FC591CE817100060A17E /* ico_make.png in Resources */,
 				048111B01CE585C30023390E /* camera_online.png in Resources */,
 				633415FF197E805800303105 /* toolbarThree.png in Resources */,
 				6334160D197E805800303105 /* sure.png in Resources */,
@@ -2712,6 +2729,7 @@
 				63A7969D193F0363006418E2 /* ShowWebViewController_iPad.xib in Resources */,
 				63B0F0B41990C34500791D0F /* Icon_120.png in Resources */,
 				63B0F0B51990C34500791D0F /* Icon_144.png in Resources */,
+				048C34D31CEAD962008745C1 /* button5.png in Resources */,
 				04F12F991CE050CA0014E655 /* button_on.png in Resources */,
 				049968C21CE765D000AA9FAE /* js in Resources */,
 				63AB454B196282A300C6E39A /* ToReadViewController_iPhone.xib in Resources */,
@@ -2820,6 +2838,7 @@
 				A54AF5C61AC2589B000B5B8F /* 打电话.png in Resources */,
 				04F12FA01CE050F90014E655 /* feature_guide_2.jpg in Resources */,
 				631A4FCD192888C40067FF3B /* RootViewController_iPad.xib in Resources */,
+				048C34D51CEAD96A008745C1 /* down.png in Resources */,
 				0463AC0B1CE339B400EE9A96 /* video.png in Resources */,
 				04F12FAD1CE0512F0014E655 /* number_icon.png in Resources */,
 				632184971A288A7100FD3F98 /* InfoPlist.strings in Resources */,
@@ -2992,6 +3011,7 @@
 				63ED7C6C1939CB23005B7B93 /* ASIDataCompressor.m in Sources */,
 				6349761D1939B9FD00CC887C /* ButtonInSection.m in Sources */,
 				63B20A9B1946EC3B00D16C5B /* PeopleNameView.m in Sources */,
+				048C34C91CEAD952008745C1 /* CZPickerView.m in Sources */,
 				A5E86FFC1ABC1518005195ED /* SendEmailPOPViewController.m in Sources */,
 				04883BE91CE764B600249F2B /* PYLineStyle.m in Sources */,
 				63F383951986288B006CE287 /* NSString+SBJSON.m in Sources */,
@@ -3047,7 +3067,6 @@
 				04883C011CE764B600249F2B /* PYSeries.m in Sources */,
 				04883C151CE764C400249F2B /* NSObject+RMArchivable.m in Sources */,
 				63ED7C731939CB23005B7B93 /* Reachability.m in Sources */,
-				0450FC5A1CE817100060A17E /* JSDropDownMenu.m in Sources */,
 				046532B61CE967D500B6EF1E /* Camera.m in Sources */,
 				046532C71CE968F800B6EF1E /* HomeShedSettingVC.m in Sources */,
 				046532AA1CE965F200B6EF1E /* Smartgate.m in Sources */,
@@ -3072,6 +3091,7 @@
 				A5E86FBE1ABBF9BB005195ED /* MailMessage.mm in Sources */,
 				A5E870121ABC1555005195ED /* PeopleTableViewCell.m in Sources */,
 				631A4FCA192888AF0067FF3B /* RootViewController.m in Sources */,
+				044393DB1CEA9EAA005D4347 /* ShedDetailBottomMenu.m in Sources */,
 				63DDEFBE1943611300A28A0B /* RATreeNodeInfo+Private.m in Sources */,
 				63341588197E37E600303105 /* GlobalData.m in Sources */,
 				04883BEA1CE764B600249F2B /* PYLoadingOption.m in Sources */,

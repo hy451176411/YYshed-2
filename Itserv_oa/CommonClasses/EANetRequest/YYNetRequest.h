@@ -26,20 +26,22 @@
 - (void)netRequest:(int)tag Finished:(NSDictionary *)model;
 - (void)netRequest:(int)tag Failed:(NSDictionary *)model;
 - (void)netRequest:(int)tag requestFailed:(NSString *)message;
-
+- (void)netRequest:(int)tag Finished:(NSDictionary *)model withView:(UIView*)view ;
 @end
 @interface YYNetRequest : NSObject<ASIHTTPRequestDelegate>
 
 @property (retain, nonatomic) NSMutableDictionary *requestDic;
 
-@property (nonatomic, assign) id <NetRequestDelegate>delegate;
+@property (nonatomic, assign) id <YYNetRequestDelegate>delegate;
 
 
 @property (nonatomic,retain) NSString *screct;
 @property (nonatomic, retain) NSString *oauth_token;
 @property (nonatomic, retain) NSString *oauth_verifier;
+@property (nonatomic, retain) UIView *touchView;//点击了那个view，那个view发起的请求，回来对那个view做处理
 
 - (void)startAsynchronousWithRequest:(ASIHTTPRequest *)request;
+
 /*
  *
  *setDelegate when init
@@ -52,5 +54,6 @@
 -(void)getUserInfo:(NSString*)session_token user_Agent:(NSString*)Agent;
 //获取大棚详情页数据
 -(void)getDeviceInfo:(NSString*)session_token withDev_id:(NSString*)dev_id;
-
+//节水系统的开关操作
+-(void)opeErelay:(NSString*)session_token withDev_id:(NSString*)dev_id withComponentId:(NSString*) componentId withAction:(NSString*)action;
 @end

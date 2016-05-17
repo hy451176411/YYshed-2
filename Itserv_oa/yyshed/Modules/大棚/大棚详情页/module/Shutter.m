@@ -59,13 +59,13 @@
 	downImg.frame = CGRectMake(controlX, controlY, controlW, controlH);
 	
 	controlX = controlX +controlW;
-	UIImage *stop = [UIImage imageNamed:@"forward3_focus.png"];
+	UIImage *stop= [UIImage imageNamed:@"forward3_focus"];
 	UIImageView* stopImg = [[UIImageView alloc] initWithImage:stop];
 	stopImg.frame = CGRectMake(controlX, controlY, controlW, controlH);
 	UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchUP:)];
 	[stopImg addGestureRecognizer:singleTap];
 	stopImg.userInteractionEnabled = YES;
-
+	
 	lable = [[UILabel alloc] init];
 	lable.text = @"更新:2016-05-12 14:41:40";
 	lable.backgroundColor = [UIColor clearColor];
@@ -79,9 +79,15 @@
 	[rootView1 addSubview:stopImg];
 	[self addSubview:rootView1];
 }
+
 - (void)touchUP:(id)sender
 {
 	NSLog(@"touchUp shutter");
+	NSDictionary *touchModel = self.model;
+	id temp = self.delegate;
+	if (self.delegate && [self.delegate respondsToSelector:@selector(touchShutterUP:)]) {
+		[_delegate touchShutterUP:self.model];
+	}
 }
 
 @end
