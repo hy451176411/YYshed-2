@@ -7,7 +7,6 @@
 //
 
 #import "HomeDetailNav.h"
-#import "ShedDatailCenter.h"
 
 @interface HomeDetailNav () <ViewPagerDataSource, ViewPagerDelegate>
 
@@ -42,7 +41,7 @@
 	NSString *title = toViewController.title;
     label.text = title;
     label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor redColor];
+   // label.textColor = [UIColor redColor];
     [label sizeToFit];
     
     return label;

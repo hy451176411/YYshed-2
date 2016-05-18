@@ -131,6 +131,7 @@
 	}
 	
 }
+
 - (void) HeaderTitleDidClicked:(FriendGroup *) group{
 //	FriendGroup *gg = group;
 	HomeShedDetail *control = [[HomeShedDetail alloc] init];

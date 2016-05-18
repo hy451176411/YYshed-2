@@ -73,13 +73,18 @@
 		046532BF1CE9681D00B6EF1E /* LineDemoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046532BD1CE9681D00B6EF1E /* LineDemoController.xib */; };
 		046532C21CE9686D00B6EF1E /* EChartTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532C11CE9686D00B6EF1E /* EChartTest.m */; };
 		046532C71CE968F800B6EF1E /* HomeShedSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532C51CE968F800B6EF1E /* HomeShedSettingVC.m */; };
-		046532C81CE968F800B6EF1E /* HomeShedSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046532C61CE968F800B6EF1E /* HomeShedSettingVC.xib */; };
 		046532CF1CE9699100B6EF1E /* ShedDatailCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532CA1CE9699100B6EF1E /* ShedDatailCenter.m */; };
 		046532D01CE9699100B6EF1E /* ShedDetailBottom.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532CC1CE9699100B6EF1E /* ShedDetailBottom.m */; };
 		046532D11CE9699100B6EF1E /* ShedDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532CE1CE9699100B6EF1E /* ShedDetailHeaderView.m */; };
 		046532D51CE969CB00B6EF1E /* ShedDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532D31CE969CB00B6EF1E /* ShedDetailVC.m */; };
 		046532D61CE969CB00B6EF1E /* ShedDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046532D41CE969CB00B6EF1E /* ShedDetailVC.xib */; };
 		046532DA1CE96C2D00B6EF1E /* 大棚详情.txt in Resources */ = {isa = PBXBuildFile; fileRef = 046532D91CE96C2D00B6EF1E /* 大棚详情.txt */; };
+		04657EF21CEC0BC700EA03C4 /* NIckNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04657EF01CEC0BC700EA03C4 /* NIckNameController.m */; };
+		04657EF31CEC0BC700EA03C4 /* NIckNameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04657EF11CEC0BC700EA03C4 /* NIckNameController.xib */; };
+		04657EF71CEC0EFA00EA03C4 /* NickNameCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04657EF51CEC0EFA00EA03C4 /* NickNameCellTableViewCell.m */; };
+		04657EF81CEC0EFA00EA03C4 /* NickNameCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04657EF61CEC0EFA00EA03C4 /* NickNameCellTableViewCell.xib */; };
+		0469AF841CEBF10500E57E08 /* ShedParamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469AF831CEBF10500E57E08 /* ShedParamController.m */; };
+		0469AF871CEBF14900E57E08 /* ShedSettingNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469AF861CEBF14900E57E08 /* ShedSettingNav.m */; };
 		046B81581CE2C538003F170B /* lead.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B81571CE2C538003F170B /* lead.png */; };
 		046B81691CE2E6D1003F170B /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B81681CE2E6D1003F170B /* back.png */; };
 		048111AF1CE585C30023390E /* camera_offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111AD1CE585C30023390E /* camera_offline.png */; };
@@ -178,6 +183,9 @@
 		04F12FBC1CE051980014E655 /* REPagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F12FBB1CE051980014E655 /* REPagedScrollView.m */; };
 		04F12FCA1CE052660014E655 /* input1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F12FC91CE052660014E655 /* input1.png */; };
 		04F12FCC1CE052790014E655 /* login_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F12FCB1CE052790014E655 /* login_btn_bg.png */; };
+		04F432AE1CEC242400D89541 /* OhterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F432AC1CEC242400D89541 /* OhterViewController.m */; };
+		04F432AF1CEC242400D89541 /* OhterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F432AD1CEC242400D89541 /* OhterViewController.xib */; };
+		04F432BB1CEC2AF600D89541 /* ShedSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F432BA1CEC2AF600D89541 /* ShedSettingVC.m */; };
 		3609191E1CA2EB3E00DF05D3 /* NDHTMLtoPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3609191D1CA2EB3E00DF05D3 /* NDHTMLtoPDF.m */; };
 		36B1215B1C1E92710031A3AB /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B1215A1C1E92710031A3AB /* Global.m */; };
 		6303A8FE199213E7000C20FB /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 6303A8FC199213E7000C20FB /* Default-Portrait.png */; };
@@ -590,7 +598,6 @@
 		046532C11CE9686D00B6EF1E /* EChartTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EChartTest.m; sourceTree = "<group>"; };
 		046532C41CE968F800B6EF1E /* HomeShedSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeShedSettingVC.h; sourceTree = "<group>"; };
 		046532C51CE968F800B6EF1E /* HomeShedSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeShedSettingVC.m; sourceTree = "<group>"; };
-		046532C61CE968F800B6EF1E /* HomeShedSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeShedSettingVC.xib; sourceTree = "<group>"; };
 		046532C91CE9699100B6EF1E /* ShedDatailCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShedDatailCenter.h; path = "yyshed/Modules/大棚/大棚详情页/ShedDatailCenter.h"; sourceTree = "<group>"; };
 		046532CA1CE9699100B6EF1E /* ShedDatailCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShedDatailCenter.m; path = "yyshed/Modules/大棚/大棚详情页/ShedDatailCenter.m"; sourceTree = "<group>"; };
 		046532CB1CE9699100B6EF1E /* ShedDetailBottom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShedDetailBottom.h; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailBottom.h"; sourceTree = "<group>"; };
@@ -601,6 +608,16 @@
 		046532D31CE969CB00B6EF1E /* ShedDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShedDetailVC.m; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailVC.m"; sourceTree = "<group>"; };
 		046532D41CE969CB00B6EF1E /* ShedDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShedDetailVC.xib; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailVC.xib"; sourceTree = "<group>"; };
 		046532D91CE96C2D00B6EF1E /* 大棚详情.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "大棚详情.txt"; path = "yyshed/Modules/大棚/大棚详情页/大棚详情.txt"; sourceTree = "<group>"; };
+		04657EEF1CEC0BC700EA03C4 /* NIckNameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIckNameController.h; sourceTree = "<group>"; };
+		04657EF01CEC0BC700EA03C4 /* NIckNameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIckNameController.m; sourceTree = "<group>"; };
+		04657EF11CEC0BC700EA03C4 /* NIckNameController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NIckNameController.xib; sourceTree = "<group>"; };
+		04657EF41CEC0EFA00EA03C4 /* NickNameCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NickNameCellTableViewCell.h; sourceTree = "<group>"; };
+		04657EF51CEC0EFA00EA03C4 /* NickNameCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NickNameCellTableViewCell.m; sourceTree = "<group>"; };
+		04657EF61CEC0EFA00EA03C4 /* NickNameCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NickNameCellTableViewCell.xib; sourceTree = "<group>"; };
+		0469AF821CEBF10500E57E08 /* ShedParamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedParamController.h; sourceTree = "<group>"; };
+		0469AF831CEBF10500E57E08 /* ShedParamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedParamController.m; sourceTree = "<group>"; };
+		0469AF851CEBF14900E57E08 /* ShedSettingNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedSettingNav.h; sourceTree = "<group>"; };
+		0469AF861CEBF14900E57E08 /* ShedSettingNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedSettingNav.m; sourceTree = "<group>"; };
 		046B81571CE2C538003F170B /* lead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lead.png; sourceTree = "<group>"; };
 		046B81681CE2E6D1003F170B /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		048111AD1CE585C30023390E /* camera_offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_offline.png; path = "../../../res/drawable-hdpi/camera_offline.png"; sourceTree = "<group>"; };
@@ -755,6 +772,11 @@
 		04F12FBB1CE051980014E655 /* REPagedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPagedScrollView.m; sourceTree = "<group>"; };
 		04F12FC91CE052660014E655 /* input1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input1.png; sourceTree = "<group>"; };
 		04F12FCB1CE052790014E655 /* login_btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_bg.png; sourceTree = "<group>"; };
+		04F432AB1CEC242400D89541 /* OhterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OhterViewController.h; sourceTree = "<group>"; };
+		04F432AC1CEC242400D89541 /* OhterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OhterViewController.m; sourceTree = "<group>"; };
+		04F432AD1CEC242400D89541 /* OhterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OhterViewController.xib; sourceTree = "<group>"; };
+		04F432B91CEC2AF600D89541 /* ShedSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedSettingVC.h; sourceTree = "<group>"; };
+		04F432BA1CEC2AF600D89541 /* ShedSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedSettingVC.m; sourceTree = "<group>"; };
 		3609191C1CA2EB3E00DF05D3 /* NDHTMLtoPDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDHTMLtoPDF.h; sourceTree = "<group>"; };
 		3609191D1CA2EB3E00DF05D3 /* NDHTMLtoPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDHTMLtoPDF.m; sourceTree = "<group>"; };
 		36B121591C1E92710031A3AB /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
@@ -1273,9 +1295,22 @@
 		046532C31CE968F800B6EF1E /* 大棚设置页 */ = {
 			isa = PBXGroup;
 			children = (
+				04F432B81CEC2AC400D89541 /* 设置页 */,
 				046532C41CE968F800B6EF1E /* HomeShedSettingVC.h */,
 				046532C51CE968F800B6EF1E /* HomeShedSettingVC.m */,
-				046532C61CE968F800B6EF1E /* HomeShedSettingVC.xib */,
+				04657EEF1CEC0BC700EA03C4 /* NIckNameController.h */,
+				04657EF01CEC0BC700EA03C4 /* NIckNameController.m */,
+				04657EF11CEC0BC700EA03C4 /* NIckNameController.xib */,
+				0469AF821CEBF10500E57E08 /* ShedParamController.h */,
+				0469AF831CEBF10500E57E08 /* ShedParamController.m */,
+				0469AF851CEBF14900E57E08 /* ShedSettingNav.h */,
+				0469AF861CEBF14900E57E08 /* ShedSettingNav.m */,
+				04657EF41CEC0EFA00EA03C4 /* NickNameCellTableViewCell.h */,
+				04657EF51CEC0EFA00EA03C4 /* NickNameCellTableViewCell.m */,
+				04657EF61CEC0EFA00EA03C4 /* NickNameCellTableViewCell.xib */,
+				04F432AB1CEC242400D89541 /* OhterViewController.h */,
+				04F432AC1CEC242400D89541 /* OhterViewController.m */,
+				04F432AD1CEC242400D89541 /* OhterViewController.xib */,
 			);
 			name = "大棚设置页";
 			path = "yyshed/Modules/大棚/大棚设置页";
@@ -1651,6 +1686,15 @@
 			children = (
 			);
 			name = "引导页";
+			sourceTree = "<group>";
+		};
+		04F432B81CEC2AC400D89541 /* 设置页 */ = {
+			isa = PBXGroup;
+			children = (
+				04F432B91CEC2AF600D89541 /* ShedSettingVC.h */,
+				04F432BA1CEC2AF600D89541 /* ShedSettingVC.m */,
+			);
+			name = "设置页";
 			sourceTree = "<group>";
 		};
 		3609191B1CA2EB3E00DF05D3 /* HtmlToPdf */ = {
@@ -2678,6 +2722,7 @@
 				044EE8331CE22495007C90C2 /* house.png in Resources */,
 				63A7969B193F0348006418E2 /* ShowWebViewController_iPhone.xib in Resources */,
 				63AB9D041952D6A2007AFA83 /* contenttoolbar_hd_share_light@2x.png in Resources */,
+				04657EF31CEC0BC700EA03C4 /* NIckNameController.xib in Resources */,
 				A5E86FEE1ABC13F3005195ED /* EmailPopListViewController_iPhone.xib in Resources */,
 				633415FC197E805800303105 /* toolbarFour.png in Resources */,
 				63A7379E1941915800DCBD68 /* icon_attachbtn_paperclip.png in Resources */,
@@ -2714,6 +2759,7 @@
 				633415FB197E805800303105 /* homeToolBg_iPhone.png in Resources */,
 				045EAFD51CD0700C008AE499 /* TestView.xib in Resources */,
 				A5E86FFE1ABC1518005195ED /* SendEmailPOPViewController_iPad.xib in Resources */,
+				04657EF81CEC0EFA00EA03C4 /* NickNameCellTableViewCell.xib in Resources */,
 				048111B01CE585C30023390E /* camera_online.png in Resources */,
 				633415FF197E805800303105 /* toolbarThree.png in Resources */,
 				6334160D197E805800303105 /* sure.png in Resources */,
@@ -2794,7 +2840,6 @@
 				639578A91938AC9500FDE95D /* ContactsViewController_iPhone.xib in Resources */,
 				63B9A7891980D8FF005ED169 /* searchInput_iPad.png in Resources */,
 				63AB454A196282A300C6E39A /* ToReadViewController_iPad.xib in Resources */,
-				046532C81CE968F800B6EF1E /* HomeShedSettingVC.xib in Resources */,
 				044C79CE1CE17D7A00F9EE21 /* 003.png in Resources */,
 				63A7379C1941915800DCBD68 /* icon_attach_readmail.png in Resources */,
 				634053F719404A400019052B /* arrow_up.png in Resources */,
@@ -2809,6 +2854,7 @@
 				044C79DA1CE17DA300F9EE21 /* 009.png in Resources */,
 				634053FC19404A400019052B /* RefreshView.xib in Resources */,
 				044C79D01CE17D8100F9EE21 /* 004.png in Resources */,
+				04F432AF1CEC242400D89541 /* OhterViewController.xib in Resources */,
 				63B0F0B61990C34500791D0F /* Icon-72.png in Resources */,
 				63F3E47E193C89EF00C4F7BA /* ProcessFileViewController_iPhone.xib in Resources */,
 				63A7379419418F2600DCBD68 /* icon_attach_panel_album.png in Resources */,
@@ -2952,6 +2998,7 @@
 				04883BE81CE764B600249F2B /* PYLegend.m in Sources */,
 				630CE9AB193E08F000E34663 /* EmailListViewController.m in Sources */,
 				04883BDB1CE764B600249F2B /* PYAxis.m in Sources */,
+				0469AF871CEBF14900E57E08 /* ShedSettingNav.m in Sources */,
 				045EAFD41CD0700C008AE499 /* TestView.m in Sources */,
 				63A737A31941995900DCBD68 /* SBPublicFormatValidation.m in Sources */,
 				04883BEC1CE764B600249F2B /* PYOption.m in Sources */,
@@ -2994,7 +3041,9 @@
 				63ED7C711939CB23005B7B93 /* ASIInputStream.m in Sources */,
 				046532651CE9624200B6EF1E /* FriendHeader.m in Sources */,
 				63D2813A19431B7B00556A22 /* SendtoView.m in Sources */,
+				0469AF841CEBF10500E57E08 /* ShedParamController.m in Sources */,
 				634053F919404A400019052B /* PullToRefreshTableView.m in Sources */,
+				04F432AE1CEC242400D89541 /* OhterViewController.m in Sources */,
 				A53D26791AC1490100C14721 /* UIView+SBHLayerSet.m in Sources */,
 				63B098A6194590EB0055457D /* HomeViewController.m in Sources */,
 				3609191E1CA2EB3E00DF05D3 /* NDHTMLtoPDF.m in Sources */,
@@ -3039,6 +3088,7 @@
 				63ED7C701939CB23005B7B93 /* ASIHTTPRequest.m in Sources */,
 				A55E291F1ABD160700FF4190 /* RegistrViewController.m in Sources */,
 				63ED7C511939CB0C005B7B93 /* NetRequest.m in Sources */,
+				04657EF21CEC0BC700EA03C4 /* NIckNameController.m in Sources */,
 				63DDEFC21943611300A28A0B /* RATreeView+TableViewDataSource.m in Sources */,
 				63381460193ABBBB002AF53F /* SBPublicAlert.m in Sources */,
 				639578A21938AC5000FDE95D /* IntegratedQueryViewController.m in Sources */,
@@ -3052,6 +3102,7 @@
 				04883C181CE764C400249F2B /* RMMapper.m in Sources */,
 				04883BF01CE764B600249F2B /* PYSplitLine.m in Sources */,
 				631C84CB1943255600847216 /* AttachmentView.m in Sources */,
+				04F432BB1CEC2AF600D89541 /* ShedSettingVC.m in Sources */,
 				631A4FC4192886AD0067FF3B /* MBProgressHUD.m in Sources */,
 				63DDEFBD1943611300A28A0B /* RATreeNodeCollectionController.m in Sources */,
 				63A796A1193F0A8A006418E2 /* NSString+Extension.m in Sources */,
@@ -3061,6 +3112,7 @@
 				63AB454E19629C1100C6E39A /* PicFileView.m in Sources */,
 				A5E86FEF1ABC13F3005195ED /* EmailPopListViewController.m in Sources */,
 				046532501CE9619C00B6EF1E /* ThirdController.m in Sources */,
+				04657EF71CEC0EFA00EA03C4 /* NickNameCellTableViewCell.m in Sources */,
 				63F383961986288B006CE287 /* SBJSON.m in Sources */,
 				04883BED1CE764B600249F2B /* PYPolar.m in Sources */,
 				639578751938935C00FDE95D /* UIView+LoadXib.m in Sources */,

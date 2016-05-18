@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShedSettingNav.h"
+#import "NIckNameController.h"
+#import "ShedParamController.h"
+#import "OhterViewController.h"
 
 @interface HomeShedSettingVC : UIViewController
-
-- (IBAction)btnclck:(id)sender;
+{
+	UINavigationController *mNavigationController;
+	ShedSettingNav *mNavigationContent;
+	NSArray *viewControllers;
+}
+-(void)initControls;
+-(void)initTitlesAndNav;
+@property (nonatomic, strong) NSString *dev_id;
 @end

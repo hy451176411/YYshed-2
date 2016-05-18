@@ -7,6 +7,7 @@
 //
 
 #import "HomeShedDetail.h"
+#import "ShedSettingVC.h"
 @interface HomeShedDetail ()
 
 @end
@@ -37,9 +38,12 @@
 	Component *component = friends[0];
 	self.dev_id = component.sn;
 	table.dev_id = self.dev_id;
-	HomeShedSettingVC *viewC = [[HomeShedSettingVC alloc] init];
+	ShedSettingVC *viewC = [[ShedSettingVC alloc] init];
 	viewC.title = @"设置";
 	
+	
+	//HomeShedSettingVC *viewC2 = [[HomeShedSettingVC alloc] init];
+	//viewC2.title = @"别名设置";
 	//HomeShedSettingVC *viewC2 = [[HomeShedSettingVC alloc] init];
 	//viewC2.title = @"设置";
 	//NSArray *views = @[table, viewC,viewC2];
