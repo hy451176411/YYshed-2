@@ -10,6 +10,7 @@
 #import "ShedHomeViewController.h"
 #import "LineDemoController.h"
 #import "EChartTest.h"
+#import "ShedSettingVC.h"
 
 
 

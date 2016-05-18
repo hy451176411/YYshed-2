@@ -13,6 +13,7 @@
 #import "FriendHeader.h"
 #import "ShedDetailVC.h"
 #import "HomeController.h"
+#import "ShedSettingVC.h"
 
 
 

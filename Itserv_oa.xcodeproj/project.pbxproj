@@ -81,8 +81,8 @@
 		046532DA1CE96C2D00B6EF1E /* 大棚详情.txt in Resources */ = {isa = PBXBuildFile; fileRef = 046532D91CE96C2D00B6EF1E /* 大棚详情.txt */; };
 		04657EF21CEC0BC700EA03C4 /* NIckNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04657EF01CEC0BC700EA03C4 /* NIckNameController.m */; };
 		04657EF31CEC0BC700EA03C4 /* NIckNameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04657EF11CEC0BC700EA03C4 /* NIckNameController.xib */; };
-		04657EF71CEC0EFA00EA03C4 /* NickNameCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04657EF51CEC0EFA00EA03C4 /* NickNameCellTableViewCell.m */; };
-		04657EF81CEC0EFA00EA03C4 /* NickNameCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04657EF61CEC0EFA00EA03C4 /* NickNameCellTableViewCell.xib */; };
+		04657EF71CEC0EFA00EA03C4 /* ShedAliasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04657EF51CEC0EFA00EA03C4 /* ShedAliasCell.m */; };
+		04657EF81CEC0EFA00EA03C4 /* ShedAliasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04657EF61CEC0EFA00EA03C4 /* ShedAliasCell.xib */; };
 		0469AF841CEBF10500E57E08 /* ShedParamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469AF831CEBF10500E57E08 /* ShedParamController.m */; };
 		0469AF871CEBF14900E57E08 /* ShedSettingNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469AF861CEBF14900E57E08 /* ShedSettingNav.m */; };
 		046B81581CE2C538003F170B /* lead.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B81571CE2C538003F170B /* lead.png */; };
@@ -186,6 +186,9 @@
 		04F432AE1CEC242400D89541 /* OhterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F432AC1CEC242400D89541 /* OhterViewController.m */; };
 		04F432AF1CEC242400D89541 /* OhterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F432AD1CEC242400D89541 /* OhterViewController.xib */; };
 		04F432BB1CEC2AF600D89541 /* ShedSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F432BA1CEC2AF600D89541 /* ShedSettingVC.m */; };
+		04F432BF1CEC4E8600D89541 /* ShedSensorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F432BD1CEC4E8600D89541 /* ShedSensorCell.m */; };
+		04F432C01CEC4E8600D89541 /* ShedSensorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F432BE1CEC4E8600D89541 /* ShedSensorCell.xib */; };
+		04F432C31CEC545900D89541 /* NickNameModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F432C21CEC545900D89541 /* NickNameModule.m */; };
 		3609191E1CA2EB3E00DF05D3 /* NDHTMLtoPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3609191D1CA2EB3E00DF05D3 /* NDHTMLtoPDF.m */; };
 		36B1215B1C1E92710031A3AB /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B1215A1C1E92710031A3AB /* Global.m */; };
 		6303A8FE199213E7000C20FB /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 6303A8FC199213E7000C20FB /* Default-Portrait.png */; };
@@ -611,9 +614,9 @@
 		04657EEF1CEC0BC700EA03C4 /* NIckNameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIckNameController.h; sourceTree = "<group>"; };
 		04657EF01CEC0BC700EA03C4 /* NIckNameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIckNameController.m; sourceTree = "<group>"; };
 		04657EF11CEC0BC700EA03C4 /* NIckNameController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NIckNameController.xib; sourceTree = "<group>"; };
-		04657EF41CEC0EFA00EA03C4 /* NickNameCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NickNameCellTableViewCell.h; sourceTree = "<group>"; };
-		04657EF51CEC0EFA00EA03C4 /* NickNameCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NickNameCellTableViewCell.m; sourceTree = "<group>"; };
-		04657EF61CEC0EFA00EA03C4 /* NickNameCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NickNameCellTableViewCell.xib; sourceTree = "<group>"; };
+		04657EF41CEC0EFA00EA03C4 /* ShedAliasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedAliasCell.h; sourceTree = "<group>"; };
+		04657EF51CEC0EFA00EA03C4 /* ShedAliasCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedAliasCell.m; sourceTree = "<group>"; };
+		04657EF61CEC0EFA00EA03C4 /* ShedAliasCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShedAliasCell.xib; sourceTree = "<group>"; };
 		0469AF821CEBF10500E57E08 /* ShedParamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedParamController.h; sourceTree = "<group>"; };
 		0469AF831CEBF10500E57E08 /* ShedParamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedParamController.m; sourceTree = "<group>"; };
 		0469AF851CEBF14900E57E08 /* ShedSettingNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedSettingNav.h; sourceTree = "<group>"; };
@@ -777,6 +780,11 @@
 		04F432AD1CEC242400D89541 /* OhterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OhterViewController.xib; sourceTree = "<group>"; };
 		04F432B91CEC2AF600D89541 /* ShedSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedSettingVC.h; sourceTree = "<group>"; };
 		04F432BA1CEC2AF600D89541 /* ShedSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedSettingVC.m; sourceTree = "<group>"; };
+		04F432BC1CEC4E8600D89541 /* ShedSensorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedSensorCell.h; sourceTree = "<group>"; };
+		04F432BD1CEC4E8600D89541 /* ShedSensorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedSensorCell.m; sourceTree = "<group>"; };
+		04F432BE1CEC4E8600D89541 /* ShedSensorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShedSensorCell.xib; sourceTree = "<group>"; };
+		04F432C11CEC545900D89541 /* NickNameModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NickNameModule.h; sourceTree = "<group>"; };
+		04F432C21CEC545900D89541 /* NickNameModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NickNameModule.m; sourceTree = "<group>"; };
 		3609191C1CA2EB3E00DF05D3 /* NDHTMLtoPDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDHTMLtoPDF.h; sourceTree = "<group>"; };
 		3609191D1CA2EB3E00DF05D3 /* NDHTMLtoPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDHTMLtoPDF.m; sourceTree = "<group>"; };
 		36B121591C1E92710031A3AB /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
@@ -1305,12 +1313,17 @@
 				0469AF831CEBF10500E57E08 /* ShedParamController.m */,
 				0469AF851CEBF14900E57E08 /* ShedSettingNav.h */,
 				0469AF861CEBF14900E57E08 /* ShedSettingNav.m */,
-				04657EF41CEC0EFA00EA03C4 /* NickNameCellTableViewCell.h */,
-				04657EF51CEC0EFA00EA03C4 /* NickNameCellTableViewCell.m */,
-				04657EF61CEC0EFA00EA03C4 /* NickNameCellTableViewCell.xib */,
+				04657EF41CEC0EFA00EA03C4 /* ShedAliasCell.h */,
+				04657EF51CEC0EFA00EA03C4 /* ShedAliasCell.m */,
+				04657EF61CEC0EFA00EA03C4 /* ShedAliasCell.xib */,
 				04F432AB1CEC242400D89541 /* OhterViewController.h */,
 				04F432AC1CEC242400D89541 /* OhterViewController.m */,
 				04F432AD1CEC242400D89541 /* OhterViewController.xib */,
+				04F432BC1CEC4E8600D89541 /* ShedSensorCell.h */,
+				04F432BD1CEC4E8600D89541 /* ShedSensorCell.m */,
+				04F432BE1CEC4E8600D89541 /* ShedSensorCell.xib */,
+				04F432C11CEC545900D89541 /* NickNameModule.h */,
+				04F432C21CEC545900D89541 /* NickNameModule.m */,
 			);
 			name = "大棚设置页";
 			path = "yyshed/Modules/大棚/大棚设置页";
@@ -2759,7 +2772,7 @@
 				633415FB197E805800303105 /* homeToolBg_iPhone.png in Resources */,
 				045EAFD51CD0700C008AE499 /* TestView.xib in Resources */,
 				A5E86FFE1ABC1518005195ED /* SendEmailPOPViewController_iPad.xib in Resources */,
-				04657EF81CEC0EFA00EA03C4 /* NickNameCellTableViewCell.xib in Resources */,
+				04657EF81CEC0EFA00EA03C4 /* ShedAliasCell.xib in Resources */,
 				048111B01CE585C30023390E /* camera_online.png in Resources */,
 				633415FF197E805800303105 /* toolbarThree.png in Resources */,
 				6334160D197E805800303105 /* sure.png in Resources */,
@@ -2925,6 +2938,7 @@
 				631A4FCB192888AF0067FF3B /* RootViewController_iPhone.xib in Resources */,
 				631A4FC2192886AD0067FF3B /* 37x-Checkmark.png in Resources */,
 				63B0F0BC1990C3C700791D0F /* Default@2x.png in Resources */,
+				04F432C01CEC4E8600D89541 /* ShedSensorCell.xib in Resources */,
 				631A4FC3192886AD0067FF3B /* 37x-Checkmark@2x.png in Resources */,
 				630824BC197F675300BB7217 /* OfficialIcon2.png in Resources */,
 				A5E870051ABC1528005195ED /* EmailDraftViewController_iPad.xib in Resources */,
@@ -3045,6 +3059,7 @@
 				634053F919404A400019052B /* PullToRefreshTableView.m in Sources */,
 				04F432AE1CEC242400D89541 /* OhterViewController.m in Sources */,
 				A53D26791AC1490100C14721 /* UIView+SBHLayerSet.m in Sources */,
+				04F432C31CEC545900D89541 /* NickNameModule.m in Sources */,
 				63B098A6194590EB0055457D /* HomeViewController.m in Sources */,
 				3609191E1CA2EB3E00DF05D3 /* NDHTMLtoPDF.m in Sources */,
 				63AB4549196282A300C6E39A /* ToReadViewController.m in Sources */,
@@ -3055,6 +3070,7 @@
 				046532D01CE9699100B6EF1E /* ShedDetailBottom.m in Sources */,
 				63A79740193F53B4006418E2 /* ContactsCell.m in Sources */,
 				A5E86FBB1ABBF87A005195ED /* SBHPublicDate.m in Sources */,
+				04F432BF1CEC4E8600D89541 /* ShedSensorCell.m in Sources */,
 				046532541CE961D300B6EF1E /* YYshedLoginController.m in Sources */,
 				04883BE11CE764B600249F2B /* PYDataRange.m in Sources */,
 				046532B91CE967D500B6EF1E /* Shutter.m in Sources */,
@@ -3112,7 +3128,7 @@
 				63AB454E19629C1100C6E39A /* PicFileView.m in Sources */,
 				A5E86FEF1ABC13F3005195ED /* EmailPopListViewController.m in Sources */,
 				046532501CE9619C00B6EF1E /* ThirdController.m in Sources */,
-				04657EF71CEC0EFA00EA03C4 /* NickNameCellTableViewCell.m in Sources */,
+				04657EF71CEC0EFA00EA03C4 /* ShedAliasCell.m in Sources */,
 				63F383961986288B006CE287 /* SBJSON.m in Sources */,
 				04883BED1CE764B600249F2B /* PYPolar.m in Sources */,
 				639578751938935C00FDE95D /* UIView+LoadXib.m in Sources */,

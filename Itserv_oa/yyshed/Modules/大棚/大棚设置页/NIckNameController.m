@@ -8,7 +8,7 @@
 
 #import "NIckNameController.h"
 #import "FriendCell.h"
-#import "NickNameCellTableViewCell.h"
+#import "ShedAliasCell.h"
 
 @interface NIckNameController ()
 
@@ -43,7 +43,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NickNameCellTableViewCell *cell = [NickNameCellTableViewCell cellWithTableView:self.tableView];
+	ShedAliasCell *cell = [ShedAliasCell cellWithTableView:self.tableView];
 	//FriendGroup *group = self.friendGroups[indexPath.section];
 	//cell.friendData = group.friends[indexPath.row];
 	return cell;

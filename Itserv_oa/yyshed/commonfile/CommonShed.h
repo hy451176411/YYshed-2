@@ -17,3 +17,4 @@
 #define ELEMENT_SPACING 10			//元素的左右边距，上下间距
 #define ECHART_H	300				//图标元素的高度
 #define MENU_H   45					//图表选择器的高度
+#define SEGMENT_SETTING_H  40		//大棚设置界面的segment的高度

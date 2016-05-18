@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NickNameModule.h"
 
 @interface ShedSettingVC : UIViewController
-
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIView *rootView;
+@property (nonatomic, retain) YYNetRequest *theRequest;
+@property (nonatomic, retain) NSString *dev_id;
+@property (nonatomic,strong) NSMutableArray *modules;
 @end

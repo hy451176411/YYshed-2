@@ -38,16 +38,16 @@
 	Component *component = friends[0];
 	self.dev_id = component.sn;
 	table.dev_id = self.dev_id;
-	ShedSettingVC *viewC = [[ShedSettingVC alloc] init];
-	viewC.title = @"设置";
-	
+	ShedSettingVC *shedSettingVc = [[ShedSettingVC alloc] init];
+	shedSettingVc.title = @"设置";
+	shedSettingVc.dev_id = self.dev_id;
 	
 	//HomeShedSettingVC *viewC2 = [[HomeShedSettingVC alloc] init];
 	//viewC2.title = @"别名设置";
 	//HomeShedSettingVC *viewC2 = [[HomeShedSettingVC alloc] init];
 	//viewC2.title = @"设置";
 	//NSArray *views = @[table, viewC,viewC2];
-	NSArray *views = @[table, viewC];
+	NSArray *views = @[table, shedSettingVc];
 	viewControllers = views;
 }
 
