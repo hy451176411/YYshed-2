@@ -182,6 +182,28 @@
 	[request setTimeOutSeconds:30];
 	[self startAsynchronousWithRequest:request];
 }
+//获取大棚的strategy
+-(void)getShedStrategy:(NSString*)session_token withDevUuid:(NSString*)dev_uuid{
+	NSString *temp = [NSString stringWithFormat:@"http://182.92.67.74/api/users/smartgates/%@/alarmstrategy_settings/",dev_uuid];
+	NSString *str = @"http://182.92.67.74/api/users/custom_alarmstrategies/";
+	NSURL *url=[NSURL URLWithString:str];
+	ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
+	[request setRequestMethod:@"GET"];
+	//访问
+	request = [ASIHTTPRequest requestWithURL:url];
+	//超时时间多少秒
+	[request setTimeOutSeconds:30];
+	//访问失败重新访问次数
+	[request setNumberOfTimesToRetryOnTimeout:2];
+	//是否使用持久化连接
+	[request setShouldAttemptPersistentConnection:NO];
+	NSString *Authorization = [NSString stringWithFormat:@"%@%@",@"bearer ",session_token];
+	[request addRequestHeader:@"Authorization" value:Authorization];
+	request.delegate = self;
+	request.tag = YYShed_getShedStrategy;
+	[request setTimeOutSeconds:30];
+	[self startAsynchronousWithRequest:request];
+}
 - (void)startAsynchronousWithRequest:(ASIHTTPRequest *)request
 {
 	[request startAsynchronous];

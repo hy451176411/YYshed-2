@@ -128,7 +128,8 @@ typedef enum  {
 	YYShed_getUserinfo,
 	YYShed_openErelay,
 	YYShed_getDeviceInfo,
-	YYShed_getAnalysisResult
+	YYShed_getAnalysisResult,
+	YYShed_getShedStrategy
 } HttpRequestTag;
 
 typedef enum  {

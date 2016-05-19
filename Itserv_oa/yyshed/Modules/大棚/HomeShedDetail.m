@@ -61,7 +61,7 @@
 	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
 	//添加左边的按钮
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
-	UIImage *left = [UIImage imageNamed:@"back.png"];
+	UIImage *left = [UIImage imageNamed:@"back_normal@2x.png"];
 	UIImageView* img = [[UIImageView alloc] initWithImage:left];
 	UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(leftClick)];
 	[img addGestureRecognizer:singleTap];

@@ -10,7 +10,10 @@
 #import "CommonShed.h"
 #import "ShedAliasCell.h"
 #import "ShedSensorCell.h"
-@interface ShedSettingVC ()<UITableViewDataSource,UITableViewDelegate,ShedAliasCellDelegate,ShedSensorCellDelegate>
+#import "AlarmStratey.h"
+#import "AlarmStrategyView.h"
+#import "AlarmStrateyItem.h"
+@interface ShedSettingVC ()<UITableViewDataSource,UITableViewDelegate,ShedAliasCellDelegate,ShedSensorCellDelegate,StrategyMenuDelegate>
 {
 	UITableView *personalTableView;
 	//NSArray *dataSource;
@@ -24,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	isFirstEnter = YES;
+	self.theRequest = [NetRequestManager createNetRequestWithDelegate:self];
 	self.modules = [NSMutableArray array];
 	self.rootView = [[UIView alloc] init];
 	[self.view addSubview:self.rootView];
@@ -64,35 +68,98 @@
 	//self.view.backgroundColor = [UIColor redColor];
 	[self.view addSubview:self.rootView];
 }
+//-(void)secoendView{
+//	[self.rootView removeAllSubviews];
+////	// 1.创建UIScrollView
+//	self.scrollView = [[UIScrollView alloc] init];
+//	CGRect rect =self.view.frame;
+//	float h = rect.size.height;
+//	self.scrollView.frame = CGRectMake(0, 0, rect.size.width, h-MENU_H);
+//	UIImageView *imageView = [[UIImageView alloc] init];
+//	imageView.image = [UIImage imageNamed:@"back.png"];
+//	imageView.frame = CGRectMake(80, 80, 40, 40);
+//	UITextField *textFile = [[UITextField alloc] init];
+//	textFile.frame =CGRectMake(80, 150, 200, 40);
+//	textFile.text = @"text";
+//	UILabel  *label = [[UILabel alloc] init];
+//	label.frame =CGRectMake(80, 800-40-BOTTOM_H-10, 200, 40);
+//	label.backgroundColor = [UIColor redColor];
+//	label.text = @"底部测试";
+//	[self.scrollView addSubview:label];
+//	[textFile setKeyboardType:UIKeyboardTypeDefault];
+//	[self.scrollView addSubview:textFile];
+//	[self.scrollView addSubview:imageView];
+//	[self.scrollView setScrollEnabled:YES];
+//	self.scrollView.contentSize = CGSizeMake(rect.size.width, 800);
+//	// 隐藏水平滚动条
+//	self.scrollView.showsHorizontalScrollIndicator = NO;
+//	self.scrollView.showsVerticalScrollIndicator = NO;
+//	// 去掉弹簧效果
+//	self.scrollView.bounces = YES;
+//	[self.rootView addSubview:self.scrollView];
+//	self.rootView.frame = CGRectMake(0, 60, rect.size.width, h-MENU_H);
+//	
+//}
+
 -(void)secoendView{
 	[self.rootView removeAllSubviews];
-//	// 1.创建UIScrollView
-	self.scrollView = [[UIScrollView alloc] init];
-	CGRect rect =[[UIScreen mainScreen] bounds];
+	CGRect rect =self.view.frame;
 	float h = rect.size.height;
-	self.scrollView.frame = CGRectMake(0, 0, rect.size.width, h-60);
-	//self.scrollView.backgroundColor = [UIColor grayColor];
-	// 2.创建UIImageView（图片）
-	UIImageView *imageView = [[UIImageView alloc] init];
-	imageView.image = [UIImage imageNamed:@"back.png"];
-	imageView.frame = CGRectMake(80, 80, 40, 40);
-	UITextField *textFile = [[UITextField alloc] init];
-	textFile.frame =CGRectMake(80, 150, 200, 40);
-	textFile.text = @"text";
-	[textFile setKeyboardType:UIKeyboardTypeDefault];
-	[self.scrollView addSubview:textFile];
-	[self.scrollView addSubview:imageView];
+	self.scrollView = [[UIScrollView alloc] init];
 	[self.scrollView setScrollEnabled:YES];
-	self.scrollView.contentSize = CGSizeMake(rect.size.width, 2000);
 	// 隐藏水平滚动条
 	self.scrollView.showsHorizontalScrollIndicator = NO;
 	self.scrollView.showsVerticalScrollIndicator = NO;
 	// 去掉弹簧效果
 	self.scrollView.bounces = YES;
 	[self.rootView addSubview:self.scrollView];
-	self.rootView.frame = CGRectMake(0, 60, rect.size.width, 2000);
+	self.rootView.frame = CGRectMake(0, 60, rect.size.width, h-MENU_H);
 	
+	self.scrollView.frame = CGRectMake(0, 0, rect.size.width, h-MENU_H-2*ELEMENT_SPACING);
+	self.startY = 0;
+	float headerH =50;
+	float W =rect.size.width-2*ELEMENT_SPACING;
+	UIView *headerView = [[UIView alloc] init];
+	headerView.frame = CGRectMake(ELEMENT_SPACING, self.startY,W , headerH);
+	
+	float applyAndRefreshW_H = 40;
+	UILabel  *headerTip = [[UILabel alloc] init];
+	headerTip.frame =CGRectMake(0, 0, 200, 45);
+	headerTip.text = @"报警预案";
+	headerTip.font = SystemFontOfSize(24);
+	[headerView addSubview:headerTip];
+	
+	UIImageView *refresh = [[UIImageView alloc] init];//刷新按钮
+	refresh.image = [UIImage imageNamed:@"refresh.png"];
+	refresh.frame = CGRectMake(W-2*applyAndRefreshW_H-ELEMENT_SPACING, (headerH-applyAndRefreshW_H)/2, applyAndRefreshW_H, applyAndRefreshW_H);//(headerH-applyAndRefreshW_H)/2 header区域的高度减去按钮的高度，除以2，让按钮居中显示
+	[headerView addSubview:refresh];
+	
+	UIImageView *apply = [[UIImageView alloc] init];//应用按钮
+	apply.image = [UIImage imageNamed:@"apply.png"];
+	apply.frame = CGRectMake(W-applyAndRefreshW_H, (headerH-applyAndRefreshW_H)/2, applyAndRefreshW_H, applyAndRefreshW_H);
+	[headerView addSubview:apply];
+	[self.scrollView addSubview:headerView];
+	self.startY = self.startY+headerH+ELEMENT_SPACING;
+	
+	StrategyMenu *menu = [[StrategyMenu alloc] init];
+	//NSMutableArray *menus = [self configMenus:model[@"components"]];
+	//menu.menus = menus;
+	float menuH = [menu configDataOfBottomMenu:nil];
+	menu.frame = CGRectMake(ELEMENT_SPACING, self.startY,W, MENU_H);
+	menu.delegate = self;
+	[self.scrollView addSubview:menu];
+	self.startY = self.startY +menuH +ELEMENT_SPACING;
+	//添加一个数据
+	self.mAllAlarmStratey = [NSMutableArray array];
+	AlarmStratey *noStratey = [[AlarmStratey alloc] init];
+	noStratey.strategy_name = @"<未设置报警策略>";
+	[self.mAllAlarmStratey addObject:noStratey];
+	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
+	[self.theRequest getShedStrategy:session_token withDevUuid:self.dev_id];
+	self.scrollView.contentSize = CGSizeMake(rect.size.width, self.startY);
+
 }
+
 -(void)FirstView{
 	CGRect rect = self.view.frame;
 	float h = 0 ;
@@ -103,10 +170,8 @@
 		h=rect.size.height-SEGMENT_SETTING_H-3*ELEMENT_SPACING-BOTTOM_H;
 	//}
 	personalTableView=[[UITableView alloc]initWithFrame:CGRectMake(ELEMENT_SPACING, 0, SCREEN_WIDTH-2*ELEMENT_SPACING,h) style:UITableViewStylePlain];
-	//personalTableView.backgroundColor = [UIColor blueColor];
 	personalTableView.delegate=self;
 	personalTableView.dataSource=self;
-	//personalTableView.bounces=NO;
 	personalTableView.showsVerticalScrollIndicator=NO;
 	personalTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
 	personalTableView.delegate = self;
@@ -127,15 +192,10 @@
 	return self.modules.count;
 }
 -(void)firstViewEnter{
-	self.theRequest = [NetRequestManager createNetRequestWithDelegate:self];
 	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
 	[self.theRequest getDeviceInfo:session_token withDev_id:self.dev_id];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	//UITableViewCell *cell;
-	//FriendGroup *group = self.friendGroups[indexPath.section];
-	//cell.friendData = group.friends[indexPath.row];
-	//int i = indexPath.row;
 	if (indexPath.row==0) {
 	ShedAliasCell *cell = [ShedAliasCell cellWithTableView:personalTableView];
 		cell.delegate = self;
@@ -183,7 +243,9 @@
 	[self.view addSubview:segmentedControl];
 	[self firstViewEnter];
 }
-
+- (void)didConfirmWithItemAtRow:(NSDictionary*)model{
+	NSLog(@"didConfirmWithItemAtRow %@",model);
+}
 - (void) updateShedAlias:(NickNameModule *) module{
 	NSLog(@"updateShedAlias");
 }
@@ -213,10 +275,26 @@
 	NSLog(@"----------%@",model);
 	if (tag == YYShed_getDeviceInfo) {
 		[self initViewsWithDatas:model];
+	}else if(tag == YYShed_getShedStrategy){
+		[self initSecendView:model];
 	}
 	
 }
-
+-(void)initSecendView:(NSDictionary*)model{
+	AlarmStrateyItem *test = [[AlarmStrateyItem alloc] init];
+	NSArray *array = model;
+	NSDictionary *model1 = array[0];
+	AlarmStratey *alarmStatey = [[AlarmStratey alloc] init];
+	[alarmStatey initAlarmStratey:model1];
+	if (alarmStatey) {
+		AlarmStrategyView *alarmStateyView = [[AlarmStrategyView alloc] init];
+		float h = [alarmStateyView showAlarmStrategyView:alarmStatey];
+		alarmStateyView.frame =CGRectMake(ELEMENT_SPACING, self.startY,SCREEN_WIDTH , h);
+		self.startY = self.startY+h;
+		[self.scrollView addSubview:alarmStateyView];
+		self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.startY+BOTTOM_H+ELEMENT_SPACING);
+	}
+}
 - (void)netRequest:(int)tag Failed:(NSDictionary *)model
 {
 	NSLog(@"请求超时");

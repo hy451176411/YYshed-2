@@ -58,4 +58,6 @@
 -(void)opeErelay:(NSString*)session_token withDev_id:(NSString*)dev_id withComponentId:(NSString*) componentId withAction:(NSString*)action;
 //获取图标数据
 -(void)getAnalysisResult:(NSString*)sn withType:(NSString*)type withScope:(NSString*)scope;
+//获取大棚的strategy
+-(void)getShedStrategy:(NSString*)session_token withDevUuid:(NSString*)dev_uuid;
 @end

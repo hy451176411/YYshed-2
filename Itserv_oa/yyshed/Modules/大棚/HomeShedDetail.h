@@ -11,7 +11,6 @@
 #import <UIKit/UIKit.h>
 #import "HomeDetailNav.h"
 #import "ShedDetailVC.h"
-#import "HomeShedSettingVC.h"
 #import "Component.h"
 
 @class Component;

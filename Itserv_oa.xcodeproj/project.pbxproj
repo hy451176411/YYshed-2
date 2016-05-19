@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0432F5061CEDE60F00430B85 /* AlarmStrateyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432F5051CEDE60F00430B85 /* AlarmStrateyItem.m */; };
 		044393DB1CEA9EAA005D4347 /* ShedDetailBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 044393DA1CEA9EAA005D4347 /* ShedDetailBottomMenu.m */; };
 		044C79CA1CE17D6800F9EE21 /* 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79C91CE17D6800F9EE21 /* 001.png */; };
 		044C79CC1CE17D7300F9EE21 /* 002.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CB1CE17D7300F9EE21 /* 002.png */; };
@@ -72,21 +73,24 @@
 		046532BE1CE9681D00B6EF1E /* LineDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532BC1CE9681D00B6EF1E /* LineDemoController.m */; };
 		046532BF1CE9681D00B6EF1E /* LineDemoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046532BD1CE9681D00B6EF1E /* LineDemoController.xib */; };
 		046532C21CE9686D00B6EF1E /* EChartTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532C11CE9686D00B6EF1E /* EChartTest.m */; };
-		046532C71CE968F800B6EF1E /* HomeShedSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532C51CE968F800B6EF1E /* HomeShedSettingVC.m */; };
 		046532CF1CE9699100B6EF1E /* ShedDatailCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532CA1CE9699100B6EF1E /* ShedDatailCenter.m */; };
 		046532D01CE9699100B6EF1E /* ShedDetailBottom.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532CC1CE9699100B6EF1E /* ShedDetailBottom.m */; };
 		046532D11CE9699100B6EF1E /* ShedDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532CE1CE9699100B6EF1E /* ShedDetailHeaderView.m */; };
 		046532D51CE969CB00B6EF1E /* ShedDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532D31CE969CB00B6EF1E /* ShedDetailVC.m */; };
 		046532D61CE969CB00B6EF1E /* ShedDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046532D41CE969CB00B6EF1E /* ShedDetailVC.xib */; };
 		046532DA1CE96C2D00B6EF1E /* 大棚详情.txt in Resources */ = {isa = PBXBuildFile; fileRef = 046532D91CE96C2D00B6EF1E /* 大棚详情.txt */; };
-		04657EF21CEC0BC700EA03C4 /* NIckNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04657EF01CEC0BC700EA03C4 /* NIckNameController.m */; };
-		04657EF31CEC0BC700EA03C4 /* NIckNameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04657EF11CEC0BC700EA03C4 /* NIckNameController.xib */; };
 		04657EF71CEC0EFA00EA03C4 /* ShedAliasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04657EF51CEC0EFA00EA03C4 /* ShedAliasCell.m */; };
 		04657EF81CEC0EFA00EA03C4 /* ShedAliasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04657EF61CEC0EFA00EA03C4 /* ShedAliasCell.xib */; };
 		0469AF841CEBF10500E57E08 /* ShedParamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469AF831CEBF10500E57E08 /* ShedParamController.m */; };
-		0469AF871CEBF14900E57E08 /* ShedSettingNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469AF861CEBF14900E57E08 /* ShedSettingNav.m */; };
 		046B81581CE2C538003F170B /* lead.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B81571CE2C538003F170B /* lead.png */; };
 		046B81691CE2E6D1003F170B /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B81681CE2E6D1003F170B /* back.png */; };
+		0472F8961CED5E57001F9372 /* apply.png in Resources */ = {isa = PBXBuildFile; fileRef = 0472F8951CED5E57001F9372 /* apply.png */; };
+		0472F8981CED5E6C001F9372 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 0472F8971CED5E6C001F9372 /* refresh.png */; };
+		0472F89B1CED6214001F9372 /* StrategyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472F89A1CED6214001F9372 /* StrategyMenu.m */; };
+		0472F89E1CED71C8001F9372 /* AlarmStratey.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472F89D1CED71C8001F9372 /* AlarmStratey.m */; };
+		0472F8A41CED9A67001F9372 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472F8A31CED9A67001F9372 /* Alarm.m */; };
+		0472F8A71CEDB55C001F9372 /* AlarmStrategyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472F8A61CEDB55C001F9372 /* AlarmStrategyView.m */; };
+		0472F8A91CEDBDA7001F9372 /* alramStratey.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0472F8A81CEDBDA7001F9372 /* alramStratey.xib */; };
 		048111AF1CE585C30023390E /* camera_offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111AD1CE585C30023390E /* camera_offline.png */; };
 		048111B01CE585C30023390E /* camera_online.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111AE1CE585C30023390E /* camera_online.png */; };
 		048111B21CE586030023390E /* button_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111B11CE586030023390E /* button_close.png */; };
@@ -183,8 +187,6 @@
 		04F12FBC1CE051980014E655 /* REPagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F12FBB1CE051980014E655 /* REPagedScrollView.m */; };
 		04F12FCA1CE052660014E655 /* input1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F12FC91CE052660014E655 /* input1.png */; };
 		04F12FCC1CE052790014E655 /* login_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F12FCB1CE052790014E655 /* login_btn_bg.png */; };
-		04F432AE1CEC242400D89541 /* OhterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F432AC1CEC242400D89541 /* OhterViewController.m */; };
-		04F432AF1CEC242400D89541 /* OhterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F432AD1CEC242400D89541 /* OhterViewController.xib */; };
 		04F432BB1CEC2AF600D89541 /* ShedSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F432BA1CEC2AF600D89541 /* ShedSettingVC.m */; };
 		04F432BF1CEC4E8600D89541 /* ShedSensorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F432BD1CEC4E8600D89541 /* ShedSensorCell.m */; };
 		04F432C01CEC4E8600D89541 /* ShedSensorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F432BE1CEC4E8600D89541 /* ShedSensorCell.xib */; };
@@ -508,6 +510,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0432F5041CEDE60F00430B85 /* AlarmStrateyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmStrateyItem.h; sourceTree = "<group>"; };
+		0432F5051CEDE60F00430B85 /* AlarmStrateyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmStrateyItem.m; sourceTree = "<group>"; };
 		044393D91CEA9EA9005D4347 /* ShedDetailBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShedDetailBottomMenu.h; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailBottomMenu.h"; sourceTree = "<group>"; };
 		044393DA1CEA9EAA005D4347 /* ShedDetailBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShedDetailBottomMenu.m; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailBottomMenu.m"; sourceTree = "<group>"; };
 		044C79C91CE17D6800F9EE21 /* 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 001.png; sourceTree = "<group>"; };
@@ -599,8 +603,6 @@
 		046532BD1CE9681D00B6EF1E /* LineDemoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineDemoController.xib; sourceTree = "<group>"; };
 		046532C01CE9686D00B6EF1E /* EChartTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EChartTest.h; sourceTree = "<group>"; };
 		046532C11CE9686D00B6EF1E /* EChartTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EChartTest.m; sourceTree = "<group>"; };
-		046532C41CE968F800B6EF1E /* HomeShedSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeShedSettingVC.h; sourceTree = "<group>"; };
-		046532C51CE968F800B6EF1E /* HomeShedSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeShedSettingVC.m; sourceTree = "<group>"; };
 		046532C91CE9699100B6EF1E /* ShedDatailCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShedDatailCenter.h; path = "yyshed/Modules/大棚/大棚详情页/ShedDatailCenter.h"; sourceTree = "<group>"; };
 		046532CA1CE9699100B6EF1E /* ShedDatailCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShedDatailCenter.m; path = "yyshed/Modules/大棚/大棚详情页/ShedDatailCenter.m"; sourceTree = "<group>"; };
 		046532CB1CE9699100B6EF1E /* ShedDetailBottom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShedDetailBottom.h; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailBottom.h"; sourceTree = "<group>"; };
@@ -611,18 +613,24 @@
 		046532D31CE969CB00B6EF1E /* ShedDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShedDetailVC.m; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailVC.m"; sourceTree = "<group>"; };
 		046532D41CE969CB00B6EF1E /* ShedDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShedDetailVC.xib; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailVC.xib"; sourceTree = "<group>"; };
 		046532D91CE96C2D00B6EF1E /* 大棚详情.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "大棚详情.txt"; path = "yyshed/Modules/大棚/大棚详情页/大棚详情.txt"; sourceTree = "<group>"; };
-		04657EEF1CEC0BC700EA03C4 /* NIckNameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIckNameController.h; sourceTree = "<group>"; };
-		04657EF01CEC0BC700EA03C4 /* NIckNameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIckNameController.m; sourceTree = "<group>"; };
-		04657EF11CEC0BC700EA03C4 /* NIckNameController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NIckNameController.xib; sourceTree = "<group>"; };
 		04657EF41CEC0EFA00EA03C4 /* ShedAliasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedAliasCell.h; sourceTree = "<group>"; };
 		04657EF51CEC0EFA00EA03C4 /* ShedAliasCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedAliasCell.m; sourceTree = "<group>"; };
 		04657EF61CEC0EFA00EA03C4 /* ShedAliasCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShedAliasCell.xib; sourceTree = "<group>"; };
 		0469AF821CEBF10500E57E08 /* ShedParamController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedParamController.h; sourceTree = "<group>"; };
 		0469AF831CEBF10500E57E08 /* ShedParamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedParamController.m; sourceTree = "<group>"; };
-		0469AF851CEBF14900E57E08 /* ShedSettingNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedSettingNav.h; sourceTree = "<group>"; };
-		0469AF861CEBF14900E57E08 /* ShedSettingNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedSettingNav.m; sourceTree = "<group>"; };
 		046B81571CE2C538003F170B /* lead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lead.png; sourceTree = "<group>"; };
 		046B81681CE2E6D1003F170B /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		0472F8951CED5E57001F9372 /* apply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apply.png; sourceTree = "<group>"; };
+		0472F8971CED5E6C001F9372 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		0472F8991CED6214001F9372 /* StrategyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrategyMenu.h; sourceTree = "<group>"; };
+		0472F89A1CED6214001F9372 /* StrategyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrategyMenu.m; sourceTree = "<group>"; };
+		0472F89C1CED71C8001F9372 /* AlarmStratey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmStratey.h; sourceTree = "<group>"; };
+		0472F89D1CED71C8001F9372 /* AlarmStratey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmStratey.m; sourceTree = "<group>"; };
+		0472F8A21CED9A67001F9372 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		0472F8A31CED9A67001F9372 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		0472F8A51CEDB55C001F9372 /* AlarmStrategyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmStrategyView.h; sourceTree = "<group>"; };
+		0472F8A61CEDB55C001F9372 /* AlarmStrategyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmStrategyView.m; sourceTree = "<group>"; };
+		0472F8A81CEDBDA7001F9372 /* alramStratey.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = alramStratey.xib; sourceTree = "<group>"; };
 		048111AD1CE585C30023390E /* camera_offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_offline.png; path = "../../../res/drawable-hdpi/camera_offline.png"; sourceTree = "<group>"; };
 		048111AE1CE585C30023390E /* camera_online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_online.png; path = "../../../res/drawable-hdpi/camera_online.png"; sourceTree = "<group>"; };
 		048111B11CE586030023390E /* button_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_close.png; path = "../../../res/drawable-hdpi/button_close.png"; sourceTree = "<group>"; };
@@ -775,9 +783,6 @@
 		04F12FBB1CE051980014E655 /* REPagedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REPagedScrollView.m; sourceTree = "<group>"; };
 		04F12FC91CE052660014E655 /* input1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input1.png; sourceTree = "<group>"; };
 		04F12FCB1CE052790014E655 /* login_btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_bg.png; sourceTree = "<group>"; };
-		04F432AB1CEC242400D89541 /* OhterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OhterViewController.h; sourceTree = "<group>"; };
-		04F432AC1CEC242400D89541 /* OhterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OhterViewController.m; sourceTree = "<group>"; };
-		04F432AD1CEC242400D89541 /* OhterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OhterViewController.xib; sourceTree = "<group>"; };
 		04F432B91CEC2AF600D89541 /* ShedSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedSettingVC.h; sourceTree = "<group>"; };
 		04F432BA1CEC2AF600D89541 /* ShedSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedSettingVC.m; sourceTree = "<group>"; };
 		04F432BC1CEC4E8600D89541 /* ShedSensorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedSensorCell.h; sourceTree = "<group>"; };
@@ -1304,26 +1309,18 @@
 			isa = PBXGroup;
 			children = (
 				04F432B81CEC2AC400D89541 /* 设置页 */,
-				046532C41CE968F800B6EF1E /* HomeShedSettingVC.h */,
-				046532C51CE968F800B6EF1E /* HomeShedSettingVC.m */,
-				04657EEF1CEC0BC700EA03C4 /* NIckNameController.h */,
-				04657EF01CEC0BC700EA03C4 /* NIckNameController.m */,
-				04657EF11CEC0BC700EA03C4 /* NIckNameController.xib */,
 				0469AF821CEBF10500E57E08 /* ShedParamController.h */,
 				0469AF831CEBF10500E57E08 /* ShedParamController.m */,
-				0469AF851CEBF14900E57E08 /* ShedSettingNav.h */,
-				0469AF861CEBF14900E57E08 /* ShedSettingNav.m */,
 				04657EF41CEC0EFA00EA03C4 /* ShedAliasCell.h */,
 				04657EF51CEC0EFA00EA03C4 /* ShedAliasCell.m */,
 				04657EF61CEC0EFA00EA03C4 /* ShedAliasCell.xib */,
-				04F432AB1CEC242400D89541 /* OhterViewController.h */,
-				04F432AC1CEC242400D89541 /* OhterViewController.m */,
-				04F432AD1CEC242400D89541 /* OhterViewController.xib */,
 				04F432BC1CEC4E8600D89541 /* ShedSensorCell.h */,
 				04F432BD1CEC4E8600D89541 /* ShedSensorCell.m */,
 				04F432BE1CEC4E8600D89541 /* ShedSensorCell.xib */,
 				04F432C11CEC545900D89541 /* NickNameModule.h */,
 				04F432C21CEC545900D89541 /* NickNameModule.m */,
+				0472F8991CED6214001F9372 /* StrategyMenu.h */,
+				0472F89A1CED6214001F9372 /* StrategyMenu.m */,
 			);
 			name = "大棚设置页";
 			path = "yyshed/Modules/大棚/大棚设置页";
@@ -1356,10 +1353,12 @@
 				048111C31CE58A910023390E /* forward2_focus.png */,
 				048111C11CE58A890023390E /* forward3_focus.png */,
 				048C34D41CEAD96A008745C1 /* down.png */,
+				0472F8951CED5E57001F9372 /* apply.png */,
 				048111BF1CE586BE0023390E /* water_valve.png */,
 				048C34D21CEAD962008745C1 /* button5.png */,
 				048111BD1CE586960023390E /* time.png */,
 				048111BB1CE5868B0023390E /* temperature_humidity.png */,
+				0472F8971CED5E6C001F9372 /* refresh.png */,
 				048111B91CE586700023390E /* shutter.png */,
 				048111B71CE586580023390E /* main_07.png */,
 				048111B51CE586440023390E /* lamp.png */,
@@ -1706,6 +1705,15 @@
 			children = (
 				04F432B91CEC2AF600D89541 /* ShedSettingVC.h */,
 				04F432BA1CEC2AF600D89541 /* ShedSettingVC.m */,
+				0472F89C1CED71C8001F9372 /* AlarmStratey.h */,
+				0472F89D1CED71C8001F9372 /* AlarmStratey.m */,
+				0472F8A21CED9A67001F9372 /* Alarm.h */,
+				0472F8A31CED9A67001F9372 /* Alarm.m */,
+				0472F8A51CEDB55C001F9372 /* AlarmStrategyView.h */,
+				0472F8A61CEDB55C001F9372 /* AlarmStrategyView.m */,
+				0472F8A81CEDBDA7001F9372 /* alramStratey.xib */,
+				0432F5041CEDE60F00430B85 /* AlarmStrateyItem.h */,
+				0432F5051CEDE60F00430B85 /* AlarmStrateyItem.m */,
 			);
 			name = "设置页";
 			sourceTree = "<group>";
@@ -2735,7 +2743,6 @@
 				044EE8331CE22495007C90C2 /* house.png in Resources */,
 				63A7969B193F0348006418E2 /* ShowWebViewController_iPhone.xib in Resources */,
 				63AB9D041952D6A2007AFA83 /* contenttoolbar_hd_share_light@2x.png in Resources */,
-				04657EF31CEC0BC700EA03C4 /* NIckNameController.xib in Resources */,
 				A5E86FEE1ABC13F3005195ED /* EmailPopListViewController_iPhone.xib in Resources */,
 				633415FC197E805800303105 /* toolbarFour.png in Resources */,
 				63A7379E1941915800DCBD68 /* icon_attachbtn_paperclip.png in Resources */,
@@ -2745,6 +2752,7 @@
 				0463AC041CE339A500EE9A96 /* video_right_seletor.png in Resources */,
 				63CB000D197F99CB009C07AA /* SelectType.png in Resources */,
 				044EE8351CE224A9007C90C2 /* expand.png in Resources */,
+				0472F8981CED5E6C001F9372 /* refresh.png in Resources */,
 				A5EE8A9F1B7057240051DB11 /* json.txt in Resources */,
 				04F12F951CE050940014E655 /* add.png in Resources */,
 				0463AC081CE339A500EE9A96 /* video_up_seletor.png in Resources */,
@@ -2867,7 +2875,6 @@
 				044C79DA1CE17DA300F9EE21 /* 009.png in Resources */,
 				634053FC19404A400019052B /* RefreshView.xib in Resources */,
 				044C79D01CE17D8100F9EE21 /* 004.png in Resources */,
-				04F432AF1CEC242400D89541 /* OhterViewController.xib in Resources */,
 				63B0F0B61990C34500791D0F /* Icon-72.png in Resources */,
 				63F3E47E193C89EF00C4F7BA /* ProcessFileViewController_iPhone.xib in Resources */,
 				63A7379419418F2600DCBD68 /* icon_attach_panel_album.png in Resources */,
@@ -2914,6 +2921,7 @@
 				04D4B9F11CE0C39C00124034 /* logo_tencentweibo.png in Resources */,
 				63341609197E805800303105 /* selectOn.png in Resources */,
 				63B9A78B1980DD58005ED169 /* back.png in Resources */,
+				0472F8961CED5E57001F9372 /* apply.png in Resources */,
 				63B098A7194590EB0055457D /* HomeViewController.xib in Resources */,
 				6374B6551938ADA60071710A /* ContactsViewController_iPad.xib in Resources */,
 				046532661CE9624200B6EF1E /* FriendHeader.xib in Resources */,
@@ -2924,6 +2932,7 @@
 				04F12FAE1CE0512F0014E655 /* number_icon2.png in Resources */,
 				63E5A5131936DA34008CC126 /* login_ico.png in Resources */,
 				630824B4197F61DF00BB7217 /* menuBg.png in Resources */,
+				0472F8A91CEDBDA7001F9372 /* alramStratey.xib in Resources */,
 				A5E8701B1ABC17A9005195ED /* EmailPopContentViewController_iPad.xib in Resources */,
 				63341607197E805800303105 /* passIcon.png in Resources */,
 				04F12FA51CE0510E0014E655 /* logo_sinaweibo.png in Resources */,
@@ -2996,6 +3005,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0432F5061CEDE60F00430B85 /* AlarmStrateyItem.m in Sources */,
+				0472F89E1CED71C8001F9372 /* AlarmStratey.m in Sources */,
 				046532611CE9624200B6EF1E /* Component.m in Sources */,
 				046532B71CE967D500B6EF1E /* EchartViewShed.m in Sources */,
 				6395786D193892A200FDE95D /* PushMessageCell.m in Sources */,
@@ -3012,7 +3023,6 @@
 				04883BE81CE764B600249F2B /* PYLegend.m in Sources */,
 				630CE9AB193E08F000E34663 /* EmailListViewController.m in Sources */,
 				04883BDB1CE764B600249F2B /* PYAxis.m in Sources */,
-				0469AF871CEBF14900E57E08 /* ShedSettingNav.m in Sources */,
 				045EAFD41CD0700C008AE499 /* TestView.m in Sources */,
 				63A737A31941995900DCBD68 /* SBPublicFormatValidation.m in Sources */,
 				04883BEC1CE764B600249F2B /* PYOption.m in Sources */,
@@ -3057,7 +3067,6 @@
 				63D2813A19431B7B00556A22 /* SendtoView.m in Sources */,
 				0469AF841CEBF10500E57E08 /* ShedParamController.m in Sources */,
 				634053F919404A400019052B /* PullToRefreshTableView.m in Sources */,
-				04F432AE1CEC242400D89541 /* OhterViewController.m in Sources */,
 				A53D26791AC1490100C14721 /* UIView+SBHLayerSet.m in Sources */,
 				04F432C31CEC545900D89541 /* NickNameModule.m in Sources */,
 				63B098A6194590EB0055457D /* HomeViewController.m in Sources */,
@@ -3094,6 +3103,7 @@
 				046532B81CE967D500B6EF1E /* ShedWater.m in Sources */,
 				63E5A51A1936DE27008CC126 /* CustomSwitch.m in Sources */,
 				634053F819404A400019052B /* EGORefreshTableHeaderView.m in Sources */,
+				0472F8A71CEDB55C001F9372 /* AlarmStrategyView.m in Sources */,
 				63DDEFC81943611300A28A0B /* OrgCell.m in Sources */,
 				63F3E476193C868000C4F7BA /* MattersCell.m in Sources */,
 				04883BF11CE764B600249F2B /* PYTextStyle.m in Sources */,
@@ -3104,7 +3114,6 @@
 				63ED7C701939CB23005B7B93 /* ASIHTTPRequest.m in Sources */,
 				A55E291F1ABD160700FF4190 /* RegistrViewController.m in Sources */,
 				63ED7C511939CB0C005B7B93 /* NetRequest.m in Sources */,
-				04657EF21CEC0BC700EA03C4 /* NIckNameController.m in Sources */,
 				63DDEFC21943611300A28A0B /* RATreeView+TableViewDataSource.m in Sources */,
 				63381460193ABBBB002AF53F /* SBPublicAlert.m in Sources */,
 				639578A21938AC5000FDE95D /* IntegratedQueryViewController.m in Sources */,
@@ -3140,11 +3149,12 @@
 				04883C151CE764C400249F2B /* NSObject+RMArchivable.m in Sources */,
 				63ED7C731939CB23005B7B93 /* Reachability.m in Sources */,
 				046532B61CE967D500B6EF1E /* Camera.m in Sources */,
-				046532C71CE968F800B6EF1E /* HomeShedSettingVC.m in Sources */,
 				046532AA1CE965F200B6EF1E /* Smartgate.m in Sources */,
 				04883BFD1CE764B600249F2B /* PYMarkLine.m in Sources */,
 				04883C051CE764B600249F2B /* PYWordCloudSeries.m in Sources */,
 				A5E86FE61ABC0D64005195ED /* BindingEmailViewController.m in Sources */,
+				0472F89B1CED6214001F9372 /* StrategyMenu.m in Sources */,
+				0472F8A41CED9A67001F9372 /* Alarm.m in Sources */,
 				04883C041CE764B600249F2B /* PYVennSeries.m in Sources */,
 				63ED7C931939CBF4005B7B93 /* ModelManager.m in Sources */,
 				04883BF51CE764B600249F2B /* PYToolboxFeature.m in Sources */,
