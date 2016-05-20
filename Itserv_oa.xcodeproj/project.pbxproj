@@ -162,6 +162,13 @@
 		048C34D51CEAD96A008745C1 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 048C34D41CEAD96A008745C1 /* down.png */; };
 		048C34D71CEB04AE008745C1 /* chartjson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 048C34D61CEB04AE008745C1 /* chartjson.txt */; };
 		049968C21CE765D000AA9FAE /* js in Resources */ = {isa = PBXBuildFile; fileRef = 049968C11CE765D000AA9FAE /* js */; };
+		04A97B9E1CEEB3BA00E30754 /* alarm_air_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B971CEEB3BA00E30754 /* alarm_air_h.png */; };
+		04A97B9F1CEEB3BA00E30754 /* alarm_air_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B981CEEB3BA00E30754 /* alarm_air_t.png */; };
+		04A97BA01CEEB3BA00E30754 /* alarm_battery.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B991CEEB3BA00E30754 /* alarm_battery.png */; };
+		04A97BA11CEEB3BA00E30754 /* alarm_co.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B9A1CEEB3BA00E30754 /* alarm_co.png */; };
+		04A97BA21CEEB3BA00E30754 /* alarm_co2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B9B1CEEB3BA00E30754 /* alarm_co2.png */; };
+		04A97BA31CEEB3BA00E30754 /* alarm_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B9C1CEEB3BA00E30754 /* alarm_icon3.png */; };
+		04A97BA41CEEB3BA00E30754 /* alarm_lux.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B9D1CEEB3BA00E30754 /* alarm_lux.png */; };
 		04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */; };
 		04D4B9ED1CE0B27C00124034 /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D4B9EC1CE0B27C00124034 /* login_bg.png */; };
 		04D4B9F01CE0C39C00124034 /* logo_sinaweibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D4B9EE1CE0C39C00124034 /* logo_sinaweibo.png */; };
@@ -756,6 +763,13 @@
 		048C34D41CEAD96A008745C1 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = ../down.png; sourceTree = "<group>"; };
 		048C34D61CEB04AE008745C1 /* chartjson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = chartjson.txt; sourceTree = "<group>"; };
 		049968C11CE765D000AA9FAE /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
+		04A97B971CEEB3BA00E30754 /* alarm_air_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_air_h.png; sourceTree = "<group>"; };
+		04A97B981CEEB3BA00E30754 /* alarm_air_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_air_t.png; sourceTree = "<group>"; };
+		04A97B991CEEB3BA00E30754 /* alarm_battery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_battery.png; sourceTree = "<group>"; };
+		04A97B9A1CEEB3BA00E30754 /* alarm_co.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_co.png; sourceTree = "<group>"; };
+		04A97B9B1CEEB3BA00E30754 /* alarm_co2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_co2.png; sourceTree = "<group>"; };
+		04A97B9C1CEEB3BA00E30754 /* alarm_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_icon3.png; sourceTree = "<group>"; };
+		04A97B9D1CEEB3BA00E30754 /* alarm_lux.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_lux.png; sourceTree = "<group>"; };
 		04B9E0901CE0733B004CC6D5 /* YYNetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNetRequest.h; sourceTree = "<group>"; };
 		04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNetRequest.m; sourceTree = "<group>"; };
 		04D4B9EC1CE0B27C00124034 /* login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bg.png; sourceTree = "<group>"; };
@@ -1354,6 +1368,13 @@
 				048111C11CE58A890023390E /* forward3_focus.png */,
 				048C34D41CEAD96A008745C1 /* down.png */,
 				0472F8951CED5E57001F9372 /* apply.png */,
+				04A97B971CEEB3BA00E30754 /* alarm_air_h.png */,
+				04A97B981CEEB3BA00E30754 /* alarm_air_t.png */,
+				04A97B991CEEB3BA00E30754 /* alarm_battery.png */,
+				04A97B9A1CEEB3BA00E30754 /* alarm_co.png */,
+				04A97B9B1CEEB3BA00E30754 /* alarm_co2.png */,
+				04A97B9C1CEEB3BA00E30754 /* alarm_icon3.png */,
+				04A97B9D1CEEB3BA00E30754 /* alarm_lux.png */,
 				048111BF1CE586BE0023390E /* water_valve.png */,
 				048C34D21CEAD962008745C1 /* button5.png */,
 				048111BD1CE586960023390E /* time.png */,
@@ -2823,6 +2844,7 @@
 				0463AC021CE339A500EE9A96 /* video_left_seletor.png in Resources */,
 				63E825211A1C7ECA00F5B060 /* configFile.txt in Resources */,
 				63A79742193F53BE006418E2 /* ContactsCell.xib in Resources */,
+				04A97BA21CEEB3BA00E30754 /* alarm_co2.png in Resources */,
 				63B0F0BB1990C3C700791D0F /* Default.png in Resources */,
 				633415FD197E805800303105 /* toolbarOne.png in Resources */,
 				044C79D41CE17D8E00F9EE21 /* 006.png in Resources */,
@@ -2840,6 +2862,7 @@
 				048111BC1CE5868B0023390E /* temperature_humidity.png in Resources */,
 				63A7379519418F2600DCBD68 /* icon_attach_panel_album_highlighted.png in Resources */,
 				048111B81CE586580023390E /* main_07.png in Resources */,
+				04A97BA31CEEB3BA00E30754 /* alarm_icon3.png in Resources */,
 				044C79F11CE1D7B200F9EE21 /* chart3.png in Resources */,
 				0463AC001CE339A500EE9A96 /* video_down_unseletor.png in Resources */,
 				044C79DE1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png in Resources */,
@@ -2900,7 +2923,9 @@
 				63341603197E805800303105 /* no_select.png in Resources */,
 				048111B21CE586030023390E /* button_close.png in Resources */,
 				6334160B197E805800303105 /* cancel.png in Resources */,
+				04A97B9E1CEEB3BA00E30754 /* alarm_air_h.png in Resources */,
 				6334160F197E805800303105 /* noRead.png in Resources */,
+				04A97BA41CEEB3BA00E30754 /* alarm_lux.png in Resources */,
 				046532DA1CE96C2D00B6EF1E /* 大棚详情.txt in Resources */,
 				630824BD197F675300BB7217 /* OfficialIcon3.png in Resources */,
 				633415FA197E805800303105 /* homeToolBg_iPad.png in Resources */,
@@ -2920,6 +2945,7 @@
 				04F12FAA1CE051210014E655 /* logo1.png in Resources */,
 				04D4B9F11CE0C39C00124034 /* logo_tencentweibo.png in Resources */,
 				63341609197E805800303105 /* selectOn.png in Resources */,
+				04A97B9F1CEEB3BA00E30754 /* alarm_air_t.png in Resources */,
 				63B9A78B1980DD58005ED169 /* back.png in Resources */,
 				0472F8961CED5E57001F9372 /* apply.png in Resources */,
 				63B098A7194590EB0055457D /* HomeViewController.xib in Resources */,
@@ -2933,6 +2959,7 @@
 				63E5A5131936DA34008CC126 /* login_ico.png in Resources */,
 				630824B4197F61DF00BB7217 /* menuBg.png in Resources */,
 				0472F8A91CEDBDA7001F9372 /* alramStratey.xib in Resources */,
+				04A97BA11CEEB3BA00E30754 /* alarm_co.png in Resources */,
 				A5E8701B1ABC17A9005195ED /* EmailPopContentViewController_iPad.xib in Resources */,
 				63341607197E805800303105 /* passIcon.png in Resources */,
 				04F12FA51CE0510E0014E655 /* logo_sinaweibo.png in Resources */,
@@ -2972,6 +2999,7 @@
 				63CB000B197F96CA009C07AA /* searchInput_iPhone.png in Resources */,
 				639578711938930F00FDE95D /* PushMessageCell.xib in Resources */,
 				044C79DC1CE17DAB00F9EE21 /* buddy_header_arrow.png in Resources */,
+				04A97BA01CEEB3BA00E30754 /* alarm_battery.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

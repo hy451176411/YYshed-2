@@ -144,6 +144,8 @@
 	StrategyMenu *menu = [[StrategyMenu alloc] init];
 	//NSMutableArray *menus = [self configMenus:model[@"components"]];
 	//menu.menus = menus;
+	NSArray *menus = [NSArray arrayWithObjects:@"<未设置报警策略>",@"西红柿种植预案(自定义策略)",nil];
+	menu.menus = menus;
 	float menuH = [menu configDataOfBottomMenu:nil];
 	menu.frame = CGRectMake(ELEMENT_SPACING, self.startY,W, MENU_H);
 	menu.delegate = self;

@@ -27,12 +27,18 @@
 //}
 -(float)configDataOfBottomMenu:(id)data{
 	//[self initModel];
-	self.menus = [NSArray arrayWithObjects:@"初一",@"初二",@"初三",@"初四",nil];
+	//self.menus = [NSArray arrayWithObjects:@"初一",@"初二",@"初三",@"初四",nil];
 	UIView *rootView1 = [[UIView alloc] init];
 	rootView1.frame = CGRectMake(0, 0, SCREEN_WIDTH-2*ELEMENT_SPACING, MENU_H);
 	float startY = 0;
+	float tipW = 85;
+	UILabel  *lowTip = [[UILabel alloc] init];
+	lowTip.frame =CGRectMake(0, startY, tipW, MENU_H);
+	lowTip.text = @"预案名称：";
+	[rootView1 addSubview:lowTip];
+	
 	self.mSelectBtn = [[UIButton alloc] init];
-	self.mSelectBtn.frame = CGRectMake(0, startY, SCREEN_WIDTH-2*ELEMENT_SPACING, MENU_H);
+	self.mSelectBtn.frame = CGRectMake(tipW, startY, SCREEN_WIDTH-2*ELEMENT_SPACING-tipW, MENU_H);
 	self.mSelectBtn.titleLabel.font = SystemFontOfSize(16);
 	NSString *name = self.menus[0];
 	[self.mSelectBtn setTitle:name forState:UIControlStateNormal];
