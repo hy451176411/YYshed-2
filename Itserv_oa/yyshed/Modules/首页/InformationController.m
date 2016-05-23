@@ -1,22 +1,22 @@
 //
-//  FourController.m
-//  REPagedScrollViewExample
+//  InformationController.m
+//  Itserv_oa
 //
-//  Created by mac on 16/5/7.
-//  Copyright (c) 2016年 Roman Efimov. All rights reserved.
+//  Created by mac on 16/5/23.
+//  Copyright (c) 2016年 xiexianhui. All rights reserved.
 //
 
-#import "FourController.h"
+#import "InformationController.h"
 
-@interface FourController ()
+@interface InformationController ()
 
 @end
 
-@implementation FourController
+@implementation InformationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

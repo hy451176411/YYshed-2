@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040E732D1CF2AF9600314057 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040E732B1CF2AF9600314057 /* AboutController.m */; };
+		040E732E1CF2AF9600314057 /* AboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E732C1CF2AF9600314057 /* AboutController.xib */; };
+		040E73311CF2B08700314057 /* navigation_item_lead.png in Resources */ = {isa = PBXBuildFile; fileRef = 040E73301CF2B08700314057 /* navigation_item_lead.png */; };
+		040E73341CF2B7CC00314057 /* InformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040E73331CF2B7CC00314057 /* InformationController.m */; };
+		040E73371CF2B7EC00314057 /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040E73361CF2B7EC00314057 /* MapController.m */; };
+		040E73391CF2B96D00314057 /* u28.png in Resources */ = {isa = PBXBuildFile; fileRef = 040E73381CF2B96D00314057 /* u28.png */; };
+		040E733B1CF2BCC500314057 /* main_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 040E733A1CF2BCC500314057 /* main_07.png */; };
 		0432F5061CEDE60F00430B85 /* AlarmStrateyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432F5051CEDE60F00430B85 /* AlarmStrateyItem.m */; };
 		044393DB1CEA9EAA005D4347 /* ShedDetailBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 044393DA1CEA9EAA005D4347 /* ShedDetailBottomMenu.m */; };
 		044C79CA1CE17D6800F9EE21 /* 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79C91CE17D6800F9EE21 /* 001.png */; };
@@ -44,7 +51,6 @@
 		0463AC091CE339A500EE9A96 /* video_up_unseletor.png in Resources */ = {isa = PBXBuildFile; fileRef = 0463ABFD1CE339A500EE9A96 /* video_up_unseletor.png */; };
 		0463AC0B1CE339B400EE9A96 /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = 0463AC0A1CE339B400EE9A96 /* video.png */; };
 		0463AC0D1CE33A5900EE9A96 /* category2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0463AC0C1CE33A5900EE9A96 /* category2.png */; };
-		0465324B1CE9619C00B6EF1E /* FourController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532411CE9619C00B6EF1E /* FourController.m */; };
 		0465324C1CE9619C00B6EF1E /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532431CE9619C00B6EF1E /* HomeController.m */; };
 		0465324D1CE9619C00B6EF1E /* SecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532451CE9619C00B6EF1E /* SecondController.m */; };
 		0465324E1CE9619C00B6EF1E /* ShedHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046532471CE9619C00B6EF1E /* ShedHomeViewController.m */; };
@@ -169,6 +175,8 @@
 		04A97BA21CEEB3BA00E30754 /* alarm_co2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B9B1CEEB3BA00E30754 /* alarm_co2.png */; };
 		04A97BA31CEEB3BA00E30754 /* alarm_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B9C1CEEB3BA00E30754 /* alarm_icon3.png */; };
 		04A97BA41CEEB3BA00E30754 /* alarm_lux.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B9D1CEEB3BA00E30754 /* alarm_lux.png */; };
+		04A97BB51CEEC4B200E30754 /* AddDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A97BB41CEEC4B200E30754 /* AddDevice.m */; };
+		04A97BB71CEEC57700E30754 /* AddDevice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A97BB61CEEC57700E30754 /* AddDevice.xib */; };
 		04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */; };
 		04D4B9ED1CE0B27C00124034 /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D4B9EC1CE0B27C00124034 /* login_bg.png */; };
 		04D4B9F01CE0C39C00124034 /* logo_sinaweibo.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D4B9EE1CE0C39C00124034 /* logo_sinaweibo.png */; };
@@ -517,6 +525,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040E732A1CF2AF9600314057 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutController.h; path = "yyshed/Modules/首页/AboutController.h"; sourceTree = "<group>"; };
+		040E732B1CF2AF9600314057 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutController.m; path = "yyshed/Modules/首页/AboutController.m"; sourceTree = "<group>"; };
+		040E732C1CF2AF9600314057 /* AboutController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutController.xib; path = "yyshed/Modules/首页/AboutController.xib"; sourceTree = "<group>"; };
+		040E73301CF2B08700314057 /* navigation_item_lead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_item_lead.png; sourceTree = "<group>"; };
+		040E73321CF2B7CC00314057 /* InformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InformationController.h; path = "yyshed/Modules/首页/InformationController.h"; sourceTree = "<group>"; };
+		040E73331CF2B7CC00314057 /* InformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InformationController.m; path = "yyshed/Modules/首页/InformationController.m"; sourceTree = "<group>"; };
+		040E73351CF2B7EC00314057 /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapController.h; path = "yyshed/Modules/首页/MapController.h"; sourceTree = "<group>"; };
+		040E73361CF2B7EC00314057 /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapController.m; path = "yyshed/Modules/首页/MapController.m"; sourceTree = "<group>"; };
+		040E73381CF2B96D00314057 /* u28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = u28.png; sourceTree = "<group>"; };
+		040E733A1CF2BCC500314057 /* main_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_07.png; sourceTree = "<group>"; };
 		0432F5041CEDE60F00430B85 /* AlarmStrateyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmStrateyItem.h; sourceTree = "<group>"; };
 		0432F5051CEDE60F00430B85 /* AlarmStrateyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmStrateyItem.m; sourceTree = "<group>"; };
 		044393D91CEA9EA9005D4347 /* ShedDetailBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShedDetailBottomMenu.h; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailBottomMenu.h"; sourceTree = "<group>"; };
@@ -558,8 +576,6 @@
 		0463AC0A1CE339B400EE9A96 /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
 		0463AC0C1CE33A5900EE9A96 /* category2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = category2.png; sourceTree = "<group>"; };
 		0465323F1CE960D900B6EF1E /* CommonShed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonShed.h; path = yyshed/commonfile/CommonShed.h; sourceTree = "<group>"; };
-		046532401CE9619C00B6EF1E /* FourController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FourController.h; path = "yyshed/Modules/首页/FourController.h"; sourceTree = "<group>"; };
-		046532411CE9619C00B6EF1E /* FourController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FourController.m; path = "yyshed/Modules/首页/FourController.m"; sourceTree = "<group>"; };
 		046532421CE9619C00B6EF1E /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeController.h; path = "yyshed/Modules/首页/HomeController.h"; sourceTree = "<group>"; };
 		046532431CE9619C00B6EF1E /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeController.m; path = "yyshed/Modules/首页/HomeController.m"; sourceTree = "<group>"; };
 		046532441CE9619C00B6EF1E /* SecondController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondController.h; path = "yyshed/Modules/首页/SecondController.h"; sourceTree = "<group>"; };
@@ -770,6 +786,9 @@
 		04A97B9B1CEEB3BA00E30754 /* alarm_co2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_co2.png; sourceTree = "<group>"; };
 		04A97B9C1CEEB3BA00E30754 /* alarm_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_icon3.png; sourceTree = "<group>"; };
 		04A97B9D1CEEB3BA00E30754 /* alarm_lux.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_lux.png; sourceTree = "<group>"; };
+		04A97BB31CEEC4B200E30754 /* AddDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddDevice.h; path = "yyshed/Modules/大棚/大棚设置页/AddDevice.h"; sourceTree = "<group>"; };
+		04A97BB41CEEC4B200E30754 /* AddDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddDevice.m; path = "yyshed/Modules/大棚/大棚设置页/AddDevice.m"; sourceTree = "<group>"; };
+		04A97BB61CEEC57700E30754 /* AddDevice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddDevice.xib; path = "yyshed/Modules/大棚/大棚设置页/AddDevice.xib"; sourceTree = "<group>"; };
 		04B9E0901CE0733B004CC6D5 /* YYNetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNetRequest.h; sourceTree = "<group>"; };
 		04B9E0911CE0733B004CC6D5 /* YYNetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNetRequest.m; sourceTree = "<group>"; };
 		04D4B9EC1CE0B27C00124034 /* login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bg.png; sourceTree = "<group>"; };
@@ -1214,6 +1233,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040E732F1CF2B07900314057 /* 关于 */ = {
+			isa = PBXGroup;
+			children = (
+				040E73301CF2B08700314057 /* navigation_item_lead.png */,
+			);
+			name = "关于";
+			sourceTree = "<group>";
+		};
 		0414E77E1CE459380072076C /* ICViewPager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1650,7 +1677,9 @@
 		04F12F931CE050870014E655 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				040E73381CF2B96D00314057 /* u28.png */,
 				046B81571CE2C538003F170B /* lead.png */,
+				040E733A1CF2BCC500314057 /* main_07.png */,
 				044EE8341CE224A9007C90C2 /* expand.png */,
 				044EE8321CE22495007C90C2 /* house.png */,
 				044C79F21CE1D98100F9EE21 /* pointer.png */,
@@ -1689,10 +1718,11 @@
 		04F12FB01CE051730014E655 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
-				046532401CE9619C00B6EF1E /* FourController.h */,
-				046532411CE9619C00B6EF1E /* FourController.m */,
 				046532421CE9619C00B6EF1E /* HomeController.h */,
 				046532431CE9619C00B6EF1E /* HomeController.m */,
+				04A97BB31CEEC4B200E30754 /* AddDevice.h */,
+				04A97BB41CEEC4B200E30754 /* AddDevice.m */,
+				04A97BB61CEEC57700E30754 /* AddDevice.xib */,
 				046532441CE9619C00B6EF1E /* SecondController.h */,
 				046532451CE9619C00B6EF1E /* SecondController.m */,
 				046532461CE9619C00B6EF1E /* ShedHomeViewController.h */,
@@ -1700,6 +1730,13 @@
 				046532481CE9619C00B6EF1E /* ShedHomeViewController.xib */,
 				046532491CE9619C00B6EF1E /* ThirdController.h */,
 				0465324A1CE9619C00B6EF1E /* ThirdController.m */,
+				040E732A1CF2AF9600314057 /* AboutController.h */,
+				040E732B1CF2AF9600314057 /* AboutController.m */,
+				040E732C1CF2AF9600314057 /* AboutController.xib */,
+				040E73321CF2B7CC00314057 /* InformationController.h */,
+				040E73331CF2B7CC00314057 /* InformationController.m */,
+				040E73351CF2B7EC00314057 /* MapController.h */,
+				040E73361CF2B7EC00314057 /* MapController.m */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -1810,6 +1847,7 @@
 		631A4E7D1928839B0067FF3B /* pictures-iphone */ = {
 			isa = PBXGroup;
 			children = (
+				040E732F1CF2B07900314057 /* 关于 */,
 				046B81671CE2E6BF003F170B /* 大棚详情 */,
 				044C79C81CE17D5600F9EE21 /* friend */,
 				04F12FA91CE051210014E655 /* logo1.png */,
@@ -2885,11 +2923,13 @@
 				63B9A7891980D8FF005ED169 /* searchInput_iPad.png in Resources */,
 				63AB454A196282A300C6E39A /* ToReadViewController_iPad.xib in Resources */,
 				044C79CE1CE17D7A00F9EE21 /* 003.png in Resources */,
+				040E732E1CF2AF9600314057 /* AboutController.xib in Resources */,
 				63A7379C1941915800DCBD68 /* icon_attach_readmail.png in Resources */,
 				634053F719404A400019052B /* arrow_up.png in Resources */,
 				A5E870131ABC1555005195ED /* PeopleTableViewCell.xib in Resources */,
 				044C79D21CE17D8700F9EE21 /* 005.png in Resources */,
 				63A135A61A81FF4C00B8A58E /* OA_Address.geojson in Resources */,
+				04A97BB71CEEC57700E30754 /* AddDevice.xib in Resources */,
 				633415FE197E805800303105 /* toolbarOneSelect.png in Resources */,
 				04F12F901CE050480014E655 /* a4.png in Resources */,
 				63D2813319430A0700556A22 /* EmailContentViewController_iPhone.xib in Resources */,
@@ -2899,6 +2939,7 @@
 				634053FC19404A400019052B /* RefreshView.xib in Resources */,
 				044C79D01CE17D8100F9EE21 /* 004.png in Resources */,
 				63B0F0B61990C34500791D0F /* Icon-72.png in Resources */,
+				040E73311CF2B08700314057 /* navigation_item_lead.png in Resources */,
 				63F3E47E193C89EF00C4F7BA /* ProcessFileViewController_iPhone.xib in Resources */,
 				63A7379419418F2600DCBD68 /* icon_attach_panel_album.png in Resources */,
 				63341608197E805800303105 /* selectOff.png in Resources */,
@@ -2959,6 +3000,7 @@
 				63E5A5131936DA34008CC126 /* login_ico.png in Resources */,
 				630824B4197F61DF00BB7217 /* menuBg.png in Resources */,
 				0472F8A91CEDBDA7001F9372 /* alramStratey.xib in Resources */,
+				040E733B1CF2BCC500314057 /* main_07.png in Resources */,
 				04A97BA11CEEB3BA00E30754 /* alarm_co.png in Resources */,
 				A5E8701B1ABC17A9005195ED /* EmailPopContentViewController_iPad.xib in Resources */,
 				63341607197E805800303105 /* passIcon.png in Resources */,
@@ -2974,6 +3016,7 @@
 				631A4FCB192888AF0067FF3B /* RootViewController_iPhone.xib in Resources */,
 				631A4FC2192886AD0067FF3B /* 37x-Checkmark.png in Resources */,
 				63B0F0BC1990C3C700791D0F /* Default@2x.png in Resources */,
+				040E73391CF2B96D00314057 /* u28.png in Resources */,
 				04F432C01CEC4E8600D89541 /* ShedSensorCell.xib in Resources */,
 				631A4FC3192886AD0067FF3B /* 37x-Checkmark@2x.png in Resources */,
 				630824BC197F675300BB7217 /* OfficialIcon2.png in Resources */,
@@ -3057,17 +3100,18 @@
 				A564E8B21ABFB64400FC36AD /* ShowPopWebViewController.m in Sources */,
 				A53D267D1AC14D0200C14721 /* SBHMessage.m in Sources */,
 				63B19CAE1928548B002F3E17 /* AppDelegate.m in Sources */,
+				040E73371CF2B7EC00314057 /* MapController.m in Sources */,
 				04883BDD1CE764B600249F2B /* PYAxisLine.m in Sources */,
 				63D2813219430A0700556A22 /* EmailContentViewController.m in Sources */,
 				04883BF91CE764B600249F2B /* PYFunnelSeries.m in Sources */,
 				04883BFB1CE764B600249F2B /* PYHeatmapSeries.m in Sources */,
+				040E732D1CF2AF9600314057 /* AboutController.m in Sources */,
 				A5E870031ABC1528005195ED /* EmailDraftListViewController.m in Sources */,
 				634053FB19404A400019052B /* RefreshView.m in Sources */,
 				63DDEFC41943611300A28A0B /* RATreeView+UIScrollView.m in Sources */,
 				0465324D1CE9619C00B6EF1E /* SecondController.m in Sources */,
 				63957849193885E400FDE95D /* BaseViewController.m in Sources */,
 				63F383991986288B006CE287 /* SBJsonWriter.m in Sources */,
-				0465324B1CE9619C00B6EF1E /* FourController.m in Sources */,
 				63ED7C6D1939CB23005B7B93 /* ASIDataDecompressor.m in Sources */,
 				63ED7C6E1939CB23005B7B93 /* ASIDownloadCache.m in Sources */,
 				63F5D9871999FD4400043421 /* SBAppMessage.m in Sources */,
@@ -3127,6 +3171,7 @@
 				04883BEB1CE764B600249F2B /* PYNoDataLoadingOption.m in Sources */,
 				63A7969A193F0348006418E2 /* ShowWebViewController.m in Sources */,
 				04883BD91CE764B600249F2B /* NSObject+PYObject.m in Sources */,
+				040E73341CF2B7CC00314057 /* InformationController.m in Sources */,
 				639578961938A98F00FDE95D /* SendReceiveViewController.m in Sources */,
 				046532B81CE967D500B6EF1E /* ShedWater.m in Sources */,
 				63E5A51A1936DE27008CC126 /* CustomSwitch.m in Sources */,
@@ -3188,6 +3233,7 @@
 				04883BF51CE764B600249F2B /* PYToolboxFeature.m in Sources */,
 				046532A91CE965F200B6EF1E /* ShedHomeData.m in Sources */,
 				63DDEFC51943611300A28A0B /* RATreeView.m in Sources */,
+				04A97BB51CEEC4B200E30754 /* AddDevice.m in Sources */,
 				04883BF41CE764B600249F2B /* PYToolbox.m in Sources */,
 				04883BF81CE764B600249F2B /* PYEventRiverSeries.m in Sources */,
 				04883BEE1CE764B600249F2B /* PYRoamController.m in Sources */,

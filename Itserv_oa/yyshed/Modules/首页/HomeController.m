@@ -10,7 +10,7 @@
 #import "ShedHomeViewController.h"
 #import "SecondController.h"
 #import "ThirdController.h"
-#import "FourController.h"
+#import "AboutController.h"
 
 @interface HomeController ()
 
@@ -49,7 +49,7 @@
 	thirdPage.title = @"综合";
 	[controllers addObject:thirdNv];
 	
-	FourController *fourPage = [[FourController alloc]init];
+	AboutController *fourPage = [[AboutController alloc]init];
 	UINavigationController *fourNv = [[UINavigationController alloc]initWithRootViewController:fourPage];
 	UIImage *fourImage = [UIImage imageNamed:@"a4.png"];
 	fourPage.tabBarItem.image = fourImage;

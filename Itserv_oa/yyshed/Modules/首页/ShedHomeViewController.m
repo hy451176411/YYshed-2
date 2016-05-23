@@ -14,6 +14,7 @@
 #import "ShedDetailVC.h"
 #import "HomeController.h"
 #import "ShedSettingVC.h"
+#import "AddDevice.h"
 
 
 
@@ -143,8 +144,14 @@
 }
 
 -(void)rightBtnClick{
-	UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请添加大棚!" delegate:self  cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-	[alter show];
+//	UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请添加大棚!" delegate:self  cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//	[alter show];
+	AddDevice *messageView = [AddDevice loadFromXibWithOwner:self];
+	messageView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+
+	//[messageView loadDataRADataObject:data];
+	[self.view addSubview:messageView];
+
 }
 
 

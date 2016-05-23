@@ -16,22 +16,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+	  [self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+	HomeDetailNav *control = [[HomeDetailNav alloc] init];
+	//内容导航
+	mNavigationContent = [[HomeDetailNav alloc]init];
+	mNavigationController = [[UINavigationController alloc]initWithRootViewController:mNavigationContent];
+	//初始化子视图
+	[self initControls];
+	[self initTitlesAndNav];
+	[self.view addSubview:mNavigationController.view];
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	[super didReceiveMemoryWarning];
 }
 
-/*
-#pragma mark - Navigation
+-(void)initControls{
+	InformationController *table = [[InformationController alloc] init];
+	table.title = @"概况";
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+	MapController *shedSettingVc = [[MapController alloc] init];
+	shedSettingVc.title = @"地图";
+
+	NSArray *views = @[table, shedSettingVc];
+	viewControllers = views;
 }
-*/
-
+//初始化标题和导航栏
+-(void)initTitlesAndNav{
+	[mNavigationContent setViewControls:viewControllers];
+	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+	//添加左边的按钮
+	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
+	UIImage *left = [UIImage imageNamed:@"logo.png"];
+	UIImageView* img = [[UIImageView alloc] initWithImage:left];
+	img.frame =CGRectMake(0, 0, 30, 30);
+	img.backgroundColor = [UIColor clearColor];
+	item.customView = img ;
+	
+	self.navigationItem.leftBarButtonItem =item;
+	self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
+}
 @end

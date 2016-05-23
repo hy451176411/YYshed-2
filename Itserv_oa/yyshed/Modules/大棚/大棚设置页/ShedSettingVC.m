@@ -43,12 +43,7 @@
 #pragma mark 其他设置
 -(void)thirdView{
 	[self.rootView removeAllSubviews];
-	UIImageView *imageView = [[UIImageView alloc] init];
-	imageView.image = [UIImage imageNamed:@"back.png"];
-	imageView.frame = CGRectMake(80, 80, 40, 40);
-	[self.rootView addSubview:imageView];
-	//self.view.backgroundColor = [UIColor redColor];
-	[self.view addSubview:self.rootView];
+
 }
 #pragma mark 报警预案设置
 -(void)secoendView{
