@@ -10,8 +10,6 @@
 		040E732D1CF2AF9600314057 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040E732B1CF2AF9600314057 /* AboutController.m */; };
 		040E732E1CF2AF9600314057 /* AboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040E732C1CF2AF9600314057 /* AboutController.xib */; };
 		040E73311CF2B08700314057 /* navigation_item_lead.png in Resources */ = {isa = PBXBuildFile; fileRef = 040E73301CF2B08700314057 /* navigation_item_lead.png */; };
-		040E73341CF2B7CC00314057 /* InformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040E73331CF2B7CC00314057 /* InformationController.m */; };
-		040E73371CF2B7EC00314057 /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040E73361CF2B7EC00314057 /* MapController.m */; };
 		040E73391CF2B96D00314057 /* u28.png in Resources */ = {isa = PBXBuildFile; fileRef = 040E73381CF2B96D00314057 /* u28.png */; };
 		040E733B1CF2BCC500314057 /* main_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 040E733A1CF2BCC500314057 /* main_07.png */; };
 		040EB45F1CF40B8000450251 /* address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040EB45E1CF40B8000450251 /* address.plist */; };
@@ -19,6 +17,8 @@
 		040EB4641CF42AD100450251 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 040EB4631CF42AD100450251 /* bg.png */; };
 		0432F5061CEDE60F00430B85 /* AlarmStrateyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432F5051CEDE60F00430B85 /* AlarmStrateyItem.m */; };
 		044393DB1CEA9EAA005D4347 /* ShedDetailBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 044393DA1CEA9EAA005D4347 /* ShedDetailBottomMenu.m */; };
+		044891E31CF481B300B4CD22 /* InformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044891E01CF481B300B4CD22 /* InformationController.m */; };
+		044891E41CF481B300B4CD22 /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044891E21CF481B300B4CD22 /* MapController.m */; };
 		044C79CA1CE17D6800F9EE21 /* 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79C91CE17D6800F9EE21 /* 001.png */; };
 		044C79CC1CE17D7300F9EE21 /* 002.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CB1CE17D7300F9EE21 /* 002.png */; };
 		044C79CE1CE17D7A00F9EE21 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CD1CE17D7A00F9EE21 /* 003.png */; };
@@ -529,14 +529,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		040E732A1CF2AF9600314057 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutController.h; path = "yyshed/Modules/首页/AboutController.h"; sourceTree = "<group>"; };
-		040E732B1CF2AF9600314057 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutController.m; path = "yyshed/Modules/首页/AboutController.m"; sourceTree = "<group>"; };
-		040E732C1CF2AF9600314057 /* AboutController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutController.xib; path = "yyshed/Modules/首页/AboutController.xib"; sourceTree = "<group>"; };
+		040E732A1CF2AF9600314057 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutController.h; path = "yyshed/Modules/首页/更多/AboutController.h"; sourceTree = "<group>"; };
+		040E732B1CF2AF9600314057 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutController.m; path = "yyshed/Modules/首页/更多/AboutController.m"; sourceTree = "<group>"; };
+		040E732C1CF2AF9600314057 /* AboutController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutController.xib; path = "yyshed/Modules/首页/更多/AboutController.xib"; sourceTree = "<group>"; };
 		040E73301CF2B08700314057 /* navigation_item_lead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_item_lead.png; sourceTree = "<group>"; };
-		040E73321CF2B7CC00314057 /* InformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InformationController.h; path = "yyshed/Modules/首页/InformationController.h"; sourceTree = "<group>"; };
-		040E73331CF2B7CC00314057 /* InformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InformationController.m; path = "yyshed/Modules/首页/InformationController.m"; sourceTree = "<group>"; };
-		040E73351CF2B7EC00314057 /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapController.h; path = "yyshed/Modules/首页/MapController.h"; sourceTree = "<group>"; };
-		040E73361CF2B7EC00314057 /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapController.m; path = "yyshed/Modules/首页/MapController.m"; sourceTree = "<group>"; };
 		040E73381CF2B96D00314057 /* u28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = u28.png; sourceTree = "<group>"; };
 		040E733A1CF2BCC500314057 /* main_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_07.png; sourceTree = "<group>"; };
 		040EB45E1CF40B8000450251 /* address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = address.plist; sourceTree = "<group>"; };
@@ -547,6 +543,10 @@
 		0432F5051CEDE60F00430B85 /* AlarmStrateyItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmStrateyItem.m; sourceTree = "<group>"; };
 		044393D91CEA9EA9005D4347 /* ShedDetailBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShedDetailBottomMenu.h; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailBottomMenu.h"; sourceTree = "<group>"; };
 		044393DA1CEA9EAA005D4347 /* ShedDetailBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShedDetailBottomMenu.m; path = "yyshed/Modules/大棚/大棚详情页/ShedDetailBottomMenu.m"; sourceTree = "<group>"; };
+		044891DF1CF481B300B4CD22 /* InformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InformationController.h; path = "yyshed/Modules/首页/综合/InformationController.h"; sourceTree = "<group>"; };
+		044891E01CF481B300B4CD22 /* InformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InformationController.m; path = "yyshed/Modules/首页/综合/InformationController.m"; sourceTree = "<group>"; };
+		044891E11CF481B300B4CD22 /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapController.h; path = "yyshed/Modules/首页/综合/MapController.h"; sourceTree = "<group>"; };
+		044891E21CF481B300B4CD22 /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapController.m; path = "yyshed/Modules/首页/综合/MapController.m"; sourceTree = "<group>"; };
 		044C79C91CE17D6800F9EE21 /* 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 001.png; sourceTree = "<group>"; };
 		044C79CB1CE17D7300F9EE21 /* 002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 002.png; sourceTree = "<group>"; };
 		044C79CD1CE17D7A00F9EE21 /* 003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 003.png; sourceTree = "<group>"; };
@@ -1281,6 +1281,27 @@
 			name = "大鹏详情页";
 			sourceTree = "<group>";
 		};
+		044891D51CF4808D00B4CD22 /* 更多 */ = {
+			isa = PBXGroup;
+			children = (
+				040E732A1CF2AF9600314057 /* AboutController.h */,
+				040E732B1CF2AF9600314057 /* AboutController.m */,
+				040E732C1CF2AF9600314057 /* AboutController.xib */,
+			);
+			name = "更多";
+			sourceTree = "<group>";
+		};
+		044891DE1CF480DD00B4CD22 /* 综合 */ = {
+			isa = PBXGroup;
+			children = (
+				044891DF1CF481B300B4CD22 /* InformationController.h */,
+				044891E01CF481B300B4CD22 /* InformationController.m */,
+				044891E11CF481B300B4CD22 /* MapController.h */,
+				044891E21CF481B300B4CD22 /* MapController.m */,
+			);
+			name = "综合";
+			sourceTree = "<group>";
+		};
 		044C79B91CE17BE400F9EE21 /* friend */ = {
 			isa = PBXGroup;
 			children = (
@@ -1740,6 +1761,8 @@
 		04F12FB01CE051730014E655 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				044891DE1CF480DD00B4CD22 /* 综合 */,
+				044891D51CF4808D00B4CD22 /* 更多 */,
 				040EB4601CF40B9400450251 /* AddressViewController.h */,
 				040EB4611CF40B9400450251 /* AddressViewController.m */,
 				046532421CE9619C00B6EF1E /* HomeController.h */,
@@ -1754,13 +1777,6 @@
 				046532481CE9619C00B6EF1E /* ShedHomeViewController.xib */,
 				046532491CE9619C00B6EF1E /* ThirdController.h */,
 				0465324A1CE9619C00B6EF1E /* ThirdController.m */,
-				040E732A1CF2AF9600314057 /* AboutController.h */,
-				040E732B1CF2AF9600314057 /* AboutController.m */,
-				040E732C1CF2AF9600314057 /* AboutController.xib */,
-				040E73321CF2B7CC00314057 /* InformationController.h */,
-				040E73331CF2B7CC00314057 /* InformationController.m */,
-				040E73351CF2B7EC00314057 /* MapController.h */,
-				040E73361CF2B7EC00314057 /* MapController.m */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -3129,7 +3145,6 @@
 				A564E8B21ABFB64400FC36AD /* ShowPopWebViewController.m in Sources */,
 				A53D267D1AC14D0200C14721 /* SBHMessage.m in Sources */,
 				63B19CAE1928548B002F3E17 /* AppDelegate.m in Sources */,
-				040E73371CF2B7EC00314057 /* MapController.m in Sources */,
 				04883BDD1CE764B600249F2B /* PYAxisLine.m in Sources */,
 				63D2813219430A0700556A22 /* EmailContentViewController.m in Sources */,
 				04883BF91CE764B600249F2B /* PYFunnelSeries.m in Sources */,
@@ -3192,6 +3207,7 @@
 				63B20A9B1946EC3B00D16C5B /* PeopleNameView.m in Sources */,
 				048C34C91CEAD952008745C1 /* CZPickerView.m in Sources */,
 				A5E86FFC1ABC1518005195ED /* SendEmailPOPViewController.m in Sources */,
+				044891E41CF481B300B4CD22 /* MapController.m in Sources */,
 				04883BE91CE764B600249F2B /* PYLineStyle.m in Sources */,
 				63F383951986288B006CE287 /* NSString+SBJSON.m in Sources */,
 				046532791CE9651500B6EF1E /* ViewPagerController.m in Sources */,
@@ -3200,7 +3216,6 @@
 				04883BEB1CE764B600249F2B /* PYNoDataLoadingOption.m in Sources */,
 				63A7969A193F0348006418E2 /* ShowWebViewController.m in Sources */,
 				04883BD91CE764B600249F2B /* NSObject+PYObject.m in Sources */,
-				040E73341CF2B7CC00314057 /* InformationController.m in Sources */,
 				639578961938A98F00FDE95D /* SendReceiveViewController.m in Sources */,
 				046532B81CE967D500B6EF1E /* ShedWater.m in Sources */,
 				63E5A51A1936DE27008CC126 /* CustomSwitch.m in Sources */,
@@ -3285,6 +3300,7 @@
 				04883BFA1CE764B600249F2B /* PYGaugeSeries.m in Sources */,
 				0465329C1CE965F200B6EF1E /* HomeShedDetail.m in Sources */,
 				04883BDC1CE764B600249F2B /* PYAxisLabel.m in Sources */,
+				044891E31CF481B300B4CD22 /* InformationController.m in Sources */,
 				04883BF61CE764B600249F2B /* PYTooltip.m in Sources */,
 				63F3E47D193C89EF00C4F7BA /* ProcessFileViewController.m in Sources */,
 				04883C161CE764C400249F2B /* NSObject+RMCopyable.m in Sources */,
