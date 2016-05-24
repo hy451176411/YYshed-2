@@ -42,10 +42,25 @@
 }
 
 -(void)initMenu{
-	self.menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 0) andHeight:40];
+	float buttonW = 50;
+	float w = SCREEN_WIDTH - buttonW-5;
+	float menuH = 40;
+	float buttonH =25;
+	self.menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 0) andHeight:menuH andWidth:w];
+	
+	UIButton *_btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
+	_btnBack.frame = CGRectMake(w, (menuH-buttonH)/2, buttonW, buttonH);
+	_btnBack.backgroundColor = [UIColor greenColor];
+	_btnBack.titleLabel.font = SystemFontOfSize(16);
+	//[_btnBack setImage:[UIImage imageNamed:@"button5.png"] forState:UIControlStateNormal];
+	[_btnBack setTitle:@"查询" forState:UIControlStateNormal];
+	//[_btnBack addTarget:self action:@selector(searchPlant:) forControlEvents:UIControlEventTouchUpInside];
+	
 	self.menu.dataSource = self;
 	self.menu.delegate = self;
 	[self.view addSubview:self.menu];
+	[self.view addSubview:_btnBack];
+	
 }
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];

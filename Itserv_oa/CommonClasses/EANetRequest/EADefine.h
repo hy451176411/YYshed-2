@@ -129,7 +129,8 @@ typedef enum  {
 	YYShed_openErelay,
 	YYShed_getDeviceInfo,
 	YYShed_getAnalysisResult,
-	YYShed_getShedStrategy
+	YYShed_getShedStrategy,
+	YYShed_devgeogroupInfo
 } HttpRequestTag;
 
 typedef enum  {

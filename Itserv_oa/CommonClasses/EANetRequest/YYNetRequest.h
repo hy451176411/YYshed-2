@@ -60,4 +60,6 @@
 -(void)getAnalysisResult:(NSString*)sn withType:(NSString*)type withScope:(NSString*)scope;
 //获取大棚的strategy
 -(void)getShedStrategy:(NSString*)session_token withDevUuid:(NSString*)dev_uuid;
+// 获取指定省市和农作物的总体统计信息(InfomationPage)
+-(void)devgeogroupInfo:(NSString*)province_name withCityName:(NSString*)city_name withPlantName:(NSString*)plant_name;
 @end

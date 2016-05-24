@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonShed.h"
 
 @interface DOPIndexPath : NSObject
 
@@ -46,6 +47,7 @@
 @property (nonatomic, strong) UIColor *indicatorColor;
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) UIColor *separatorColor;
+@property  float viewWidth;
 /**
  *  the width of menu will be set to screen width defaultly
  *
@@ -54,7 +56,7 @@
  *
  *  @return menu
  */
-- (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height;
+- (instancetype)initWithOrigin:(CGPoint)origin andHeight:(CGFloat)height andWidth:(float)width;
 - (NSString *)titleForRowAtIndexPath:(DOPIndexPath *)indexPath;
 
 //programmatically dismiss

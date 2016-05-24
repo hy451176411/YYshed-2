@@ -208,6 +208,31 @@
 	[request setTimeOutSeconds:30];
 	[self startAsynchronousWithRequest:request];
 }
+
+-(void)devgeogroupInfo:(NSString*)province_name withCityName:(NSString*)city_name withPlantName:(NSString*)plant_name{
+	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
+	NSString *str = [NSString stringWithFormat:@"%@/api/devgeogroup/info?province_name=%@&city_name=%@&plant_name=%@",WAPI_URL,province_name,city_name,plant_name];
+	str = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSURL *url=[NSURL URLWithString:str];
+	ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
+	[request setRequestMethod:@"GET"];
+	//访问
+	request = [ASIHTTPRequest requestWithURL:url];
+	//超时时间多少秒
+	[request setTimeOutSeconds:30];
+	//访问失败重新访问次数
+	[request setNumberOfTimesToRetryOnTimeout:2];
+	//是否使用持久化连接
+	[request setShouldAttemptPersistentConnection:NO];
+	NSString *agent = @"Mozilla/5.0 (Android; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/1.0 Mobile/EC99E CUTV/A312 Safari/525.13";
+	NSString *Authorization = [NSString stringWithFormat:@"%@%@",@"bearer ",session_token];
+	[request addRequestHeader:@"Authorization" value:Authorization];
+	[request addRequestHeader:@"User-Agent" value:agent];
+	request.delegate = self;
+	request.tag = YYShed_devgeogroupInfo;
+	[request setTimeOutSeconds:30];
+	[self startAsynchronousWithRequest:request];
+}
 - (void)startAsynchronousWithRequest:(ASIHTTPRequest *)request
 {
 	[request startAsynchronous];

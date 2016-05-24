@@ -9,7 +9,7 @@
 #import "InformationController.h"
 
 
-@interface InformationController ()<DOPDropDownMenuDataSource, DOPDropDownMenuDelegate>
+@interface InformationController ()<DOPDropDownMenuDataSource, DOPDropDownMenuDelegate,YYNetRequestDelegate>
 @end
 
 @implementation InformationController
@@ -27,10 +27,15 @@
 	}
 	self.citys = [NSMutableArray array];
 	NSDictionary *province = self.address[0];
+	self.currentProvince = province;
+	self.selectedProvince = [self.currentProvince objectForKey:@"name"];
 	NSArray *CITYS = [province objectForKey:@"sub"];
 	for (int i=0; i<CITYS.count; i++) {
 		NSDictionary *city = CITYS[i];
 		NSString *cityName = [city objectForKey:@"name"];
+		if (i==0) {
+			self.selectedCity = cityName;
+		}
 		[self.citys addObject:cityName];
 	}
 }
@@ -40,8 +45,8 @@
 	[self configureData];
 	self.plants = @[@"全部",@"番茄",@"土豆",@"西红柿",@"大米"];
 	[self initMenu];
-	float ox = self.menu.frame.origin.x;
 	[self initBottom];
+	self.theRequest = [NetRequestManager createNetRequestWithDelegate:self];
 }
 -(void)initBottom{
 	self.scrollView = [[UIScrollView alloc] init];
@@ -133,11 +138,30 @@
 	}
 }
 -(void)initMenu{
-	self.menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 0) andHeight:40];
-	//self.menu.frame = CGRectMake(0, 0, 200, 40);
+	float buttonW = 50;
+	float w = SCREEN_WIDTH - buttonW-5;
+	float menuH = 40;
+	float buttonH =25;
+	self.menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 0) andHeight:menuH andWidth:w];
+	
+	UIButton *_btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
+	_btnBack.frame = CGRectMake(w, (menuH-buttonH)/2, buttonW, buttonH);
+	_btnBack.backgroundColor = [UIColor greenColor];
+	_btnBack.titleLabel.font = SystemFontOfSize(16);
+	//[_btnBack setImage:[UIImage imageNamed:@"button5.png"] forState:UIControlStateNormal];
+	[_btnBack setTitle:@"查询" forState:UIControlStateNormal];
+	[_btnBack addTarget:self action:@selector(searchPlant:) forControlEvents:UIControlEventTouchUpInside];
+	
 	self.menu.dataSource = self;
 	self.menu.delegate = self;
 	[self.view addSubview:self.menu];
+	[self.view addSubview:_btnBack];
+	if (self.citys&&self.currentProvince) {
+		NSArray *CITYS = [self.currentProvince objectForKey:@"sub"];
+		NSDictionary *currentCity = CITYS[0];
+		self.selectedCity = [currentCity objectForKey:@"name"];
+		NSLog(@"name = %@ city= %@",[self.currentProvince objectForKey:@"name"],[currentCity objectForKey:@"name"]);
+	}
 }
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
@@ -193,6 +217,8 @@
 				NSString *cityName = [city objectForKey:@"name"];
 				[self.citys addObject:cityName];
 			}
+			self.currentProvince = province;
+			self.selectedProvince = [province objectForKey:@"name"];
 			/*方法一：从父亲的view中间去掉menu，然后再加上，不成功刷新menu的选择状态*/
 			//[self.menu removeFromSuperview];
 			//[self.view addSubview:self.menu];
@@ -208,16 +234,42 @@
 		}
 		break;
 		case 1:{
-			
+			NSDictionary *province = self.currentProvince;
+			NSArray *CITYS = [province objectForKey:@"sub"];
+			NSDictionary *currentCity = CITYS[indexPath.column];
+			self.selectedCity =[currentCity objectForKey:@"name"];
+			NSLog(@"self.selectedProvince = %@ self.selectedCity= %@",self.selectedProvince,self.selectedCity);
 		}
 			break;
 		case 2:{
-			
+			self.selectedPlant = self.plants[indexPath.column];
+			NSLog(@"self.selectedProvince = %@ self.selectedCity= %@ self.selectedPlant=%@",self.selectedProvince,self.selectedCity,self.selectedPlant);
 		}
 			
 		default:
 			break;
 	}
 
+}
+
+#pragma mark 登录请求成功
+- (void)netRequest:(int)tag Finished:(NSDictionary *)model
+{
+	NSLog(@"----------%@",model);
+	
+}
+
+- (void)netRequest:(int)tag Failed:(NSDictionary *)model
+{
+	NSLog(@"请求超时");
+	[SBPublicAlert showMBProgressHUD:@"请求超时" andWhereView:self.view hiddenTime:kHiddenAlertTime];
+}
+
+- (void)netRequest:(int)tag requestFailed:(NSString *)message
+{
+	[SBPublicAlert showMBProgressHUD:message andWhereView:self.view hiddenTime:kHiddenAlertTime];
+}
+-(void)searchPlant:(id)sender{
+	[self.theRequest devgeogroupInfo:@"北京市" withCityName:@"北京" withPlantName:self.selectedPlant];
 }
 @end
