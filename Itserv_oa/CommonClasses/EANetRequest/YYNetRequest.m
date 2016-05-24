@@ -67,7 +67,9 @@
 		NSError *error;
 		NSData *jsonData = [NSJSONSerialization dataWithJSONObject:userDictionary options:NSJSONWritingPrettyPrinted error: &error];
 		NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
-		NSURL *url = [NSURL URLWithString:@"http://182.92.67.74/api/sessions"];
+		NSString *str = [NSString stringWithFormat:@"%@/api/sessions",WAPI_URL];
+		NSURL *url = [NSURL URLWithString:str];
+		
 		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 		[request setRequestMethod:@"POST"];
 		request.tag = Login;
@@ -86,7 +88,8 @@
 
 -(void)getUserInfo:(NSString*)session_token user_Agent:(NSString*)Agent{
 	
-	NSURL *url=[NSURL URLWithString:@"http://182.92.67.74/api/users/infos"];
+	NSString *str = [NSString stringWithFormat:@"%@/api/users/infos",WAPI_URL];
+	NSURL *url=[NSURL URLWithString:str];
 	ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
 	[request setRequestMethod:@"GET"];
 	//访问
@@ -109,7 +112,8 @@
 
 -(void)getDeviceInfo:(NSString*)session_token withDev_id:(NSString*)dev_id
 {
-	NSString *str = @"http://182.92.67.74/api/smartgates/";
+	NSString *str = [NSString stringWithFormat:@"%@/api/smartgates/",WAPI_URL];
+
 	NSString *tempStr = [NSString stringWithFormat:@"%@%@%@",str,dev_id,@"/infos"];
 	NSURL *url=[NSURL URLWithString:tempStr];
 	ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
@@ -143,7 +147,8 @@
 		NSError *error;
 		NSData *jsonData = [NSJSONSerialization dataWithJSONObject:userDictionary options:NSJSONWritingPrettyPrinted error: &error];
 		NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
-		NSURL *url = [NSURL URLWithString:@"http://182.92.67.74/api/remotes/erelays/actions"];
+		NSString *str = [NSString stringWithFormat:@"%@/api/remotes/erelays/actions",WAPI_URL];
+		NSURL *url = [NSURL URLWithString:str];
 		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 		[request setRequestMethod:@"POST"];
 		NSString *Authorization = [NSString stringWithFormat:@"%@%@",@"bearer ",session_token];
@@ -162,8 +167,7 @@
 
 //获取图标数据
 -(void)getAnalysisResult:(NSString*)sn withType:(NSString*)type withScope:(NSString*)scope{
-	NSString *str = @"http://182.92.67.74/api/analyses/histories?sn=01010D0000000021&device_type=humidity-temperature&date=[2016-05-17%2000:00:00,2016-05-17%2015:38:42]&scope=scope2";
-	NSString *temp = [NSString stringWithFormat:@"http://182.92.67.74/api/analyses/histories?sn=%@&device_type=%@&date=%@&scope=scope2",sn,type,@"[2016-05-17%2000:00:00,2016-05-17%2015:38:42]"];
+	NSString *temp = [NSString stringWithFormat:@"%@/api/analyses/histories?sn=%@&device_type=%@&date=%@&scope=scope2",WAPI_URL,sn,type,@"[2016-05-17%2000:00:00,2016-05-17%2015:38:42]"];
 	NSURL *url=[NSURL URLWithString:temp];
 	ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
 	[request setRequestMethod:@"GET"];
@@ -184,8 +188,8 @@
 }
 //获取大棚的strategy
 -(void)getShedStrategy:(NSString*)session_token withDevUuid:(NSString*)dev_uuid{
+		NSString *str = [NSString stringWithFormat:@"%@/api/users/custom_alarmstrategies/",WAPI_URL];
 	NSString *temp = [NSString stringWithFormat:@"http://182.92.67.74/api/users/smartgates/%@/alarmstrategy_settings/",dev_uuid];
-	NSString *str = @"http://182.92.67.74/api/users/custom_alarmstrategies/";
 	NSURL *url=[NSURL URLWithString:str];
 	ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
 	[request setRequestMethod:@"GET"];

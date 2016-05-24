@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>331E4CFE-6CCA-4149-A754-984E5FE4E719</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Itserv_oa</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>44B0D2A55B37754C4E4F666AF478D547C1415F89</key>
 		<string>https://github.com/hy451176411/YYshed-2.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Itserv_oa.xcodeproj</string>
+	<string>Itserv_oa.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>44B0D2A55B37754C4E4F666AF478D547C1415F89</key>
