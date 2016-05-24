@@ -19,6 +19,10 @@
 		044393DB1CEA9EAA005D4347 /* ShedDetailBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 044393DA1CEA9EAA005D4347 /* ShedDetailBottomMenu.m */; };
 		044891E31CF481B300B4CD22 /* InformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044891E01CF481B300B4CD22 /* InformationController.m */; };
 		044891E41CF481B300B4CD22 /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044891E21CF481B300B4CD22 /* MapController.m */; };
+		044891E81CF4823600B4CD22 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 044891E61CF4823600B4CD22 /* FeedbackVC.m */; };
+		044891E91CF4823600B4CD22 /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044891E71CF4823600B4CD22 /* FeedbackVC.xib */; };
+		044891ED1CF4895900B4CD22 /* AboutMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 044891EB1CF4895900B4CD22 /* AboutMeVC.m */; };
+		044891EE1CF4895900B4CD22 /* AboutMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044891EC1CF4895900B4CD22 /* AboutMeVC.xib */; };
 		044C79CA1CE17D6800F9EE21 /* 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79C91CE17D6800F9EE21 /* 001.png */; };
 		044C79CC1CE17D7300F9EE21 /* 002.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CB1CE17D7300F9EE21 /* 002.png */; };
 		044C79CE1CE17D7A00F9EE21 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CD1CE17D7A00F9EE21 /* 003.png */; };
@@ -547,6 +551,12 @@
 		044891E01CF481B300B4CD22 /* InformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InformationController.m; path = "yyshed/Modules/首页/综合/InformationController.m"; sourceTree = "<group>"; };
 		044891E11CF481B300B4CD22 /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapController.h; path = "yyshed/Modules/首页/综合/MapController.h"; sourceTree = "<group>"; };
 		044891E21CF481B300B4CD22 /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapController.m; path = "yyshed/Modules/首页/综合/MapController.m"; sourceTree = "<group>"; };
+		044891E51CF4823600B4CD22 /* FeedbackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedbackVC.h; path = "yyshed/Modules/首页/更多/FeedbackVC.h"; sourceTree = "<group>"; };
+		044891E61CF4823600B4CD22 /* FeedbackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedbackVC.m; path = "yyshed/Modules/首页/更多/FeedbackVC.m"; sourceTree = "<group>"; };
+		044891E71CF4823600B4CD22 /* FeedbackVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedbackVC.xib; path = "yyshed/Modules/首页/更多/FeedbackVC.xib"; sourceTree = "<group>"; };
+		044891EA1CF4895900B4CD22 /* AboutMeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutMeVC.h; path = "yyshed/Modules/首页/更多/AboutMeVC.h"; sourceTree = "<group>"; };
+		044891EB1CF4895900B4CD22 /* AboutMeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutMeVC.m; path = "yyshed/Modules/首页/更多/AboutMeVC.m"; sourceTree = "<group>"; };
+		044891EC1CF4895900B4CD22 /* AboutMeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutMeVC.xib; path = "yyshed/Modules/首页/更多/AboutMeVC.xib"; sourceTree = "<group>"; };
 		044C79C91CE17D6800F9EE21 /* 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 001.png; sourceTree = "<group>"; };
 		044C79CB1CE17D7300F9EE21 /* 002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 002.png; sourceTree = "<group>"; };
 		044C79CD1CE17D7A00F9EE21 /* 003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 003.png; sourceTree = "<group>"; };
@@ -1287,6 +1297,12 @@
 				040E732A1CF2AF9600314057 /* AboutController.h */,
 				040E732B1CF2AF9600314057 /* AboutController.m */,
 				040E732C1CF2AF9600314057 /* AboutController.xib */,
+				044891E51CF4823600B4CD22 /* FeedbackVC.h */,
+				044891E61CF4823600B4CD22 /* FeedbackVC.m */,
+				044891E71CF4823600B4CD22 /* FeedbackVC.xib */,
+				044891EA1CF4895900B4CD22 /* AboutMeVC.h */,
+				044891EB1CF4895900B4CD22 /* AboutMeVC.m */,
+				044891EC1CF4895900B4CD22 /* AboutMeVC.xib */,
 			);
 			name = "更多";
 			sourceTree = "<group>";
@@ -2996,6 +3012,7 @@
 				04F12F8D1CE050480014E655 /* a1.png in Resources */,
 				A54AF5D31AC25940000B5B8F /* 发邮件@2x.png in Resources */,
 				63F3E478193C869100C4F7BA /* MattersCell.xib in Resources */,
+				044891EE1CF4895900B4CD22 /* AboutMeVC.xib in Resources */,
 				A55E29201ABD160700FF4190 /* RegistrViewController_iPhone.xib in Resources */,
 				6303A8FE199213E7000C20FB /* Default-Portrait.png in Resources */,
 				63A7379D1941915800DCBD68 /* icon_attachbtn_paperclip_active.png in Resources */,
@@ -3068,6 +3085,7 @@
 				046532D61CE969CB00B6EF1E /* ShedDetailVC.xib in Resources */,
 				A5E86FE81ABC0D64005195ED /* BindingEmailViewController_iPhone.xib in Resources */,
 				040EB45F1CF40B8000450251 /* address.plist in Resources */,
+				044891E91CF4823600B4CD22 /* FeedbackVC.xib in Resources */,
 				63A7379719418F2600DCBD68 /* icon_attach_panel_camera_highlighted.png in Resources */,
 				0463ABFF1CE339A500EE9A96 /* video_down_seletor.png in Resources */,
 				04D4B9F31CE0C3B400124034 /* logo_qq.png in Resources */,
@@ -3238,6 +3256,7 @@
 				04B9E0921CE0733B004CC6D5 /* YYNetRequest.m in Sources */,
 				046532BE1CE9681D00B6EF1E /* LineDemoController.m in Sources */,
 				046532761CE9638D00B6EF1E /* YYshedRootViewController.m in Sources */,
+				044891E81CF4823600B4CD22 /* FeedbackVC.m in Sources */,
 				63ED7C521939CB0C005B7B93 /* NetRequestManager.m in Sources */,
 				04883BE41CE764B600249F2B /* PYItemStyle.m in Sources */,
 				046532CF1CE9699100B6EF1E /* ShedDatailCenter.m in Sources */,
@@ -3262,6 +3281,7 @@
 				04883BF71CE764B600249F2B /* PYCartesianSeries.m in Sources */,
 				04883C031CE764B600249F2B /* PYTreeSeries.m in Sources */,
 				63405400194072C90019052B /* SendEmailViewController.m in Sources */,
+				044891ED1CF4895900B4CD22 /* AboutMeVC.m in Sources */,
 				04883C011CE764B600249F2B /* PYSeries.m in Sources */,
 				04883C151CE764C400249F2B /* NSObject+RMArchivable.m in Sources */,
 				63ED7C731939CB23005B7B93 /* Reachability.m in Sources */,
