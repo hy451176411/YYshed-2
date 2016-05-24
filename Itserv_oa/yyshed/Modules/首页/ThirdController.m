@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	  [self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+	self.view.backgroundColor = [UIColor whiteColor];
 	HomeDetailNav *control = [[HomeDetailNav alloc] init];
 	//内容导航
 	mNavigationContent = [[HomeDetailNav alloc]init];
