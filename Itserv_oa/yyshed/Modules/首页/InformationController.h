@@ -23,6 +23,10 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, retain) DOPDropDownMenu *menu;
 @property (nonatomic, retain) YYNetRequest *theRequest;
+@property (nonatomic, retain) UILabel *palntCountlabelv;
+@property (nonatomic, retain) UILabel *palntArealabel;
+@property (nonatomic, retain) UILabel *palntExpectationlabelv;
+@property (nonatomic, retain) UILabel *palntHarvestlabelv;
 -(void)initMenu;
 -(void)searchPlant:(id)sender;
 @end

@@ -211,7 +211,7 @@
 
 -(void)devgeogroupInfo:(NSString*)province_name withCityName:(NSString*)city_name withPlantName:(NSString*)plant_name{
 	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
-	NSString *str = [NSString stringWithFormat:@"%@/api/devgeogroup/info?province_name=%@&city_name=%@&plant_name=%@",WAPI_URL,province_name,city_name,plant_name];
+	NSString *str = [NSString stringWithFormat:@"%@/api/devgeogroup/info?province_name=%@&city_name=%@&plant_name=%@",WAPI_URL,@"all",@"all",@"all"];
 	str = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	NSURL *url=[NSURL URLWithString:str];
 	ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];

@@ -77,7 +77,8 @@
 		
 		UILabel  *palntCountlabelv = [[UILabel alloc] init];
 		palntCountlabelv.frame =CGRectMake(ELEMENT_SPACING+lineTitlew, 0, valuew, colomH);
-		palntCountlabelv.text = @"20个";
+		//palntCountlabelv.text = @"20个";
+		self.palntCountlabelv = palntCountlabelv;
 		[palntCountView addSubview:palntCountlabelv];
 		startY = startY+colomH+1;
 		[self.scrollView addSubview:palntCountView];
@@ -95,7 +96,8 @@
 		
 		UILabel  *palntArealabelv = [[UILabel alloc] init];
 		palntArealabelv.frame =CGRectMake(ELEMENT_SPACING+lineTitlew, 0, valuew, colomH);
-		palntArealabelv.text = @"200平方米";
+		self.palntArealabel = palntArealabelv;
+		//palntArealabelv.text = @"200平方米";
 		[palntAreaView addSubview:palntArealabelv];
 		startY = startY+colomH+1;
 		[self.scrollView addSubview:palntAreaView];
@@ -113,7 +115,8 @@
 		
 		UILabel  *palntArealabelv = [[UILabel alloc] init];
 		palntArealabelv.frame =CGRectMake(ELEMENT_SPACING+lineTitlew, 0, valuew, colomH);
-		palntArealabelv.text = @"200公斤";
+		//palntArealabelv.text = @"200公斤";
+		self.palntExpectationlabelv = palntArealabelv;
 		[palntAreaView addSubview:palntArealabelv];
 		startY = startY+colomH+1;
 		[self.scrollView addSubview:palntAreaView];
@@ -131,7 +134,8 @@
 		
 		UILabel  *palntArealabelv = [[UILabel alloc] init];
 		palntArealabelv.frame =CGRectMake(ELEMENT_SPACING+lineTitlew, 0, valuew, colomH);
-		palntArealabelv.text = @"无信息";
+		//palntArealabelv.text = @"无信息";
+		self.palntHarvestlabelv = palntArealabelv;
 		[palntAreaView addSubview:palntArealabelv];
 		startY = startY+colomH+1;
 		[self.scrollView addSubview:palntAreaView];
@@ -208,7 +212,6 @@
 	switch (indexPath.column) {
 		case 0:{
 			int index = indexPath.row;
-			int row = indexPath.column;
 			self.citys.removeAllObjects;
 			NSDictionary *province = self.address[index];
 			NSArray *CITYS = [province objectForKey:@"sub"];
@@ -236,7 +239,7 @@
 		case 1:{
 			NSDictionary *province = self.currentProvince;
 			NSArray *CITYS = [province objectForKey:@"sub"];
-			NSDictionary *currentCity = CITYS[indexPath.column];
+			NSDictionary *currentCity = CITYS[indexPath.row];
 			self.selectedCity =[currentCity objectForKey:@"name"];
 			NSLog(@"self.selectedProvince = %@ self.selectedCity= %@",self.selectedProvince,self.selectedCity);
 		}
@@ -251,11 +254,24 @@
 	}
 
 }
-
-#pragma mark 登录请求成功
+-(void)initData:(NSDictionary *)model{
+	NSString *area = [NSString stringWithFormat:@"%@",[model objectForKey:@"area"] ];
+	NSString *count = [NSString stringWithFormat:@"%@",[model objectForKey:@"count"]];
+	NSString *expectation = [NSString stringWithFormat:@"%@",[model objectForKey:@"expectation"]];
+	NSArray *harvest = [model objectForKey:@"harvest"];
+	self.palntArealabel.text = area;
+	self.palntCountlabelv.text = count;
+	self.palntExpectationlabelv.text = expectation;
+	if (harvest.count==0) {
+		self.palntHarvestlabelv.text = @"无信息";
+	}
+	
+}
+#pragma mark 请求成功
 - (void)netRequest:(int)tag Finished:(NSDictionary *)model
 {
 	NSLog(@"----------%@",model);
+	[self initData:model];
 	
 }
 
