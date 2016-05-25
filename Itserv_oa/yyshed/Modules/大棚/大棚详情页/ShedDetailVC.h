@@ -16,13 +16,13 @@
 #import "YYNetRequest.h"
 
 @interface ShedDetailVC : UIViewController
-@property (weak, nonatomic) IBOutlet UIScrollView *mScrollView;
+@property (nonatomic, nonatomic) IBOutlet UIScrollView *mScrollView;
 @property (nonatomic, retain) ShedDetailHeaderView *mShedHeader;
 @property (nonatomic, retain) ShedDatailCenter *mShedCenter;
 @property (nonatomic, retain) ShedDetailBottom *mShedBottom;
 @property (nonatomic, retain) ShedDetailBottomMenu *mShedMenu;
 @property (nonatomic, retain) YYNetRequest *theRequest;
-@property (weak, nonatomic) NSString *dev_id;
+@property (nonatomic, nonatomic) NSString *dev_id;
 @property float startY;
 -(void)initViewsWithDatas:(NSDictionary*)model;
 -(YYNetRequest *)createRequest;

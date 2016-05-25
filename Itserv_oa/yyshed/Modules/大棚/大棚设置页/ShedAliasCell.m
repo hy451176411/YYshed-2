@@ -11,13 +11,14 @@
 @implementation ShedAliasCell
 
 - (void)awakeFromNib {
-    
+	
 }
 /** 自定义构造方法 */
 - (IBAction)updateAlias:(id)sender {
+	NSString *nickname = self.shedAliasNickName.text;
 	NSLog(@"updateAlias");
-	if ([self.delegate respondsToSelector:@selector(updateNickName:)]) {
-		[self.delegate updateShedAlias:self.module];
+	if ([self.delegate respondsToSelector:@selector(updateShedAlias:)]) {
+		[self.delegate updateShedAlias:nickname];
 	}
 }
 
@@ -32,9 +33,9 @@
 	return cell;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+	[super setSelected:selected animated:animated];
+	
+	// Configure the view for the selected state
 }
 /** 加载数据 */
 - (void)setModule:(NickNameModule *)module{

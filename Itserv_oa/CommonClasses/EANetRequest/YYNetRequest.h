@@ -62,4 +62,9 @@
 -(void)getShedStrategy:(NSString*)session_token withDevUuid:(NSString*)dev_uuid;
 // 获取指定省市和农作物的总体统计信息(InfomationPage)
 -(void)devgeogroupInfo:(NSString*)province_name withCityName:(NSString*)city_name withPlantName:(NSString*)plant_name;
+//更新大棚别名
+-(void)updateDevAlias:(NSString*)devUuid withAlias:(NSString*)alias;
+
+//更新大棚传感器别名
+-(void)updateDevComponentAlias:(NSString*)component_id withAlias:(NSString*)alias;
 @end

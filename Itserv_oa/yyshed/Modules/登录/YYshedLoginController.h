@@ -12,8 +12,8 @@
 #import "EADefine.h"
 
 @interface YYshedLoginController : UIViewController<UITextFieldDelegate,YYNetRequestDelegate,UIAlertViewDelegate>
-@property (weak, nonatomic) IBOutlet UIButton *mRemberPsd;
-@property (weak, nonatomic) IBOutlet UIButton *mAutoLogin;
+@property (nonatomic, nonatomic) IBOutlet UIButton *mRemberPsd;
+@property (nonatomic, nonatomic) IBOutlet UIButton *mAutoLogin;
 
 @property (strong, nonatomic) IBOutlet UITextField *mUserName;
 @property (strong, nonatomic) IBOutlet UITextField *mPassword;

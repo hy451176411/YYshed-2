@@ -41,8 +41,8 @@
 #pragma mark - interface
 @interface DOPDropDownMenu : UIView <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, weak) id <DOPDropDownMenuDataSource> dataSource;
-@property (nonatomic, weak) id <DOPDropDownMenuDelegate> delegate;
+@property (nonatomic, nonatomic) id <DOPDropDownMenuDataSource> dataSource;
+@property (nonatomic, nonatomic) id <DOPDropDownMenuDelegate> delegate;
 
 @property (nonatomic, strong) UIColor *indicatorColor;
 @property (nonatomic, strong) UIColor *textColor;

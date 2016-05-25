@@ -36,7 +36,7 @@
     
     int num;
 }
-@property (weak, nonatomic) RATreeView *treeView;
+@property (nonatomic, nonatomic) RATreeView *treeView;
 
 
 @end

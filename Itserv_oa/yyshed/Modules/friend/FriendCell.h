@@ -11,12 +11,12 @@
 @interface FriendCell : UITableViewCell
 
 @property(nonatomic, strong) Component *friendData;
-@property (weak, nonatomic) IBOutlet UIImageView *mPointer;
-@property (weak, nonatomic) IBOutlet UIImageView *mPointer1;
-@property (weak, nonatomic) IBOutlet UIImageView *mPointer2;
-@property (weak, nonatomic) IBOutlet UILabel *mLable;
+@property (nonatomic, nonatomic) IBOutlet UIImageView *mPointer;
+@property (nonatomic, nonatomic) IBOutlet UIImageView *mPointer1;
+@property (nonatomic, nonatomic) IBOutlet UIImageView *mPointer2;
+@property (nonatomic, nonatomic) IBOutlet UILabel *mLable;
 
-@property (weak, nonatomic) IBOutlet UILabel *mLable1;
-@property (weak, nonatomic) IBOutlet UILabel *mLable2;
+@property (nonatomic, nonatomic) IBOutlet UILabel *mLable1;
+@property (nonatomic, nonatomic) IBOutlet UILabel *mLable2;
 + (instancetype) cellWithTableView:(UITableView *) tableView;
 @end

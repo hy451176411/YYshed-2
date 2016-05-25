@@ -113,7 +113,7 @@
 -(void)getDeviceInfo:(NSString*)session_token withDev_id:(NSString*)dev_id
 {
 	NSString *str = [NSString stringWithFormat:@"%@/api/smartgates/",WAPI_URL];
-
+	
 	NSString *tempStr = [NSString stringWithFormat:@"%@%@%@",str,dev_id,@"/infos"];
 	NSURL *url=[NSURL URLWithString:tempStr];
 	ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
@@ -188,7 +188,7 @@
 }
 //获取大棚的strategy
 -(void)getShedStrategy:(NSString*)session_token withDevUuid:(NSString*)dev_uuid{
-		NSString *str = [NSString stringWithFormat:@"%@/api/users/custom_alarmstrategies/",WAPI_URL];
+	NSString *str = [NSString stringWithFormat:@"%@/api/users/custom_alarmstrategies/",WAPI_URL];
 	NSString *temp = [NSString stringWithFormat:@"http://182.92.67.74/api/users/smartgates/%@/alarmstrategy_settings/",dev_uuid];
 	NSURL *url=[NSURL URLWithString:str];
 	ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
@@ -233,6 +233,62 @@
 	[request setTimeOutSeconds:30];
 	[self startAsynchronousWithRequest:request];
 }
+
+-(void)updateDevAlias:(NSString*)devUuid withAlias:(NSString*)alias{
+	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
+	
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:devUuid,@"dev_uuid",alias,@"alias",nil];
+	NSString *jsonStr=[params JSONRepresentation];
+	if ([NSJSONSerialization isValidJSONObject:params])
+	{
+		NSError *error;
+		NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error: &error];
+		NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
+		NSString *str = [NSString stringWithFormat:@"%@/api/smartgates/%@/alias",WAPI_URL,devUuid];
+		NSURL *url = [NSURL URLWithString:str];
+		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+		[request setRequestMethod:@"PUT"];
+		NSString *Authorization = [NSString stringWithFormat:@"%@%@",@"bearer ",session_token];
+		[request addRequestHeader:@"Authorization" value:Authorization];
+		request.tag = YYShed_updateDevAlias;
+		request.delegate = self;
+		[request setPostBody:tempJsonData];
+		[self startAsynchronousWithRequest:request];
+		NSError *error1 = [request error];
+		if (!error1) {
+			NSString *response = [request responseString];
+			NSLog(@"Test：%@",response);
+		}
+	}
+}
+//更新大棚传感器别名
+-(void)updateDevComponentAlias:(NSString*)component_id withAlias:(NSString*)alias{
+	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
+	
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:component_id,@"component_id",alias,@"alias",nil];
+	NSString *jsonStr=[params JSONRepresentation];
+	if ([NSJSONSerialization isValidJSONObject:params])
+	{
+		NSError *error;
+		NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error: &error];
+		NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
+		NSString *str = [NSString stringWithFormat:@"%@/api/enddevices/%@/alias",WAPI_URL,component_id];
+		NSURL *url = [NSURL URLWithString:str];
+		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+		[request setRequestMethod:@"PUT"];
+		NSString *Authorization = [NSString stringWithFormat:@"%@%@",@"bearer ",session_token];
+		[request addRequestHeader:@"Authorization" value:Authorization];
+		request.tag = YYShed_updateDevComponentAlias;
+		request.delegate = self;
+		[request setPostBody:tempJsonData];
+		[self startAsynchronousWithRequest:request];
+		NSError *error1 = [request error];
+		if (!error1) {
+			NSString *response = [request responseString];
+			NSLog(@"Test：%@",response);
+		}
+	}
+}
 - (void)startAsynchronousWithRequest:(ASIHTTPRequest *)request
 {
 	[request startAsynchronous];
@@ -246,7 +302,7 @@
 	NSString *responseStr = [request responseString];
 	//NSLog(@"responseStr\n++++++++++++++++\n%@\n++++++++++++++++\n%d-----%d", responseStr ,request.responseStatusCode,request.tag);
 	NSDictionary *dic = [responseStr JSONValue];
-
+	
 	if (!dic) {
 		responseStr = [responseStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];
 		responseStr = [responseStr stringByReplacingOccurrencesOfString:@"\r" withString:@"\\n"];

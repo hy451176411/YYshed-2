@@ -28,7 +28,7 @@ typedef void (^NDHTMLtoPDFCompletionBlock)(NDHTMLtoPDF* htmlToPDF);
 @property (nonatomic, copy) NDHTMLtoPDFCompletionBlock successBlock;
 @property (nonatomic, copy) NDHTMLtoPDFCompletionBlock errorBlock;
 
-@property (nonatomic, weak) id <NDHTMLtoPDFDelegate> delegate;
+@property (nonatomic, nonatomic) id <NDHTMLtoPDFDelegate> delegate;
 
 @property (nonatomic, strong, readonly) NSString *PDFpath;
 @property (nonatomic, strong, readonly) NSData *PDFdata;

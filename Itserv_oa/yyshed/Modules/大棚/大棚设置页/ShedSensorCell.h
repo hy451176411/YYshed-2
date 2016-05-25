@@ -15,14 +15,14 @@
 @protocol ShedSensorCellDelegate <NSObject>
 /** header被点击的代理方法 */
 @optional
-- (void) updateShedSensorAlias:(NickNameModule *) module;
+- (void) updateShedSensorAlias:(NSString *) alias withComonentId:(NSString*)component_id;
 @end
 @interface ShedSensorCell : UITableViewCell
 - (IBAction)updateAlias:(id)sender;
 + (instancetype) cellWithTableView:(UITableView *) tableView;
 @property (nonatomic, strong) NickNameModule *module;
-@property (weak, nonatomic) IBOutlet UITextField *shedAliasNickName;//大棚别名的更新框
-@property (weak, nonatomic) IBOutlet UILabel *shedAlias;//大棚的别名
+@property (nonatomic, nonatomic) IBOutlet UITextField *shedAliasNickName;//大棚别名的更新框
+@property (nonatomic, nonatomic) IBOutlet UILabel *shedAlias;//大棚的别名
 /** 代理 */
 @property(nonatomic, strong) id<ShedSensorCellDelegate> delegate;
 @end

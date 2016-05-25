@@ -52,7 +52,7 @@
 	UIImage *down = [UIImage imageNamed:@"down.png"];
 	UIImageView* downImg = [[UIImageView alloc] initWithImage:down];
 	downImg.frame =CGRectMake(SCREEN_WIDTH-60,10, 34, 27);
-	downImg.backgroundColor = [UIColor redColor];
+	//downImg.backgroundColor = [UIColor redColor];
 	
 	[rootView1 addSubview:self.mSelectBtn];
 	[rootView1 addSubview:downImg];

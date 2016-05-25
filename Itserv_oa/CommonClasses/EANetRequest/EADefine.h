@@ -102,35 +102,37 @@
 #define Http_FeedBack_Tag 138 //  意见反馈
 
 typedef enum  {
-    RequestToken = 100,//获取RequestToken,
-    Login,//登录
-    Regist,//注册
-    SureLogin,//确认登录
-    SureMail,//确认登录
-    SubMenuList,//获取子菜单列表
-    NeedDealList,//获取待处理列表  待办
-    NeedDealListOne,//获取待处理列表  待阅
-    NeedDealListCounter,//获取待处理列表  已阅
-    NeedDealListDo,//获取待处理列表  已办
-    NotifyMsgList,//推送消息
-    DocList = 140,//公文
-    SendEmail,//发邮件
-    EmailContent,//邮件内容
-    DeleteMail,//删除邮件
-    ContactList,//通讯录
-    ContactSearch,//搜索通讯录
-    Version,//版本
-    Server,//机构
-    VerficationCode,//验证码
-    MailList = 180,//邮件列表
-    ReadFile = 200,//读取文件内容
-    DownFile = 210,//下载文件
+	RequestToken = 100,//获取RequestToken,
+	Login,//登录
+	Regist,//注册
+	SureLogin,//确认登录
+	SureMail,//确认登录
+	SubMenuList,//获取子菜单列表
+	NeedDealList,//获取待处理列表  待办
+	NeedDealListOne,//获取待处理列表  待阅
+	NeedDealListCounter,//获取待处理列表  已阅
+	NeedDealListDo,//获取待处理列表  已办
+	NotifyMsgList,//推送消息
+	DocList = 140,//公文
+	SendEmail,//发邮件
+	EmailContent,//邮件内容
+	DeleteMail,//删除邮件
+	ContactList,//通讯录
+	ContactSearch,//搜索通讯录
+	Version,//版本
+	Server,//机构
+	VerficationCode,//验证码
+	MailList = 180,//邮件列表
+	ReadFile = 200,//读取文件内容
+	DownFile = 210,//下载文件
 	YYShed_getUserinfo,
 	YYShed_openErelay,
 	YYShed_getDeviceInfo,
 	YYShed_getAnalysisResult,
 	YYShed_getShedStrategy,
-	YYShed_devgeogroupInfo
+	YYShed_devgeogroupInfo,
+	YYShed_updateDevAlias,
+	YYShed_updateDevComponentAlias
 } HttpRequestTag;
 
 typedef enum  {

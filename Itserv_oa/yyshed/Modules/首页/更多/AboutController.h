@@ -12,10 +12,10 @@
 #import "YYshedLoginController.h"
 
 @interface AboutController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *myEvent;
-@property (weak, nonatomic) IBOutlet UIView *feedback;
-@property (weak, nonatomic) IBOutlet UIView *loginout;
-@property (weak, nonatomic) IBOutlet UIView *aboutme;
+@property (nonatomic, nonatomic) IBOutlet UIView *myEvent;
+@property (nonatomic, nonatomic) IBOutlet UIView *feedback;
+@property (nonatomic, nonatomic) IBOutlet UIView *loginout;
+@property (nonatomic, nonatomic) IBOutlet UIView *aboutme;
 - (IBAction)feedback:(id)sender;
 - (IBAction)myEvent:(id)sender;
 - (IBAction)logout:(id)sender;

@@ -25,7 +25,7 @@
 @implementation ShedSettingVC
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
 	isFirstEnter = YES;
 	self.theRequest = [NetRequestManager createNetRequestWithDelegate:self];
 	self.modules = [NSMutableArray array];
@@ -35,7 +35,7 @@
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+	[super didReceiveMemoryWarning];
 }
 
 
@@ -43,7 +43,7 @@
 #pragma mark 其他设置
 -(void)thirdView{
 	[self.rootView removeAllSubviews];
-
+	
 }
 #pragma mark 报警预案设置
 -(void)secoendView{
@@ -89,16 +89,16 @@
 	
 	//NSMutableArray *menus = [self configMenus:model[@"components"]];
 	//menu.menus = menus;
-
+	
 	//添加一个数据
-//	self.mAllAlarmStratey = [NSMutableArray array];
-//	AlarmStratey *noStratey = [[AlarmStratey alloc] init];
-//	noStratey.strategy_name = @"<未设置报警策略>";
-//	[self.mAllAlarmStratey addObject:noStratey];
+	//	self.mAllAlarmStratey = [NSMutableArray array];
+	//	AlarmStratey *noStratey = [[AlarmStratey alloc] init];
+	//	noStratey.strategy_name = @"<未设置报警策略>";
+	//	[self.mAllAlarmStratey addObject:noStratey];
 	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
 	[self.theRequest getShedStrategy:session_token withDevUuid:self.dev_id];
 	self.scrollView.contentSize = CGSizeMake(rect.size.width, self.startY);
-
+	
 }
 -(void)initSecendMenu:(NSArray*)array{
 	CGRect rect =self.view.frame;
@@ -119,7 +119,7 @@
 	AlarmStrateyItem *test = [[AlarmStrateyItem alloc] init];
 	NSArray *array = model;
 	[self initSecendMenu:array];
-
+	
 }
 -(void)initSecendViewDatas:(NSDictionary*)model1{
 	AlarmStratey *alarmStatey = [[AlarmStratey alloc] init];
@@ -298,12 +298,14 @@
 	return h;
 }
 /*更新大棚的别名*/
-- (void) updateShedAlias:(NickNameModule *) module{
-	NSLog(@"updateShedAlias");
+- (void) updateShedAlias:(NSString*) nickname{
+	NSLog(@"updateShedAlias%@",nickname);
+	[self.theRequest updateDevAlias:self.dev_id withAlias:nickname];
 }
 /*更新大棚传感器的别名*/
-- (void) updateShedSensorAlias:(NickNameModule *) module{
-	NSLog(@"updateShedSensorAlias");
+- (void) updateShedSensorAlias:(NSString *) alias withComonentId:(NSString*)component_id{
+	NSLog(@"updateShedSensorAlias%@",alias);
+	[self.theRequest updateDevComponentAlias:component_id withAlias:alias];
 }
 
 #pragma mark 网络请求成功
@@ -314,6 +316,18 @@
 		[self initViewsWithDatas:model];
 	}else if(tag == YYShed_getShedStrategy){
 		[self initSecendView:model];
+	}else if(tag ==YYShed_updateDevAlias){
+		NSString *result = [model objectForKey:@"result"];
+		if ([result isEqualToString:@"OK"]) {
+			//nickname.text = [model objectForKey:@"alias"];
+			[SBPublicAlert showMBProgressHUD:@"更新成功" andWhereView:self.view hiddenTime:kHiddenAlertTime];
+		}
+	}else if(tag ==YYShed_updateDevComponentAlias){
+		NSString *result = [model objectForKey:@"result"];
+		if ([result isEqualToString:@"OK"]) {
+			//nickname.text = [model objectForKey:@"alias"];
+			[SBPublicAlert showMBProgressHUD:@"更新成功" andWhereView:self.view hiddenTime:kHiddenAlertTime];
+		}
 	}
 	
 }

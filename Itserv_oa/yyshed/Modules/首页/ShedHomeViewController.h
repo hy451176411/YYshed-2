@@ -12,7 +12,7 @@
 #import "HomeShedDetail.h"
 @interface ShedHomeViewController : UIViewController<UITextFieldDelegate,YYNetRequestDelegate,UIAlertViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) NSMutableArray *groupsArray;
+@property (nonatomic, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, nonatomic) NSMutableArray *groupsArray;
 -(void)initDataSource:(NSDictionary *)model;
 @end

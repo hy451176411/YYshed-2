@@ -13,15 +13,15 @@
 @protocol ShedAliasCellDelegate <NSObject>
 /** header被点击的代理方法 */
 @optional
-- (void) updateShedAlias:(NickNameModule *) module;
+- (void) updateShedAlias:(NSString*) nickname;
 @end
 
 @interface ShedAliasCell : UITableViewCell
 @property (nonatomic, strong) NickNameModule *module;
 - (IBAction)updateAlias:(id)sender;
 + (instancetype) cellWithTableView:(UITableView *) tableView;
-@property (weak, nonatomic) IBOutlet UILabel *shedAlias;
-@property (weak, nonatomic) IBOutlet UITextField *shedAliasNickName;
+@property (nonatomic, nonatomic) IBOutlet UILabel *shedAlias;
+@property (nonatomic, nonatomic) IBOutlet UITextField *shedAliasNickName;
 
 /** 代理 */
 @property(nonatomic, strong) id<ShedAliasCellDelegate> delegate;

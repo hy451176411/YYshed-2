@@ -26,7 +26,7 @@
 @property (nonatomic, getter = isExpanded, readonly) BOOL expanded;
 @property (nonatomic, getter = isVisible, readonly) BOOL visible;
 
-@property (weak, nonatomic) RATreeNode *parent;
+@property (nonatomic, nonatomic) RATreeNode *parent;
 @property (strong, nonatomic) NSArray *children;
 
 @property (strong, nonatomic, readonly) RATreeNodeInfo *treeNodeInfo;

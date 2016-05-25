@@ -123,8 +123,8 @@ typedef enum RATreeViewRowAnimation {
 
 @interface RATreeView : UIView
 
-@property (weak, nonatomic) id<RATreeViewDataSource> dataSource;
-@property (weak, nonatomic) id<RATreeViewDelegate> delegate;
+@property (nonatomic, nonatomic) id<RATreeViewDataSource> dataSource;
+@property (nonatomic, nonatomic) id<RATreeViewDelegate> delegate;
 
 // Initializing a TreeView Object
 - (id)initWithFrame:(CGRect)frame style:(RATreeViewStyle)style;

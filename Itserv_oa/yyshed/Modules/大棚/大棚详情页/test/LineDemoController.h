@@ -12,6 +12,6 @@
 
 @interface LineDemoController : UIViewController
 
-@property (weak, nonatomic) IBOutlet PYZoomEchartsView *kEchartView;
+@property (nonatomic, nonatomic) IBOutlet PYZoomEchartsView *kEchartView;
 
 @end

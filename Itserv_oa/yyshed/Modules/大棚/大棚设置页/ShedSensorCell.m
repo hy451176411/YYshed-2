@@ -11,14 +11,15 @@
 @implementation ShedSensorCell
 
 - (void)awakeFromNib {
-    // Initialization code
+	// Initialization code
 }
 
 /** 自定义构造方法 */
 - (IBAction)updateAlias:(id)sender {
+	NSString *alias = self.shedAliasNickName.text;
 	NSLog(@"updateAlias");
-	if ([self.delegate respondsToSelector:@selector(updateShedSensorAlias:)]) {
-		[self.delegate updateShedSensorAlias:self.module];
+	if ([self.delegate respondsToSelector:@selector(updateShedSensorAlias:withComonentId:)]) {
+		[self.delegate updateShedSensorAlias:alias withComonentId:self.module.sn];
 	}
 }
 

@@ -10,6 +10,6 @@
 
 @interface AddDevice : UIView
 - (IBAction)btnClick:(id)sender;
-@property (weak, nonatomic) IBOutlet UIView *backgroud;
+@property (nonatomic, nonatomic) IBOutlet UIView *backgroud;
 
 @end
