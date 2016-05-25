@@ -11,6 +11,7 @@
 #import "SecondController.h"
 #import "ThirdController.h"
 #import "AboutController.h"
+#import "HomeVC.h"
 
 @interface HomeController ()
 
@@ -35,7 +36,7 @@
 	[controllers addObject:firstNv];
 	
 	
-	SecondController *secondPage = [[SecondController alloc]init];
+	HomeVC *secondPage = [[HomeVC alloc]init];
 	UINavigationController *secondNv = [[UINavigationController alloc]initWithRootViewController:secondPage];
 	UIImage *secondImage = [UIImage imageNamed:@"a2.png"];
 	secondPage.tabBarItem.image = secondImage;

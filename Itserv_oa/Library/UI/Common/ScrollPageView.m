@@ -53,8 +53,7 @@
         [self addLoopScrollowView:vCustomTableView];
         [_scrollView addSubview:vCustomTableView];
         [_contentItems addObject:vCustomTableView];
-		
-    }
+           }
     [_scrollView setContentSize:CGSizeMake(320 * aNumerOfTables, self.frame.size.height)];
 }
 
@@ -81,7 +80,7 @@
 #pragma mark 添加HeaderView
 -(void)addLoopScrollowView:(CustomTableView *)aTableView {
     //添加一张默认图片
-    SGFocusImageItem *item = [[SGFocusImageItem alloc] initWithDict:@{@"image": [NSString stringWithFormat:@"girl%d",2]} tag:-1];
+    SGFocusImageItem *item = [[SGFocusImageItem alloc] initWithDict:@{@"image": [NSString stringWithFormat:@"girl%d",2]} tag:-1] ;
     SGFocusImageFrame *bannerView = [[SGFocusImageFrame alloc] initWithFrame:CGRectMake(0, -105, 320, 105) delegate:aTableView imageItems:@[item] isAuto:YES];
     aTableView.homeTableView.tableHeaderView = bannerView;
 	
@@ -106,7 +105,7 @@
     if (length > 1)
     {
         NSDictionary *dict = [tempArray objectAtIndex:length-1];
-        SGFocusImageItem *item = [[SGFocusImageItem alloc] initWithDict:dict tag:-1] ;
+        SGFocusImageItem *item = [[SGFocusImageItem alloc] initWithDict:dict tag:-1];
         [itemArray addObject:item];
     }
     for (int i = 0; i < length; i++)

@@ -41,6 +41,16 @@
 }
 
 -(void)viewDidLoad{
+	[super viewDidLoad];
+	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
+	UIImage *left = [UIImage imageNamed:@"logo.png"];
+	UIImageView* img = [[UIImageView alloc] initWithImage:left];
+	img.frame =CGRectMake(0, 0, 30, 30);
+	img.backgroundColor = [UIColor clearColor];
+	item.customView = img ;
+	self.navigationItem.leftBarButtonItem =item;
+	self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
     [self initView];
 }
 
@@ -49,14 +59,7 @@
     
 }
 
-#if __has_feature(objc_arc)
-#else
-// dealloc函数
-- (void) dealloc {
-    [mHomeView release];
-    [super dealloc];
-}
-#endif
+
 
 // 初始View
 - (void) initView {

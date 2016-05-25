@@ -135,7 +135,7 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
         activityView.layer.shadowOffset = CSToastShadowOffset;
     }
     
-    UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge] ;
     activityIndicatorView.center = CGPointMake(activityView.bounds.size.width / 2, activityView.bounds.size.height / 2);
     [activityView addSubview:activityIndicatorView];
     [activityIndicatorView startAnimating];
@@ -212,7 +212,7 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
     wrapperView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:CSToastOpacity];
     
     if(image != nil) {
-        imageView = [[UIImageView alloc] initWithImage:image];
+        imageView = [[UIImageView alloc] initWithImage:image] ;
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.frame = CGRectMake(CSToastHorizontalPadding, CSToastVerticalPadding, CSToastImageViewWidth, CSToastImageViewHeight);
     }
@@ -246,7 +246,7 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
     }
     
     if (message != nil) {
-        messageLabel = [[UILabel alloc] init];
+        messageLabel = [[UILabel alloc] init] ;
         messageLabel.numberOfLines = CSToastMaxMessageLines;
         messageLabel.font = [UIFont systemFontOfSize:CSToastFontSize];
         messageLabel.lineBreakMode = NSLineBreakByWordWrapping;

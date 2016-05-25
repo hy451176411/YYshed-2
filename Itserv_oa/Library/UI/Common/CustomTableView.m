@@ -31,7 +31,6 @@
     return self;
 }
 
-
 #pragma mark 创建下拉刷新Header
 -(void)createRefreshHeaderView{
     
@@ -50,12 +49,13 @@
 
 #pragma mark 其他辅助功能
 #pragma mark 强制列表刷新
+//错误
 -(void)forceToFreshData{
     [_homeTableView setContentOffset:CGPointMake(_homeTableView.contentOffset.x,  - 66) animated:YES];
     double delayInSeconds = .2;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [_refreshHeaderView forceToRefresh:_homeTableView];
+        //[_refreshHeaderView forceToRefresh:_homeTableView];
     });
 }
 
@@ -145,10 +145,10 @@
 
 #pragma mark -
 #pragma mark UIScrollViewDelegate Methods
-
+//错误
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    [_refreshHeaderView egoRefreshScrollViewWillBeginScroll:scrollView];
+   // [_refreshHeaderView egoRefreshScrollViewWillBeginScroll:scrollView];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

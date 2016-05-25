@@ -66,8 +66,7 @@ static CGFloat SWITCH_FOCUS_PICTURE_INTERVAL = 5.0; //switch interval time
         [self setupViews];
         
         [self setDelegate:delegate];
-		
-	}
+    }
     return self;
 }
 - (id)initWithFrame:(CGRect)frame delegate:(id<SGFocusImageFrameDelegate>)delegate imageItems:(NSArray *)items
@@ -81,7 +80,7 @@ static CGFloat SWITCH_FOCUS_PICTURE_INTERVAL = 5.0; //switch interval time
 #pragma mark - private methods
 - (void)setupViews
 {
-	NSArray *imageItems = nil;
+    NSArray *imageItems =  nil;
     _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     _scrollView.scrollsToTop = NO;
 
@@ -127,7 +126,7 @@ static CGFloat SWITCH_FOCUS_PICTURE_INTERVAL = 5.0; //switch interval time
         imageView.backgroundColor = i%2?[UIColor redColor]:[UIColor blueColor];
         imageView.image = [UIImage imageNamed:item.image];
         [_scrollView addSubview:imageView];
-		
+        
     }
     _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * aImageItems.count, _scrollView.frame.size.height);
     _pageControl.numberOfPages = aImageItems.count>1?aImageItems.count -2:aImageItems.count;
@@ -148,7 +147,7 @@ static CGFloat SWITCH_FOCUS_PICTURE_INTERVAL = 5.0; //switch interval time
 -(void)changeImageViewsContent:(NSArray *)aArray{
     NSMutableArray *imageItems = [NSMutableArray arrayWithArray:aArray];
     //objc_setAssociatedObject(self, (const void *)SG_FOCUS_ITEM_ASS_KEY, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    //objc_setAssociatedObject(self, (const void *)SG_FOCUS_ITEM_ASS_KEY, imageItems, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+   // objc_setAssociatedObject(self, (const void *)SG_FOCUS_ITEM_ASS_KEY, imageItems, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self addImageViews:imageItems];
 }
 
@@ -157,7 +156,7 @@ static CGFloat SWITCH_FOCUS_PICTURE_INTERVAL = 5.0; //switch interval time
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(switchFocusImageItems) object:nil];
     
     CGFloat targetX = _scrollView.contentOffset.x + _scrollView.frame.size.width;
-	NSArray *imageItems = nil;
+    NSArray *imageItems = nil;
     targetX = (int)(targetX/ITEM_WIDTH) * ITEM_WIDTH;
     [self moveToTargetPosition:targetX];
     
@@ -171,7 +170,7 @@ static CGFloat SWITCH_FOCUS_PICTURE_INTERVAL = 5.0; //switch interval time
 - (void)singleTapGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
 {
     NSLog(@"%s", __FUNCTION__);
-	NSArray *imageItems = nil;
+    NSArray *imageItems =  nil;
     int page = (int)(_scrollView.contentOffset.x / _scrollView.frame.size.width);
     if (page > -1 && page < imageItems.count) {
         SGFocusImageItem *item = [imageItems objectAtIndex:page];
@@ -192,8 +191,8 @@ static CGFloat SWITCH_FOCUS_PICTURE_INTERVAL = 5.0; //switch interval time
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     float targetX = scrollView.contentOffset.x;
-	NSArray *imageItems = nil;
-	if ([imageItems count]>=3)
+    NSArray *imageItems = nil;
+    if ([imageItems count]>=3)
     {
         if (targetX >= ITEM_WIDTH * ([imageItems count] -1)) {
             targetX = ITEM_WIDTH;
