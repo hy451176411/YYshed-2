@@ -195,6 +195,7 @@
 		048FF2091CF5F9F900990A45 /* new3.png in Resources */ = {isa = PBXBuildFile; fileRef = 048FF1FF1CF5F9F900990A45 /* new3.png */; };
 		048FF20A1CF5F9F900990A45 /* new4.png in Resources */ = {isa = PBXBuildFile; fileRef = 048FF2001CF5F9F900990A45 /* new4.png */; };
 		048FF20B1CF5F9F900990A45 /* normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 048FF2011CF5F9F900990A45 /* normal.png */; };
+		048FF20E1CF5FCC800990A45 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FF20D1CF5FCC800990A45 /* CircleView.m */; };
 		049968C21CE765D000AA9FAE /* js in Resources */ = {isa = PBXBuildFile; fileRef = 049968C11CE765D000AA9FAE /* js */; };
 		04A97B9E1CEEB3BA00E30754 /* alarm_air_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B971CEEB3BA00E30754 /* alarm_air_h.png */; };
 		04A97B9F1CEEB3BA00E30754 /* alarm_air_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B981CEEB3BA00E30754 /* alarm_air_t.png */; };
@@ -853,6 +854,8 @@
 		048FF1FF1CF5F9F900990A45 /* new3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new3.png; sourceTree = "<group>"; };
 		048FF2001CF5F9F900990A45 /* new4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new4.png; sourceTree = "<group>"; };
 		048FF2011CF5F9F900990A45 /* normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal.png; sourceTree = "<group>"; };
+		048FF20C1CF5FCC800990A45 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		048FF20D1CF5FCC800990A45 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		049968C11CE765D000AA9FAE /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		04A97B971CEEB3BA00E30754 /* alarm_air_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_air_h.png; sourceTree = "<group>"; };
 		04A97B981CEEB3BA00E30754 /* alarm_air_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_air_t.png; sourceTree = "<group>"; };
@@ -2474,6 +2477,8 @@
 		634053EB19404A400019052B /* RefreshView */ = {
 			isa = PBXGroup;
 			children = (
+				048FF20C1CF5FCC800990A45 /* CircleView.h */,
+				048FF20D1CF5FCC800990A45 /* CircleView.m */,
 				634053EC19404A400019052B /* arrow_down.png */,
 				634053ED19404A400019052B /* arrow_up.png */,
 				634053EE19404A400019052B /* EGORefreshTableHeaderView.h */,
@@ -3454,6 +3459,7 @@
 				045EAFD41CD0700C008AE499 /* TestView.m in Sources */,
 				63A737A31941995900DCBD68 /* SBPublicFormatValidation.m in Sources */,
 				04883BEC1CE764B600249F2B /* PYOption.m in Sources */,
+				048FF20E1CF5FCC800990A45 /* CircleView.m in Sources */,
 				A564E8B21ABFB64400FC36AD /* ShowPopWebViewController.m in Sources */,
 				A53D267D1AC14D0200C14721 /* SBHMessage.m in Sources */,
 				63B19CAE1928548B002F3E17 /* AppDelegate.m in Sources */,
