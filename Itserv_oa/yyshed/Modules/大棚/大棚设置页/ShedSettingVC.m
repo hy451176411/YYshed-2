@@ -86,30 +86,42 @@
 	[self.scrollView addSubview:headerView];
 	self.startY = self.startY+headerH+ELEMENT_SPACING;
 	
-	StrategyMenu *menu = [[StrategyMenu alloc] init];
+	
 	//NSMutableArray *menus = [self configMenus:model[@"components"]];
 	//menu.menus = menus;
-	NSArray *menus = [NSArray arrayWithObjects:@"<未设置报警策略>",@"西红柿种植预案(自定义策略)",nil];
-	menu.menus = menus;
-	float menuH = [menu configDataOfBottomMenu:nil];
-	menu.frame = CGRectMake(ELEMENT_SPACING, self.startY,W, MENU_H);
-	menu.delegate = self;
-	[self.scrollView addSubview:menu];
-	self.startY = self.startY +menuH +ELEMENT_SPACING;
+
 	//添加一个数据
-	self.mAllAlarmStratey = [NSMutableArray array];
-	AlarmStratey *noStratey = [[AlarmStratey alloc] init];
-	noStratey.strategy_name = @"<未设置报警策略>";
-	[self.mAllAlarmStratey addObject:noStratey];
+//	self.mAllAlarmStratey = [NSMutableArray array];
+//	AlarmStratey *noStratey = [[AlarmStratey alloc] init];
+//	noStratey.strategy_name = @"<未设置报警策略>";
+//	[self.mAllAlarmStratey addObject:noStratey];
 	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
 	[self.theRequest getShedStrategy:session_token withDevUuid:self.dev_id];
 	self.scrollView.contentSize = CGSizeMake(rect.size.width, self.startY);
 
 }
+-(void)initSecendMenu:(NSArray*)array{
+	CGRect rect =self.view.frame;
+	float W =rect.size.width-2*ELEMENT_SPACING;
+	StrategyMenu *menu = [[StrategyMenu alloc] init];
+	NSDictionary *dic  = [NSDictionary dictionaryWithObjectsAndKeys:@"<未设置报警策略>",@"strategy_name",nil];
+	self.mAllAlarmStratey = [NSMutableArray array];
+	[self.mAllAlarmStratey addObject:dic];
+	[self.mAllAlarmStratey addObjectsFromArray:array];
+	menu.menus = self.mAllAlarmStratey;
+	float menuH = [menu configDataOfBottomMenu:nil];
+	menu.frame = CGRectMake(ELEMENT_SPACING, self.startY,W, MENU_H);
+	menu.delegate = self;
+	[self.scrollView addSubview:menu];
+	self.startY = self.startY +menuH +ELEMENT_SPACING;
+}
 -(void)initSecendView:(NSDictionary*)model{
 	AlarmStrateyItem *test = [[AlarmStrateyItem alloc] init];
 	NSArray *array = model;
-	NSDictionary *model1 = array[0];
+	[self initSecendMenu:array];
+
+}
+-(void)initSecendViewDatas:(NSDictionary*)model1{
 	AlarmStratey *alarmStatey = [[AlarmStratey alloc] init];
 	[alarmStatey initAlarmStratey:model1];
 	if (alarmStatey) {
@@ -124,6 +136,9 @@
 /*报警预案设置中间的预案名称的选择器返回*/
 - (void)didConfirmWithItemAtRow:(NSDictionary*)model{
 	NSLog(@"didConfirmWithItemAtRow %@",model);
+	if (![model[@"strategy_name"] isEqualToString:@"<未设置报警策略>"]) {
+		[self initSecendViewDatas:model];
+	}
 }
 //-(void)secoendView{
 //	[self.rootView removeAllSubviews];

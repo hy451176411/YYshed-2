@@ -40,7 +40,9 @@
 	self.mSelectBtn = [[UIButton alloc] init];
 	self.mSelectBtn.frame = CGRectMake(tipW, startY, SCREEN_WIDTH-2*ELEMENT_SPACING-tipW, MENU_H);
 	self.mSelectBtn.titleLabel.font = SystemFontOfSize(16);
-	NSString *name = self.menus[0];
+	//NSString *name = self.menus[0];
+	NSDictionary *model1 = self.menus[0];
+	NSString *name = [model1 objectForKey:@"strategy_name"];
 	[self.mSelectBtn setTitle:name forState:UIControlStateNormal];
 	[self.mSelectBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 	[self.mSelectBtn setBackgroundImage:[UIImage imageNamed:@"button5.png"] forState:UIControlStateNormal];
@@ -61,7 +63,8 @@
 
 - (NSString *)czpickerView:(CZPickerView *)pickerView
 			   titleForRow:(NSInteger)row{
-	NSString *name = self.menus[row];
+	NSDictionary *model1 = self.menus[row];
+	NSString *name = [model1 objectForKey:@"strategy_name"];
 	return name;
 }
 
@@ -72,11 +75,14 @@
 }
 
 - (void)czpickerView:(CZPickerView *)pickerView didConfirmWithItemAtRow:(NSInteger)row{
-	NSString *name = self.menus[row];
+	//NSString *name = self.menus[row];
+	//NSString *name = self.menus[0];
+	NSDictionary *model1 = self.menus[row];
+	NSString *name = [model1 objectForKey:@"strategy_name"];
 	NSLog(@"%@ is chosen!", name);
 	[self.mSelectBtn setTitle:name forState:UIControlStateNormal];
 	if (self.delegate && [self.delegate respondsToSelector:@selector(didConfirmWithItemAtRow:)]) {
-		[_delegate didConfirmWithItemAtRow:nil];
+		[_delegate didConfirmWithItemAtRow:model1];
 	}
 }
 
