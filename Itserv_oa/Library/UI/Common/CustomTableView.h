@@ -12,7 +12,7 @@
 #import "SGFocusImageItem.h"
 #import "Column.h"
 #import "ECMSContent.h"
-#define PAGECOUNT 2
+#import "CommonShed.h"
 
 @class CustomTableView;
 @protocol CustomTableViewDelegate <NSObject>
@@ -54,4 +54,5 @@
 #pragma mark 强制列表刷新
 -(void)forceToFreshData;
 @property Boolean isRefresh;
+@property Boolean adverLoadOver;
 @end

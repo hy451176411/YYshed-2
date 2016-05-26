@@ -114,6 +114,7 @@
 - (void)reloadTableViewDataSource{
 	_reloading = YES;
 	self.isRefresh = YES;
+	self.adverLoadOver = NO;
 	[self initDatas];
 }
 -(void)reloadBack{
@@ -181,7 +182,8 @@
 	Column *column = self.model;
 	self.start = 0;
 	self.theRequest = [NetRequestManager createNetRequestWithDelegate:self];
-	[self.theRequest getContentList:self.model.ID withStart:self.start withLimit:PAGECOUNT];
+	[self.theRequest getAdverList:@"2439" withStart:self.start withLimit:4];
+	//获取四条广告数据
 }
 -(void)loaddata{
 	[self.theRequest getContentList:self.model.ID withStart:self.start withLimit:PAGECOUNT];
@@ -227,8 +229,31 @@
 				}
 			}
 		}
+	}else if (tag == YYShed_getAdversList){
+		[self.theRequest getContentList:self.model.ID withStart:self.start withLimit:PAGECOUNT];
+		[self initAdverDatas:model];
 	}
 	[self reloadBack];
+}
+-(void)initAdverDatas:(NSDictionary*)model{
+	self.advArray= [NSMutableArray array];
+	NSDictionary *funcdata = [model objectForKey:@"funcdata"];
+	if (funcdata) {
+		NSArray *list = [funcdata objectForKey:@"list"];
+		if (list) {
+			for (int i = 0 ; i < list.count; i++)
+			{
+				NSDictionary *data = list[i];
+				NSString *title = [data objectForKey:@"title"];
+				NSString *smallpic = [data objectForKey:@"smallpic"];
+				NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+									  title,@"title" ,
+									  smallpic,@"image",
+									  nil];
+				[self.advArray addObject:dict];
+			}
+		}
+	}
 }
 
 - (void)netRequest:(int)tag Failed:(NSDictionary *)model

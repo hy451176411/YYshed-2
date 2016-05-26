@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImageView+OnlineImage.h"
 @class SGFocusImageItem;
 @class SGFocusImageFrame;
 

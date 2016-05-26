@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomTableView.h"
+#import "UIImageView+OnlineImage.h"
 
 @protocol ScrollPageViewDelegate <NSObject>
 -(void)didScrollPageViewChangedPage:(NSInteger)aPage;

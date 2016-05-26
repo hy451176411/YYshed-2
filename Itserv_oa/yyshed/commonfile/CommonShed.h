@@ -22,7 +22,8 @@
 
 #define WAPI_URL  @"http://182.92.67.74"
 
-
+#define PAGECOUNT 10								//每页加载多少条数据
+#define PIC_URL  @"http://112.124.119.190:8080/"   //图片地址
 
 #define PROVINCE_COMPONENT  0
 #define CITY_COMPONENT      1

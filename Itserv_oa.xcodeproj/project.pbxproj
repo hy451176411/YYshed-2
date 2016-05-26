@@ -96,6 +96,11 @@
 		046B81581CE2C538003F170B /* lead.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B81571CE2C538003F170B /* lead.png */; };
 		046CA3951CF6798800A99A9C /* Column.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CA3941CF6798800A99A9C /* Column.m */; };
 		046CA3981CF6C89900A99A9C /* ECMSContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CA3971CF6C89900A99A9C /* ECMSContent.m */; };
+		046CA3AE1CF6FB6B00A99A9C /* AsyncImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CA3A61CF6FB6B00A99A9C /* AsyncImageDownloader.m */; };
+		046CA3AF1CF6FB6B00A99A9C /* ImageCacheQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CA3A81CF6FB6B00A99A9C /* ImageCacheQueue.m */; };
+		046CA3B01CF6FB6B00A99A9C /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CA3AA1CF6FB6B00A99A9C /* NSString+MD5.m */; };
+		046CA3B11CF6FB6B00A99A9C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 046CA3AB1CF6FB6B00A99A9C /* README.md */; };
+		046CA3B21CF6FB6B00A99A9C /* UIImageView+OnlineImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CA3AD1CF6FB6B00A99A9C /* UIImageView+OnlineImage.m */; };
 		047226671CF5F18B00FEA668 /* CustomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047226391CF5F18B00FEA668 /* CustomTableView.m */; };
 		047226681CF5F18B00FEA668 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0472263C1CF5F18B00FEA668 /* SVProgressHUD.bundle */; };
 		047226691CF5F18B00FEA668 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472263E1CF5F18B00FEA668 /* SVProgressHUD.m */; };
@@ -687,6 +692,15 @@
 		046CA3941CF6798800A99A9C /* Column.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Column.m; sourceTree = "<group>"; };
 		046CA3961CF6C89900A99A9C /* ECMSContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMSContent.h; sourceTree = "<group>"; };
 		046CA3971CF6C89900A99A9C /* ECMSContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMSContent.m; sourceTree = "<group>"; };
+		046CA3A51CF6FB6B00A99A9C /* AsyncImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncImageDownloader.h; path = "../../../Downloads/OnlineImageView-master/AsyncImageDownloader.h"; sourceTree = "<group>"; };
+		046CA3A61CF6FB6B00A99A9C /* AsyncImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncImageDownloader.m; path = "../../../Downloads/OnlineImageView-master/AsyncImageDownloader.m"; sourceTree = "<group>"; };
+		046CA3A71CF6FB6B00A99A9C /* ImageCacheQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageCacheQueue.h; path = "../../../Downloads/OnlineImageView-master/ImageCacheQueue.h"; sourceTree = "<group>"; };
+		046CA3A81CF6FB6B00A99A9C /* ImageCacheQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageCacheQueue.m; path = "../../../Downloads/OnlineImageView-master/ImageCacheQueue.m"; sourceTree = "<group>"; };
+		046CA3A91CF6FB6B00A99A9C /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "../../../Downloads/OnlineImageView-master/NSString+MD5.h"; sourceTree = "<group>"; };
+		046CA3AA1CF6FB6B00A99A9C /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "../../../Downloads/OnlineImageView-master/NSString+MD5.m"; sourceTree = "<group>"; };
+		046CA3AB1CF6FB6B00A99A9C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = "../../../Downloads/OnlineImageView-master/README.md"; sourceTree = "<group>"; };
+		046CA3AC1CF6FB6B00A99A9C /* UIImageView+OnlineImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+OnlineImage.h"; path = "../../../Downloads/OnlineImageView-master/UIImageView+OnlineImage.h"; sourceTree = "<group>"; };
+		046CA3AD1CF6FB6B00A99A9C /* UIImageView+OnlineImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+OnlineImage.m"; path = "../../../Downloads/OnlineImageView-master/UIImageView+OnlineImage.m"; sourceTree = "<group>"; };
 		047226381CF5F18B00FEA668 /* CustomTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableView.h; sourceTree = "<group>"; };
 		047226391CF5F18B00FEA668 /* CustomTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableView.m; sourceTree = "<group>"; };
 		0472263C1CF5F18B00FEA668 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -1544,6 +1558,22 @@
 			name = "大棚详情";
 			sourceTree = "<group>";
 		};
+		046CA39C1CF6FB5900A99A9C /* IMGLOAD */ = {
+			isa = PBXGroup;
+			children = (
+				046CA3A51CF6FB6B00A99A9C /* AsyncImageDownloader.h */,
+				046CA3A61CF6FB6B00A99A9C /* AsyncImageDownloader.m */,
+				046CA3A71CF6FB6B00A99A9C /* ImageCacheQueue.h */,
+				046CA3A81CF6FB6B00A99A9C /* ImageCacheQueue.m */,
+				046CA3A91CF6FB6B00A99A9C /* NSString+MD5.h */,
+				046CA3AA1CF6FB6B00A99A9C /* NSString+MD5.m */,
+				046CA3AB1CF6FB6B00A99A9C /* README.md */,
+				046CA3AC1CF6FB6B00A99A9C /* UIImageView+OnlineImage.h */,
+				046CA3AD1CF6FB6B00A99A9C /* UIImageView+OnlineImage.m */,
+			);
+			name = IMGLOAD;
+			sourceTree = "<group>";
+		};
 		047226361CF5F18B00FEA668 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1642,6 +1672,7 @@
 		047862C31CE71A7D00F0E4F5 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				046CA39C1CF6FB5900A99A9C /* IMGLOAD */,
 				047226361CF5F18B00FEA668 /* UI */,
 				048F15E21CF34A010009332C /* DOPDropDownMenu */,
 				048C34BF1CEAD952008745C1 /* Pod */,
@@ -3341,6 +3372,7 @@
 				046CA3951CF6798800A99A9C /* Column.m in Sources */,
 				63ED7C921939CBF4005B7B93 /* BaseModel.m in Sources */,
 				04883BE51CE764B600249F2B /* PYItemStyleProp.m in Sources */,
+				046CA3AE1CF6FB6B00A99A9C /* AsyncImageDownloader.m in Sources */,
 				04883BE01CE764B600249F2B /* PYColor.m in Sources */,
 				63DDEFC01943611300A28A0B /* RATreeView+Enums.m in Sources */,
 				040EB4621CF40B9400450251 /* AddressViewController.m in Sources */,
@@ -3412,6 +3444,7 @@
 				63DDEFBC1943611300A28A0B /* RATreeNode.m in Sources */,
 				04F12FBC1CE051980014E655 /* REPagedScrollView.m in Sources */,
 				04883BDA1CE764B600249F2B /* PYAreaStyle.m in Sources */,
+				046CA3B21CF6FB6B00A99A9C /* UIImageView+OnlineImage.m in Sources */,
 				63ED7C6C1939CB23005B7B93 /* ASIDataCompressor.m in Sources */,
 				6349761D1939B9FD00CC887C /* ButtonInSection.m in Sources */,
 				63B20A9B1946EC3B00D16C5B /* PeopleNameView.m in Sources */,
@@ -3421,6 +3454,7 @@
 				04883BE91CE764B600249F2B /* PYLineStyle.m in Sources */,
 				63F383951986288B006CE287 /* NSString+SBJSON.m in Sources */,
 				046532791CE9651500B6EF1E /* ViewPagerController.m in Sources */,
+				046CA3B01CF6FB6B00A99A9C /* NSString+MD5.m in Sources */,
 				04883BF21CE764B600249F2B /* PYTimeline.m in Sources */,
 				04883BEF1CE764B600249F2B /* PYSplitArea.m in Sources */,
 				04883BEB1CE764B600249F2B /* PYNoDataLoadingOption.m in Sources */,
@@ -3430,6 +3464,7 @@
 				639578961938A98F00FDE95D /* SendReceiveViewController.m in Sources */,
 				046532B81CE967D500B6EF1E /* ShedWater.m in Sources */,
 				63E5A51A1936DE27008CC126 /* CustomSwitch.m in Sources */,
+				046CA3B11CF6FB6B00A99A9C /* README.md in Sources */,
 				634053F819404A400019052B /* EGORefreshTableHeaderView.m in Sources */,
 				0472F8A71CEDB55C001F9372 /* AlarmStrategyView.m in Sources */,
 				0472266B1CF5F18B00FEA668 /* MenuHrizontal.m in Sources */,
@@ -3483,6 +3518,7 @@
 				047226691CF5F18B00FEA668 /* SVProgressHUD.m in Sources */,
 				04883C151CE764C400249F2B /* NSObject+RMArchivable.m in Sources */,
 				0472266C1CF5F18B00FEA668 /* ScrollPageView.m in Sources */,
+				046CA3AF1CF6FB6B00A99A9C /* ImageCacheQueue.m in Sources */,
 				63ED7C731939CB23005B7B93 /* Reachability.m in Sources */,
 				046532B61CE967D500B6EF1E /* Camera.m in Sources */,
 				046532AA1CE965F200B6EF1E /* Smartgate.m in Sources */,

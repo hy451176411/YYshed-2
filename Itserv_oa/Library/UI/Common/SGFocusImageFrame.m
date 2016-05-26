@@ -124,9 +124,14 @@ static CGFloat SWITCH_FOCUS_PICTURE_INTERVAL = 5.0; //switch interval time
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * _scrollView.frame.size.width+space, space, _scrollView.frame.size.width-space*2, _scrollView.frame.size.height-2*space-size.height)];
         //加载图片
         imageView.backgroundColor = i%2?[UIColor redColor]:[UIColor blueColor];
-        imageView.image = [UIImage imageNamed:item.image];
+		NSString *str = [NSString stringWithFormat:@"%@%@",PIC_URL,item.image];
+		//NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
+		//UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:str]]];
+       // imageView.image = image;
+		[imageView setOnlineImage:str];
         [_scrollView addSubview:imageView];
-        
+		
+		
     }
     _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * aImageItems.count, _scrollView.frame.size.height);
     _pageControl.numberOfPages = aImageItems.count>1?aImageItems.count -2:aImageItems.count;
@@ -141,6 +146,11 @@ static CGFloat SWITCH_FOCUS_PICTURE_INTERVAL = 5.0; //switch interval time
         }
         
     }
+}
+-(void)loadImage:(UIImageView*)imageview withUrl:(NSString*)url{
+	NSURL *imageUrl = [NSURL URLWithString:url];
+	UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageUrl]];
+	imageview.image = image;
 }
 
 #pragma mark 改变添加视图内容

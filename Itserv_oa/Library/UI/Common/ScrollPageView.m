@@ -85,7 +85,8 @@
 #pragma mark 添加HeaderView
 -(void)addLoopScrollowView:(CustomTableView *)aTableView {
     //添加一张默认图片
-    SGFocusImageItem *item = [[SGFocusImageItem alloc] initWithDict:@{@"image": [NSString stringWithFormat:@"girl%d",2]} tag:-1] ;
+	NSDictionary *dic =@{@"image": [NSString stringWithFormat:@"girl%d",2]};
+    SGFocusImageItem *item = [[SGFocusImageItem alloc] initWithDict:dic tag:-1] ;
     SGFocusImageFrame *bannerView = [[SGFocusImageFrame alloc] initWithFrame:CGRectMake(0, -105, 320, 105) delegate:aTableView imageItems:@[item] isAuto:YES];
     aTableView.homeTableView.tableHeaderView = bannerView;
 	
@@ -166,8 +167,10 @@
 	NSArray *array =aView.tableInfoArray;
 	ECMSContent *content =array[aIndexPath.row];
 	vCell.title.text = content.title;
-    NSInteger vNewIndex = aIndexPath.row % 4 + 1;
-    vCell.headerImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"new%d",vNewIndex]];
+	NSString *str = [NSString stringWithFormat:@"%@%@",PIC_URL, content.smallpic];
+	//UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:str]]];
+	[vCell.headerImageView setOnlineImage:str];
+   // vCell.headerImageView.image = image;
     return vCell;
 }
 
@@ -180,24 +183,11 @@
 -(void)didSelectedRowAthIndexPath:(UITableView *)aTableView IndexPath:(NSIndexPath *)aIndexPath FromView:(CustomTableView *)aView{
 }
 
--(void)loadData:(void(^)(int aAddedRowCount))complete FromView:(CustomTableView *)aView{
-    //    double delayInSeconds = 1.0;
-    //    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    //    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//    for (int i = 0; i < 4; i++) {
-//        [aView.tableInfoArray  addObject:@"0"];
-//    }
-    if (complete) {
-        complete(4);
-    }
-    //    });
-}
-
 -(void)refreshData:(void(^)())complete FromView:(CustomTableView *)aView{
     double delayInSeconds = 1.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-		[self initDatas:aView];
+		//[self initDatas:aView];
         //改变header显示图片
         [self changeHeaderContentWithCustomTable:aView];
         if (complete) {
@@ -205,18 +195,7 @@
         }
     });
 }
--(void)initDatas:(CustomTableView *)aView{
-	int length = 4;
-	aView.advArray= [NSMutableArray array];
-	for (int i = 0 ; i < length; i++)
-	{
-		NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-							  [NSString stringWithFormat:@"title%d",i],@"title" ,
-							  [NSString stringWithFormat:@"girl%d",(i + 1)],@"image",
-							  nil];
-		[aView.advArray addObject:dict];
-	}
-}
+
 - (BOOL)tableViewEgoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view FromView:(CustomTableView *)aView{
    return  aView.reloading;
 }

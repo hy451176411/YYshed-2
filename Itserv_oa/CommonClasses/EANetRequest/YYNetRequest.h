@@ -71,4 +71,6 @@
 -(void)getColumnList;
 //获取栏目内容
 -(void)getContentList:(NSString*)columnid withStart:(NSInteger)start withLimit:(NSInteger)limit;
+//获取栏目广告内容
+-(void)getAdverList:(NSString*)columnid withStart:(NSInteger)start withLimit:(NSInteger)limit;
 @end
