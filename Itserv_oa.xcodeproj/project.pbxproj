@@ -125,6 +125,8 @@
 		0472F8A41CED9A67001F9372 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472F8A31CED9A67001F9372 /* Alarm.m */; };
 		0472F8A71CEDB55C001F9372 /* AlarmStrategyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472F8A61CEDB55C001F9372 /* AlarmStrategyView.m */; };
 		0472F8A91CEDBDA7001F9372 /* alramStratey.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0472F8A81CEDBDA7001F9372 /* alramStratey.xib */; };
+		047BDA621CF725F400F10C2A /* item_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 047BDA611CF725F400F10C2A /* item_bg.png */; };
+		047BDA6C1CF725FF00F10C2A /* input1.png in Resources */ = {isa = PBXBuildFile; fileRef = 047BDA6B1CF725FF00F10C2A /* input1.png */; };
 		048111AF1CE585C30023390E /* camera_offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111AD1CE585C30023390E /* camera_offline.png */; };
 		048111B01CE585C30023390E /* camera_online.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111AE1CE585C30023390E /* camera_online.png */; };
 		048111B21CE586030023390E /* button_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 048111B11CE586030023390E /* button_close.png */; };
@@ -239,7 +241,6 @@
 		04F12FAD1CE0512F0014E655 /* number_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F12FAB1CE0512F0014E655 /* number_icon.png */; };
 		04F12FAE1CE0512F0014E655 /* number_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F12FAC1CE0512F0014E655 /* number_icon2.png */; };
 		04F12FBC1CE051980014E655 /* REPagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F12FBB1CE051980014E655 /* REPagedScrollView.m */; };
-		04F12FCA1CE052660014E655 /* input1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F12FC91CE052660014E655 /* input1.png */; };
 		04F12FCC1CE052790014E655 /* login_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F12FCB1CE052790014E655 /* login_btn_bg.png */; };
 		04F432BB1CEC2AF600D89541 /* ShedSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F432BA1CEC2AF600D89541 /* ShedSettingVC.m */; };
 		04F432BF1CEC4E8600D89541 /* ShedSensorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F432BD1CEC4E8600D89541 /* ShedSensorCell.m */; };
@@ -744,6 +745,8 @@
 		0472F8A51CEDB55C001F9372 /* AlarmStrategyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmStrategyView.h; sourceTree = "<group>"; };
 		0472F8A61CEDB55C001F9372 /* AlarmStrategyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmStrategyView.m; sourceTree = "<group>"; };
 		0472F8A81CEDBDA7001F9372 /* alramStratey.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = alramStratey.xib; sourceTree = "<group>"; };
+		047BDA611CF725F400F10C2A /* item_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_bg.png; sourceTree = "<group>"; };
+		047BDA6B1CF725FF00F10C2A /* input1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = input1.png; path = icon/input1.png; sourceTree = "<group>"; };
 		048111AD1CE585C30023390E /* camera_offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_offline.png; path = "../../../res/drawable-hdpi/camera_offline.png"; sourceTree = "<group>"; };
 		048111AE1CE585C30023390E /* camera_online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_online.png; path = "../../../res/drawable-hdpi/camera_online.png"; sourceTree = "<group>"; };
 		048111B11CE586030023390E /* button_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_close.png; path = "../../../res/drawable-hdpi/button_close.png"; sourceTree = "<group>"; };
@@ -2118,6 +2121,8 @@
 		631A4E7D1928839B0067FF3B /* pictures-iphone */ = {
 			isa = PBXGroup;
 			children = (
+				047BDA6B1CF725FF00F10C2A /* input1.png */,
+				047BDA611CF725F400F10C2A /* item_bg.png */,
 				0449FDA91CF70E8800452A34 /* select_iPad.png */,
 				0449FDA71CF70D6A00452A34 /* favourite_off.png */,
 				040E732F1CF2B07900314057 /* 关于 */,
@@ -3140,6 +3145,7 @@
 				63B0F0B41990C34500791D0F /* Icon_120.png in Resources */,
 				63B0F0B51990C34500791D0F /* Icon_144.png in Resources */,
 				048C34D31CEAD962008745C1 /* button5.png in Resources */,
+				047BDA6C1CF725FF00F10C2A /* input1.png in Resources */,
 				04F12F991CE050CA0014E655 /* button_on.png in Resources */,
 				049968C21CE765D000AA9FAE /* js in Resources */,
 				63AB454B196282A300C6E39A /* ToReadViewController_iPhone.xib in Resources */,
@@ -3187,6 +3193,7 @@
 				048111B81CE586580023390E /* main_07.png in Resources */,
 				04A97BA31CEEB3BA00E30754 /* alarm_icon3.png in Resources */,
 				044C79F11CE1D7B200F9EE21 /* chart3.png in Resources */,
+				047BDA621CF725F400F10C2A /* item_bg.png in Resources */,
 				0463AC001CE339A500EE9A96 /* video_down_unseletor.png in Resources */,
 				044C79DE1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png in Resources */,
 				639578A31938AC5000FDE95D /* IntegratedQueryViewController_iPhone.xib in Resources */,
@@ -3296,7 +3303,6 @@
 				630CE9AC193E08F000E34663 /* EmailListViewController_iPhone.xib in Resources */,
 				63AB9D061952D6A2007AFA83 /* contenttoolbar_hd_share_light.png in Resources */,
 				044C79F31CE1D98100F9EE21 /* pointer.png in Resources */,
-				04F12FCA1CE052660014E655 /* input1.png in Resources */,
 				A53D26601AC13C4100C14721 /* peopleIcon@2x.png in Resources */,
 				63341601197E805800303105 /* toolbarTwo.png in Resources */,
 				63341602197E805800303105 /* toolbarTwoSelect.png in Resources */,

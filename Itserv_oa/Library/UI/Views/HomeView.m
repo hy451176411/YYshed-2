@@ -34,7 +34,7 @@
 		NSNumber *width =[NSNumber numberWithFloat:108];
 		Column *column = self.titles[i];
 		NSString *title = column.name;
-		NSDictionary  *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"normal.png",NOMALKEY,@"select_iPad.png",HEIGHTKEY,width,TITLEWIDTH,title,TITLEKEY,nil];
+		NSDictionary  *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"normal.png",NOMALKEY,@"item_bg.png",HEIGHTKEY,width,TITLEWIDTH,title,TITLEKEY,nil];
 		[vButtonItemArray addObject:dic];
 	}
     if (mMenuHriZontal == nil) {
