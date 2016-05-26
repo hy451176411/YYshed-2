@@ -94,6 +94,7 @@
 		04657EF81CEC0EFA00EA03C4 /* ShedAliasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04657EF61CEC0EFA00EA03C4 /* ShedAliasCell.xib */; };
 		0469AF841CEBF10500E57E08 /* ShedParamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469AF831CEBF10500E57E08 /* ShedParamController.m */; };
 		046B81581CE2C538003F170B /* lead.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B81571CE2C538003F170B /* lead.png */; };
+		046CA3951CF6798800A99A9C /* Column.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CA3941CF6798800A99A9C /* Column.m */; };
 		047226671CF5F18B00FEA668 /* CustomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047226391CF5F18B00FEA668 /* CustomTableView.m */; };
 		047226681CF5F18B00FEA668 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0472263C1CF5F18B00FEA668 /* SVProgressHUD.bundle */; };
 		047226691CF5F18B00FEA668 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472263E1CF5F18B00FEA668 /* SVProgressHUD.m */; };
@@ -681,6 +682,8 @@
 		0469AF831CEBF10500E57E08 /* ShedParamController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedParamController.m; sourceTree = "<group>"; };
 		046B81571CE2C538003F170B /* lead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lead.png; sourceTree = "<group>"; };
 		046B81681CE2E6D1003F170B /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		046CA3931CF6798800A99A9C /* Column.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Column.h; sourceTree = "<group>"; };
+		046CA3941CF6798800A99A9C /* Column.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Column.m; sourceTree = "<group>"; };
 		047226381CF5F18B00FEA668 /* CustomTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableView.h; sourceTree = "<group>"; };
 		047226391CF5F18B00FEA668 /* CustomTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableView.m; sourceTree = "<group>"; };
 		0472263C1CF5F18B00FEA668 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -1544,9 +1547,6 @@
 				048FF1F71CF5F9F800990A45 /* Resource */,
 				047226371CF5F18B00FEA668 /* Common */,
 				0472264B1CF5F18B00FEA668 /* Macros.h */,
-				0472264C1CF5F18B00FEA668 /* Maneger */,
-				0472264D1CF5F18B00FEA668 /* Public */,
-				047226571CF5F18B00FEA668 /* Util */,
 				0472265B1CF5F18B00FEA668 /* VCS */,
 				0472265E1CF5F18B00FEA668 /* Views */,
 			);
@@ -1608,128 +1608,13 @@
 			path = RefreshTableHeaderView;
 			sourceTree = "<group>";
 		};
-		0472264C1CF5F18B00FEA668 /* Maneger */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Maneger;
-			sourceTree = "<group>";
-		};
-		0472264D1CF5F18B00FEA668 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				0472264E1CF5F18B00FEA668 /* ConstDefine */,
-				0472264F1CF5F18B00FEA668 /* UI */,
-				047226531CF5F18B00FEA668 /* Util */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		0472264E1CF5F18B00FEA668 /* ConstDefine */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ConstDefine;
-			sourceTree = "<group>";
-		};
-		0472264F1CF5F18B00FEA668 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				047226501CF5F18B00FEA668 /* HUD */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		047226501CF5F18B00FEA668 /* HUD */ = {
-			isa = PBXGroup;
-			children = (
-				047226511CF5F18B00FEA668 /* SVProgress */,
-				047226521CF5F18B00FEA668 /* Toast */,
-			);
-			path = HUD;
-			sourceTree = "<group>";
-		};
-		047226511CF5F18B00FEA668 /* SVProgress */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SVProgress;
-			sourceTree = "<group>";
-		};
-		047226521CF5F18B00FEA668 /* Toast */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Toast;
-			sourceTree = "<group>";
-		};
-		047226531CF5F18B00FEA668 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				047226541CF5F18B00FEA668 /* AnimationTransition */,
-				047226551CF5F18B00FEA668 /* Net */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		047226541CF5F18B00FEA668 /* AnimationTransition */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AnimationTransition;
-			sourceTree = "<group>";
-		};
-		047226551CF5F18B00FEA668 /* Net */ = {
-			isa = PBXGroup;
-			children = (
-				047226561CF5F18B00FEA668 /* AFNetworking */,
-			);
-			path = Net;
-			sourceTree = "<group>";
-		};
-		047226561CF5F18B00FEA668 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		047226571CF5F18B00FEA668 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				047226581CF5F18B00FEA668 /* AnimationTransition */,
-				047226591CF5F18B00FEA668 /* Net */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		047226581CF5F18B00FEA668 /* AnimationTransition */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AnimationTransition;
-			sourceTree = "<group>";
-		};
-		047226591CF5F18B00FEA668 /* Net */ = {
-			isa = PBXGroup;
-			children = (
-				0472265A1CF5F18B00FEA668 /* AFNetworking */,
-			);
-			path = Net;
-			sourceTree = "<group>";
-		};
-		0472265A1CF5F18B00FEA668 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AFNetworking;
-			sourceTree = "<group>";
-		};
 		0472265B1CF5F18B00FEA668 /* VCS */ = {
 			isa = PBXGroup;
 			children = (
 				0472265C1CF5F18B00FEA668 /* HomeVC.h */,
 				0472265D1CF5F18B00FEA668 /* HomeVC.m */,
+				046CA3931CF6798800A99A9C /* Column.h */,
+				046CA3941CF6798800A99A9C /* Column.m */,
 			);
 			path = VCS;
 			sourceTree = "<group>";
@@ -3447,6 +3332,7 @@
 				630CE9A3193DD90600E34663 /* SaveData.m in Sources */,
 				047226711CF5F18B00FEA668 /* HomeViewCell.m in Sources */,
 				63F383941986288B006CE287 /* NSObject+SBJSON.m in Sources */,
+				046CA3951CF6798800A99A9C /* Column.m in Sources */,
 				63ED7C921939CBF4005B7B93 /* BaseModel.m in Sources */,
 				04883BE51CE764B600249F2B /* PYItemStyleProp.m in Sources */,
 				04883BE01CE764B600249F2B /* PYColor.m in Sources */,

@@ -67,4 +67,6 @@
 
 //更新大棚传感器别名
 -(void)updateDevComponentAlias:(NSString*)component_id withAlias:(NSString*)alias;
+//获取大棚的资讯栏目
+-(void)getColumnList;
 @end

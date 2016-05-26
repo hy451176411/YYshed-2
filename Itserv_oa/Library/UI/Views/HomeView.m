@@ -8,6 +8,7 @@
 
 #import "HomeView.h"
 #import "HomeViewCell.h"
+#import "Column.h"
 
 
 #define MENUHEIHT 40
@@ -19,80 +20,23 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        [self commInit];
+		
     }
     return self;
 }
-
+-(void)initViews{
+	[self commInit];
+}
 #pragma mark UI初始化
 -(void)commInit{
-    NSArray *vButtonItemArray = @[@{NOMALKEY: @"normal.png",
-                                    HEIGHTKEY:@"helight.png",
-                                    TITLEKEY:@"头条",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  @{NOMALKEY: @"normal.png",
-                                    HEIGHTKEY:@"helight.png",
-                                    TITLEKEY:@"推荐",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  @{NOMALKEY: @"normal",
-                                    HEIGHTKEY:@"helight",
-                                    TITLEKEY:@"娱乐",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  @{NOMALKEY: @"normal",
-                                    HEIGHTKEY:@"helight",
-                                    TITLEKEY:@"体育",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  @{NOMALKEY: @"normal",
-                                    HEIGHTKEY:@"helight",
-                                    TITLEKEY:@"科技",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  @{NOMALKEY: @"normal",
-                                    HEIGHTKEY:@"helight",
-                                    TITLEKEY:@"轻松一刻",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:40*2]
-                                    },
-                                  @{NOMALKEY: @"normal",
-                                    HEIGHTKEY:@"helight",
-                                    TITLEKEY:@"新闻",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  @{NOMALKEY: @"normal",
-                                    HEIGHTKEY:@"helight",
-                                    TITLEKEY:@"美女",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  @{NOMALKEY: @"normal",
-                                    HEIGHTKEY:@"helight",
-                                    TITLEKEY:@"帅哥",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  @{NOMALKEY: @"normal",
-                                    HEIGHTKEY:@"helight",
-                                    TITLEKEY:@"帅哥",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  @{NOMALKEY: @"normal",
-                                    HEIGHTKEY:@"helight",
-                                    TITLEKEY:@"帅哥",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  @{NOMALKEY: @"normal",
-                                    HEIGHTKEY:@"helight",
-                                    TITLEKEY:@"帅哥",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  @{NOMALKEY: @"normal",
-                                    HEIGHTKEY:@"helight",
-                                    TITLEKEY:@"帅哥",
-                                    TITLEWIDTH:[NSNumber numberWithFloat:60]
-                                    },
-                                  ];
-    
+	vButtonItemArray = [NSMutableArray array];
+	for (int i=0; i<self.titles.count; i++) {
+		NSNumber *width =[NSNumber numberWithFloat:108];
+		Column *column = self.titles[i];
+		NSString *title = column.name;
+		NSDictionary  *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"normal.png",NOMALKEY,@"helight.png",HEIGHTKEY,width,TITLEWIDTH,title,TITLEKEY,nil];
+		[vButtonItemArray addObject:dic];
+	}
     if (mMenuHriZontal == nil) {
         mMenuHriZontal = [[MenuHrizontal alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, MENUHEIHT) ButtonItems:vButtonItemArray];
         mMenuHriZontal.delegate = self;
@@ -128,6 +72,4 @@
         [mScrollPageView freshContentTableAtIndex:aPage];
 //    }
 }
-
-
 @end

@@ -9,8 +9,9 @@
 #import "HomeVC.h"
 #import "HomeView.h"
 #import "Macros.h"
+#import "Column.h"
 
-@interface HomeVC ()
+@interface HomeVC ()<YYNetRequestDelegate>
 {
     HomeView *mHomeView;
 }
@@ -42,6 +43,7 @@
 
 -(void)viewDidLoad{
 	[super viewDidLoad];
+	self.theRequest = [NetRequestManager createNetRequestWithDelegate:self];
 	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
 	UIImage *left = [UIImage imageNamed:@"logo.png"];
@@ -67,34 +69,64 @@
     if (IS_IOS7) {
         self.edgesForExtendedLayout =UIRectEdgeNone ;
     }
-    //contentView大小设置
-    int vWidth = (int)([UIScreen mainScreen].bounds.size.width);
-    int vHeight = (int)([UIScreen mainScreen].bounds.size.height);
-    //contentView大小设置
-    
-    CGRect vViewRect = CGRectMake(0, 0, vWidth, vHeight -44 -20);
-    UIView *vContentView = [[UIView alloc] initWithFrame:vViewRect];
-    if (mHomeView == nil) {
-        mHomeView = [[HomeView alloc] initWithFrame:vContentView.frame];
-    }
-    [vContentView addSubview:mHomeView];
-    
-    self.view = vContentView;
-    
-    [self setViewFrame];
-   
+	[self.theRequest getColumnList];
 }
 
 //设置View方向
 -(void) setViewFrame{
  
 }
+-(void)initViews:(NSArray*)data{
+	//contentView大小设置
+	int vWidth = (int)([UIScreen mainScreen].bounds.size.width);
+	int vHeight = (int)([UIScreen mainScreen].bounds.size.height);
+	//contentView大小设置
+	
+	CGRect vViewRect = CGRectMake(0, 0, vWidth, vHeight -44 -20);
+	UIView *vContentView = [[UIView alloc] initWithFrame:vViewRect];
+	if (mHomeView == nil) {
+		mHomeView = [[HomeView alloc] initWithFrame:vContentView.frame];
+	}
+	mHomeView.titles = data;
+	[mHomeView initViews];
+	[vContentView addSubview:mHomeView];
+	
+	self.view = vContentView;
+	[self setViewFrame];
+}
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
 }
+-(void)initDatas:(NSDictionary *)model{
+	NSArray *funcdata = [model objectForKey:@"funcdata"];
+	NSMutableArray *data = [NSMutableArray array];
+	for (int i=0; i<funcdata.count; i++) {
+		NSDictionary *dic = funcdata[i];
+		Column *column = [[Column alloc]init];
+		column.ID =[dic objectForKey:@"id"];
+		column.name =[dic objectForKey:@"name"];
+		column.PID =[dic objectForKey:@"pid"];
+		[data addObject:column];
+	}
+	[self initViews:data];
+}
+#pragma mark 登录请求成功
+- (void)netRequest:(int)tag Finished:(NSDictionary *)model
+{
+	NSLog(@"----------%@",model);
+	[self initDatas:model];
+}
 
-//------------------------------------------------
+- (void)netRequest:(int)tag Failed:(NSDictionary *)model
+{
+	NSLog(@"请求超时");
+	[SBPublicAlert showMBProgressHUD:@"请求超时" andWhereView:self.view hiddenTime:kHiddenAlertTime];
+}
 
+- (void)netRequest:(int)tag requestFailed:(NSString *)message
+{
+	[SBPublicAlert showMBProgressHUD:message andWhereView:self.view hiddenTime:kHiddenAlertTime];
+}
 
 @end

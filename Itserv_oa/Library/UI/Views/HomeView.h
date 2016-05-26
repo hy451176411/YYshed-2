@@ -14,7 +14,8 @@
 {
     MenuHrizontal *mMenuHriZontal;
     ScrollPageView *mScrollPageView;
+	NSMutableArray *vButtonItemArray;
 }
-
-
+@property (nonatomic,strong)NSArray *titles;
+-(void)initViews;
 @end
