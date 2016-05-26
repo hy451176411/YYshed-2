@@ -169,7 +169,8 @@
 	vCell.title.text = content.title;
 	NSString *str = [NSString stringWithFormat:@"%@%@",PIC_URL, content.smallpic];
 	//UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:str]]];
-	[vCell.headerImageView setOnlineImage:str];
+	[vCell.headerImageView setOnlineImage:str
+						 placeholderImage:[UIImage imageNamed:@"loading_thumb.png"]];
    // vCell.headerImageView.image = image;
     return vCell;
 }
@@ -181,6 +182,9 @@
 }
 
 -(void)didSelectedRowAthIndexPath:(UITableView *)aTableView IndexPath:(NSIndexPath *)aIndexPath FromView:(CustomTableView *)aView{
+	if ([_delegate respondsToSelector:@selector(YYdidSelectedRowAthIndexPath:IndexPath:FromView:)]) {
+		[_delegate YYdidSelectedRowAthIndexPath:aTableView IndexPath:aIndexPath FromView:aView];
+	}
 }
 
 -(void)refreshData:(void(^)())complete FromView:(CustomTableView *)aView{

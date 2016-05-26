@@ -128,7 +128,8 @@ static CGFloat SWITCH_FOCUS_PICTURE_INTERVAL = 5.0; //switch interval time
 		//NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
 		//UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:str]]];
        // imageView.image = image;
-		[imageView setOnlineImage:str];
+		[imageView setOnlineImage:str
+				 placeholderImage:[UIImage imageNamed:@"loading_thumb.png"]];
         [_scrollView addSubview:imageView];
 		
 		

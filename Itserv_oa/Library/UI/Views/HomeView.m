@@ -34,7 +34,7 @@
 		NSNumber *width =[NSNumber numberWithFloat:108];
 		Column *column = self.titles[i];
 		NSString *title = column.name;
-		NSDictionary  *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"normal.png",NOMALKEY,@"helight.png",HEIGHTKEY,width,TITLEWIDTH,title,TITLEKEY,nil];
+		NSDictionary  *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"normal.png",NOMALKEY,@"select_iPad.png",HEIGHTKEY,width,TITLEWIDTH,title,TITLEKEY,nil];
 		[vButtonItemArray addObject:dic];
 	}
     if (mMenuHriZontal == nil) {
@@ -71,5 +71,10 @@
         //刷新当页数据
         [mScrollPageView freshContentTableAtIndex:aPage];
 //    }
+}
+-(void)YYdidSelectedRowAthIndexPath:(UITableView *)aTableView IndexPath:(NSIndexPath *)aIndexPath FromView:(CustomTableView *)aView{
+	if ([_delegate respondsToSelector:@selector(YYdidSelectedRowAthIndexPath:IndexPath:FromView:)] ) {
+		[_delegate YYdidSelectedRowAthIndexPath:aTableView IndexPath:aIndexPath FromView:aView];
+	}
 }
 @end

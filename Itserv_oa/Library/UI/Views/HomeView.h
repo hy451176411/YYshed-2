@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MenuHrizontal.h"
 #import "ScrollPageView.h"
+#import "AboutMeVC.h"
+@protocol HomeViewDelegate <NSObject>
+-(void)YYdidSelectedRowAthIndexPath:(UITableView *)aTableView IndexPath:(NSIndexPath *)aIndexPath FromView:(CustomTableView *)aView;
+@end
 
 @interface HomeView : UIView<MenuHrizontalDelegate,ScrollPageViewDelegate>
 {
@@ -16,6 +20,7 @@
     ScrollPageView *mScrollPageView;
 	NSMutableArray *vButtonItemArray;
 }
+@property (nonatomic,assign) id<HomeViewDelegate> delegate;
 @property (nonatomic,strong)NSArray *titles;
 -(void)initViews;
 @end

@@ -22,6 +22,9 @@
 		044891E91CF4823600B4CD22 /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044891E71CF4823600B4CD22 /* FeedbackVC.xib */; };
 		044891ED1CF4895900B4CD22 /* AboutMeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 044891EB1CF4895900B4CD22 /* AboutMeVC.m */; };
 		044891EE1CF4895900B4CD22 /* AboutMeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044891EC1CF4895900B4CD22 /* AboutMeVC.xib */; };
+		0449FD9E1CF709B200452A34 /* loading_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0449FD9D1CF709B200452A34 /* loading_thumb.png */; };
+		0449FDA81CF70D6A00452A34 /* favourite_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 0449FDA71CF70D6A00452A34 /* favourite_off.png */; };
+		0449FDAA1CF70E8800452A34 /* select_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0449FDA91CF70E8800452A34 /* select_iPad.png */; };
 		044C79CA1CE17D6800F9EE21 /* 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79C91CE17D6800F9EE21 /* 001.png */; };
 		044C79CC1CE17D7300F9EE21 /* 002.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CB1CE17D7300F9EE21 /* 002.png */; };
 		044C79CE1CE17D7A00F9EE21 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79CD1CE17D7A00F9EE21 /* 003.png */; };
@@ -584,6 +587,9 @@
 		044891EA1CF4895900B4CD22 /* AboutMeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutMeVC.h; path = "yyshed/Modules/首页/更多/AboutMeVC.h"; sourceTree = "<group>"; };
 		044891EB1CF4895900B4CD22 /* AboutMeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutMeVC.m; path = "yyshed/Modules/首页/更多/AboutMeVC.m"; sourceTree = "<group>"; };
 		044891EC1CF4895900B4CD22 /* AboutMeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutMeVC.xib; path = "yyshed/Modules/首页/更多/AboutMeVC.xib"; sourceTree = "<group>"; };
+		0449FD9D1CF709B200452A34 /* loading_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loading_thumb.png; path = "../../../drawable-hdpi/loading_thumb.png"; sourceTree = "<group>"; };
+		0449FDA71CF70D6A00452A34 /* favourite_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = favourite_off.png; path = "../../../../Downloads/NewsReader-master/images/favourite_off.png"; sourceTree = "<group>"; };
+		0449FDA91CF70E8800452A34 /* select_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = select_iPad.png; path = "../../../../Downloads/NewsReader-master/images/select_iPad.png"; sourceTree = "<group>"; };
 		044C79C91CE17D6800F9EE21 /* 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 001.png; sourceTree = "<group>"; };
 		044C79CB1CE17D7300F9EE21 /* 002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 002.png; sourceTree = "<group>"; };
 		044C79CD1CE17D7A00F9EE21 /* 003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 003.png; sourceTree = "<group>"; };
@@ -1334,6 +1340,7 @@
 		040E732F1CF2B07900314057 /* 关于 */ = {
 			isa = PBXGroup;
 			children = (
+				0449FD9D1CF709B200452A34 /* loading_thumb.png */,
 				040E73301CF2B08700314057 /* navigation_item_lead.png */,
 			);
 			name = "关于";
@@ -2111,6 +2118,8 @@
 		631A4E7D1928839B0067FF3B /* pictures-iphone */ = {
 			isa = PBXGroup;
 			children = (
+				0449FDA91CF70E8800452A34 /* select_iPad.png */,
+				0449FDA71CF70D6A00452A34 /* favourite_off.png */,
 				040E732F1CF2B07900314057 /* 关于 */,
 				046B81671CE2E6BF003F170B /* 大棚详情 */,
 				044C79C81CE17D5600F9EE21 /* friend */,
@@ -3144,6 +3153,7 @@
 				04F12FA61CE0510E0014E655 /* logo_tencentweibo.png in Resources */,
 				0463AC0D1CE33A5900EE9A96 /* category2.png in Resources */,
 				63DDEFCA1943611300A28A0B /* OrgCell.xib in Resources */,
+				0449FDAA1CF70E8800452A34 /* select_iPad.png in Resources */,
 				047226741CF5F18C00FEA668 /* LoadMoreCell.xib in Resources */,
 				048111C41CE58A910023390E /* forward2_focus.png in Resources */,
 				63B20AE11946F1BB00D16C5B /* btn_contactblock.png in Resources */,
@@ -3237,6 +3247,7 @@
 				044C79E01CE17DBB00F9EE21 /* buddy_header_bg.png in Resources */,
 				04F12F981CE050CA0014E655 /* button_off.png in Resources */,
 				04883C081CE764B600249F2B /* echarts.html in Resources */,
+				0449FDA81CF70D6A00452A34 /* favourite_off.png in Resources */,
 				630824B6197F64B600BB7217 /* toolbarFourSelect.png in Resources */,
 				63341603197E805800303105 /* no_select.png in Resources */,
 				048111B21CE586030023390E /* button_close.png in Resources */,
@@ -3274,6 +3285,7 @@
 				63341606197E805800303105 /* loginIcon.png in Resources */,
 				A5E870111ABC1555005195ED /* EmailContactsViewController_iPad.xib in Resources */,
 				04F12FAE1CE0512F0014E655 /* number_icon2.png in Resources */,
+				0449FD9E1CF709B200452A34 /* loading_thumb.png in Resources */,
 				63E5A5131936DA34008CC126 /* login_ico.png in Resources */,
 				630824B4197F61DF00BB7217 /* menuBg.png in Resources */,
 				0472F8A91CEDBDA7001F9372 /* alramStratey.xib in Resources */,

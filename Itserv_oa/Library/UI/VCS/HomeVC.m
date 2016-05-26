@@ -11,7 +11,7 @@
 #import "Macros.h"
 #import "Column.h"
 
-@interface HomeVC ()<YYNetRequestDelegate>
+@interface HomeVC ()<YYNetRequestDelegate,HomeViewDelegate>
 {
     HomeView *mHomeView;
 }
@@ -82,6 +82,7 @@
 		mHomeView = [[HomeView alloc] initWithFrame:vContentView.frame];
 	}
 	mHomeView.titles = data;
+	mHomeView.delegate = self;
 	[mHomeView initViews];
 	[vContentView addSubview:mHomeView];
 	
@@ -104,6 +105,12 @@
 		[data addObject:column];
 	}
 	[self initViews:data];
+}
+
+-(void)YYdidSelectedRowAthIndexPath:(UITableView *)aTableView IndexPath:(NSIndexPath *)aIndexPath FromView:(CustomTableView *)aView{
+	AboutMeVC *control = [[AboutMeVC alloc] init];
+	//[self.navigationController pushViewController:control animated:YES];
+	[self presentViewController:control animated:YES completion:nil];
 }
 #pragma mark 登录请求成功
 - (void)netRequest:(int)tag Finished:(NSDictionary *)model
