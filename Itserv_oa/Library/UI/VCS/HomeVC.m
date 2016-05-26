@@ -108,6 +108,9 @@
 }
 
 -(void)YYdidSelectedRowAthIndexPath:(UITableView *)aTableView IndexPath:(NSIndexPath *)aIndexPath FromView:(CustomTableView *)aView{
+	NSArray *array = aView.tableInfoArray;
+	ECMSContent *content =array[aIndexPath.row];
+	NSLog(@"点击第%i的值其中title为：%@   id为：%@",aIndexPath.row,content.title,content.ID);
 	AboutMeVC *control = [[AboutMeVC alloc] init];
 	//[self.navigationController pushViewController:control animated:YES];
 	[self presentViewController:control animated:YES completion:nil];

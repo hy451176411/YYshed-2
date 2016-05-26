@@ -97,7 +97,7 @@
 -(void)changeHeaderContentWithCustomTable:(CustomTableView *)aTableContent{
 
 	float length = aTableContent.advArray.count;
-    NSMutableArray *itemArray = [NSMutableArray arrayWithCapacity:length+2];
+    NSMutableArray *itemArray = [NSMutableArray arrayWithCapacity:length];
     //添加最后一张图 用于循环
     if (length > 1)
     {
