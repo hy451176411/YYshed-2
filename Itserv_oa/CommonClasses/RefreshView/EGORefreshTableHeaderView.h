@@ -28,6 +28,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "CircleView.h"
 
+
 typedef enum{
 	EGOOPullRefreshPulling = 0,
 	EGOOPullRefreshNormal,

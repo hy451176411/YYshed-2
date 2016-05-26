@@ -69,4 +69,6 @@
 -(void)updateDevComponentAlias:(NSString*)component_id withAlias:(NSString*)alias;
 //获取大棚的资讯栏目
 -(void)getColumnList;
+//获取栏目内容
+-(void)getContentList:(NSString*)columnid withStart:(NSInteger)start withLimit:(NSInteger)limit;
 @end

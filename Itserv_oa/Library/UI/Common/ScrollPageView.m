@@ -8,7 +8,7 @@
 
 #import "ScrollPageView.h"
 #import "HomeViewCell.h"
-
+#import "ECMSContent.h"
 @implementation ScrollPageView
 
 - (id)initWithFrame:(CGRect)frame
@@ -22,7 +22,7 @@
     return self;
 }
 
--(void)initData{
+-(void)initData:(NSArray*)titles{
     [self freshContentTableAtIndex:0];
 }
 
@@ -44,11 +44,13 @@
 
 #pragma mark - 其他辅助功能
 #pragma mark 添加ScrollowViewd的ContentView
--(void)setContentOfTables:(NSInteger)aNumerOfTables{
+-(void)setContentOfTables:(NSInteger)aNumerOfTables withTitles:(NSArray*)titles{
+	self.titleArray = titles;
     for (int i = 0; i < aNumerOfTables; i++) {
         CustomTableView *vCustomTableView = [[CustomTableView alloc] initWithFrame:CGRectMake(320 * i, 0, 320, self.frame.size.height)];
         vCustomTableView.delegate = self;
         vCustomTableView.dataSource = self;
+		//vCustomTableView.model = self.titleArray.[i];
         //为table添加嵌套HeadderView
         [self addLoopScrollowView:vCustomTableView];
         [_scrollView addSubview:vCustomTableView];
@@ -70,11 +72,14 @@
 
 #pragma mark 刷新某个页面
 -(void)freshContentTableAtIndex:(NSInteger)aIndex{
+	
     if (_contentItems.count < aIndex) {
         return;
     }
     CustomTableView *vTableContentView =(CustomTableView *)[_contentItems objectAtIndex:aIndex];
-    [vTableContentView forceToFreshData];
+	vTableContentView.model =  self.titleArray[aIndex];
+	//刷新第几页数据
+	[vTableContentView forceToFreshData];
 }
 
 #pragma mark 添加HeaderView
@@ -89,28 +94,19 @@
 
 #pragma mark 改变TableView上面滚动栏的内容
 -(void)changeHeaderContentWithCustomTable:(CustomTableView *)aTableContent{
-    int length = 4;
-    NSMutableArray *tempArray = [NSMutableArray array];
-    for (int i = 0 ; i < length; i++)
-    {
-        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                              [NSString stringWithFormat:@"title%d",i],@"title" ,
-                              [NSString stringWithFormat:@"girl%d",(i + 1)],@"image",
-                              nil];
-        [tempArray addObject:dict];
-    }
-    
+
+	float length = aTableContent.advArray.count;
     NSMutableArray *itemArray = [NSMutableArray arrayWithCapacity:length+2];
     //添加最后一张图 用于循环
     if (length > 1)
     {
-        NSDictionary *dict = [tempArray objectAtIndex:length-1];
+        NSDictionary *dict = [aTableContent.advArray objectAtIndex:length-1];
         SGFocusImageItem *item = [[SGFocusImageItem alloc] initWithDict:dict tag:-1];
         [itemArray addObject:item];
     }
     for (int i = 0; i < length; i++)
     {
-        NSDictionary *dict = [tempArray objectAtIndex:i];
+        NSDictionary *dict = [aTableContent.advArray objectAtIndex:i];
         SGFocusImageItem *item = [[SGFocusImageItem alloc] initWithDict:dict tag:i];
         [itemArray addObject:item];
         
@@ -118,7 +114,7 @@
     //添加第一张图 用于循环
     if (length >1)
     {
-        NSDictionary *dict = [tempArray objectAtIndex:0];
+        NSDictionary *dict = [aTableContent.advArray objectAtIndex:0];
         SGFocusImageItem *item = [[SGFocusImageItem alloc] initWithDict:dict tag:length];
         [itemArray addObject:item];
     }
@@ -167,7 +163,9 @@
     if (vCell == nil) {
         vCell = [[[NSBundle mainBundle] loadNibNamed:@"HomeViewCell" owner:self options:nil] lastObject];
     }
-    
+	NSArray *array =aView.tableInfoArray;
+	ECMSContent *content =array[aIndexPath.row];
+	vCell.title.text = content.title;
     NSInteger vNewIndex = aIndexPath.row % 4 + 1;
     vCell.headerImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"new%d",vNewIndex]];
     return vCell;
@@ -186,9 +184,9 @@
     //    double delayInSeconds = 1.0;
     //    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     //    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-    for (int i = 0; i < 4; i++) {
-        [aView.tableInfoArray  addObject:@"0"];
-    }
+//    for (int i = 0; i < 4; i++) {
+//        [aView.tableInfoArray  addObject:@"0"];
+//    }
     if (complete) {
         complete(4);
     }
@@ -199,10 +197,7 @@
     double delayInSeconds = 1.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [aView.tableInfoArray removeAllObjects];
-        for (int i = 0; i < 4; i++) {
-            [aView.tableInfoArray addObject:@"0"];
-        }
+		[self initDatas:aView];
         //改变header显示图片
         [self changeHeaderContentWithCustomTable:aView];
         if (complete) {
@@ -210,7 +205,18 @@
         }
     });
 }
-
+-(void)initDatas:(CustomTableView *)aView{
+	int length = 4;
+	aView.advArray= [NSMutableArray array];
+	for (int i = 0 ; i < length; i++)
+	{
+		NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+							  [NSString stringWithFormat:@"title%d",i],@"title" ,
+							  [NSString stringWithFormat:@"girl%d",(i + 1)],@"image",
+							  nil];
+		[aView.advArray addObject:dict];
+	}
+}
 - (BOOL)tableViewEgoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view FromView:(CustomTableView *)aView{
    return  aView.reloading;
 }

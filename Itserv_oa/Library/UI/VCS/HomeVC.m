@@ -24,7 +24,6 @@
     self = [super initWithNibName:aNibName bundle:aBuddle];
     if (self != nil) {
         [self initCommonData];
-        [self initTopNavBar];
     }
     return self;
 }
@@ -35,11 +34,6 @@
     [self setViewFrame];
 }
 
-//重载导航条
--(void)initTopNavBar{
-    self.title = @"我的新闻客户端";
-    self.navigationItem.leftBarButtonItem = Nil;
-}
 
 -(void)viewDidLoad{
 	[super viewDidLoad];
@@ -82,7 +76,7 @@
 	int vHeight = (int)([UIScreen mainScreen].bounds.size.height);
 	//contentView大小设置
 	
-	CGRect vViewRect = CGRectMake(0, 0, vWidth, vHeight -44 -20);
+	CGRect vViewRect = CGRectMake(0, 0, vWidth, vHeight -44 -80);
 	UIView *vContentView = [[UIView alloc] initWithFrame:vViewRect];
 	if (mHomeView == nil) {
 		mHomeView = [[HomeView alloc] initWithFrame:vContentView.frame];

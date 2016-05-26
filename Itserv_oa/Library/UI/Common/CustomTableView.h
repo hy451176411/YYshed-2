@@ -10,6 +10,9 @@
 #import "EGORefreshTableHeaderView.h"
 #import "SGFocusImageFrame.h"
 #import "SGFocusImageItem.h"
+#import "Column.h"
+#import "ECMSContent.h"
+#define PAGECOUNT 2
 
 @class CustomTableView;
 @protocol CustomTableViewDelegate <NSObject>
@@ -32,22 +35,23 @@
 
 @end
 
-@interface CustomTableView : UIView<UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate,SGFocusImageFrameDelegate>
+@interface CustomTableView : UIView<UITableViewDataSource,UITableViewDelegate,EGORefreshTableHeaderDelegate,SGFocusImageFrameDelegate,YYNetRequestDelegate>
 {
     EGORefreshTableHeaderView *_refreshHeaderView;
     NSInteger     mRowCount;
 }
-//  Reloading var should really be your tableviews datasource
-//  Putting it here for demo purposes
+@property NSInteger start;//起始条数
+@property NSInteger lastCount;//最后一页有多少条数据
 @property (nonatomic,assign) BOOL reloading;
-
+@property (nonatomic, retain) YYNetRequest *theRequest;
 @property (nonatomic,retain) UITableView *homeTableView;
-@property (nonatomic,retain) NSMutableArray *tableInfoArray;
+@property (nonatomic,strong) NSMutableArray *tableInfoArray;//table的数据列表
+@property (nonatomic,strong) NSMutableArray *advArray;//table广告数据
 @property (nonatomic,assign) id<CustomTableViewDataSource> dataSource;
 @property (nonatomic,assign) id<CustomTableViewDelegate>  delegate;
-
+@property (nonatomic,strong) Column  *model;
 - (void)reloadTableViewDataSource;
 #pragma mark 强制列表刷新
 -(void)forceToFreshData;
-
+@property Boolean isRefresh;
 @end

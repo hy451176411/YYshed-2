@@ -133,7 +133,8 @@ typedef enum  {
 	YYShed_devgeogroupInfo,
 	YYShed_updateDevAlias,
 	YYShed_updateDevComponentAlias,
-	YYShed_getColumnList
+	YYShed_getColumnList,
+	YYShed_getContentList
 } HttpRequestTag;
 
 typedef enum  {

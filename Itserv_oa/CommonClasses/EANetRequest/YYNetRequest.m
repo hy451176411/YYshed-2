@@ -309,6 +309,24 @@
 		[request setTimeOutSeconds:30];
 		[self startAsynchronousWithRequest:request];
 }
+-(void)getContentList:(NSString*)columnid withStart:(NSInteger)start withLimit:(NSInteger)limit{
+	NSString *str1 = [NSString stringWithFormat:@"http://112.124.119.190:8080/common/api/app/interface.jsp?func=getContentList&appid=1234567890&appsecret=abc123&columnid=%@&start=%i&limit=%i",columnid,start,limit];
+	NSURL *url=[NSURL URLWithString:str1];
+	ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
+	[request setRequestMethod:@"GET"];
+	//访问
+	request = [ASIHTTPRequest requestWithURL:url];
+	//超时时间多少秒
+	[request setTimeOutSeconds:30];
+	//访问失败重新访问次数
+	[request setNumberOfTimesToRetryOnTimeout:2];
+	//是否使用持久化连接
+	[request setShouldAttemptPersistentConnection:NO];
+	request.delegate = self;
+	request.tag = YYShed_getContentList;
+	[request setTimeOutSeconds:30];
+	[self startAsynchronousWithRequest:request];
+}
 - (void)startAsynchronousWithRequest:(ASIHTTPRequest *)request
 {
 	[request startAsynchronous];

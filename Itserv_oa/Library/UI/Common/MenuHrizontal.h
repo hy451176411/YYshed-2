@@ -29,6 +29,7 @@
 
 @property (nonatomic,assign) id <MenuHrizontalDelegate> delegate;
 
+
 #pragma mark 初始化菜单
 - (id)initWithFrame:(CGRect)frame ButtonItems:(NSArray *)aItemsArray;
 

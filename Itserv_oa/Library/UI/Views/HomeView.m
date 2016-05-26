@@ -46,7 +46,7 @@
         mScrollPageView = [[ScrollPageView alloc] initWithFrame:CGRectMake(0, MENUHEIHT, self.frame.size.width, self.frame.size.height - MENUHEIHT)];
         mScrollPageView.delegate = self;
     }
-    [mScrollPageView setContentOfTables:vButtonItemArray.count];
+    [mScrollPageView setContentOfTables:vButtonItemArray.count withTitles:self.titles];
     //默认选中第一个button
     [mMenuHriZontal clickButtonAtIndex:0];
     //-------

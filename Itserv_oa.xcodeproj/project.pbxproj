@@ -95,6 +95,7 @@
 		0469AF841CEBF10500E57E08 /* ShedParamController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469AF831CEBF10500E57E08 /* ShedParamController.m */; };
 		046B81581CE2C538003F170B /* lead.png in Resources */ = {isa = PBXBuildFile; fileRef = 046B81571CE2C538003F170B /* lead.png */; };
 		046CA3951CF6798800A99A9C /* Column.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CA3941CF6798800A99A9C /* Column.m */; };
+		046CA3981CF6C89900A99A9C /* ECMSContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CA3971CF6C89900A99A9C /* ECMSContent.m */; };
 		047226671CF5F18B00FEA668 /* CustomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047226391CF5F18B00FEA668 /* CustomTableView.m */; };
 		047226681CF5F18B00FEA668 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0472263C1CF5F18B00FEA668 /* SVProgressHUD.bundle */; };
 		047226691CF5F18B00FEA668 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472263E1CF5F18B00FEA668 /* SVProgressHUD.m */; };
@@ -684,6 +685,8 @@
 		046B81681CE2E6D1003F170B /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		046CA3931CF6798800A99A9C /* Column.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Column.h; sourceTree = "<group>"; };
 		046CA3941CF6798800A99A9C /* Column.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Column.m; sourceTree = "<group>"; };
+		046CA3961CF6C89900A99A9C /* ECMSContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECMSContent.h; sourceTree = "<group>"; };
+		046CA3971CF6C89900A99A9C /* ECMSContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECMSContent.m; sourceTree = "<group>"; };
 		047226381CF5F18B00FEA668 /* CustomTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableView.h; sourceTree = "<group>"; };
 		047226391CF5F18B00FEA668 /* CustomTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableView.m; sourceTree = "<group>"; };
 		0472263C1CF5F18B00FEA668 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -1615,6 +1618,8 @@
 				0472265D1CF5F18B00FEA668 /* HomeVC.m */,
 				046CA3931CF6798800A99A9C /* Column.h */,
 				046CA3941CF6798800A99A9C /* Column.m */,
+				046CA3961CF6C89900A99A9C /* ECMSContent.h */,
+				046CA3971CF6C89900A99A9C /* ECMSContent.m */,
 			);
 			path = VCS;
 			sourceTree = "<group>";
@@ -3332,6 +3337,7 @@
 				630CE9A3193DD90600E34663 /* SaveData.m in Sources */,
 				047226711CF5F18B00FEA668 /* HomeViewCell.m in Sources */,
 				63F383941986288B006CE287 /* NSObject+SBJSON.m in Sources */,
+				046CA3981CF6C89900A99A9C /* ECMSContent.m in Sources */,
 				046CA3951CF6798800A99A9C /* Column.m in Sources */,
 				63ED7C921939CBF4005B7B93 /* BaseModel.m in Sources */,
 				04883BE51CE764B600249F2B /* PYItemStyleProp.m in Sources */,

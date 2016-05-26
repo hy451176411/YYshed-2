@@ -21,11 +21,13 @@
 @property (nonatomic,retain) UIScrollView *scrollView;
 
 @property (nonatomic,retain) NSMutableArray *contentItems;
-
+@property (nonatomic,retain) NSMutableArray *titleArray;
 @property (nonatomic,assign) id<ScrollPageViewDelegate> delegate;
+//初始化
+-(void)initData:(NSArray*)titles;
 
 #pragma mark 添加ScrollowViewd的ContentView
--(void)setContentOfTables:(NSInteger)aNumerOfTables;
+-(void)setContentOfTables:(NSInteger)aNumerOfTables withTitles:(NSArray*)titles;
 #pragma mark 滑动到某个页面
 -(void)moveScrollowViewAthIndex:(NSInteger)aIndex;
 #pragma mark 刷新某个页面
