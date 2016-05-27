@@ -137,6 +137,8 @@
 		047521FC1CF7E69E00A3BE41 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 047521F61CF7E69E00A3BE41 /* NSString+MD5.m */; };
 		047521FD1CF7E69E00A3BE41 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 047521F71CF7E69E00A3BE41 /* README.md */; };
 		047521FE1CF7E69E00A3BE41 /* UIImageView+OnlineImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 047521F91CF7E69E00A3BE41 /* UIImageView+OnlineImage.m */; };
+		047522021CF7E9A700A3BE41 /* WebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 047522001CF7E9A700A3BE41 /* WebViewVC.m */; };
+		047522031CF7E9A700A3BE41 /* WebViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047522011CF7E9A700A3BE41 /* WebViewVC.xib */; };
 		047BDA621CF725F400F10C2A /* item_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 047BDA611CF725F400F10C2A /* item_bg.png */; };
 		047BDA6C1CF725FF00F10C2A /* input1.png in Resources */ = {isa = PBXBuildFile; fileRef = 047BDA6B1CF725FF00F10C2A /* input1.png */; };
 		04883BD91CE764B600249F2B /* NSObject+PYObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 04883B741CE764B600249F2B /* NSObject+PYObject.m */; };
@@ -754,6 +756,9 @@
 		047521F71CF7E69E00A3BE41 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Library/IMGLOAD/README.md; sourceTree = "<group>"; };
 		047521F81CF7E69E00A3BE41 /* UIImageView+OnlineImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+OnlineImage.h"; path = "Library/IMGLOAD/UIImageView+OnlineImage.h"; sourceTree = "<group>"; };
 		047521F91CF7E69E00A3BE41 /* UIImageView+OnlineImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+OnlineImage.m"; path = "Library/IMGLOAD/UIImageView+OnlineImage.m"; sourceTree = "<group>"; };
+		047521FF1CF7E9A700A3BE41 /* WebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewVC.h; sourceTree = "<group>"; };
+		047522001CF7E9A700A3BE41 /* WebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewVC.m; sourceTree = "<group>"; };
+		047522011CF7E9A700A3BE41 /* WebViewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewVC.xib; sourceTree = "<group>"; };
 		047BDA611CF725F400F10C2A /* item_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_bg.png; sourceTree = "<group>"; };
 		047BDA6B1CF725FF00F10C2A /* input1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = input1.png; path = icon/input1.png; sourceTree = "<group>"; };
 		04883B731CE764B600249F2B /* NSObject+PYObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PYObject.h"; sourceTree = "<group>"; };
@@ -1585,6 +1590,9 @@
 				0472264B1CF5F18B00FEA668 /* Macros.h */,
 				0472265B1CF5F18B00FEA668 /* VCS */,
 				0472265E1CF5F18B00FEA668 /* Views */,
+				047521FF1CF7E9A700A3BE41 /* WebViewVC.h */,
+				047522001CF7E9A700A3BE41 /* WebViewVC.m */,
+				047522011CF7E9A700A3BE41 /* WebViewVC.xib */,
 			);
 			name = UI;
 			path = Library/UI;
@@ -3241,6 +3249,7 @@
 				04F12F981CE050CA0014E655 /* button_off.png in Resources */,
 				04883C081CE764B600249F2B /* echarts.html in Resources */,
 				630824B6197F64B600BB7217 /* toolbarFourSelect.png in Resources */,
+				047522031CF7E9A700A3BE41 /* WebViewVC.xib in Resources */,
 				63341603197E805800303105 /* no_select.png in Resources */,
 				6334160B197E805800303105 /* cancel.png in Resources */,
 				048FF2041CF5F9F900990A45 /* girl3.png in Resources */,
@@ -3458,6 +3467,7 @@
 				63B20A9B1946EC3B00D16C5B /* PeopleNameView.m in Sources */,
 				048C34C91CEAD952008745C1 /* CZPickerView.m in Sources */,
 				A5E86FFC1ABC1518005195ED /* SendEmailPOPViewController.m in Sources */,
+				047522021CF7E9A700A3BE41 /* WebViewVC.m in Sources */,
 				044891E41CF481B300B4CD22 /* MapController.m in Sources */,
 				04883BE91CE764B600249F2B /* PYLineStyle.m in Sources */,
 				63F383951986288B006CE287 /* NSString+SBJSON.m in Sources */,
