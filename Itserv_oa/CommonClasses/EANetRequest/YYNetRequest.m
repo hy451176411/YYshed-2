@@ -346,6 +346,24 @@
 	[request setTimeOutSeconds:30];
 	[self startAsynchronousWithRequest:request];
 }
+-(void)addDevice:(NSString*)devUuid withAlias:(NSString*)alias{
+	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
+	NSString *str = [NSString stringWithFormat:@"%@/api/users/smartgates/%@",WAPI_URL,devUuid];
+	NSURL *url = [NSURL URLWithString:str];
+	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+	[request setRequestMethod:@"POST"];
+	NSString *Authorization = [NSString stringWithFormat:@"%@%@",@"bearer ",session_token];
+	[request addRequestHeader:@"Authorization" value:Authorization];
+	request.tag = YYShed_addDevice;
+	request.delegate = self;
+	//[request setPostBody:tempJsonData];
+	[self startAsynchronousWithRequest:request];
+	NSError *error1 = [request error];
+	if (!error1) {
+		NSString *response = [request responseString];
+		NSLog(@"Test：%@",response);
+	}
+}
 - (void)startAsynchronousWithRequest:(ASIHTTPRequest *)request
 {
 	[request startAsynchronous];

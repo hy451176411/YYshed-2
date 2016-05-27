@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ContactsViewController.h"
 #import "RADataObject.h"
-#import "Global.h"
+//#import "Global.h"
 #import "PeopleNameView.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "PicFileView.h"

@@ -130,7 +130,7 @@ void showAlertViewWithMessage(NSString *message, NSString *confirm,NSString *can
 }
 
 #define DEFAULT_VOID_COLOR [UIColor whiteColor]
-
+/*十六进制转uicolor*/
 UIColor * colorWithHexString(NSString *stringToConvert)
 {
     NSString *cString = [[stringToConvert stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];

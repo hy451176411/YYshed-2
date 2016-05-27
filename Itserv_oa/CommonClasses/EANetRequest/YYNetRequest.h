@@ -73,4 +73,6 @@
 -(void)getContentList:(NSString*)columnid withStart:(NSInteger)start withLimit:(NSInteger)limit;
 //获取栏目广告内容
 -(void)getAdverList:(NSString*)columnid withStart:(NSInteger)start withLimit:(NSInteger)limit;
+//添加大棚设备
+-(void)addDevice:(NSString*)devUuid withAlias:(NSString*)alias;
 @end

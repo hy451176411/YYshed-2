@@ -25,7 +25,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="btnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="DbB-U2-Ole"/>
+                                <action selector="addDevice:" destination="iN0-l3-epB" eventType="touchUpInside" id="Oq6-Nc-YrW"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大棚设备编号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZPp-BR-osv">
@@ -81,23 +81,31 @@
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_07.png" id="9Yh-Ze-1V1">
-                            <rect key="frame" x="202" y="43" width="40" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4eM-rN-6K3">
+                            <rect key="frame" x="200" y="42" width="40" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
+                            <state key="normal" title="Button" image="main_07.jpg">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="zxing:" destination="iN0-l3-epB" eventType="touchUpInside" id="Gd6-fx-snV"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="alias" destination="UfH-w9-GnU" id="K1O-PM-hnU"/>
                 <outlet property="backgroud" destination="hll-Bz-Oz7" id="dT8-34-CDd"/>
+                <outlet property="devUuid" destination="kdc-Qm-7Pv" id="MyM-86-ubb"/>
             </connections>
             <point key="canvasLocation" x="249" y="274"/>
         </view>
     </objects>
     <resources>
-        <image name="main_07.png" width="100" height="100"/>
+        <image name="main_07.jpg" width="100" height="100"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

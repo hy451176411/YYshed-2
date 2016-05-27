@@ -135,7 +135,8 @@ typedef enum  {
 	YYShed_updateDevComponentAlias,
 	YYShed_getColumnList,
 	YYShed_getContentList,
-	YYShed_getAdversList
+	YYShed_getAdversList,
+	YYShed_addDevice
 
 } HttpRequestTag;
 

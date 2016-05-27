@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AddDevice : UIView
+#import "YYNetRequest.h"
+@interface AddDevice : UIView<YYNetRequestDelegate>
 - (IBAction)btnClick:(id)sender;
 @property (nonatomic, nonatomic) IBOutlet UIView *backgroud;
+@property (weak, nonatomic) IBOutlet UITextField *devUuid;
 
+@property (weak, nonatomic) IBOutlet UITextField *alias;
+- (IBAction)addDevice:(id)sender;
+- (IBAction)zxing:(id)sender;
+@property (nonatomic, retain) YYNetRequest *theRequest;
 @end
