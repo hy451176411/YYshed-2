@@ -38,6 +38,10 @@
 }
 
 - (IBAction)myEvent:(id)sender {
+	MineEventVC *control = [[MineEventVC alloc] init];
+	//[self.navigationController pushViewController:control animated:YES];
+	//[self presentViewController:control animated:YES completion:nil];
+	[self.navigationController pushViewController:control animated:YES];
 }
 
 - (IBAction)logout:(id)sender {
@@ -66,4 +70,5 @@
 	[self presentViewController:control animated:YES completion:nil];
 
 }
+
 @end

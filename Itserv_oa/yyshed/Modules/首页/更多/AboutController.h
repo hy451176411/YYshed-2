@@ -10,12 +10,11 @@
 #import "FeedbackVC.h"
 #import "AboutMeVC.h"
 #import "YYshedLoginController.h"
+#import "MineEventVC.h"
 
 @interface AboutController : UIViewController
-@property (nonatomic, nonatomic) IBOutlet UIView *myEvent;
-@property (nonatomic, nonatomic) IBOutlet UIView *feedback;
-@property (nonatomic, nonatomic) IBOutlet UIView *loginout;
-@property (nonatomic, nonatomic) IBOutlet UIView *aboutme;
+
+
 - (IBAction)feedback:(id)sender;
 - (IBAction)myEvent:(id)sender;
 - (IBAction)logout:(id)sender;

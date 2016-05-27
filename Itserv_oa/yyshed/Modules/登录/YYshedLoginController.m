@@ -14,7 +14,7 @@
 
 
 
-@interface YYshedLoginController ()
+@interface YYshedLoginController ()<UITextFieldDelegate>
 @property (nonatomic, retain) YYNetRequest *theRequest;
 @end
 
