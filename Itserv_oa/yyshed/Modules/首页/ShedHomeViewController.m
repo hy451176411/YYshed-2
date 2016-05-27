@@ -52,13 +52,13 @@
 	self.navigationItem.leftBarButtonItem =item;
 	self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
 	self.navigationItem.rightBarButtonItem =rightItem;
-	
+	    [self loadTableViewWithRect:CGRectMake(0, 70, ScreenWidth, ScreenHeight  - ToolBarHeight) style:UITableViewStylePlain];
 	//初始化中间部分
-	self.tableView.showsVerticalScrollIndicator=NO;
-	self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
-	self.tableView.sectionHeaderHeight = 44;
-	self.tableView.delegate = self;
-	self.tableView.dataSource = self;
+//	self.tableView.showsVerticalScrollIndicator=NO;
+//	self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
+//	self.tableView.sectionHeaderHeight = 44;
+//	self.tableView.delegate = self;
+//	self.tableView.dataSource = self;
 	self.theRequest = [NetRequestManager createNetRequestWithDelegate:self];
 	NSString *session_token = [UserDefaults stringForKey:YYSession_token];
 	[_theRequest getUserInfo:session_token user_Agent:@"test"];
@@ -97,7 +97,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	FriendCell *cell = [FriendCell cellWithTableView:self.tableView];
+	FriendCell *cell = [FriendCell cellWithTableView:_pullTableView];
 	FriendGroup *group = self.friendGroups[indexPath.section];
 	cell.friendData = group.friends[indexPath.row];
 	return cell;
@@ -114,7 +114,7 @@
 }
 /** 自定义每个section的头部 */
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-	FriendHeader *header = [FriendHeader friendHeaderWithTableView:self.tableView];
+	FriendHeader *header = [FriendHeader friendHeaderWithTableView:_pullTableView];
 	// 加载数据
 	header.friendGroup = self.friendGroups[section];
 	// 设置代理
@@ -126,7 +126,7 @@
 - (void)friendHeaderDidClickedHeader:(FriendHeader *)header {
 	if (header.clickView.tag == 100) {
 		// 刷新数据
-		[self.tableView reloadData];
+		[_pullTableView reloadData];
 	}else{
 		ShedDetailVC *control = [[ShedDetailVC alloc] init];
 		[self.navigationController pushViewController:control animated:YES];
@@ -214,25 +214,143 @@
 		}
 		self.friendGroups = mgroupsArray;
 	}
-	[self.tableView reloadData];
+	[_pullTableView reloadData];
 }
+
+
+#pragma mark  加载tableView
+- (void)loadTableViewWithRect:(CGRect)theRect style:(UITableViewStyle)style
+{
+	_pullTableView = [[PullToRefreshTableView alloc] initWithFrame:theRect style:style];
+	if (style == UITableViewStyleGrouped) {
+		[_pullTableView setBackgroundView:nil];
+	}
+	//    [_pullTableView setBackgroundView:[[UIView alloc] init]];
+	
+	[_pullTableView setBackgroundColor:[UIColor clearColor]];
+	_pullTableView.delegate = self;
+	_pullTableView.dataSource = self;
+	[self.view addSubview:_pullTableView];
+	_pullTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	_pullTableView.isCloseFooter = YES;
+	//    _pullTableView.isCloseHeader = YES;
+}
+
+#pragma mark 刷新的代理方法
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+	NSInteger returnKey = [_pullTableView tableViewDidEndDragging];
+	if (returnKey != k_RETURN_DO_NOTHING) {
+		NSString * key = [NSString stringWithFormat:@"%d", returnKey];
+		[self updateThread:key];
+	}
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+	[_pullTableView tableViewDidDragging];
+}
+
+- (void)updateTableViewCount:(NSInteger)theCount pageSize:(NSInteger)size
+{
+	BOOL status = NO;
+	NSInteger totalCount = size;
+	if (size == 0) {
+		totalCount = (int)PageSize;
+	} else if (size == -1) {//网络问题失败
+		status = YES;
+	}
+	
+	if (theCount < totalCount) {//小于
+		status = YES;
+	}
+	if (theCount != 0) {
+		_pullTableView.isCloseFooter = !status;
+	}
+	
+	if (status) {//还有数据
+		// 一定要调用本方法，否则下拉/上拖视图的状态不会还原，会一直转菊花
+		[_pullTableView reloadData:NO];
+	} else {//没有数据
+		//  一定要调用本方法，否则下拉/上拖视图的状态不会还原，会一直转菊花
+		[_pullTableView reloadData:YES];
+	}
+}
+
+
+#pragma mark 刷新
+-(void)getData
+{
+	[self updateTableViewCount:0 pageSize:0];
+}
+
+#pragma mark 加载
+- (void)nextPage
+{
+	[self updateTableViewCount:0 pageSize:0];
+}
+
+- (void)updateThread:(NSString *)returnKey{
+	switch ([returnKey intValue]) {
+		case k_RETURN_REFRESH:
+			//            [data removeAllObjects];
+			[self getData];
+			break;
+		case k_RETURN_LOADMORE:
+			[self nextPage];
+			break;
+		default:
+			break;
+	}
+}
+
+
+
 #pragma mark 登录请求成功
 - (void)netRequest:(int)tag Finished:(NSDictionary *)model
 {
 	NSLog(@"----------%@",model);
 	[self initDataSource:model];
-
+	[SBPublicAlert hideMBprogressHUD:self.view];
+	//NSInteger tagRequest = MailList + _type;
+	
+//	if (tag == tagRequest) {
+//		_totalPage = [model[@"tcount"] integerValue];
+//		
+//		if (_currentPage == kStartPage) {//是第一页
+//			[_muArrData removeAllObjects];
+//		}
+//		NSArray *arr = model[@"list"];
+//		[_muArrData addObjectsFromArray:arr];
+//		if (_muArrData.count == 0) {
+//			[SBPublicAlert showMBProgressHUD:@"没有数据" andWhereView:self.view hiddenTime:kHiddenAlertTime];
+//		}
+//		[self updateTableViewCount:_muArrData.count pageSize:_totalPage];
+//	} else if (tag == DeleteMail) {//删除邮件成功
+//		if ([model isKindOfClass:[NSDictionary class]]) {
+//			[SBPublicAlert showMBProgressHUD:model[@"resultinfo"] andWhereView:self.view hiddenTime:kHiddenAlertTime];
+//		}
+//	}
 }
-
 - (void)netRequest:(int)tag Failed:(NSDictionary *)model
 {
-	NSLog(@"请求超时");
+	if (_pullTableView) {
+		[self updateTableViewCount:0 pageSize:0];
+	}
 	[SBPublicAlert showMBProgressHUD:@"请求超时" andWhereView:self.view hiddenTime:kHiddenAlertTime];
+	//[self pageMinusOne];
 }
 
 - (void)netRequest:(int)tag requestFailed:(NSString *)message
 {
+	if (message.length == 0) {
+		message = @"请求失败";
+	}
+	if (_pullTableView) {
+		[self updateTableViewCount:0 pageSize:0];
+	}
+	
 	[SBPublicAlert showMBProgressHUD:message andWhereView:self.view hiddenTime:kHiddenAlertTime];
+	//[self pageMinusOne];
 }
 
 @end

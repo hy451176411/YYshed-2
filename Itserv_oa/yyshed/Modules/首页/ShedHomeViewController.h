@@ -11,8 +11,11 @@
 #import "EADefine.h"
 #import "HomeShedDetail.h"
 @interface ShedHomeViewController : UIViewController<UITextFieldDelegate,YYNetRequestDelegate,UIAlertViewDelegate>
-
-@property (nonatomic, nonatomic) IBOutlet UITableView *tableView;
+{
+	PullToRefreshTableView *_pullTableView;//带有上拉加载，下拉刷新
+}
+//@property (nonatomic, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, nonatomic) NSMutableArray *groupsArray;
 -(void)initDataSource:(NSDictionary *)model;
+
 @end
