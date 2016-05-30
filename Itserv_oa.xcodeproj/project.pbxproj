@@ -40,8 +40,6 @@
 		044C79F31CE1D98100F9EE21 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 044C79F21CE1D98100F9EE21 /* pointer.png */; };
 		044EE8331CE22495007C90C2 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 044EE8321CE22495007C90C2 /* house.png */; };
 		044EE8351CE224A9007C90C2 /* expand.png in Resources */ = {isa = PBXBuildFile; fileRef = 044EE8341CE224A9007C90C2 /* expand.png */; };
-		045EAFD41CD0700C008AE499 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EAFD21CD0700C008AE499 /* TestView.m */; };
-		045EAFD51CD0700C008AE499 /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045EAFD31CD0700C008AE499 /* TestView.xib */; };
 		0463ABFE1CE339A500EE9A96 /* video_center.png in Resources */ = {isa = PBXBuildFile; fileRef = 0463ABF21CE339A500EE9A96 /* video_center.png */; };
 		0463ABFF1CE339A500EE9A96 /* video_down_seletor.png in Resources */ = {isa = PBXBuildFile; fileRef = 0463ABF31CE339A500EE9A96 /* video_down_seletor.png */; };
 		0463AC001CE339A500EE9A96 /* video_down_unseletor.png in Resources */ = {isa = PBXBuildFile; fileRef = 0463ABF41CE339A500EE9A96 /* video_down_unseletor.png */; };
@@ -229,6 +227,15 @@
 		0492C15B1CFC185500BE250E /* ScanZcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492C1591CFC185500BE250E /* ScanZcodeVC.m */; };
 		0492C15C1CFC185500BE250E /* ScanZcodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C15A1CFC185500BE250E /* ScanZcodeVC.xib */; };
 		0492C1631CFC2FD200BE250E /* splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0492C1621CFC2FD100BE250E /* splash.jpg */; };
+		0492C1711CFC3D3E00BE250E /* BindingEmailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C16D1CFC3D3E00BE250E /* BindingEmailViewController_iPad.xib */; };
+		0492C1721CFC3D3E00BE250E /* BindingEmailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C16E1CFC3D3E00BE250E /* BindingEmailViewController_iPhone.xib */; };
+		0492C1731CFC3D3E00BE250E /* BindingEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492C1701CFC3D3E00BE250E /* BindingEmailViewController.m */; };
+		0492C1831CFC3DAD00BE250E /* LoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C1741CFC3DAD00BE250E /* LoginViewController_iPad.xib */; };
+		0492C1841CFC3DAD00BE250E /* LoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C1751CFC3DAD00BE250E /* LoginViewController_iPhone.xib */; };
+		0492C1851CFC3DAD00BE250E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492C1771CFC3DAD00BE250E /* LoginViewController.m */; };
+		0492C1861CFC3DAD00BE250E /* RegistrViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C1781CFC3DAD00BE250E /* RegistrViewController_iPad.xib */; };
+		0492C1871CFC3DAD00BE250E /* RegistrViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C1791CFC3DAD00BE250E /* RegistrViewController_iPhone.xib */; };
+		0492C1881CFC3DAD00BE250E /* RegistrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492C17B1CFC3DAD00BE250E /* RegistrViewController.m */; };
 		049968C21CE765D000AA9FAE /* js in Resources */ = {isa = PBXBuildFile; fileRef = 049968C11CE765D000AA9FAE /* js */; };
 		04A97B9E1CEEB3BA00E30754 /* alarm_air_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B971CEEB3BA00E30754 /* alarm_air_h.png */; };
 		04A97B9F1CEEB3BA00E30754 /* alarm_air_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B981CEEB3BA00E30754 /* alarm_air_t.png */; };
@@ -280,9 +287,6 @@
 		630CE9AB193E08F000E34663 /* EmailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630CE9A9193E08F000E34663 /* EmailListViewController.m */; };
 		630CE9AC193E08F000E34663 /* EmailListViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630CE9AA193E08F000E34663 /* EmailListViewController_iPhone.xib */; };
 		630CE9B0193E091A00E34663 /* EmailListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630CE9AF193E091A00E34663 /* EmailListViewController_iPad.xib */; };
-		631A4FA1192885AF0067FF3B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A4F9F192885AF0067FF3B /* LoginViewController.m */; };
-		631A4FA2192885AF0067FF3B /* LoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631A4FA0192885AF0067FF3B /* LoginViewController_iPhone.xib */; };
-		631A4FA4192885D10067FF3B /* LoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631A4FA3192885D10067FF3B /* LoginViewController_iPad.xib */; };
 		631A4FC2192886AD0067FF3B /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 631A4FBE192886AD0067FF3B /* 37x-Checkmark.png */; };
 		631A4FC3192886AD0067FF3B /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 631A4FBF192886AD0067FF3B /* 37x-Checkmark@2x.png */; };
 		631A4FC4192886AD0067FF3B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 631A4FC1192886AD0067FF3B /* MBProgressHUD.m */; };
@@ -292,9 +296,6 @@
 		631C84CB1943255600847216 /* AttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631C84CA1943255600847216 /* AttachmentView.m */; };
 		6324C63E19396AD000E5C2A2 /* FileMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6324C63D19396AD000E5C2A2 /* FileMessageCell.m */; };
 		6324C64019396B0800E5C2A2 /* FileMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6324C63F19396B0800E5C2A2 /* FileMessageCell.xib */; };
-		63341557197E30E100303105 /* SwitchingAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63341555197E30E100303105 /* SwitchingAddressViewController.m */; };
-		63341558197E30E100303105 /* SwitchingAddressViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63341556197E30E100303105 /* SwitchingAddressViewController_iPhone.xib */; };
-		6334155A197E310B00303105 /* SwitchingAddressViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63341559197E310B00303105 /* SwitchingAddressViewController_iPad.xib */; };
 		63341588197E37E600303105 /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 63341587197E37E600303105 /* GlobalData.m */; };
 		633415FA197E805800303105 /* homeToolBg_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 633415DC197E805800303105 /* homeToolBg_iPad.png */; };
 		633415FB197E805800303105 /* homeToolBg_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 633415DD197E805800303105 /* homeToolBg_iPhone.png */; };
@@ -480,9 +481,6 @@
 		A54AF5D81AC27C48000B5B8F /* 发短信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A54AF5D61AC27C48000B5B8F /* 发短信@2x.png */; };
 		A54AF5E21AC280CB000B5B8F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54AF5E11AC280CB000B5B8F /* MessageUI.framework */; };
 		A55088101AD61E3800E6C351 /* SelectType@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A550880F1AD61E3800E6C351 /* SelectType@2x.png */; };
-		A55E291F1ABD160700FF4190 /* RegistrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55E291C1ABD160700FF4190 /* RegistrViewController.m */; };
-		A55E29201ABD160700FF4190 /* RegistrViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A55E291D1ABD160700FF4190 /* RegistrViewController_iPhone.xib */; };
-		A55E29211ABD160700FF4190 /* RegistrViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A55E291E1ABD160700FF4190 /* RegistrViewController_iPad.xib */; };
 		A564E8B21ABFB64400FC36AD /* ShowPopWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A564E8B01ABFB64400FC36AD /* ShowPopWebViewController.m */; };
 		A5C8B0BD1A8C6722008496A2 /* back_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5C8B0BC1A8C6722008496A2 /* back_normal@2x.png */; };
 		A5E86FBB1ABBF87A005195ED /* SBHPublicDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E86FBA1ABBF87A005195ED /* SBHPublicDate.m */; };
@@ -491,9 +489,6 @@
 		A5E86FDC1ABBFD13005195ED /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E86FDB1ABBFD13005195ED /* libiconv.dylib */; };
 		A5E86FDE1ABBFD1E005195ED /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E86FDD1ABBFD1E005195ED /* ImageIO.framework */; };
 		A5E86FE01ABBFD2A005195ED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E86FDF1ABBFD2A005195ED /* Security.framework */; };
-		A5E86FE61ABC0D64005195ED /* BindingEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E86FE31ABC0D64005195ED /* BindingEmailViewController.m */; };
-		A5E86FE71ABC0D64005195ED /* BindingEmailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E86FE41ABC0D64005195ED /* BindingEmailViewController_iPad.xib */; };
-		A5E86FE81ABC0D64005195ED /* BindingEmailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E86FE51ABC0D64005195ED /* BindingEmailViewController_iPhone.xib */; };
 		A5E86FEE1ABC13F3005195ED /* EmailPopListViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E86FEA1ABC13F3005195ED /* EmailPopListViewController_iPhone.xib */; };
 		A5E86FEF1ABC13F3005195ED /* EmailPopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E86FEC1ABC13F3005195ED /* EmailPopListViewController.m */; };
 		A5E86FF01ABC13F3005195ED /* EmailPopListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E86FED1ABC13F3005195ED /* EmailPopListViewController_iPad.xib */; };
@@ -617,9 +612,6 @@
 		044C79F21CE1D98100F9EE21 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
 		044EE8321CE22495007C90C2 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		044EE8341CE224A9007C90C2 /* expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expand.png; sourceTree = "<group>"; };
-		045EAFD11CD0700C008AE499 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
-		045EAFD21CD0700C008AE499 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
-		045EAFD31CD0700C008AE499 /* TestView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
 		0463ABF21CE339A500EE9A96 /* video_center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_center.png; sourceTree = "<group>"; };
 		0463ABF31CE339A500EE9A96 /* video_down_seletor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_down_seletor.png; sourceTree = "<group>"; };
 		0463ABF41CE339A500EE9A96 /* video_down_unseletor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_down_unseletor.png; sourceTree = "<group>"; };
@@ -924,6 +916,18 @@
 		0492C1591CFC185500BE250E /* ScanZcodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanZcodeVC.m; path = "yyshed/Modules/首页/ScanZcodeVC.m"; sourceTree = "<group>"; };
 		0492C15A1CFC185500BE250E /* ScanZcodeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScanZcodeVC.xib; path = "yyshed/Modules/首页/ScanZcodeVC.xib"; sourceTree = "<group>"; };
 		0492C1621CFC2FD100BE250E /* splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash.jpg; sourceTree = "<group>"; };
+		0492C16D1CFC3D3E00BE250E /* BindingEmailViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BindingEmailViewController_iPad.xib; path = "绑定邮箱/BindingEmailViewController_iPad.xib"; sourceTree = "<group>"; };
+		0492C16E1CFC3D3E00BE250E /* BindingEmailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BindingEmailViewController_iPhone.xib; path = "绑定邮箱/BindingEmailViewController_iPhone.xib"; sourceTree = "<group>"; };
+		0492C16F1CFC3D3E00BE250E /* BindingEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BindingEmailViewController.h; path = "绑定邮箱/BindingEmailViewController.h"; sourceTree = "<group>"; };
+		0492C1701CFC3D3E00BE250E /* BindingEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BindingEmailViewController.m; path = "绑定邮箱/BindingEmailViewController.m"; sourceTree = "<group>"; };
+		0492C1741CFC3DAD00BE250E /* LoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPad.xib; sourceTree = "<group>"; };
+		0492C1751CFC3DAD00BE250E /* LoginViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPhone.xib; sourceTree = "<group>"; };
+		0492C1761CFC3DAD00BE250E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0492C1771CFC3DAD00BE250E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		0492C1781CFC3DAD00BE250E /* RegistrViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrViewController_iPad.xib; sourceTree = "<group>"; };
+		0492C1791CFC3DAD00BE250E /* RegistrViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrViewController_iPhone.xib; sourceTree = "<group>"; };
+		0492C17A1CFC3DAD00BE250E /* RegistrViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrViewController.h; sourceTree = "<group>"; };
+		0492C17B1CFC3DAD00BE250E /* RegistrViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrViewController.m; sourceTree = "<group>"; };
 		049968C11CE765D000AA9FAE /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		04A97B971CEEB3BA00E30754 /* alarm_air_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_air_h.png; sourceTree = "<group>"; };
 		04A97B981CEEB3BA00E30754 /* alarm_air_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_air_t.png; sourceTree = "<group>"; };
@@ -986,10 +990,6 @@
 		630CE9A9193E08F000E34663 /* EmailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailListViewController.m; sourceTree = "<group>"; };
 		630CE9AA193E08F000E34663 /* EmailListViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailListViewController_iPhone.xib; sourceTree = "<group>"; };
 		630CE9AF193E091A00E34663 /* EmailListViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailListViewController_iPad.xib; sourceTree = "<group>"; };
-		631A4F9E192885AF0067FF3B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		631A4F9F192885AF0067FF3B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		631A4FA0192885AF0067FF3B /* LoginViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPhone.xib; sourceTree = "<group>"; };
-		631A4FA3192885D10067FF3B /* LoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPad.xib; sourceTree = "<group>"; };
 		631A4FA6192886750067FF3B /* AlertViewMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewMacro.h; sourceTree = "<group>"; };
 		631A4FA7192886750067FF3B /* ApplicationMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationMacro.h; sourceTree = "<group>"; };
 		631A4FA8192886750067FF3B /* BundleMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleMacro.h; sourceTree = "<group>"; };
@@ -1028,10 +1028,6 @@
 		6324C63C19396AD000E5C2A2 /* FileMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileMessageCell.h; sourceTree = "<group>"; };
 		6324C63D19396AD000E5C2A2 /* FileMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileMessageCell.m; sourceTree = "<group>"; };
 		6324C63F19396B0800E5C2A2 /* FileMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileMessageCell.xib; sourceTree = "<group>"; };
-		63341554197E30E100303105 /* SwitchingAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchingAddressViewController.h; sourceTree = "<group>"; };
-		63341555197E30E100303105 /* SwitchingAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchingAddressViewController.m; sourceTree = "<group>"; };
-		63341556197E30E100303105 /* SwitchingAddressViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchingAddressViewController_iPhone.xib; sourceTree = "<group>"; };
-		63341559197E310B00303105 /* SwitchingAddressViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchingAddressViewController_iPad.xib; sourceTree = "<group>"; };
 		63341586197E37E600303105 /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
 		63341587197E37E600303105 /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
 		633415DC197E805800303105 /* homeToolBg_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeToolBg_iPad.png; sourceTree = "<group>"; };
@@ -1296,10 +1292,6 @@
 		A54AF5D61AC27C48000B5B8F /* 发短信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发短信@2x.png"; sourceTree = "<group>"; };
 		A54AF5E11AC280CB000B5B8F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A550880F1AD61E3800E6C351 /* SelectType@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SelectType@2x.png"; sourceTree = "<group>"; };
-		A55E291B1ABD160700FF4190 /* RegistrViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrViewController.h; sourceTree = "<group>"; };
-		A55E291C1ABD160700FF4190 /* RegistrViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrViewController.m; sourceTree = "<group>"; };
-		A55E291D1ABD160700FF4190 /* RegistrViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrViewController_iPhone.xib; sourceTree = "<group>"; };
-		A55E291E1ABD160700FF4190 /* RegistrViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrViewController_iPad.xib; sourceTree = "<group>"; };
 		A564E8AF1ABFB64400FC36AD /* ShowPopWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPopWebViewController.h; sourceTree = "<group>"; };
 		A564E8B01ABFB64400FC36AD /* ShowPopWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPopWebViewController.m; sourceTree = "<group>"; };
 		A5C8B0BC1A8C6722008496A2 /* back_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_normal@2x.png"; sourceTree = "<group>"; };
@@ -1311,10 +1303,6 @@
 		A5E86FDB1ABBFD13005195ED /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		A5E86FDD1ABBFD1E005195ED /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		A5E86FDF1ABBFD2A005195ED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		A5E86FE21ABC0D64005195ED /* BindingEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingEmailViewController.h; sourceTree = "<group>"; };
-		A5E86FE31ABC0D64005195ED /* BindingEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindingEmailViewController.m; sourceTree = "<group>"; };
-		A5E86FE41ABC0D64005195ED /* BindingEmailViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindingEmailViewController_iPad.xib; sourceTree = "<group>"; };
-		A5E86FE51ABC0D64005195ED /* BindingEmailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindingEmailViewController_iPhone.xib; sourceTree = "<group>"; };
 		A5E86FEA1ABC13F3005195ED /* EmailPopListViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailPopListViewController_iPhone.xib; sourceTree = "<group>"; };
 		A5E86FEB1ABC13F3005195ED /* EmailPopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailPopListViewController.h; sourceTree = "<group>"; };
 		A5E86FEC1ABC13F3005195ED /* EmailPopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailPopListViewController.m; sourceTree = "<group>"; };
@@ -1925,6 +1913,17 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		0492C16C1CFC3D2D00BE250E /* 绑定邮箱 */ = {
+			isa = PBXGroup;
+			children = (
+				0492C16D1CFC3D3E00BE250E /* BindingEmailViewController_iPad.xib */,
+				0492C16E1CFC3D3E00BE250E /* BindingEmailViewController_iPhone.xib */,
+				0492C16F1CFC3D3E00BE250E /* BindingEmailViewController.h */,
+				0492C1701CFC3D3E00BE250E /* BindingEmailViewController.m */,
+			);
+			name = "绑定邮箱";
+			sourceTree = "<group>";
+		};
 		04F12F7F1CE04F960014E655 /* yyshed */ = {
 			isa = PBXGroup;
 			children = (
@@ -2155,7 +2154,7 @@
 		631A4E7B192883860067FF3B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A5E86FE11ABC0D64005195ED /* 绑定邮箱 */,
+				0492C16C1CFC3D2D00BE250E /* 绑定邮箱 */,
 				63A79696193F032B006418E2 /* 显示详情 */,
 				6395789D1938AC0200FDE95D /* 更多 */,
 				6395787C1938A1EE00FDE95D /* 个人事务 */,
@@ -2271,21 +2270,14 @@
 		631A4E811928848F0067FF3B /* 登录注册 */ = {
 			isa = PBXGroup;
 			children = (
-				631A4F9E192885AF0067FF3B /* LoginViewController.h */,
-				631A4F9F192885AF0067FF3B /* LoginViewController.m */,
-				631A4FA0192885AF0067FF3B /* LoginViewController_iPhone.xib */,
-				631A4FA3192885D10067FF3B /* LoginViewController_iPad.xib */,
-				63341554197E30E100303105 /* SwitchingAddressViewController.h */,
-				63341555197E30E100303105 /* SwitchingAddressViewController.m */,
-				63341556197E30E100303105 /* SwitchingAddressViewController_iPhone.xib */,
-				63341559197E310B00303105 /* SwitchingAddressViewController_iPad.xib */,
-				A55E291B1ABD160700FF4190 /* RegistrViewController.h */,
-				A55E291C1ABD160700FF4190 /* RegistrViewController.m */,
-				A55E291D1ABD160700FF4190 /* RegistrViewController_iPhone.xib */,
-				A55E291E1ABD160700FF4190 /* RegistrViewController_iPad.xib */,
-				045EAFD11CD0700C008AE499 /* TestView.h */,
-				045EAFD21CD0700C008AE499 /* TestView.m */,
-				045EAFD31CD0700C008AE499 /* TestView.xib */,
+				0492C1741CFC3DAD00BE250E /* LoginViewController_iPad.xib */,
+				0492C1751CFC3DAD00BE250E /* LoginViewController_iPhone.xib */,
+				0492C1761CFC3DAD00BE250E /* LoginViewController.h */,
+				0492C1771CFC3DAD00BE250E /* LoginViewController.m */,
+				0492C1781CFC3DAD00BE250E /* RegistrViewController_iPad.xib */,
+				0492C1791CFC3DAD00BE250E /* RegistrViewController_iPhone.xib */,
+				0492C17A1CFC3DAD00BE250E /* RegistrViewController.h */,
+				0492C17B1CFC3DAD00BE250E /* RegistrViewController.m */,
 			);
 			path = "登录注册";
 			sourceTree = "<group>";
@@ -2955,17 +2947,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A5E86FE11ABC0D64005195ED /* 绑定邮箱 */ = {
-			isa = PBXGroup;
-			children = (
-				A5E86FE21ABC0D64005195ED /* BindingEmailViewController.h */,
-				A5E86FE31ABC0D64005195ED /* BindingEmailViewController.m */,
-				A5E86FE41ABC0D64005195ED /* BindingEmailViewController_iPad.xib */,
-				A5E86FE51ABC0D64005195ED /* BindingEmailViewController_iPhone.xib */,
-			);
-			path = "绑定邮箱";
-			sourceTree = "<group>";
-		};
 		A5E86FE91ABC13E8005195ED /* POP */ = {
 			isa = PBXGroup;
 			children = (
@@ -3141,24 +3122,22 @@
 				A54AF5D21AC25940000B5B8F /* 发邮件.png in Resources */,
 				048FF2071CF5F9F900990A45 /* new1.png in Resources */,
 				6334160C197E805800303105 /* left.png in Resources */,
+				0492C1721CFC3D3E00BE250E /* BindingEmailViewController_iPhone.xib in Resources */,
 				048FF2091CF5F9F900990A45 /* new3.png in Resources */,
 				63CB001B197FC69C009C07AA /* peopleIcon.png in Resources */,
 				63341600197E805800303105 /* toolbarThreeSelect.png in Resources */,
-				A55E29211ABD160700FF4190 /* RegistrViewController_iPad.xib in Resources */,
 				04F12FA41CE0510E0014E655 /* logo_qq.png in Resources */,
 				A54AF5D81AC27C48000B5B8F /* 发短信@2x.png in Resources */,
 				0475220C1CF82F4D00A3BE41 /* index_icon4.png in Resources */,
 				63B20A981946D89C00D16C5B /* btn_add_highlighted.png in Resources */,
-				A5E86FE71ABC0D64005195ED /* BindingEmailViewController_iPad.xib in Resources */,
 				63CB0017197FBE1C009C07AA /* addPeople.png in Resources */,
 				A5E870041ABC1528005195ED /* EmailDraftListViewController_iPhone.xib in Resources */,
-				63341558197E30E100303105 /* SwitchingAddressViewController_iPhone.xib in Resources */,
 				0463AC031CE339A500EE9A96 /* video_left_unseletor.png in Resources */,
+				0492C1871CFC3DAD00BE250E /* RegistrViewController_iPhone.xib in Resources */,
 				63405403194073850019052B /* SendEmailViewController_iPad.xib in Resources */,
 				04F12FA81CE0511A0014E655 /* logo.png in Resources */,
 				63A6DEA5194A74190030B2A4 /* MattersCell_iPad.xib in Resources */,
 				633415FB197E805800303105 /* homeToolBg_iPhone.png in Resources */,
-				045EAFD51CD0700C008AE499 /* TestView.xib in Resources */,
 				047521E41CF7E4DB00A3BE41 /* button_close.png in Resources */,
 				A5E86FFE1ABC1518005195ED /* SendEmailPOPViewController_iPad.xib in Resources */,
 				04657EF81CEC0EFA00EA03C4 /* ShedAliasCell.xib in Resources */,
@@ -3201,12 +3180,11 @@
 				047226741CF5F18C00FEA668 /* LoadMoreCell.xib in Resources */,
 				0492C1631CFC2FD200BE250E /* splash.jpg in Resources */,
 				63B20AE11946F1BB00D16C5B /* btn_contactblock.png in Resources */,
-				631A4FA4192885D10067FF3B /* LoginViewController_iPad.xib in Resources */,
+				0492C1841CFC3DAD00BE250E /* LoginViewController_iPhone.xib in Resources */,
 				048FF2081CF5F9F900990A45 /* new2.png in Resources */,
 				63341611197E805800303105 /* defineNotUrgentIcon.png in Resources */,
 				63A79687193EBC3A006418E2 /* EmailCell.xib in Resources */,
 				04F12F9F1CE050F90014E655 /* feature_guide_1.jpg in Resources */,
-				631A4FA2192885AF0067FF3B /* LoginViewController_iPhone.xib in Resources */,
 				A53D266E1AC13C9A00C14721 /* )).png in Resources */,
 				0463AC021CE339A500EE9A96 /* video_left_seletor.png in Resources */,
 				63E825211A1C7ECA00F5B060 /* configFile.txt in Resources */,
@@ -3234,7 +3212,6 @@
 				639578A31938AC5000FDE95D /* IntegratedQueryViewController_iPhone.xib in Resources */,
 				63A7379619418F2600DCBD68 /* icon_attach_panel_camera.png in Resources */,
 				0492C1501CFBE26000BE250E /* ForgetPasswordInfo.xib in Resources */,
-				6334155A197E310B00303105 /* SwitchingAddressViewController_iPad.xib in Resources */,
 				044C79EF1CE1D7B200F9EE21 /* chart1.png in Resources */,
 				63AB9D051952D6A2007AFA83 /* contenttoolbar_hd_share@2x.png in Resources */,
 				047521D81CF7E2E400A3BE41 /* lamp.png in Resources */,
@@ -3255,6 +3232,7 @@
 				040E732E1CF2AF9600314057 /* AboutController.xib in Resources */,
 				63A7379C1941915800DCBD68 /* icon_attach_readmail.png in Resources */,
 				048FF2031CF5F9F900990A45 /* girl2.png in Resources */,
+				0492C1711CFC3D3E00BE250E /* BindingEmailViewController_iPad.xib in Resources */,
 				634053F719404A400019052B /* arrow_up.png in Resources */,
 				A5E870131ABC1555005195ED /* PeopleTableViewCell.xib in Resources */,
 				044C79D21CE17D8700F9EE21 /* 005.png in Resources */,
@@ -3262,6 +3240,7 @@
 				04A97BB71CEEC57700E30754 /* AddDevice.xib in Resources */,
 				0492C1571CFBEDC900BE250E /* u18.png in Resources */,
 				633415FE197E805800303105 /* toolbarOneSelect.png in Resources */,
+				0492C1861CFC3DAD00BE250E /* RegistrViewController_iPad.xib in Resources */,
 				047522091CF82F4D00A3BE41 /* index_icon1.png in Resources */,
 				04F12F901CE050480014E655 /* a4.png in Resources */,
 				63D2813319430A0700556A22 /* EmailContentViewController_iPhone.xib in Resources */,
@@ -3286,7 +3265,6 @@
 				A54AF5D31AC25940000B5B8F /* 发邮件@2x.png in Resources */,
 				63F3E478193C869100C4F7BA /* MattersCell.xib in Resources */,
 				044891EE1CF4895900B4CD22 /* AboutMeVC.xib in Resources */,
-				A55E29201ABD160700FF4190 /* RegistrViewController_iPhone.xib in Resources */,
 				6303A8FE199213E7000C20FB /* Default-Portrait.png in Resources */,
 				0492C1551CFBE4E500BE250E /* ForgetPassword.xib in Resources */,
 				63A7379D1941915800DCBD68 /* icon_attachbtn_paperclip_active.png in Resources */,
@@ -3363,7 +3341,6 @@
 				046B81581CE2C538003F170B /* lead.png in Resources */,
 				A54AF5D71AC27C48000B5B8F /* 发短信.png in Resources */,
 				046532D61CE969CB00B6EF1E /* ShedDetailVC.xib in Resources */,
-				A5E86FE81ABC0D64005195ED /* BindingEmailViewController_iPhone.xib in Resources */,
 				040EB45F1CF40B8000450251 /* address.plist in Resources */,
 				047521F01CF7E5AF00A3BE41 /* loading_thumb.png in Resources */,
 				047521D31CF7E27700A3BE41 /* forward2_focus.png in Resources */,
@@ -3374,6 +3351,7 @@
 				04D4B9F31CE0C3B400124034 /* logo_qq.png in Resources */,
 				63F3E485193C8B3400C4F7BA /* ProcessFileCell.xib in Resources */,
 				A5E86FF01ABC13F3005195ED /* EmailPopListViewController_iPad.xib in Resources */,
+				0492C1831CFC3DAD00BE250E /* LoginViewController_iPad.xib in Resources */,
 				04F12F8E1CE050480014E655 /* a2.png in Resources */,
 				6374B6511938AD110071710A /* SendReceiveViewController_iPad.xib in Resources */,
 				63B20A971946D89C00D16C5B /* btn_add.png in Resources */,
@@ -3436,11 +3414,11 @@
 				63DDEFC01943611300A28A0B /* RATreeView+Enums.m in Sources */,
 				040EB4621CF40B9400450251 /* AddressViewController.m in Sources */,
 				04883BFF1CE764B600249F2B /* PYPieSeries.m in Sources */,
+				0492C1881CFC3DAD00BE250E /* RegistrViewController.m in Sources */,
 				0492C15B1CFC185500BE250E /* ScanZcodeVC.m in Sources */,
 				04883BE81CE764B600249F2B /* PYLegend.m in Sources */,
 				630CE9AB193E08F000E34663 /* EmailListViewController.m in Sources */,
 				04883BDB1CE764B600249F2B /* PYAxis.m in Sources */,
-				045EAFD41CD0700C008AE499 /* TestView.m in Sources */,
 				63A737A31941995900DCBD68 /* SBPublicFormatValidation.m in Sources */,
 				04883BEC1CE764B600249F2B /* PYOption.m in Sources */,
 				048FF20E1CF5FCC800990A45 /* CircleView.m in Sources */,
@@ -3530,20 +3508,20 @@
 				046532B81CE967D500B6EF1E /* ShedWater.m in Sources */,
 				63E5A51A1936DE27008CC126 /* CustomSwitch.m in Sources */,
 				047521FD1CF7E69E00A3BE41 /* README.md in Sources */,
+				0492C1731CFC3D3E00BE250E /* BindingEmailViewController.m in Sources */,
 				634053F819404A400019052B /* EGORefreshTableHeaderView.m in Sources */,
 				0472F8A71CEDB55C001F9372 /* AlarmStrategyView.m in Sources */,
 				0472266B1CF5F18B00FEA668 /* MenuHrizontal.m in Sources */,
 				0472266D1CF5F18B00FEA668 /* SGFocusImageFrame.m in Sources */,
 				63DDEFC81943611300A28A0B /* OrgCell.m in Sources */,
 				63F3E476193C868000C4F7BA /* MattersCell.m in Sources */,
+				0492C1851CFC3DAD00BE250E /* LoginViewController.m in Sources */,
 				04883BF11CE764B600249F2B /* PYTextStyle.m in Sources */,
 				0465324E1CE9619C00B6EF1E /* ShedHomeViewController.m in Sources */,
 				04883C171CE764C400249F2B /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
-				631A4FA1192885AF0067FF3B /* LoginViewController.m in Sources */,
 				0472266A1CF5F18B00FEA668 /* Toast+UIView.m in Sources */,
 				63ED7C6F1939CB23005B7B93 /* ASIFormDataRequest.m in Sources */,
 				63ED7C701939CB23005B7B93 /* ASIHTTPRequest.m in Sources */,
-				A55E291F1ABD160700FF4190 /* RegistrViewController.m in Sources */,
 				63ED7C511939CB0C005B7B93 /* NetRequest.m in Sources */,
 				63DDEFC21943611300A28A0B /* RATreeView+TableViewDataSource.m in Sources */,
 				63381460193ABBBB002AF53F /* SBPublicAlert.m in Sources */,
@@ -3590,7 +3568,6 @@
 				046532AA1CE965F200B6EF1E /* Smartgate.m in Sources */,
 				04883BFD1CE764B600249F2B /* PYMarkLine.m in Sources */,
 				04883C051CE764B600249F2B /* PYWordCloudSeries.m in Sources */,
-				A5E86FE61ABC0D64005195ED /* BindingEmailViewController.m in Sources */,
 				0472F89B1CED6214001F9372 /* StrategyMenu.m in Sources */,
 				0472F8A41CED9A67001F9372 /* Alarm.m in Sources */,
 				04883C041CE764B600249F2B /* PYVennSeries.m in Sources */,
@@ -3619,7 +3596,6 @@
 				63DDEFBE1943611300A28A0B /* RATreeNodeInfo+Private.m in Sources */,
 				63341588197E37E600303105 /* GlobalData.m in Sources */,
 				04883BEA1CE764B600249F2B /* PYLoadingOption.m in Sources */,
-				63341557197E30E100303105 /* SwitchingAddressViewController.m in Sources */,
 				04883BDE1CE764B600249F2B /* PYAxisPointer.m in Sources */,
 				0492C14A1CFBDD0600BE250E /* RegisterInfoVC.m in Sources */,
 				04883BFA1CE764B600249F2B /* PYGaugeSeries.m in Sources */,
@@ -3741,7 +3717,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Itserv_oa/Itserv_oa-Prefix.pch";
 				INFOPLIST_FILE = "Itserv_oa/Itserv_oa-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lctemplate-ios",
@@ -3777,7 +3753,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Itserv_oa/Itserv_oa-Prefix.pch";
 				INFOPLIST_FILE = "Itserv_oa/Itserv_oa-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lctemplate-ios",

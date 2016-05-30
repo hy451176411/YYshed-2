@@ -10,7 +10,7 @@
 #import "CustomSwitch.h"
 #import "CustomIOS7AlertView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "SwitchingAddressViewController.h"
+
 #import "RegistrViewController.h"
 
 @interface LoginViewController ()
@@ -451,44 +451,7 @@
 }
 
 #pragma mark 设置按钮事件
-- (IBAction)btnSettingClicked:(UIButton *)sender
-{
-    
-    __block UILabel *label = _labelAppTitle;
-    SwitchingAddressViewController *ctrl = [[SwitchingAddressViewController alloc] initWithNibName:[AppDelegate strCtrlName:@"SwitchingAddressViewController"] bundle:nil];
-    
-    __block LoginViewController *loginCtrl = self;
-    
-    [ctrl setUpdateAddress:^(NSDictionary *dicAddress){
-        label.text = [NSString stringWithFormat:@"%@局移动办公系统",dicAddress[@"name"]];
-        
-//        BOOL status = ![AppDelegate isPop3];
-//        _btnRegister.hidden = status;
-//        _btnSelectAgency.hidden = status;
-//        _labelAgency.hidden = status;
-//        
-//        _fieldCode.hidden = status;
-//        _btnGetCode.hidden = status;
-        
-        if ([AppDelegate isPop3]) {
-//            if (DevicePhone) {
-//                _viewLoginBtnBg.top += 40;
-//            } else {
-//                _viewLoginBtnBg.top += 120;
-//            }
-            [loginCtrl requestAgency];
-        } else {
-//            if (DevicePhone) {
-//                _viewLoginBtnBg.top -= 40;
-//            } else {
-//                _viewLoginBtnBg.top -= 120;
-//            }
-        }
-        _updateSuccess();
-    }];
-    ctrl.isJava = _isOff;
-    [self.navigationController pushViewController:ctrl animated:YES];
-}
+
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
