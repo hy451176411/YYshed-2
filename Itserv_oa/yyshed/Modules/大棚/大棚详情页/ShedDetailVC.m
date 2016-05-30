@@ -72,7 +72,7 @@
 	/*根据头部，中部，底部的元素值动态设置滚动视图的高度*/
 	//float ContentSize = self.startY+BOTTOM_H;
 	[self.mScrollView setContentSize:CGSizeMake(SCREEN_WIDTH, self.startY)];
-	//[self initCharts:menus[0]];
+	[self initCharts:menus[0]];
 }
 
 -(NSMutableArray*)configMenus:(NSArray*)model{
@@ -137,7 +137,7 @@
 {
 	NSLog(@"----------%@",model);
 	if (tag == YYShed_getDeviceInfo) {
-		//[self initViewsWithDatas:model];
+		[self initViewsWithDatas:model];
 	}else if(tag == YYShed_getAnalysisResult){
 		[self initBottom:model];
 	}

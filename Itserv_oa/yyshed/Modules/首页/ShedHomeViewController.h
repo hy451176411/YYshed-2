@@ -10,7 +10,10 @@
 #import "YYNetRequest.h"
 #import "EADefine.h"
 #import "HomeShedDetail.h"
-@interface ShedHomeViewController : UIViewController<UITextFieldDelegate,YYNetRequestDelegate,UIAlertViewDelegate>
+#import "AddDevice.h"
+#include "ScanZcodeVC.h"
+
+@interface ShedHomeViewController : UIViewController<UITextFieldDelegate,YYNetRequestDelegate,UIAlertViewDelegate,AddDeviceDelegate,ScanZcodeVCDelegate>
 {
 	PullToRefreshTableView *_pullTableView;//带有上拉加载，下拉刷新
 }

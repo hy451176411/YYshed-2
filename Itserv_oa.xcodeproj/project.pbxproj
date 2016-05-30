@@ -215,6 +215,20 @@
 		048FF20A1CF5F9F900990A45 /* new4.png in Resources */ = {isa = PBXBuildFile; fileRef = 048FF2001CF5F9F900990A45 /* new4.png */; };
 		048FF20B1CF5F9F900990A45 /* normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 048FF2011CF5F9F900990A45 /* normal.png */; };
 		048FF20E1CF5FCC800990A45 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FF20D1CF5FCC800990A45 /* CircleView.m */; };
+		0492C1381CFBD67200BE250E /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492C1361CFBD67200BE250E /* RegisterVC.m */; };
+		0492C1391CFBD67200BE250E /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C1371CFBD67200BE250E /* RegisterVC.xib */; };
+		0492C1451CFBDCC900BE250E /* RegisterSmsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492C1431CFBDCC900BE250E /* RegisterSmsVC.m */; };
+		0492C1461CFBDCC900BE250E /* RegisterSmsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C1441CFBDCC900BE250E /* RegisterSmsVC.xib */; };
+		0492C14A1CFBDD0600BE250E /* RegisterInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492C1481CFBDD0600BE250E /* RegisterInfoVC.m */; };
+		0492C14B1CFBDD0600BE250E /* RegisterInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C1491CFBDD0600BE250E /* RegisterInfoVC.xib */; };
+		0492C14F1CFBE26000BE250E /* ForgetPasswordInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492C14D1CFBE26000BE250E /* ForgetPasswordInfo.m */; };
+		0492C1501CFBE26000BE250E /* ForgetPasswordInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C14E1CFBE26000BE250E /* ForgetPasswordInfo.xib */; };
+		0492C1541CFBE4E500BE250E /* ForgetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492C1521CFBE4E500BE250E /* ForgetPassword.m */; };
+		0492C1551CFBE4E500BE250E /* ForgetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C1531CFBE4E500BE250E /* ForgetPassword.xib */; };
+		0492C1571CFBEDC900BE250E /* u18.png in Resources */ = {isa = PBXBuildFile; fileRef = 0492C1561CFBEDC900BE250E /* u18.png */; };
+		0492C15B1CFC185500BE250E /* ScanZcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0492C1591CFC185500BE250E /* ScanZcodeVC.m */; };
+		0492C15C1CFC185500BE250E /* ScanZcodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0492C15A1CFC185500BE250E /* ScanZcodeVC.xib */; };
+		0492C1631CFC2FD200BE250E /* splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0492C1621CFC2FD100BE250E /* splash.jpg */; };
 		049968C21CE765D000AA9FAE /* js in Resources */ = {isa = PBXBuildFile; fileRef = 049968C11CE765D000AA9FAE /* js */; };
 		04A97B9E1CEEB3BA00E30754 /* alarm_air_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B971CEEB3BA00E30754 /* alarm_air_h.png */; };
 		04A97B9F1CEEB3BA00E30754 /* alarm_air_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A97B981CEEB3BA00E30754 /* alarm_air_t.png */; };
@@ -890,6 +904,26 @@
 		048FF2011CF5F9F900990A45 /* normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal.png; sourceTree = "<group>"; };
 		048FF20C1CF5FCC800990A45 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		048FF20D1CF5FCC800990A45 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		0492C1351CFBD67200BE250E /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterVC.h; path = "yyshed/Modules/登录/RegisterVC.h"; sourceTree = "<group>"; };
+		0492C1361CFBD67200BE250E /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterVC.m; path = "yyshed/Modules/登录/RegisterVC.m"; sourceTree = "<group>"; };
+		0492C1371CFBD67200BE250E /* RegisterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterVC.xib; path = "yyshed/Modules/登录/RegisterVC.xib"; sourceTree = "<group>"; };
+		0492C1421CFBDCC900BE250E /* RegisterSmsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterSmsVC.h; path = "yyshed/Modules/登录/RegisterSmsVC.h"; sourceTree = "<group>"; };
+		0492C1431CFBDCC900BE250E /* RegisterSmsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterSmsVC.m; path = "yyshed/Modules/登录/RegisterSmsVC.m"; sourceTree = "<group>"; };
+		0492C1441CFBDCC900BE250E /* RegisterSmsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterSmsVC.xib; path = "yyshed/Modules/登录/RegisterSmsVC.xib"; sourceTree = "<group>"; };
+		0492C1471CFBDD0600BE250E /* RegisterInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterInfoVC.h; path = "yyshed/Modules/登录/RegisterInfoVC.h"; sourceTree = "<group>"; };
+		0492C1481CFBDD0600BE250E /* RegisterInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterInfoVC.m; path = "yyshed/Modules/登录/RegisterInfoVC.m"; sourceTree = "<group>"; };
+		0492C1491CFBDD0600BE250E /* RegisterInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterInfoVC.xib; path = "yyshed/Modules/登录/RegisterInfoVC.xib"; sourceTree = "<group>"; };
+		0492C14C1CFBE26000BE250E /* ForgetPasswordInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgetPasswordInfo.h; path = "yyshed/Modules/登录/ForgetPasswordInfo.h"; sourceTree = "<group>"; };
+		0492C14D1CFBE26000BE250E /* ForgetPasswordInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgetPasswordInfo.m; path = "yyshed/Modules/登录/ForgetPasswordInfo.m"; sourceTree = "<group>"; };
+		0492C14E1CFBE26000BE250E /* ForgetPasswordInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForgetPasswordInfo.xib; path = "yyshed/Modules/登录/ForgetPasswordInfo.xib"; sourceTree = "<group>"; };
+		0492C1511CFBE4E500BE250E /* ForgetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgetPassword.h; path = "yyshed/Modules/登录/ForgetPassword.h"; sourceTree = "<group>"; };
+		0492C1521CFBE4E500BE250E /* ForgetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgetPassword.m; path = "yyshed/Modules/登录/ForgetPassword.m"; sourceTree = "<group>"; };
+		0492C1531CFBE4E500BE250E /* ForgetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForgetPassword.xib; path = "yyshed/Modules/登录/ForgetPassword.xib"; sourceTree = "<group>"; };
+		0492C1561CFBEDC900BE250E /* u18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = u18.png; sourceTree = "<group>"; };
+		0492C1581CFC185500BE250E /* ScanZcodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanZcodeVC.h; path = "yyshed/Modules/首页/ScanZcodeVC.h"; sourceTree = "<group>"; };
+		0492C1591CFC185500BE250E /* ScanZcodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanZcodeVC.m; path = "yyshed/Modules/首页/ScanZcodeVC.m"; sourceTree = "<group>"; };
+		0492C15A1CFC185500BE250E /* ScanZcodeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScanZcodeVC.xib; path = "yyshed/Modules/首页/ScanZcodeVC.xib"; sourceTree = "<group>"; };
+		0492C1621CFC2FD100BE250E /* splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash.jpg; sourceTree = "<group>"; };
 		049968C11CE765D000AA9FAE /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		04A97B971CEEB3BA00E30754 /* alarm_air_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_air_h.png; sourceTree = "<group>"; };
 		04A97B981CEEB3BA00E30754 /* alarm_air_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm_air_t.png; sourceTree = "<group>"; };
@@ -2015,6 +2049,9 @@
 				046532481CE9619C00B6EF1E /* ShedHomeViewController.xib */,
 				046532491CE9619C00B6EF1E /* ThirdController.h */,
 				0465324A1CE9619C00B6EF1E /* ThirdController.m */,
+				0492C1581CFC185500BE250E /* ScanZcodeVC.h */,
+				0492C1591CFC185500BE250E /* ScanZcodeVC.m */,
+				0492C15A1CFC185500BE250E /* ScanZcodeVC.xib */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -2025,6 +2062,21 @@
 				046532511CE961D300B6EF1E /* YYshedLoginController.h */,
 				046532521CE961D300B6EF1E /* YYshedLoginController.m */,
 				046532531CE961D300B6EF1E /* YYshedLoginController.xib */,
+				0492C1351CFBD67200BE250E /* RegisterVC.h */,
+				0492C1361CFBD67200BE250E /* RegisterVC.m */,
+				0492C1371CFBD67200BE250E /* RegisterVC.xib */,
+				0492C1421CFBDCC900BE250E /* RegisterSmsVC.h */,
+				0492C1431CFBDCC900BE250E /* RegisterSmsVC.m */,
+				0492C1441CFBDCC900BE250E /* RegisterSmsVC.xib */,
+				0492C1471CFBDD0600BE250E /* RegisterInfoVC.h */,
+				0492C1481CFBDD0600BE250E /* RegisterInfoVC.m */,
+				0492C1491CFBDD0600BE250E /* RegisterInfoVC.xib */,
+				0492C14C1CFBE26000BE250E /* ForgetPasswordInfo.h */,
+				0492C14D1CFBE26000BE250E /* ForgetPasswordInfo.m */,
+				0492C14E1CFBE26000BE250E /* ForgetPasswordInfo.xib */,
+				0492C1511CFBE4E500BE250E /* ForgetPassword.h */,
+				0492C1521CFBE4E500BE250E /* ForgetPassword.m */,
+				0492C1531CFBE4E500BE250E /* ForgetPassword.xib */,
 			);
 			name = "登录";
 			sourceTree = "<group>";
@@ -2125,13 +2177,15 @@
 		631A4E7D1928839B0067FF3B /* pictures-iphone */ = {
 			isa = PBXGroup;
 			children = (
+				0492C1621CFC2FD100BE250E /* splash.jpg */,
+				0492C1561CFBEDC900BE250E /* u18.png */,
+				04F12FA71CE0511A0014E655 /* logo.png */,
+				04F12FA91CE051210014E655 /* logo1.png */,
 				047BDA6B1CF725FF00F10C2A /* input1.png */,
 				047BDA611CF725F400F10C2A /* item_bg.png */,
 				040E732F1CF2B07900314057 /* 关于 */,
 				046B81671CE2E6BF003F170B /* 大棚详情 */,
 				044C79C81CE17D5600F9EE21 /* friend */,
-				04F12FA91CE051210014E655 /* logo1.png */,
-				04F12FA71CE0511A0014E655 /* logo.png */,
 				04F12F9A1CE050E10014E655 /* 启动引导 */,
 				04F12F931CE050870014E655 /* 首页 */,
 				04F12F921CE0506F0014E655 /* 登录 */,
@@ -3119,6 +3173,7 @@
 				0463AC061CE339A500EE9A96 /* video_stop_seletor.png in Resources */,
 				040EB4641CF42AD100450251 /* bg.png in Resources */,
 				63E5A51B1936DE27008CC126 /* CustomSwitch.xib in Resources */,
+				0492C14B1CFBDD0600BE250E /* RegisterInfoVC.xib in Resources */,
 				A5E870101ABC1555005195ED /* EmailContactsViewController_iPhone.xib in Resources */,
 				0463ABFE1CE339A500EE9A96 /* video_center.png in Resources */,
 				047521EC1CF7E4DB00A3BE41 /* time.png in Resources */,
@@ -3144,6 +3199,7 @@
 				0463AC0D1CE33A5900EE9A96 /* category2.png in Resources */,
 				63DDEFCA1943611300A28A0B /* OrgCell.xib in Resources */,
 				047226741CF5F18C00FEA668 /* LoadMoreCell.xib in Resources */,
+				0492C1631CFC2FD200BE250E /* splash.jpg in Resources */,
 				63B20AE11946F1BB00D16C5B /* btn_contactblock.png in Resources */,
 				631A4FA4192885D10067FF3B /* LoginViewController_iPad.xib in Resources */,
 				048FF2081CF5F9F900990A45 /* new2.png in Resources */,
@@ -3177,6 +3233,7 @@
 				044C79DE1CE17DB300F9EE21 /* buddy_header_bg_highlighted.png in Resources */,
 				639578A31938AC5000FDE95D /* IntegratedQueryViewController_iPhone.xib in Resources */,
 				63A7379619418F2600DCBD68 /* icon_attach_panel_camera.png in Resources */,
+				0492C1501CFBE26000BE250E /* ForgetPasswordInfo.xib in Resources */,
 				6334155A197E310B00303105 /* SwitchingAddressViewController_iPad.xib in Resources */,
 				044C79EF1CE1D7B200F9EE21 /* chart1.png in Resources */,
 				63AB9D051952D6A2007AFA83 /* contenttoolbar_hd_share@2x.png in Resources */,
@@ -3203,6 +3260,7 @@
 				044C79D21CE17D8700F9EE21 /* 005.png in Resources */,
 				63A135A61A81FF4C00B8A58E /* OA_Address.geojson in Resources */,
 				04A97BB71CEEC57700E30754 /* AddDevice.xib in Resources */,
+				0492C1571CFBEDC900BE250E /* u18.png in Resources */,
 				633415FE197E805800303105 /* toolbarOneSelect.png in Resources */,
 				047522091CF82F4D00A3BE41 /* index_icon1.png in Resources */,
 				04F12F901CE050480014E655 /* a4.png in Resources */,
@@ -3230,6 +3288,7 @@
 				044891EE1CF4895900B4CD22 /* AboutMeVC.xib in Resources */,
 				A55E29201ABD160700FF4190 /* RegistrViewController_iPhone.xib in Resources */,
 				6303A8FE199213E7000C20FB /* Default-Portrait.png in Resources */,
+				0492C1551CFBE4E500BE250E /* ForgetPassword.xib in Resources */,
 				63A7379D1941915800DCBD68 /* icon_attachbtn_paperclip_active.png in Resources */,
 				044C79E01CE17DBB00F9EE21 /* buddy_header_bg.png in Resources */,
 				04F12F981CE050CA0014E655 /* button_off.png in Resources */,
@@ -3255,6 +3314,7 @@
 				631A4FCD192888C40067FF3B /* RootViewController_iPad.xib in Resources */,
 				0463AC0B1CE339B400EE9A96 /* video.png in Resources */,
 				04F12FAD1CE0512F0014E655 /* number_icon.png in Resources */,
+				0492C1391CFBD67200BE250E /* RegisterVC.xib in Resources */,
 				6324C64019396B0800E5C2A2 /* FileMessageCell.xib in Resources */,
 				63B9A78D1980DE7E005ED169 /* loginBg.png in Resources */,
 				63341605197E805800303105 /* login.png in Resources */,
@@ -3265,6 +3325,7 @@
 				63341609197E805800303105 /* selectOn.png in Resources */,
 				04A97B9F1CEEB3BA00E30754 /* alarm_air_t.png in Resources */,
 				63B9A78B1980DD58005ED169 /* back.png in Resources */,
+				0492C1461CFBDCC900BE250E /* RegisterSmsVC.xib in Resources */,
 				0472F8961CED5E57001F9372 /* apply.png in Resources */,
 				63B098A7194590EB0055457D /* HomeViewController.xib in Resources */,
 				6374B6551938ADA60071710A /* ContactsViewController_iPad.xib in Resources */,
@@ -3293,6 +3354,7 @@
 				63B0F0BC1990C3C700791D0F /* Default@2x.png in Resources */,
 				040E73391CF2B96D00314057 /* u28.png in Resources */,
 				047521D41CF7E27700A3BE41 /* forward3_focus.png in Resources */,
+				0492C15C1CFC185500BE250E /* ScanZcodeVC.xib in Resources */,
 				04F432C01CEC4E8600D89541 /* ShedSensorCell.xib in Resources */,
 				631A4FC3192886AD0067FF3B /* 37x-Checkmark@2x.png in Resources */,
 				630824BC197F675300BB7217 /* OfficialIcon2.png in Resources */,
@@ -3354,6 +3416,7 @@
 				0432F5061CEDE60F00430B85 /* AlarmStrateyItem.m in Sources */,
 				0472F89E1CED71C8001F9372 /* AlarmStratey.m in Sources */,
 				046532611CE9624200B6EF1E /* Component.m in Sources */,
+				0492C1451CFBDCC900BE250E /* RegisterSmsVC.m in Sources */,
 				046532B71CE967D500B6EF1E /* EchartViewShed.m in Sources */,
 				6395786D193892A200FDE95D /* PushMessageCell.m in Sources */,
 				0472266E1CF5F18B00FEA668 /* SGFocusImageItem.m in Sources */,
@@ -3373,6 +3436,7 @@
 				63DDEFC01943611300A28A0B /* RATreeView+Enums.m in Sources */,
 				040EB4621CF40B9400450251 /* AddressViewController.m in Sources */,
 				04883BFF1CE764B600249F2B /* PYPieSeries.m in Sources */,
+				0492C15B1CFC185500BE250E /* ScanZcodeVC.m in Sources */,
 				04883BE81CE764B600249F2B /* PYLegend.m in Sources */,
 				630CE9AB193E08F000E34663 /* EmailListViewController.m in Sources */,
 				04883BDB1CE764B600249F2B /* PYAxis.m in Sources */,
@@ -3408,6 +3472,7 @@
 				04883BE71CE764B600249F2B /* PYLabelLine.m in Sources */,
 				046532D51CE969CB00B6EF1E /* ShedDetailVC.m in Sources */,
 				04883BE31CE764B600249F2B /* PYGrid.m in Sources */,
+				0492C1381CFBD67200BE250E /* RegisterVC.m in Sources */,
 				046532621CE9624200B6EF1E /* FriendCell.m in Sources */,
 				63F383971986288B006CE287 /* SBJsonBase.m in Sources */,
 				04883C021CE764B600249F2B /* PYTreeMapSeries.m in Sources */,
@@ -3511,6 +3576,7 @@
 				639578751938935C00FDE95D /* UIView+LoadXib.m in Sources */,
 				63ED7C721939CB23005B7B93 /* ASINetworkQueue.m in Sources */,
 				04883BF71CE764B600249F2B /* PYCartesianSeries.m in Sources */,
+				0492C1541CFBE4E500BE250E /* ForgetPassword.m in Sources */,
 				04883C031CE764B600249F2B /* PYTreeSeries.m in Sources */,
 				63405400194072C90019052B /* SendEmailViewController.m in Sources */,
 				044891ED1CF4895900B4CD22 /* AboutMeVC.m in Sources */,
@@ -3542,6 +3608,7 @@
 				A5E870141ABC1555005195ED /* DirBtnView.m in Sources */,
 				04883BF31CE764B600249F2B /* PYTitle.m in Sources */,
 				04883C061CE764B600249F2B /* PYEchartsView.m in Sources */,
+				0492C14F1CFBE26000BE250E /* ForgetPasswordInfo.m in Sources */,
 				63DDEFA61943607200A28A0B /* RADataObject.m in Sources */,
 				047226671CF5F18B00FEA668 /* CustomTableView.m in Sources */,
 				63ED7C531939CB0C005B7B93 /* TestNetRequest.m in Sources */,
@@ -3554,6 +3621,7 @@
 				04883BEA1CE764B600249F2B /* PYLoadingOption.m in Sources */,
 				63341557197E30E100303105 /* SwitchingAddressViewController.m in Sources */,
 				04883BDE1CE764B600249F2B /* PYAxisPointer.m in Sources */,
+				0492C14A1CFBDD0600BE250E /* RegisterInfoVC.m in Sources */,
 				04883BFA1CE764B600249F2B /* PYGaugeSeries.m in Sources */,
 				0465329C1CE965F200B6EF1E /* HomeShedDetail.m in Sources */,
 				04883BDC1CE764B600249F2B /* PYAxisLabel.m in Sources */,

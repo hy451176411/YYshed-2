@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScanZcodeVC.h"
 
 @interface HomeController : UITabBarController
 

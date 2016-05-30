@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"u18.png"]]];
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
 	UIImage *left = [UIImage imageNamed:@"logo.png"];
 	UIImageView* img = [[UIImageView alloc] initWithImage:left];
@@ -66,8 +66,7 @@
 }
 - (IBAction)aboutme:(id)sender {
 	AboutMeVC *control = [[AboutMeVC alloc] init];
-	//[self.navigationController pushViewController:control animated:YES];
-	[self presentViewController:control animated:YES completion:nil];
+	[self presentViewController:control animated:NO completion:nil];
 
 }
 

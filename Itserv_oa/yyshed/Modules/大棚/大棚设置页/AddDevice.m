@@ -64,10 +64,20 @@
 	}
 	
 }
-
-- (IBAction)zxing:(id)sender {
+-(void)passValue:(NSString*)value{
+	self.devUuid.text = value;
+	
 }
 
+- (IBAction)zxing:(id)sender {
+	if (self.delegate && [self.delegate respondsToSelector:@selector(ScanZcode:)]) {
+		[_delegate ScanZcode:nil];
+	}
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+	[self.devUuid resignFirstResponder];
+	[self.alias resignFirstResponder];
+}
 #pragma mark 登录请求成功
 - (void)netRequest:(int)tag Finished:(NSDictionary *)model
 {

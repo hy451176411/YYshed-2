@@ -38,7 +38,7 @@
 -(void)viewDidLoad{
 	[super viewDidLoad];
 	self.theRequest = [NetRequestManager createNetRequestWithDelegate:self];
-	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+	[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"u18.png"]]];
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
 	UIImage *left = [UIImage imageNamed:@"logo.png"];
 	UIImageView* img = [[UIImageView alloc] initWithImage:left];
@@ -114,7 +114,7 @@
 	WebViewVC *control = [[WebViewVC alloc] init];
 	control.content = content.content;
 	control.titleStr = content.title;
-	[self presentViewController:control animated:YES completion:nil];
+	[self presentViewController:control animated:NO completion:nil];
 }
 #pragma mark 登录请求成功
 - (void)netRequest:(int)tag Finished:(NSDictionary *)model

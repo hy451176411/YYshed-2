@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	  [self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
 	self.view.backgroundColor = [UIColor whiteColor];
 	HomeDetailNav *control = [[HomeDetailNav alloc] init];
 	//内容导航
@@ -45,7 +44,7 @@
 //初始化标题和导航栏
 -(void)initTitlesAndNav{
 	[mNavigationContent setViewControls:viewControllers];
-	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+	[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"u18.png"]]];
 	//添加左边的按钮
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
 	UIImage *left = [UIImage imageNamed:@"logo.png"];

@@ -24,6 +24,6 @@
 
 //左边按键点击动作，返回处理
 - (IBAction)back:(id)sender {
-	[self dismissViewControllerAnimated:YES completion:nil];
+	[self dismissViewControllerAnimated:NO completion:nil];
 }
 @end

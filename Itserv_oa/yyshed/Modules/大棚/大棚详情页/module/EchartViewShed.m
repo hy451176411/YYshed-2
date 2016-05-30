@@ -50,6 +50,7 @@
  *  标准折线图
  */
 -(void)showStandardLineDemo {
+	NSLog(@"showStandardLineDemo %@",self.model);
 	PYOption *option = [[PYOption alloc] init];
 	PYTitle *title = [[PYTitle alloc] init];
 	title.text = self.title;

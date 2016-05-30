@@ -10,6 +10,10 @@
 #import "HomeController.h"
 #import "YYNetRequest.h"
 #import "EADefine.h"
+#import "RegisterVC.h"
+#import "ForgetPassword.h"
+#import "ScanZcodeVC.h"
+
 
 @interface YYshedLoginController : UIViewController<UITextFieldDelegate,YYNetRequestDelegate,UIAlertViewDelegate>
 @property (nonatomic, nonatomic) IBOutlet UIButton *mRemberPsd;
@@ -21,5 +25,7 @@
 - (IBAction)login:(id)sender;
 - (IBAction)btnSwithRemeberPsd:(UIButton*)sender;
 - (IBAction)btnSwithAutoLogin:(UIButton*)sender;
+- (IBAction)forgetpassword:(id)sender;
 
+- (IBAction)register:(id)sender;
 @end

@@ -1,18 +1,18 @@
 //
-//  AboutMeVC.m
+//  RegisterInfoVC.m
 //  Itserv_oa
 //
-//  Created by mac on 16/5/24.
+//  Created by mac on 16/5/30.
 //  Copyright (c) 2016年 xiexianhui. All rights reserved.
 //
 
-#import "AboutMeVC.h"
+#import "RegisterInfoVC.h"
 
-@interface AboutMeVC ()
+@interface RegisterInfoVC ()
 
 @end
 
-@implementation AboutMeVC
+@implementation RegisterInfoVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,10 +21,11 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-	
 }
-//左边按键点击动作，返回处理
+
 - (IBAction)back:(id)sender {
 	[self dismissViewControllerAnimated:NO completion:nil];
+}
+- (IBAction)overClick:(id)sender {
 }
 @end

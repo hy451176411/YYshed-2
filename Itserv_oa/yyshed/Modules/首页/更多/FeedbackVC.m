@@ -25,7 +25,7 @@
 }
 
 -(void)initTitle{
-	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+	[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"u18.png"]]];
 	//添加左边的按钮
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
 	UIImage *left = [UIImage imageNamed:@"back_normal@2x.png"];

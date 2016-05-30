@@ -86,6 +86,17 @@
 	}
 	[UserDefaults synchronize];
 }
+
+- (IBAction)forgetpassword:(id)sender {
+	ForgetPassword *control = [[ForgetPassword alloc]init];
+	[self presentViewController:control animated:NO completion:nil];
+
+}
+
+- (IBAction)register:(id)sender {
+	RegisterVC *control = [[RegisterVC alloc]init];
+	[self presentViewController:control animated:NO completion:nil];
+}
 #pragma mark 进行条件验证，如果满足条件就登录
 - (void)goLogin
 {

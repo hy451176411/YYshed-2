@@ -14,7 +14,7 @@
 #import "ShedDetailVC.h"
 #import "HomeController.h"
 #import "ShedSettingVC.h"
-#import "AddDevice.h"
+
 
 
 
@@ -23,6 +23,7 @@
 
 @property(nonatomic, strong) NSArray *friendGroups;
 @property (nonatomic, retain) YYNetRequest *theRequest;
+@property (nonatomic,strong) AddDevice *addDevice;
 @end
 
 @implementation ShedHomeViewController
@@ -30,7 +31,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+	[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"u18.png"]]];
 	//添加左边的按钮
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
 	UIImage *left = [UIImage imageNamed:@"logo.png"];
@@ -144,18 +145,11 @@
 }
 
 -(void)rightBtnClick{
-//	UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请添加大棚!" delegate:self  cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//	[alter show];
-	AddDevice *messageView = [AddDevice loadFromXibWithOwner:self];
-	messageView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-
-	//[messageView loadDataRADataObject:data];
-	[self.view addSubview:messageView];
-
+	self.addDevice = [AddDevice loadFromXibWithOwner:self];
+	self.addDevice.delegate = self;
+	self.addDevice.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+	[self.view addSubview:self.addDevice];
 }
-
-
-
 
 -(void)initDataSource:(NSDictionary *)model
 {
@@ -300,7 +294,17 @@
 	}
 }
 
+- (void)ScanZcode:(NSDictionary*)model{
+	ScanZcodeVC *control = [[ScanZcodeVC alloc]init];
+	control.delegate = self;
+	[self presentViewController:control animated:NO completion:nil];
+}
 
+- (void)passValue:(NSString*)value{
+	[self.addDevice passValue:value];
+	[self.addDevice removeFromSuperview];
+	[self.view addSubview:self.addDevice];
+}
 
 #pragma mark 登录请求成功
 - (void)netRequest:(int)tag Finished:(NSDictionary *)model

@@ -1,30 +1,35 @@
 //
-//  AboutMeVC.m
+//  ForgetPasswordInfo.m
 //  Itserv_oa
 //
-//  Created by mac on 16/5/24.
+//  Created by mac on 16/5/30.
 //  Copyright (c) 2016年 xiexianhui. All rights reserved.
 //
 
-#import "AboutMeVC.h"
+#import "ForgetPasswordInfo.h"
 
-@interface AboutMeVC ()
+@interface ForgetPasswordInfo ()
 
 @end
 
-@implementation AboutMeVC
+@implementation ForgetPasswordInfo
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-	
+    // Dispose of any resources that can be recreated.
 }
-//左边按键点击动作，返回处理
+
+
 - (IBAction)back:(id)sender {
 	[self dismissViewControllerAnimated:NO completion:nil];
+}
+- (IBAction)overClick:(id)sender {
+}
+
+- (IBAction)getSMSCode:(id)sender {
 }
 @end

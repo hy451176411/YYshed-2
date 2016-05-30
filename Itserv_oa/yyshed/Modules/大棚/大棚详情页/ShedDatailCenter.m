@@ -13,33 +13,48 @@
 	self.cameraModel=[NSMutableArray array];
 	self.waterModel=[NSMutableArray array];
 	self.shutterModel=[NSMutableArray array];
+	NSMutableArray *tempCamera = [NSMutableArray array];
+	NSMutableArray *tempwater = [NSMutableArray array];
+	NSMutableArray *tempshutter = [NSMutableArray array];
 	NSArray *array = self.rootModel;
 	for (int i=0; i<array.count; i++) {
 		NSDictionary *dic = array[i];
 		if (dic) {
 			NSString *dev_type = dic[@"dev_type"];
 			if ([dev_type isEqualToString:@"cameraip"]) {
-				[self.cameraModel addObject:dic];
+				[tempCamera addObject:dic];
 			}else if ([dev_type isEqualToString:@"erelay"]) {
-				[self.waterModel addObject:dic];
+				[tempwater addObject:dic];
 			} else if ([dev_type isEqualToString:@"erelay2"]) {
-				[self.shutterModel addObject:dic];
+				[tempshutter addObject:dic];
 			}
 		}
 	}
-
+	self.cameraModel= tempCamera;
+	self.waterModel= tempwater;
+	self.shutterModel= tempshutter;
+	//NSMutableArray *temp = self.cameraModel;
 }
 
 -(float)configDataOfCenter:(id)data{
-	id temp = self.delegate;
 	[self initModel];
 	//self.backgroundColor = [UIColor redColor];
 	float width = SCREEN_WIDTH;
 	//float Element_h = CAMERA_H+SHUTTER_H+WATER_SHED_H+ELEMENT_SPACING_H*3;
 	//一个摄像头的高度，一个卷帘机的高度，一个节水系统的高度，每个的间距为ELEMENT_SPACING_H
-	float cameraH = CAMERA_H*self.cameraModel.count;
-	float waterH = WATER_SHED_H*self.waterModel.count;
-	float shutterH = SHUTTER_H*self.shutterModel.count;
+	float cameraH= 0;
+	float  waterH = 0;
+	float shutterH= 0;
+	if (self.cameraModel) {
+		cameraH = CAMERA_H*self.cameraModel.count;
+	}
+	if (self.waterModel) {
+		waterH = WATER_SHED_H*self.waterModel.count;
+	}
+	if (self.shutterModel) {
+		shutterH = SHUTTER_H*self.shutterModel.count;
+	}
+	
 	float elementH = ELEMENT_SPACING*(self.cameraModel.count+self.waterModel.count+self.shutterModel.count);
 	float Element_h = cameraH+waterH+shutterH+elementH;
 	//一个摄像头的高度，一个卷帘机的高度，一个节水系统的高度，每个的间距为ELEMENT_SPACING_H

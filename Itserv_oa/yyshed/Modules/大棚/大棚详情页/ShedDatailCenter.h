@@ -15,7 +15,7 @@
 -(float)configDataOfCenter:(id)data;
 @property (nonatomic, assign) id delegate;
 @property (nonatomic, assign) NSArray *rootModel;
-@property (nonatomic, assign) NSMutableArray *cameraModel;//摄像头数组
-@property (nonatomic, assign) NSMutableArray *waterModel;//节水系统数组
-@property (nonatomic, assign) NSMutableArray *shutterModel;//卷帘机数组
+@property (nonatomic, strong) NSMutableArray *cameraModel;//摄像头数组
+@property (nonatomic, strong) NSMutableArray *waterModel;//节水系统数组
+@property (nonatomic, strong) NSMutableArray *shutterModel;//卷帘机数组
 @end
