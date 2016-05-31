@@ -11,7 +11,8 @@
 #import "EADefine.h"
 #import "HomeShedDetail.h"
 #import "AddDevice.h"
-#include "ScanZcodeVC.h"
+#import "ScanZcodeVC.h"
+#import "PullToRefreshTableView.h"
 
 @interface ShedHomeViewController : UIViewController<UITextFieldDelegate,YYNetRequestDelegate,UIAlertViewDelegate,AddDeviceDelegate,ScanZcodeVCDelegate>
 {

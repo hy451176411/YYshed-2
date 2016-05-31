@@ -7,8 +7,8 @@
 //
 
 #import "MailMessage.h"
-#import "RADataObject.h"
-#import "PicFileView.h"
+
+
 
 @implementation MailMessage
 
@@ -204,95 +204,6 @@ SYNTHESIZE_SINGLETONE_FOR_CLASS(MailMessage);
               mailType:(MailType)type
          withIsSuccess:(void(^)(BOOL success))isSuccess
 {
-    MCOMessageBuilder * builder = [[MCOMessageBuilder alloc] init];
-    MCOMessageHeader * header = [builder header];
-    
-    NSString *email = [NSString stringWithFormat:@"%@@gdciq.gov.cn",_strEmail];
-    if ([_strEmail rangeOfString:@"@gdciq.gov.cn"].location != NSNotFound) {
-        email = _strEmail;
-    }
-    //发件人
-    [header setFrom:[MCOAddress addressWithDisplayName:_strEmail mailbox:email]];
-    //收件人
-    NSMutableArray *muArrTo = [NSMutableArray array];
-    for (int i = 0; i < toArr.count; i++) {
-        RADataObject *data = toArr[i];
-        NSDictionary *dic = data.dicOrgparent;
-        NSString *mail = dic[@"mail"];
-        [muArrTo addObject:[MCOAddress addressWithMailbox:mail]];
-    }
-    [header setTo:muArrTo];
-    //抄送
-    if (ccArr.count > 0) {
-        NSMutableArray  *muArrCC = [NSMutableArray array];
-        for (int i = 0; i < ccArr.count; i++) {
-            RADataObject *data = ccArr[i];
-            NSDictionary *dic = data.dicOrgparent;
-            NSString *mail = dic[@"mail"];
-            [muArrCC addObject:[MCOAddress addressWithMailbox:mail]];
-        }
-        [header setCc:muArrCC];
-    }
-    //密送
-    if (ccArr.count > 0) {
-        NSMutableArray  *muArrBcc = [NSMutableArray array];
-        for (int i = 0; i < bccArr.count; i++) {
-            RADataObject *data = bccArr[i];
-            NSDictionary *dic = data.dicOrgparent;
-            NSString *mail = dic[@"mail"];
-            [muArrBcc addObject:[MCOAddress addressWithMailbox:mail]];
-        }
-        [header setBcc:muArrBcc];
-    }
-    
-    [[builder header] setSubject:subject];
-    [builder setTextBody:content];
-    
-    //附件
-    if (type == ForwardingMail) {//可能有附件
-        for (int i = 0; i < attachmentArr.count; i++) {
-            PicFileView *picFileView = attachmentArr[i];
-            NSString *imgName = picFileView.strImgName;
-            UIImage *img = picFileView.img;
-            NSData *data = nil;
-            if (!img) {
-                data = picFileView.data;
-            } else {
-                data = UIImagePNGRepresentation(img);
-            }
-            BOOL isLine = picFileView.isLine;
-            MCOAttachment *attachment = [MCOAttachment attachmentWithData:data filename:imgName];
-//            [attachment setInlineAttachment:isLine];
-            
-            [builder addAttachment:attachment];
-        }
-    } else if (type == SendMail) {//发送邮件也有附件
-        for (int i = 0; i < attachmentArr.count; i++) {
-            PicFileView *picFileView = attachmentArr[i];
-            UIImage *img = picFileView.img;
-            NSString *imgName = picFileView.strImgName;
-            NSData *data = UIImagePNGRepresentation(img);
-            MCOAttachment *attachment = [MCOAttachment attachmentWithData:data filename:imgName];
-            [builder addAttachment:attachment];
-        }
-    }
-
-    NSData * rfc822Data = [builder data];
-    MCOSMTPSession *smtpSession = [[MCOSMTPSession alloc] init];
-    smtpSession.hostname = _strSmtpAddress;
-    smtpSession.port = _smtpPort;
-    smtpSession.username = _strEmail;
-    smtpSession.password = _strPass;
-    smtpSession.connectionType = MCOConnectionTypeClear;
-    MCOSMTPOperation * op = [smtpSession sendOperationWithData:rfc822Data];
-    [op start:^(NSError * error) {
-        NSLog(@"error:%@",error);
-        if (error) {
-            isSuccess(NO);
-        } else {
-            isSuccess(YES);
-        }
-    }];
-}
+   }
 
 @end

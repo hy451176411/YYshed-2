@@ -7,11 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginViewController.h"
-#import "RootViewController.h"
-
 #import "Reachability.h"
 #import "YYshedLoginController.h"
+#import "inc/IPCClientNetLib.h"
+#import "inc/StreamPlayLib.h"
 
 @implementation AppDelegate
 
@@ -57,40 +56,24 @@
     return isExistenceNetwork;
 }
 
-- (void)openApp:(NSURL *)url
-{
-    NSString *tHost = [[url host] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSArray *arr = [tHost componentsSeparatedByString:@"&"];
-    NSArray *arrUser = [arr[0] componentsSeparatedByString:@"="];
-    NSArray *arrPass= [arr[1] componentsSeparatedByString:@"="];
-    self.strUser = [arrUser lastObject];
-    self.strPass = [arrPass lastObject];
-    
-    if (self.strUser.length == 0 || self.strPass.length == 0) {
-        return;
-    }
-    
-    if (!self.isSuccess) {//未登录
-        
-        [[AppDelegate getAppDelegate].loginCtrlShare gologinWithUser:_strUser pass:_strPass];
-    }
-    
-}
+
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    [self openApp:url];
+    //[self openApp:url];
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    [self openApp:url];
+   // [self openApp:url];
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	//device_net_work_init("");
+	//x_player_initPlayLib();
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	self.window.rootViewController = [[YYshedLoginController alloc] init];
 	self.window.backgroundColor = [UIColor whiteColor];
@@ -163,18 +146,7 @@
     return NO;
 }
 
-- (void)logout {
-    [AppDelegate getAppDelegate].isSuccess = NO;
-    [AppDelegate getAppDelegate].isAutoLogin = NO;
-    self.nav = nil;
-    self.window.rootViewController = nil;
-    
-    NSString *strCtrlName = [AppDelegate strCtrlName:@"RootViewController"];
-    RootViewController *loginCtrl = [[RootViewController alloc] initWithNibName:strCtrlName bundle:nil];
-    self.nav = [[UINavigationController alloc] initWithRootViewController:loginCtrl];
-    self.window.rootViewController = self.nav;
-    self.nav.navigationBarHidden = YES;
-}
+
 
 #pragma mark 获取用户ID
 + (NSString *)getUserId {

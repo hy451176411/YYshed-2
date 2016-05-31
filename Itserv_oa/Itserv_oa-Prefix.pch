@@ -25,7 +25,7 @@
     #import "UtilityMacro.h"
     #import "UIView+SBAdditions.h"
     #import "AppDelegate.h"
-    #import "BaseViewController.h"
+   
     #import "UIView+LoadXib.h"
     #import "NetRequestManager.h"
     #import "JSON.h"
@@ -34,7 +34,5 @@
     #import "NSString+Extension.h"
     #import "SBPublicFormatValidation.h"
     #import "UIView+SBAdditions.h"
-    #import "GlobalData.h"
-    #import "SBAppMessage.h"
     #import "MailMessage.h"
 #endif

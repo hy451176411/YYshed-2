@@ -13,7 +13,7 @@
 #include <CommonCrypto/CommonDigest.h>
 
 #include <CommonCrypto/CommonHMAC.h>
-#import "PicFileView.h"
+
 #import "NSString+Extension.h"
 
 @implementation NetRequest
@@ -61,99 +61,7 @@
     [_requestDic setObject:request forKey:tagKey];
 }
 
-- (ASIHTTPRequest *)creatRequestURLAndData:(NSString *)APIUrl WithDic:(id)tempDicOrStr withTag:(int)tag
-{
-    NSString *strUrl = [AppDelegate getAppDelegate].strOA;
-    if (tag >= MailList || tag == SendEmail || tag == EmailContent || tag == DeleteMail) {
-        strUrl = [AppDelegate getAppDelegate].strEmail;
-    }
-    
-    if (tag == SendEmail) {//发送邮件
-        NSString *strFace = [[AppDelegate getAppDelegate].strEmail stringByReplacingOccurrencesOfString:@"interface?OpenAgent" withString:@"HandleMailFromApp?OpenAgent"];
-        strUrl = [NSString stringWithFormat:@"%@",strFace];
-    }
-    
-    
-    ASIFormDataRequest *request= nil;
-    NSMutableString *urlStr = [NSMutableString stringWithString:strUrl];
-    
-    if ([tempDicOrStr isKindOfClass:[NSString class]] || tempDicOrStr == nil) {
-        urlStr = [NSMutableString stringWithFormat:@"%@func=%@",strUrl,APIUrl];
-        
-        [urlStr appendFormat:@"%@",tempDicOrStr];
-        
-        request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:urlStr]];
-        request.delegate = self;
-        [request setRequestMethod:@"GET"];
-        [request setPostFormat:ASIURLEncodedPostFormat];
-        [self setRequest:request forKey:tag];
-        
-    }else if ([tempDicOrStr isKindOfClass:[NSDictionary class]]) {
-        NSString *strUrlData = tempDicOrStr[@"url"];
-        urlStr = [NSMutableString stringWithFormat:@"%@func=%@",strUrl,APIUrl];
 
-        urlStr = [NSMutableString stringWithFormat:@"%@%@",urlStr,strUrlData];
-        
-        request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:urlStr]];
-        request.delegate = self;
-        //post表单的内容与文件上传
-        NSString *stringBoundary = @"*****";
-        NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",stringBoundary];
-        [request addRequestHeader:@"Content-Type" value:contentType];
-        
-        
-        //create the body
-        NSMutableData *postBody = [NSMutableData data];
-        [postBody appendData:[[NSString stringWithFormat:@"--%@\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        
-        //        NSArray *arrKey = tempDicOrStr[@"img"];
-        //        for (int i = 0; i < arrKey.count; i++) {
-        //            NSString *key = arrKey[i];
-        //            if (![key isEqualToString:@"url"]) {
-        //                NSString *value = tempDicOrStr[key];
-        //                [request setPostValue:value forKey:key];
-        //            } else {
-        NSArray *arrImg = tempDicOrStr[@"img"];
-        for (int j = 0; j < arrImg.count; j++) {
-            PicFileView *picFileView = arrImg[j];
-            UIImage *img = picFileView.img;
-            NSData *dataImg = UIImagePNGRepresentation(img);
-            NSString *imgName = picFileView.strImgName;
-            NSString *imgKey = [NSString stringWithFormat:@"file"];
-            NSString *type = [NSString stringWithFormat:@"image/%@",picFileView.strImgType];
-            [request addData:dataImg withFileName:imgName andContentType:type forKey:imgKey];
-        }
-        
-        NSDictionary *dict = tempDicOrStr[@"value"];
-        if (dict && dict.count) {
-            for (NSString *strKey in dict) {
-                
-                // strKey为键，str为值
-                NSString *pair = [NSString stringWithFormat:@"--%@\r\nContent-Disposition: form-data; name=\"%@\"\r\n\r\n",stringBoundary,strKey];
-                [postBody appendData:[pair dataUsingEncoding:NSUTF8StringEncoding]];
-                
-                id value = [dict objectForKey:strKey];
-                if ([value isKindOfClass:[NSString class]]) {
-                    [postBody appendData:[value dataUsingEncoding:NSUTF8StringEncoding]];
-                }else if ([value isKindOfClass:[NSData class]]){
-                    [postBody appendData:value];
-                }
-                [postBody appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-                
-            }
-        }
-        [postBody appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [request setPostBody:postBody];
-        [request setRequestMethod:@"POST"];
-        [self setRequest:request forKey:tag];
-        
-    }
-    request.timeOutSeconds = 30;
-    NSLog(@"urlStr== %@\n",urlStr);
-    
-    request.tag = tag;
-    return request;
-}
 
 #pragma mark 登录接口
 - (void)netRequestLoginUser:(NSString *)user password:(NSString *)pwd

@@ -15,10 +15,10 @@
 
 @interface MailMessage : NSObject
 {
-    
-    int num;
-    int times;
-    NSMutableArray *_muArrMessage;
+	
+	int num;
+	int times;
+	NSMutableArray *_muArrMessage;
 }
 @property (strong, nonatomic) MCOPOPSession *popSession;
 //pop 和 smtp 地址
@@ -44,8 +44,8 @@ DECLARE_SINGLETON(MailMessage);
 
 //验证用户
 - (void)verifyEmail:(NSString *)email
-           mailPass:(NSString *)mailPass
-      withIsSuccess:(void(^)(BOOL success))isSuccess;
+		   mailPass:(NSString *)mailPass
+	  withIsSuccess:(void(^)(BOOL success))isSuccess;
 
 - (void)arrEmailMessage:(void(^)(NSArray *arrMessage))arrMessage;
 
@@ -53,11 +53,11 @@ DECLARE_SINGLETON(MailMessage);
 
 // 发送
 - (void)sendEmailToArr:(NSArray *)toArr
-                 ccArr:(NSArray *)ccArr
-                bccArr:(NSArray *)bccArr
-               subject:(NSString *)subject
-           contentText:(NSString *)content
-         attachmentArr:(NSArray *)attachmentArr
-              mailType:(MailType)type
-         withIsSuccess:(void(^)(BOOL success))isSuccess;
+				 ccArr:(NSArray *)ccArr
+				bccArr:(NSArray *)bccArr
+			   subject:(NSString *)subject
+		   contentText:(NSString *)content
+		 attachmentArr:(NSArray *)attachmentArr
+			  mailType:(MailType)type
+		 withIsSuccess:(void(^)(BOOL success))isSuccess;
 @end

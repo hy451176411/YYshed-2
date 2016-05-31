@@ -47,7 +47,7 @@
  *setDelegate when init
  *
  */
-- (id)initWithDelegate:(id <NetRequestDelegate>)aDelegate;
+- (id)initWithDelegate:(id <YYNetRequestDelegate>)aDelegate;
 //登录接口
 -(void)login:(NSString*) username password:(NSString*) psd;
 //获取大鹏首页数据

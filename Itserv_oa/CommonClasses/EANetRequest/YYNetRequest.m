@@ -12,7 +12,7 @@
 #include <CommonCrypto/CommonDigest.h>
 
 #include <CommonCrypto/CommonHMAC.h>
-#import "PicFileView.h"
+
 #import "NSString+Extension.h"
 
 @implementation YYNetRequest

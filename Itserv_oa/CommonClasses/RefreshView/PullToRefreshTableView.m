@@ -9,7 +9,7 @@
 
 #import "PullToRefreshTableView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "RootViewController.h"
+
 /**
  *
  * StateView 顶部和底部状态视图

@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LoginViewController.h"
 
 BOOL isPop;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (nonatomic, nonatomic) LoginViewController *loginCtrlShare;
+
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) UINavigationController *nav;
 @property (nonatomic, strong) NSString *strOA;
